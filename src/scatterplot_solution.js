@@ -137,15 +137,16 @@ d3.csv("./data/persons.csv").then(function(data) {
 
     //    b. add mouseover event and use tooltip.html() to change its content. 
     //       Set style property 'visible', 'top' and 'left'
-    data_points.on("mouseover", function(d, i) {
+    g.selectAll("circle").on("mouseover", (event, d) => {
+        var pos = d3.pointer(event, d);
         tooltip
-            .html(`${d["First Name"]} ${d["Last Name"]}<br/>`
-                + `Height: ${d.Height}<br/>` 
-                + `Weigth: ${d.Weight}<br/>` 
-                + `Hair Color: ${d["Hair Color"]}` )
+            .style("left", pos[0] + "px")
+            .style("top", pos[1] - 28 + "px")
             .style("visibility", "visible")
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
+            .html(`${d["First Name"]} ${d["Last Name"]}<br/>`
+                + `Height: ${d.Height}<br/>`
+                + `Weigth: ${d.Weight}<br/>`
+                + `Hair Color: ${d["Hair Color"]}`);
         })
     .on("mouseout", function(d,i) {
         tooltip.style("visibility", "hidden")

@@ -35,12 +35,21 @@
 <mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
-<title></title></head>
+<title> </title></head>
 <body>
 
   <!-- put your html stuff here (titles, buttons, etc) -->
-  <script src='lib/d3/d3.js'></script>
+  <script src="https://d3js.org/d3.v6.js"></script>
   <script src='lib/lodash.js'></script>
-  <script src='src/scatterplot_test_data.js'></script>
+  <!-- Add 2 buttons -->
+  <button onclick="update('living_quality')">Lebensqualität</button>
+  <button onclick="update('threatened_species')">Bedrohte Tiere</button>
+
+  <!-- Create a div where the graph will take place -->
+  <div id="my_histogram_interactive"></div>
+  <script src='src/histogram_interactive.js'></script>
+
+  <!-- Create a div where the graph will take place -->
+
 </body>
 </html>

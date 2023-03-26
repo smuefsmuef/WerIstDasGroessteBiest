@@ -1,6 +1,7 @@
 // create svg canvas
 const canvHeight = 600, canvWidth = 800;
-const svg = d3.select("body").append("svg")
+const svg = d3.select("#my_scatterplot")
+    .append("svg")
     .attr("width", canvWidth)
     .attr("height", canvHeight)
     .style("border", "1px solid");
@@ -85,7 +86,7 @@ g.append("text")
 // note: the call is done asynchronous. 
 // That is why you have to load the data inside of a
 // callback function.
-d3.csv("./data/living_quality_small.csv").then(function (data) {
+d3.csv("./data/data_test.csv").then(function (data) {
     const X = d3.extent(data, d => Number(d.Id));
     const Y = d3.extent(data, d => Number(d.Life_Quality));
 
@@ -120,27 +121,43 @@ d3.csv("./data/living_quality_small.csv").then(function (data) {
     var data_points = g.selectAll("circle")  // this is just an empty placeholder
         .data(data)   // join empty selection with data
         .enter()      // enter join-loop
+
+        //Add circles
         .append("circle")
         .attr("class", "living_quality")
-        .attr("cx", 0)
+        .attr("cx", d => xScale(d.Id))
         .attr("cy", height)
         .attr("r", 20)
-        .style("fill", "green")
+        .style("fill", "red")
         .transition()
-        //.duration(2000)
-        .duration(d =>
-                500 * Math.log10(1000 * Math.sqrt(
-                    Math.pow(0 - xScale(d.Id), 2) +
-                    Math.pow(height - yScale(d.Life_Quality), 2)
-                ))
-        )
+        .duration(3000)
+        // .duration(d =>
+        //         500 * Math.log10(1000 * Math.sqrt(
+        //             Math.pow(0 - xScale(d.Id), 2) +
+        //             Math.pow(height - yScale(d.Life_Quality), 2)
+        //         ))
+        // )
         .ease(d3.easeElasticOut)
         .attr("cx", d => xScale(d.Id))
         .attr("cy", d => yScale(d.Life_Quality))
+        .style("fill", "green")
+
+
 
     // 4. create legend
-    var legendDomain = ["S", "M", "L"];
-    createLegend(legendDomain, colorScale);
+   // var legendDomain = ["S", "M", "L"];
+   // createLegend(legendDomain, colorScale);
+    
+    var pointLabel = d3.select("body").append("div").classed("pointLabel", true);
+    pointLabel.append("text")
+        .attr("y", d => yScale(d.Life_Quality))
+        .attr("x", d => xScale(d.Id))
+        .attr("dy", "1em")
+        .attr("font-family", "sans-serif")
+        .style("text-anchor", "middle")
+        .text("Länder")
+    //.text("text", d => xScale(d.Country));
+
 
     // 5. Create tooltip
     //    a. create tooltip div and append to body.
@@ -148,17 +165,18 @@ d3.csv("./data/living_quality_small.csv").then(function (data) {
 
     //    b. add mouseover event and use tooltip.html() to change its content.
     //       Set style property 'visible', 'top' and 'left'
-    data_points.on("mouseover", function (d, i) {
-        tooltip
-            .html(`${d["Country"]}<br/>`
-                + `Ranking Life Quality: ${d.Rank}`
-                + `Life Qality Index: ${d.Life_Quality}<br/>`
-                + `Threatened Species: ${d.Threatened_Species}<br/>`)
-            .style("visibility", "visible")
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
-    })
-        .on("mouseout", function (d, i) {
-            tooltip.style("visibility", "hidden")
-        });
+    g.selectAll("circle").on("mouseover", (event, d) => {
+            var pos = d3.pointer(event, d);
+            tooltip
+                .style("left", pos[0] + "px")
+                .style("top", pos[1] - 28 + "px")
+                .style("visibility", "visible")
+                .html(`${d["Country"]} <br/>`
+                    + `Lebensqualität: ${d.Life_Quality}<br/>`
+                    + `Id: ${d.Id}<br/>`
+                    + `Prozent bedroht: ${d["Threatened_Species"]}`);
+        })
+            .on("mouseout", function(d,i) {
+                tooltip.style("visibility", "hidden")
+            });
 });
