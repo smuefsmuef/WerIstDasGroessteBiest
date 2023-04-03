@@ -29,7 +29,7 @@ const yAxis = svg.append("g")
 function update(selectedVar) {
 
     // Parse the Data
-    d3.csv("./data/data_test.csv").then( function(data) {
+    d3.csv("./data/graph1_barchart.csv").then( function(data) {
 console.log(data);
         // X axis
         x.domain(data.map(d => d.group))

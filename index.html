@@ -1,55 +1,83 @@
 <!doctype html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
-  <meta charset="utf-8"/>
-  <!-- Create a div where the graph will take place -->
-  <style>
-    div.tooltip {
-      position: absolute;
-      text-align: left;
-      width: 120px;
-      height: 60px;
-      padding: 2px;
-      font: 12px sans-serif;
-      background: lightsteelblue;
-      border: 0px;
-      border-radius: 8px;
-      pointer-events: none;
-      visibility: hidden;
-    }
-  </style>
+    <meta charset="utf-8"/>
+    <!-- Create a div where the graph will take place -->
+    <style>
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            width: 120px;
+            height: 60px;
+            padding: 2px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+            visibility: hidden;
+        }
+    </style>
 
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marco Soldati</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
-<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
-<mso:Order msdt:dt="string">4600.00000000000</mso:Order>
-<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
-<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
-<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
-<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marco Soldati</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
-<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
-<mso:ContentTypeId msdt:dt="string">0x01010038FCF54BC1C26D4F82C419D75F2D5D4A</mso:ContentTypeId>
-<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
-<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-<title> </title></head>
+    <!--[if gte mso 9]>
+    <xml>
+        <mso:CustomDocumentProperties>
+            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marco
+                Soldati
+            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+            <mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+            <mso:Order msdt:dt="string">4600.00000000000</mso:Order>
+            <mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+            <mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+            <mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+            <mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marco
+                Soldati
+            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+            <mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+            <mso:ContentTypeId msdt:dt="string">0x01010038FCF54BC1C26D4F82C419D75F2D5D4A</mso:ContentTypeId>
+            <mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+            <mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+        </mso:CustomDocumentProperties>
+    </xml><![endif]-->
+    <title></title></head>
+
 <body>
+<header>
+    <img src="./data/IUCN_logo.png" alt="logo">
+    <h1>Wo lebt das Biest?</h1>
+</header>
+<!-- put your html stuff here (titles, buttons, etc) -->
+<h3>Oh wie schön es doch ist, in einem Land zu leben, in dem die Lebensqualität gemäss OECD Ranking 2022 am höchsten
+    ist.</h3>
 
-  <!-- put your html stuff here (titles, buttons, etc) -->
-  <script src="https://d3js.org/d3.v6.js"></script>
-  <script src='lib/lodash.js'></script>
-  <!-- Add 2 buttons -->
-  <button onclick="update('living_quality')">Lebensqualität</button>
-  <button onclick="update('threatened_species')">Bedrohte Tiere</button>
 
-  <!-- Create a div where the graph will take place -->
-  <div id="my_histogram_interactive"></div>
-  <script src='src/histogram_interactive.js'></script>
+<!-- Add 2 buttons
+<button onclick="update('living_quality')">Lebensqualität</button>
+<button onclick="update('threatened_species')">Bedrohte Tiere</button>
+-->
 
-  <!-- Create a div where the graph will take place -->
+<!-- Create a div where the graph will take place -->
+
+<div id="my_line_chart" ></div>
+
+<p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien. Keine
+    einzige andere Tierart und deren Mobilität, Nahrungsmittelangebot wird einbezogen. Wenn wir nämlich schauen, wie es
+    mit dem Prozentsatz an Tieren aussieht, die bedroht sind, also früher oder später keine Lebensgrundlage mehr haben,
+    dann thront die Schweiz auch fast auf Platz 1. </p>
+
+<h3>Oh wie schön es doch ist, in einem Land zu leben, in dem die Lebensqualität gemäss OECD Ranking 2022 am höchsten
+    ist.</h3>
+
+<!-- Create a div where the graph will take place -->
 
 </body>
+
+<script src="https://d3js.org/d3.v6.js"></script>
+<script src='lib/lodash.js'></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src='src/line_interactive.js'></script>
+<script src='src/histogram_interactive.js'></script>
+<script src='src/scatterplot_test_data.js'></script>
+
 </html>

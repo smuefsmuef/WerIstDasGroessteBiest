@@ -86,7 +86,7 @@ g.append("text")
 // note: the call is done asynchronous. 
 // That is why you have to load the data inside of a
 // callback function.
-d3.csv("./data/data_test.csv").then(function (data) {
+d3.csv("./data/graph1_barchart.csv").then(function (data) {
     const X = d3.extent(data, d => Number(d.Id));
     const Y = d3.extent(data, d => Number(d.Life_Quality));
 
