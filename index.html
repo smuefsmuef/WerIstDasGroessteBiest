@@ -52,14 +52,14 @@
     ist.</h3>
 
 
-<!-- Add 2 buttons
+<!-- Add 2 buttons -->
 <button onclick="update('living_quality')">Lebensqualität</button>
 <button onclick="update('threatened_species')">Bedrohte Tiere</button>
--->
+
 
 <!-- Create a div where the graph will take place -->
 
-<div id="my_line_chart" ></div>
+<div id="my_histogram_interactive" ></div>
 
 <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien. Keine
     einzige andere Tierart und deren Mobilität, Nahrungsmittelangebot wird einbezogen. Wenn wir nämlich schauen, wie es
@@ -69,6 +69,8 @@
 <h3>Oh wie schön es doch ist, in einem Land zu leben, in dem die Lebensqualität gemäss OECD Ranking 2022 am höchsten
     ist.</h3>
 
+<div id="my_line_chart" ></div>
+
 <!-- Create a div where the graph will take place -->
 
 </body>
@@ -76,8 +78,7 @@
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src='lib/lodash.js'></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src='src/line_interactive.js'></script>
-<script src='src/histogram_interactive.js'></script>
-<script src='src/scatterplot_test_data.js'></script>
+<script src='src/charts.js'></script>
+
 
 </html>

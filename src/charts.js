@@ -1,11 +1,76 @@
-//source:  https://d3-graph-gallery.com/graph/connectedscatter_legend.html
+/**** Chart 1: Bar Chart Life Quality vs. Threatened Species ****/
+
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 100, bottom: 30, left: 30},
+const margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-const svg = d3.select("#my_line_chart")
+const svg = d3.select("#my_histogram_interactive")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+// Initialize the X axis
+const x = d3.scaleBand()
+    .range([ 0, width ])
+    .padding(0.2);
+const xAxis = svg.append("g")
+    .attr("transform", `translate(0,${height})`);
+
+// Initialize the Y axis
+const y = d3.scaleLinear()
+    .range([height, 0]);
+const yAxis = svg.append("g")
+    .attr("class", "myYaxis");
+
+
+// A function that create / update the plot for a given variable:
+function update(selectedVar) {
+
+    // Parse the Data
+    d3.csv("./data/graph1_barchart.csv").then( function(data) {
+console.log(data);
+        // X axis
+        x.domain(data.map(d => d.group))
+        xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
+        // Add Y axis
+        y.domain([0, d3.max(data, d => +d[selectedVar]) ]);
+        yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+        // variable u: map data to existing bars
+        const u = svg.selectAll("rect")
+            .data(data)
+
+        // update bars
+        u.join("rect")
+            .transition()
+            .duration(1000)
+            .attr("x", d => x(d.group))
+            .attr("y", d => y(d[selectedVar]))
+            .attr("width", x.bandwidth())
+            .attr("height", d => height - y(d[selectedVar]))
+            .attr("fill", "green")
+    })
+}
+
+// Initialize plot
+update('living_quality')
+
+
+/**** Chart 2: Map of europe with living quality (human) and threatened aninmals ****/
+
+
+
+
+/**** Chart 3: Line Chart with historical development of farming, species, number of people ****/
+
+
+// append the svg object to the body of the page
+const svg3 = d3.select("#my_line_chart")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -39,7 +104,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
     const x = d3.scaleLinear()
         .domain([1900,2020])
         .range([ 0, width ]);
-    svg.append("g")
+    svg3.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x));
 
@@ -47,14 +112,14 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
     const y = d3.scaleLinear()
         .domain( [0,300])
         .range([ height, 0 ]);
-    svg.append("g")
+    svg3.append("g")
         .call(d3.axisLeft(y));
 
     // Add the lines
     const line = d3.line()
         .x(d => x(+d.time))
         .y(d => y(+d.value))
-    svg.selectAll("myLines")
+    svg3.selectAll("myLines")
         .data(dataReady)
         .join("path")
         .attr("class", d => d.name)
@@ -64,7 +129,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .style("fill", "none")
 
     // Add the points
-    svg
+    svg3
         // First we need to enter in a group
         .selectAll("myDots")
         .data(dataReady)
@@ -81,7 +146,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .attr("stroke", "white")
 
     // Add a label at the end of each line
-    svg
+    svg3
         .selectAll("myLabels")
         .data(dataReady)
         .join('g')
@@ -95,7 +160,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .style("font-size", 15)
 
     // Add a legend (interactive)
-    svg
+    svg3
         .selectAll("myLegend")
         .data(dataReady)
         .join('g')

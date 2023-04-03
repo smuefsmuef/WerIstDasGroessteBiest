@@ -1116,7 +1116,7 @@ Selections no longer subclass Array using [prototype chain injection](http://per
 Selections are now immutable: the elements and parents in a selection never change. (The elements’ attributes and content will of course still be modified!) The [*selection*.sort](https://github.com/d3/d3-selection/blob/master/README.md#selection_sort) and [*selection*.data](https://github.com/d3/d3-selection/blob/master/README.md#selection_data) methods now return new selections rather than modifying the selection in-place. In addition, [*selection*.append](https://github.com/d3/d3-selection/blob/master/README.md#selection_append) no longer merges entering nodes into the update selection; use [*selection*.merge](https://github.com/d3/d3-selection/blob/master/README.md#selection_merge) to combine enter and update after a data join. For example, the following [general update pattern](https://bl.ocks.org/mbostock/a8a5baa4c4a470cda598) in 3.x:
 
 ```js
-var circle = svg.selectAll("circle").data(data) // UPDATE
+var circle = svg3.selectAll("circle").data(data) // UPDATE
     .style("fill", "blue");
 
 circle.exit().remove(); // EXIT
@@ -1131,14 +1131,14 @@ circle // ENTER + UPDATE
 Would be rewritten in 4.0 as:
 
 ```js
-var circle = svg.selectAll("circle").data(data) // UPDATE
+var circle = svg3.selectAll("circle").data(data) // UPDATE
     .style("fill", "blue");
 
 circle.exit().remove(); // EXIT
 
 circle.enter().append("circle") // ENTER
     .style("fill", "green")
-  .merge(circle) // ENTER + UPDATE
+    .merge(circle) // ENTER + UPDATE
     .style("stroke", "black");
 ```
 
