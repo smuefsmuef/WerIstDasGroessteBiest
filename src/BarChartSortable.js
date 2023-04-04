@@ -2,7 +2,7 @@
 // Released under the ISC license.
 // https://observablehq.com/@d3/sortable-bar-chart
 
-//lifeQuality = FileAttachment("./data/graph1_barchart.csv").csv({typed: true})
+//lifeQuality = FileAttachment("./data/1_livingQuality_threatenedSpecies.csv").csv({typed: true})
 
 
 function BarChartSortable(data, {
@@ -171,7 +171,7 @@ function BarChartSortable(data, {
     });
 }
 
-const lifeQuality = d3.csv("./data/graph1_barchart.csv").then(function(data) {
+const lifeQuality = d3.csv("./data/1_livingQuality_threatenedSpecies.csv").then(function(data) {
     console.log(data);
 });
 

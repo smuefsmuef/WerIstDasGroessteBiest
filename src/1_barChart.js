@@ -32,7 +32,7 @@ const yAxis = svg.append("g")
 function update(selectedVar) {
 
     // Parse the Data
-    d3.csv("./data/graph1_barchart.csv").then( function(data) {
+    d3.csv("./data/1_livingQuality_threatenedSpecies.csv").then( function(data) {
 console.log(data);
         // X axis
         x.domain(data.map(d => d.group))
@@ -83,7 +83,7 @@ const svg4 = d3.select("#my_line_chart")
     .attr("transform",`translate(${margin.left},${margin.top})`);
 
 //Read the data
-d3.csv("./data/graph3_line_chart.csv").then( function(data) {
+d3.csv("./data/4_history.csv").then( function(data) {
     console.log(data);
     // List of groups (here I have one group per column)
     const allGroup = ["Bevölkerung", "FlächeLandw", "ProduktionLandw" ]
