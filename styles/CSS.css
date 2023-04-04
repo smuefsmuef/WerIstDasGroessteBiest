@@ -1,0 +1,21 @@
+.possibly-sidebyside .one {
+    float: left;
+}
+
+.sidebyside {
+    white-space: nowrap;
+}
+.sidebyside div, .sidebyside svg {
+    display: inline;
+
+}
+
+svg {
+    border: thin solid green;
+}
+svg text {
+    text-anchor: middle;
+}
+hr {
+    margin: 2em 0;
+}
