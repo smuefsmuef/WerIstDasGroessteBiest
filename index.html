@@ -44,34 +44,28 @@
 
 <body>
 <header>
-    <img src="./data/IUCN_logo.png" alt="logo">
-    <h1>Wo lebt das Biest?</h1>
+
+
 </header>
 <!-- put your html stuff here (titles, buttons, etc) -->
-<h3>Oh wie schön es doch ist, in einem Land zu leben, in dem die Lebensqualität gemäss OECD Ranking 2022 am höchsten
-    ist.</h3>
+<!-- Create a div where the graph will take place -->
+<h1>Das Biest</h1>
+<h3>Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
 
 
 <!-- Add 2 buttons -->
 <button onclick="update('living_quality')">Lebensqualität</button>
 <button onclick="update('threatened_species')">Bedrohte Tiere</button>
-
-
-<!-- Create a div where the graph will take place -->
-
 <div id="my_histogram_interactive" ></div>
 
-<p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien. Keine
-    einzige andere Tierart und deren Mobilität, Nahrungsmittelangebot wird einbezogen. Wenn wir nämlich schauen, wie es
-    mit dem Prozentsatz an Tieren aussieht, die bedroht sind, also früher oder später keine Lebensgrundlage mehr haben,
-    dann thront die Schweiz auch fast auf Platz 1. </p>
+<h3>Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
 
-<h3>Oh wie schön es doch ist, in einem Land zu leben, in dem die Lebensqualität gemäss OECD Ranking 2022 am höchsten
-    ist.</h3>
+<h3>Chart 3: Platz für Mensch und Tier </h3>
+
+<h3>Chart 4: Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht, Mobilität, Tierarten etc. </h3>
 
 <div id="my_line_chart" ></div>
 
-<!-- Create a div where the graph will take place -->
 
 </body>
 
@@ -79,6 +73,5 @@
 <script src='lib/lodash.js'></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src='src/charts.js'></script>
-<script src='src/chart2.js'></script>
 
 </html>

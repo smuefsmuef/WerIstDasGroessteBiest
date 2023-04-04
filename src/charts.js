@@ -63,14 +63,12 @@ update('living_quality')
 
 
 /**** Chart 2: Interactive map of europe with living quality (human) and threatened aninmals ****/
-@ToDo
+
 
 
 
 /**** Chart 3: Treemap of Area of Biotopes and number of animals living there ****/
 /** Possible Source: //https://d3-graph-gallery.com/graph/treemap_json.html **/
-@ToDo
-
 
 
 /**** Chart 4: Interactive line chart with historical development of farming, species, number of people ****/
