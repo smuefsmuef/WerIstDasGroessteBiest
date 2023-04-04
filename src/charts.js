@@ -1,8 +1,9 @@
 /**** Chart 1: Bar Chart Life Quality vs. Threatened Species ****/
+/** Source: https://d3-graph-gallery.com/graph/barplot_button_data_csv.html **/
 
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 60},
-    width = 460 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -61,16 +62,22 @@ console.log(data);
 update('living_quality')
 
 
-/**** Chart 2: Map of europe with living quality (human) and threatened aninmals ****/
+/**** Chart 2: Interactive map of europe with living quality (human) and threatened aninmals ****/
+@ToDo
 
 
 
+/**** Chart 3: Treemap of Area of Biotopes and number of animals living there ****/
+/** Possible Source: //https://d3-graph-gallery.com/graph/treemap_json.html **/
+@ToDo
 
-/**** Chart 3: Line Chart with historical development of farming, species, number of people ****/
 
+
+/**** Chart 4: Interactive line chart with historical development of farming, species, number of people ****/
+/** Source: https://d3-graph-gallery.com/graph/connectedscatter_legend.html **/
 
 // append the svg object to the body of the page
-const svg3 = d3.select("#my_line_chart")
+const svg4 = d3.select("#my_line_chart")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -81,7 +88,7 @@ const svg3 = d3.select("#my_line_chart")
 d3.csv("./data/graph3_line_chart.csv").then( function(data) {
     console.log(data);
     // List of groups (here I have one group per column)
-    const allGroup = ["Produktion", "Bevölkerung", "Fläche"]
+    const allGroup = ["Bevölkerung", "FlächeLandw", "ProduktionLandw" ]
 
     // Reformat the data: we need an array of arrays of {x, y} tuples
     const dataReady = allGroup.map( function(grpName) { // .map allows to do something for each element of the list
@@ -102,9 +109,9 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
 
     // Add X axis --> it is a date format
     const x = d3.scaleLinear()
-        .domain([1900,2020])
-        .range([ 0, width ]);
-    svg3.append("g")
+        .domain([1900,2030])
+        .range([ 0, width-100 ]);
+    svg4.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x));
 
@@ -112,14 +119,14 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
     const y = d3.scaleLinear()
         .domain( [0,300])
         .range([ height, 0 ]);
-    svg3.append("g")
+    svg4.append("g")
         .call(d3.axisLeft(y));
 
     // Add the lines
     const line = d3.line()
         .x(d => x(+d.time))
         .y(d => y(+d.value))
-    svg3.selectAll("myLines")
+    svg4.selectAll("myLines")
         .data(dataReady)
         .join("path")
         .attr("class", d => d.name)
@@ -129,7 +136,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .style("fill", "none")
 
     // Add the points
-    svg3
+    svg4
         // First we need to enter in a group
         .selectAll("myDots")
         .data(dataReady)
@@ -146,7 +153,7 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .attr("stroke", "white")
 
     // Add a label at the end of each line
-    svg3
+    svg4
         .selectAll("myLabels")
         .data(dataReady)
         .join('g')
@@ -160,12 +167,12 @@ d3.csv("./data/graph3_line_chart.csv").then( function(data) {
         .style("font-size", 15)
 
     // Add a legend (interactive)
-    svg3
+    svg4
         .selectAll("myLegend")
         .data(dataReady)
         .join('g')
         .append("text")
-        .attr('x', (d,i) => 30 + i*60)
+        .attr('x', (d,i) => 30 + i*100)
         .attr('y', 30)
         .text(d => d.name)
         .style("fill", d => myColor(d.name))

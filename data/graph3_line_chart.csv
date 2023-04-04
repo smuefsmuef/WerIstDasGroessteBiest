@@ -1,4 +1,4 @@
-﻿time,Produktion,Bevölkerung,Fläche,Flächenanteil Auen,Flächenanteil Hoch- und Flachmoore,Flächenanteil Auen,Feldhasenentwicklung,Anzahl Reisende Privater Strassenverkehr (in Mio Reisende),Landschaftszerschneidung Kt. BL
+﻿time,ProduktionLandw,Bevölkerung,FlächeLandw,Fläche Auen,Fläche Moore,Fläche Trockenwiesen -weiden,Feldhasenentwicklung,Anzahl Reisende Privater Strassenverkehr (in Mio Reisende),Landschaftszerschneidung Kt. BL
 1900,100,100,100,100,100,100,,,30
 1915,125,120,96,,,,,,
 1930,150,125,94,,,,,,19
@@ -9,5 +9,3 @@
 2005,240,220,84,63,17,4.5,300,6000,8
 2014,250,245,83,,,,250,6500,7
 2022,260,260,82,,,,240,7500,6
-,,,,,,,,,
-Datenquellen:,Quellen: BFS – LGR, STATPOP, Landwirtschaftliche Betriebsstrukturerhebung ,Quellen: BFS – LGR, STATPOP, Landwirtschaftliche Betriebsstrukturerhebung ,Quellen: BFS – LGR, STATPOP, Landwirtschaftliche Betriebsstrukturerhebung ,Quelle: Lachat et al. 2010 ,Quelle: Lachat et al. 2010 ,Quelle: Lachat et al. 2010 ,https://www.infosperber.ch/umwelt/vielfalt-tiere-pflanzen/bald-nur-noch-aus-schoggi-weniger-feldhasen-in-der-schweiz/,https://www.sozialgeschichte.ch/themen/entwicklung-des-individualverkehrs/,https://www.umweltberichtbeiderbasel.bs.ch/indikatoren/indikatoren-uebersicht/3-biodiversitaet/landschaftszerschneidung.html
