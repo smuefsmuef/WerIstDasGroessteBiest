@@ -95,11 +95,11 @@
 <h3>Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
 
 
-<!-- Add 2 buttons -->
-<button onclick="update('living_quality')">Lebensqualität</button>
-<button onclick="update('threatened_species')">Bedrohte Tiere</button>
+<!-- Add 2 buttons-->
+<button onclick="update('Total Index')">Lebensqualität</button>
+<button onclick="update('Threatened Species')">Bedrohte Tiere</button>
 <!--evtl direkt ins js rein anstatt hier. siehe maps on click event-->
-<div id="my_histogram_interactive"></div>
+<div id="my_barchart_horizontal"></div>
 
 <h3>Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
 <select id="speciesButton"></select>
@@ -123,6 +123,7 @@
 <script src='lib/lodash.js'></script>
 <script src="lib/topojson/topojson.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src='src/1_barChart_horizontal.js'></script>
 <script src='src/1_barChart.js'></script>
 <script src='src/2_europeMap.js'></script>
 <script src='src/4_lineChart.js'></script>
