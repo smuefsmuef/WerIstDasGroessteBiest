@@ -92,7 +92,18 @@
 <!-- put your html stuff here (titles, buttons, etc) -->
 <!-- Create a div where the graph will take place -->
 <h1>Das Biest</h1>
+<p>Jedes Jahr werden international Daten über die Lebensqualität und das Wohlergehen des Menschen publiziert. Für
+    die Berechnungen dieser komplexen Grösse werden mal mehr soziale, mal mehr wirtschaftliche oder persönliche Faktoren
+    einbezogen und mehr oder weniger gewichtet. Immer thront die Schweiz in den obersten Rängen.
+    Die Lebensqualität in der Schweiz ist unbestritten hoch. Gilt dies auch für Tiere, Pflanzen und Pilze? Fühlen die
+    sich
+    in der Schweiz auch besonders wohl? Oder gibt es für sie andere, bessere Orte?</p>
+
 <h3>Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
+<p>In dieser Grafik sollen in absteigender Reihenfolge die Lebensqualität der verschiedenen Länder angezeigt werden; die
+    Schweiz an erster Stelle in etwas stärkerer Farbe hervorgehoben. Mit einem Button "Bedrohte Arten" kann man
+    die Prozentwerte bedrohter Tierarten anzeigen, in roter Farbe und aufsteigender Reihenfolge und
+    mit der Schweiz etwas stärker hervorgehoben auf dem zweituntersten Rang</p>
 
 
 <!-- Add 2 buttons-->
@@ -100,6 +111,9 @@
 <button onclick="update('Threatened Species')">Bedrohte Tiere</button>
 <!--evtl direkt ins js rein anstatt hier. siehe maps on click event-->
 <div id="my_barchart_horizontal"></div>
+
+
+
 
 <h3>Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
 <select id="speciesButton"></select>
@@ -109,10 +123,17 @@
 <!--todo add data bedrohte tierarten / lebensräume-->
 
 
-<h3>Chart 3: Verschiedene Arten in der Schweiz </h3>
+<h3>Chart 3: Anzahl Arten in der Schweiz nach Gefährdungsstatus </h3>
+<p>In dieser Treemap werden die Anzahl Arten und ihr Gefährdungsgrad in den verschiedenen Klassen von Tieren (Säugetiere, Vögel, Fische...)
+    einander gegenübergestellt. Wenn möglich kann man auf die Klasse der Säugetiere draufklicken und sieht noch mehr Details, ev. sogar einzelne Arten und insbesondere auch den Menschen, der als einziger der Familie Menschenaffen
+    in der Schweiz vorkommt und unglaublich viel Platz einnimmt. Die Grösse der Fläche entspricht der Anzahl Arten.  </p>
 <div id="my_treemap"></div>
 
-<h3>Chart 4: Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht, Mobilität, Tierarten etc. </h3>
+<h3>Chart 4 (optinal, wenn noch Zeit): Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht, Mobilität, Tierarten etc. </h3>
+<p>Hier werden Gründe für die Dominanz des Menschen in der Schweiz und die Verdrängung der Tiere in zeitlichen Entwicklungen aufgezeigt. Es
+wird immer eine Grösse die sich positiv entwickelt, einer anderen Grösse gegenübergestellt, die sich negativ entwickelt und offensichtlich mit
+    der anderen Grösse zu tun hat. z.B. Mobilität: Anzahl Fahrzeuge auf den Strassen; Zerstückelung der Landschaft.
+    Entweder werden die verschiedenen Entwicklungen mit einem Dropdown Menu angewählt oder in einem Scrollytelling erklärt.</p>
 <div id="my_line_chart"></div>
 
 </body>
