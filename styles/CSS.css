@@ -1,3 +1,68 @@
+body {
+    background-color: #283340; /* Black background color */
+    text-align: center;
+}
+
+h1, h2, h3, text, p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #bbb;
+}
+
+text {
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+/* Containers */
+.container-fluid {
+    padding: 3% 15%;
+}
+
+/* Sections */
+.color-section {
+    background-color: #1b313b;
+    color: #fff;
+}
+
+.white-section {
+    background-color: #fff;
+}
+
+/* Headings */
+.big-heading {
+    font-weight: bold;
+    font-size: 4.5rem;
+    line-height: 1.5;
+}
+
+.small-heading {
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* Title Section */
+#title {
+    color: rgba(53, 84, 99, 0.3);
+    text-align: left;
+    /*background-image: url("images/dalle_1.png");*/
+}
+
+/* Title Image */
+.title-image {
+    width: 20%;
+    transform: rotate(3deg);
+    position: absolute;
+    right: 20%;
+    top: 3%;
+}
+
+
 .possibly-sidebyside .one {
     float: left;
 }
@@ -5,17 +70,119 @@
 .sidebyside {
     white-space: nowrap;
 }
+
 .sidebyside div, .sidebyside svg {
     display: inline;
 
 }
 
+button, #speciesButton {
+    background: #73dcd5;
+    height: 2rem;
+}
+
 svg {
     border: thin solid green;
 }
+
 svg text {
     text-anchor: middle;
 }
+
 hr {
     margin: 2em 0;
 }
+
+div.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 120px;
+    height: 60px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/*MAP*/
+
+#humans, #europe {
+    background: #ffffff;
+}
+
+
+#chart-title {
+    font-size: 24px;
+    text-anchor: start;
+}
+
+.countries {
+    fill: #bbb;
+}
+
+.countries-new {
+    fill: #ff653e;
+}
+
+.europe-boundary {
+    fill: none;
+    stroke: #cf892e;
+    stroke-width: 0.2rem;
+    stroke-linejoin: round;
+}
+
+.country-label {
+    fill: #180909;
+    fill-opacity: .5;
+    font-size: 10px;
+    font-weight: 300;
+    text-anchor: middle;
+}
+
+
+#context-holder {
+    fill: none;
+    stroke: black;
+}
+
+.stop-left-human {
+    stop-color: #fefefe;
+}
+
+.stop-right-human {
+    stop-color: #00655e; /* Teal */
+}
+
+.stop-left-species {
+    stop-color: #fefefe;
+}
+
+.stop-right-species {
+    stop-color: deeppink;
+}
+
+.filled-human {
+    fill: url(#mainGradient);
+}
+
+
+.filled {
+    fill: url(#mainGradientSpecies);
+}
+
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: center;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 35%;
+    }
+}
+
