@@ -1,130 +1,126 @@
 <!doctype html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
+    <link rel="stylesheet" href="styles/CSS.css">
     <meta charset="utf-8"/>
-    <!-- Create a div where the graph will take place -->
-    <style>
-        div.tooltip {
-            position: absolute;
-            text-align: left;
-            width: 120px;
-            height: 60px;
-            padding: 2px;
-            font: 12px sans-serif;
-            background: lightsteelblue;
-            border: 0px;
-            border-radius: 8px;
-            pointer-events: none;
-            visibility: hidden;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        #chart-title {
-            font-size: 24px;
-            text-anchor: start;
-        }
+    <!--    [if gte mso 9]>-->
+    <!--    <xml>-->
+    <!--        <mso:CustomDocumentProperties>-->
+    <!--            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marco-->
+    <!--                Soldati-->
+    <!--            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>-->
+    <!--            <mso:xd_Signature msdt:dt="string"></mso:xd_Signature>-->
+    <!--            <mso:Order msdt:dt="string">4600.00000000000</mso:Order>-->
+    <!--            <mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>-->
+    <!--            <mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>-->
+    <!--            <mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>-->
+    <!--            <mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>-->
+    <!--            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marco-->
+    <!--                Soldati-->
+    <!--            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>-->
+    <!--            <mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>-->
+    <!--            <mso:ContentTypeId msdt:dt="string">0x01010038FCF54BC1C26D4F82C419D75F2D5D4A</mso:ContentTypeId>-->
+    <!--            <mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>-->
+    <!--            <mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>-->
+    <!--        </mso:CustomDocumentProperties>-->
+    <!--    </xml><![endif]-->
 
-        .countries {
-            fill: #bbb;
-        }
-
-        .countries:hover {
-            fill: burlywood;
-        }
-
-        .europe-boundary {
-            fill: none;
-            stroke: darkmagenta;
-            stroke-linejoin: round;
-        }
-
-        .country-label {
-            fill: #777;
-            fill-opacity: .5;
-            font-size: 10px;
-            font-weight: 300;
-            text-anchor: middle;
-        }
-
-        text {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 10px;
-            text-anchor: middle;
-        }
-
-        #context-holder {
-            fill: none;
-            stroke: black;
-        }
-
-        /*#AG {
-          fill: red
-        }*/
-    </style>
-
-    <!--[if gte mso 9]>
-    <xml>
-        <mso:CustomDocumentProperties>
-            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Marco
-                Soldati
-            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
-            <mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
-            <mso:Order msdt:dt="string">4600.00000000000</mso:Order>
-            <mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
-            <mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
-            <mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
-            <mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
-            <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Marco
-                Soldati
-            </mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
-            <mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
-            <mso:ContentTypeId msdt:dt="string">0x01010038FCF54BC1C26D4F82C419D75F2D5D4A</mso:ContentTypeId>
-            <mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
-            <mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
-        </mso:CustomDocumentProperties>
-    </xml><![endif]-->
-    <title></title></head>
-
+    <!--
+// ************************************
+// karin güdel, petra kohler
+// ************************************
+-->
+    <title>Das Biest</title></head>
 <body>
 <header>
-
-
 </header>
-<!-- put your html stuff here (titles, buttons, etc) -->
-<!-- Create a div where the graph will take place -->
-<h1>Das Biest</h1>
-<h3>Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
+
+<section class="white-section" id="title">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <h1 class="big-heading">Der Mensch, so ein Biest.</h1>
+                <h2 class="small-heading">oder wie....</h2>
+            </div>
+            <div class="col-sm-8">
+                <img class="title-image" src="styles/images/dalle_1.png" alt="title" width="50%"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="color-section" id="chart-1">
+    <div class="container-fluid">
+        <h3 class="section-heading">Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
+        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
+            Keine einzige andere Tierart und............ </p>
+        <button onclick="update('living_quality')">Lebensqualität</button>
+        <button onclick="update('threatened_species')">Bedrohte Tiere</button>
+        <!--todo evtl buttons direkt ins js rein anstatt hier. siehe maps on click event-->
+        <div id="my_histogram_interactive"></div>
+    </div>
+</section>
 
 
-<!-- Add 2 buttons -->
-<button onclick="update('living_quality')">Lebensqualität</button>
-<button onclick="update('threatened_species')">Bedrohte Tiere</button>
-<!--evtl direkt ins js rein anstatt hier. siehe maps on click event-->
-<div id="my_histogram_interactive"></div>
+<section class="white-section" id="chart-2">
+    <div class="container-fluid">
+        <h3 class="section-heading">Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
+        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
+            Keine einzige andere Tierart und............ </p>
+        <div id="humans"></div>
+        <select id="speciesButton"></select>
+        <select id="environmentButton"></select>
+        <div id="europe">
+        </div>
+    </div>
+    </div>
+</section>
 
-<h3>Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
-<select id="speciesButton"></select>
-<select id="environmentButton"></select>
-<div id="europe"></div>
-<!--todo add two buttons-->
-<!--todo add data bedrohte tierarten / lebensräume-->
+<section class="color-section" id="chart-3">
+    <div class="container-fluid">
+        <h3 class="section-heading">Chart 3: Platz für Mensch und Tier </h3>
+        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
+            Keine einzige andere Tierart und............ </p>
+    </div>
+</section>
+
+<section class="white-section" id="chart-4">
+    <div class="container-fluid">
+        <h3 class="section-heading">Chart 4: Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht,
+            Mobilität, Tierarten etc. </h3>
+        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
+            Keine einzige andere Tierart und............ </p>
+        <div id="my_line_chart"></div>
+    </div>
+</section>
 
 
-<h3>Chart 3: Platz für Mensch und Tier </h3>
+<!-- Footer -->
+<footer class="color-section" id="footer">
+    <div class="container-fluid">
+        <div>
+            <p>2023 Güdel Kohler</p>
+        </div>
+    </div>
+</footer>
 
-
-<h3>Chart 4: Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht, Mobilität, Tierarten etc. </h3>
-<div id="my_line_chart"></div>
 
 </body>
 
-<!--todo d3 entweder lokal oder dynamisch-->
+<!--Javascript-->
+<!--todo d3 entweder lokal oder dynamisch, lib oder d3-->
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src='lib/d3/d3.js'></script>
 <script src='lib/lodash.js'></script>
 <script src="lib/topojson/topojson.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src='src/1_barChart.js'></script>
-<script src='src/2_europeMap.js'></script>
+<script src='src/2_2_europeMap.js'></script>
+<script src='src/2_europeMap_humans.js'></script>
 <script src='src/4_lineChart.js'></script>
 <!--<script src='src/all_charts.js'></script>-->
 <!-- todo habe nachgelesen, besser einzeln importieren, spart ladezeit-->
