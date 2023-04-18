@@ -36,7 +36,7 @@ function createLegendLifeIndex() {
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${90})`);
+        .attr("transform", `translate(${-40},${120})`);
 
     //  b. add coloured rect to legend_entry
     index.append("rect")

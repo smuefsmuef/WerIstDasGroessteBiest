@@ -26,7 +26,7 @@ svgMap.append("text")
     .attr("y", 0)
     .attr("x", margin_map.left)
     .attr("dy", "1.5em")
-    .text("And not so for {selectedOption}");
+    .text("and not so for {selectedOption}");
 
 svgMap.append("text")
     .attr("id", "species")
@@ -167,7 +167,7 @@ function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${40})`);
+        .attr("transform", `translate(${-40},${120})`);
 
 //  b. add coloured rect to legend_entry
     index.append("rect")
