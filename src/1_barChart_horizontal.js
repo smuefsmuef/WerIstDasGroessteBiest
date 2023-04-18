@@ -1,12 +1,9 @@
 /**** Chart 1: Bar Chart Life Quality vs. Threatened Species ****/
 /** Source: https://d3-graph-gallery.com/graph/barplot_button_data_csv.html **/
 
-/**** Chart 1: Bar Chart Life Quality vs. Threatened Species ****/
-/** Source: https://d3-graph-gallery.com/graph/barplot_button_data_csv.html **/
-
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 60},
-    width = 600 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -41,73 +38,97 @@ function update(selectedVar) {
         console.log(data)
         console.log(selectedVar)
 
-        // Add Y axis
-        y.domain(data.map(d => d.country));
-        yAxis.transition().duration(1000)
-            .call(d3.axisLeft(y))
-            .style("text-anchor", "right");
-        //todo: align text at the y-axis
+       // data.sort((a, b) => a[selectedVar] - b[selectedVar]);
+        // data.sort(function(b, a) {
+        //     return a[selectedVar] - b[selectedVar];
+        // });
+        if (selectedVar === "Total_Index") {
+            data.sort((a, b) =>  b[selectedVar] - a[selectedVar] );
+            // Add Y axis
+            y.domain(data.map(d => d.country));
+            yAxis.transition().duration(2000)
+                .call(d3.axisLeft(y))
+                .style("text-anchor", "right");
+            //todo: align text at the y-axis
 
-        // X axis
-        //todo: max of both variables; don't unterstand why it doesn't work for Threatened Species
-        x.domain([0, d3.max(data, d => d[selectedVar])])
-        console.log(d3.max(data, d => d[selectedVar]))
+            // X axis
+            //todo: max of both variables; don't unterstand why it doesn't work for Threatened Species
+            x.domain([0, d3.max(data, d => d[selectedVar])])
+            console.log(d3.max(data, d => d[selectedVar]))
 
-        xAxis.transition().duration(1000)
-            .call(d3.axisBottom(x))
-            .selectAll("text")
-            .attr("transform", "translate(5,0)")
-            .style("text-anchor", "end");
+            xAxis.transition().duration(1000)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "translate(5,0)")
+                .style("text-anchor", "end");
 
-        // variable u: map data to existing bars
-        const u = svg1b.selectAll("rect")
-            .data(data)
+            // variable u: map data to existing bars
+            const u = svg1b.selectAll("rect")
+                .data(data)
 
-        // update bars
-        u.join("rect")
-            .transition()
-            .duration(1000)
-            .attr("x",d => x(0))
-            .attr("y", d => y(d.country))
-            .attr("width", d => x(d[selectedVar]))
-            .attr("height", y.bandwidth())
-            .attr("fill", "green")
-            //.on("click", function() {sortBars();});
-        //todo: different fill depending on selected var (red for threatened species; green for life quality)
+            // update bars
+            u.join("rect")
+                .transition()
+                .duration(1000)
+                .attr("x", d => x(0))
+                .attr("y", d => y(d.country))
+                .attr("width", d => x(d[selectedVar]))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => colorPickerHuman(d.country))
 
+        } else {
+            data.sort((a, b) => a[selectedVar] - b[selectedVar]);
+            // Add Y axis
+            y.domain(data.map(d => d.country));
+            yAxis.transition().duration(1000)
+                .call(d3.axisLeft(y))
+                .style("text-anchor", "right");
+            //todo: align text at the y-axis
+
+            // X axis
+            //todo: max of both variables; don't unterstand why it doesn't work for Threatened Species
+            x.domain([0, d3.max(data, d => d[selectedVar])])
+            console.log(d3.max(data, d => d[selectedVar]))
+
+            xAxis.transition().duration(1000)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "translate(5,0)")
+                .style("text-anchor", "end");
+
+            // variable u: map data to existing bars
+            const u = svg1b.selectAll("rect")
+                .data(data)
+
+            // update bars
+            u.join("rect")
+                .transition()
+                .duration(1000)
+                .attr("x", d => x(0))
+                .attr("y", d => y(d.country))
+                .attr("width", d => x(d[selectedVar]))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => colorPickerAnimal(d.country))
+        }
     })
-
-    //todo sort the selectedVar
-    //Define sort order flag
-    // var sortOrder = false;
-    //
-    // //Define sort function
-    // var sortBars = function() {
-    //
-    //     //Flip value of sortOrder
-    //     sortOrder = !sortOrder;
-    //
-    //     svg1b.selectAll("rect")
-    //         .sort(function(a, b) {
-    //             if (sortOrder) {
-    //                 return d3.ascending(a.value,b.value);
-    //             } else {
-    //                 return d3.descending(a.value, b.value);
-    //             }
-    //         })
-    //         .transition()
-    //         .delay(function(d, i) {
-    //             return i * 50;
-    //         })
-    //         .duration(1000)
-    //         .attr("x", function(d, i) {
-    //             return xScale(i);
-    //         });
-    //
-    // };
 }
 
+function colorPickerHuman(c) {
+    if (c == "Switzerland") {
+        return "#eaff70";
+    } else  {
+        return "#03a65c";
+    }
+}
+
+function colorPickerAnimal(c) {
+    if (c == "Switzerland") {
+        return "#eaff70";
+    } else  {
+        return "#fd7272";
+    }
+}
 
 // Initialize plot
-update('Total Index')
+    update('Total_Index')
 
