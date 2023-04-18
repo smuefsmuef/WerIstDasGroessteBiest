@@ -42,9 +42,10 @@ svgMap.append("text")
 function mouseover(species, countryId, countryArea, landcover) {
     const percent = species[countryId];
 
-    contextHolder.select("path")
-        .attr("d", arc({startAngle: 0, endAngle: percent / 50 * Math.PI}));
-    d3.select("#context-label").text("" + percent + "%");
+    if(percent !== undefined){
+        d3.select("#context-label").text("" +countryId + ": " + percent + "%");
+
+    }
 
     plotPieChart(landcover, countryId)
 }
@@ -118,7 +119,7 @@ const arc = d3.arc()
 
 // kleines rechteck unten rechts..für donut plot
 const contextHolder = createContextHolder();
-const pieChartHolder = createPieChartHolder();
+// const pieChartHolder = createPieChartHolder(); // todo maybe enable?
 
 function createContextHolder() {
     const contextHolder = g.append("g")
@@ -127,7 +128,8 @@ function createContextHolder() {
 
     contextHolder.append("rect")
         .attr("width", 100)
-        .attr("height", 100);
+        .attr("height", 100)
+        .attr("stroke", "none");
 
     contextHolder.append("path")
         .attr("transform", "translate(50,50)"); // mitte des elements
@@ -138,6 +140,7 @@ function createContextHolder() {
     return contextHolder;
 }
 
+// environment
 function createPieChartHolder() {
     const holder = g.append("g")
         .attr("id", "context-holder-pie")
@@ -200,7 +203,7 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("x", 100)
         .attr("y", 60)
-        .text(">50%");
+        .text("> 50%");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -209,8 +212,7 @@ function createLegendEndangeredSpecies() {
         .attr("width", 120)
         .attr("height", 70)
         .attr("fill", "none")
-        .attr("stroke", "black")
-        .attr("stroke-width", "1");
+        .attr("stroke", "none");
 }
 
 createLegendEndangeredSpecies()
@@ -235,20 +237,6 @@ function fillCountry(country, species, selectedOption) {
         } else {
             return value / 100
         }
-        // alternatively set fix scale
-        // if (value > 50) {
-        //      return 1
-        //  } else if (35 < value && value < 50) {
-        //      return .7
-        //  } else if (20 < value && value < 35) {
-        //      return .5
-        //  } else if (5 < value && value < 20) {
-        //      return .3
-        //  } else if (0 < value && value < 5) {
-        //      return .2
-        //  } else {
-        //      return 1
-        //  }
     })
 
 }

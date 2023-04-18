@@ -36,7 +36,7 @@ function createLegendLifeIndex() {
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${0},${90})`);
+        .attr("transform", `translate(${-40},${90})`);
 
     //  b. add coloured rect to legend_entry
     index.append("rect")
@@ -72,7 +72,7 @@ function createLegendLifeIndex() {
     index.append("text")
         .attr("x", 100)
         .attr("y", 60)
-        .text("200");
+        .text("100");
 
     // 3. create the main border of the legend
     index.append("rect")
@@ -81,8 +81,8 @@ function createLegendLifeIndex() {
         .attr("width", 120)
         .attr("height", 70)
         .attr("fill", "none")
-        .attr("stroke", "black")
-        .attr("stroke-width", "0.5");
+        .attr("stroke", "none")
+        ;
 }
 createLegendLifeIndex()
 
@@ -98,17 +98,17 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
     })
     country.style("fill-opacity", d => {
         const value = life_index_data[d.properties.geounit]
-        if (value > 190) {
+        if (value > 90) {
             return .9
-        } else if (180 < value && value < 190) {
+        } else if (80 < value && value < 90) {
             return .7
-        } else if (170 < value && value < 180) {
+        } else if (70 < value && value < 80) {
             return .5
-        } else if (160 < value && value < 170) {
+        } else if (60 < value && value < 70) {
             return .3
-        } else if (150 < value && value < 160) {
+        } else if (50 < value && value < 60) {
             return .2
-        } else if (1 < value && value < 150) {
+        } else if (1 < value && value < 50) {
             return .1
         } else {
             return 1

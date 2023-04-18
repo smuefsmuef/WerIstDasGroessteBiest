@@ -111,6 +111,7 @@ div.tooltip {
 
 #humans, #europe, #europe_small {
     background: #ffffff;
+    color: white;
 }
 
 
@@ -148,6 +149,12 @@ div.tooltip {
     stroke: black;
 }
 
+#context-label{
+    color: #1b313b;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .stop-left-human {
     stop-color: #fefefe;
 }
@@ -167,7 +174,6 @@ div.tooltip {
 .filled-human {
     fill: url(#mainGradient);
 }
-
 
 .filled {
     fill: url(#mainGradientSpecies);
