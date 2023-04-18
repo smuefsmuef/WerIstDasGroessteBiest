@@ -8459,20 +8459,13 @@
               22,
               23,
               24,
-              25,
-              51,
-              -17,
-              52,
-              53,
-              54,
-              55,
-              -19
+              25
             ]
           ],
           "type": "Polygon",
           "properties": {
             "type": "Geounit",
-            "geounit": "Belgium"
+            "geounit": "FlemishRegion"
           }
         },
         {
@@ -8543,7 +8536,24 @@
             "geounit": "Belarus"
           }
         },
-
+        {
+          "arcs": [
+            [
+              51,
+              -17,
+              52,
+              53,
+              54,
+              55,
+              -19
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Geounit",
+            "geounit": "WalloonRegion"
+          }
+        },
         {
           "arcs": [
             [
@@ -8642,9 +8652,6 @@
               78,
               79,
               80
-            ],   [
-              -80,
-              189
             ]
           ],
           "type": "Polygon",
@@ -8773,6 +8780,19 @@
         {
           "arcs": [
             [
+              -92,
+              106
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Dependency",
+            "geounit": "Gibraltar"
+          }
+        },
+        {
+          "arcs": [
+            [
               [
                 107
               ]
@@ -8857,10 +8877,15 @@
           }
         },
         {
+          "type": null,
+          "properties": {
+            "type": "Country",
+            "geounit": "IsleofMan"
+          }
+        },
+        {
           "arcs": [
             [
-              -125,
-              149,
               124,
               125
             ]
@@ -8944,6 +8969,19 @@
         {
           "arcs": [
             [
+              -58,
+              -13
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Sovereigncountry",
+            "geounit": "Liechtenstein"
+          }
+        },
+        {
+          "arcs": [
+            [
               -50,
               136,
               137,
@@ -8987,6 +9025,19 @@
           "properties": {
             "type": "Sovereigncountry",
             "geounit": "Latvia"
+          }
+        },
+        {
+          "arcs": [
+            [
+              143,
+              -104
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Sovereigncountry",
+            "geounit": "Monaco"
           }
         },
         {
@@ -9040,6 +9091,19 @@
           "properties": {
             "type": "Sovereigncountry",
             "geounit": "Montenegro"
+          }
+        },
+        {
+          "arcs": [
+            [
+              -125,
+              149
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Geounit",
+            "geounit": "NorthernIreland"
           }
         },
         {
@@ -9104,18 +9168,6 @@
           "properties": {
             "type": "Geounit",
             "geounit": "Norway"
-          }
-        }, {
-          "arcs": [
-            [
-              -78,
-              196
-            ]
-          ],
-          "type": "Polygon",
-          "properties": {
-            "type": "Geounit",
-            "geounit": "Wales"
           }
         },
         {
@@ -9200,7 +9252,67 @@
             "geounit": "Romania"
           }
         },
-
+        {
+          "arcs": [
+            [
+              [
+                173
+              ]
+            ],
+            [
+              [
+                174,
+                -47,
+                -142,
+                -84,
+                175,
+                -96,
+                -156,
+                176
+              ]
+            ],
+            [
+              [
+                177
+              ]
+            ],
+            [
+              [
+                178
+              ]
+            ],
+            [
+              [
+                179
+              ]
+            ],
+            [
+              [
+                180
+              ]
+            ],
+            [
+              [
+                181
+              ]
+            ],
+            [
+              [
+                182
+              ]
+            ],
+            [
+              [
+                183
+              ]
+            ]
+          ],
+          "type": "MultiPolygon",
+          "properties": {
+            "type": "Geosubunit",
+            "geounit": "Russia"
+          }
+        },
         {
           "arcs": [
             [
@@ -9217,7 +9329,36 @@
             "geounit": "Russia"
           }
         },
-
+        {
+          "arcs": [
+            [
+              [
+                186
+              ]
+            ],
+            [
+              [
+                187
+              ]
+            ],
+            [
+              [
+                188
+              ]
+            ],
+            [
+              [
+                -80,
+                189
+              ]
+            ]
+          ],
+          "type": "MultiPolygon",
+          "properties": {
+            "type": "Geounit",
+            "geounit": "Scotland"
+          }
+        },
         {
           "type": null,
           "properties": {
@@ -9338,8 +9479,20 @@
             "type": "Sovereigncountry",
             "geounit": "Vatican"
           }
+        },
+        {
+          "arcs": [
+            [
+              -78,
+              196
+            ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "type": "Geounit",
+            "geounit": "Wales"
+          }
         }
-
       ]
     }
   }
