@@ -48,9 +48,16 @@ text {
 
 /* Title Section */
 #title {
-    color: rgba(53, 84, 99, 0.3);
+    color: rgba(244, 247, 249, 0.98);
     text-align: left;
-    /*background-image: url("images/dalle_1.png");*/
+    background-image: url("images/dalle_1.png");
+    height: 100%;
+    background-position: top;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20rem;
+
 }
 
 /* Title Image */
@@ -82,7 +89,7 @@ button, #speciesButton {
 }
 
 svg {
-    border: thin solid green;
+    border: thin solid none;
 }
 
 svg text {
@@ -111,6 +118,7 @@ div.tooltip {
 
 #humans, #europe, #europe_small {
     background: #ffffff;
+    color: white;
 }
 
 
@@ -148,6 +156,12 @@ div.tooltip {
     stroke: black;
 }
 
+#context-label{
+    color: #1b313b;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .stop-left-human {
     stop-color: #fefefe;
 }
@@ -168,11 +182,13 @@ div.tooltip {
     fill: url(#mainGradient);
 }
 
-
 .filled {
     fill: url(#mainGradientSpecies);
 }
 
+.red {
+    color: red;
+}
 
 @media (max-width: 1028px) {
     #title {

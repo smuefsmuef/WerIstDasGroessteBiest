@@ -34,14 +34,15 @@ d3.json("./data/3_test_data.json").then(function (data) {
         (root)
 
     // prepare a color scale
+
     const color = d3.scaleOrdinal()
-        .domain(["Säugetiere", "Vögel", "Amphibien"])
-        .range(["#402D54", "#D18975", "#8FD175"])
+        .domain(["Insekten","Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
+        .range(["#ffa8f2", "#dec2ff", "#70fffa", "#eaff70", "#ffc170", "#b5a8ff"])
 
     // And a opacity scale
     const opacity = d3.scaleLinear()
-        .domain([10, 30])
-        .range([.5, 1])
+        .domain([500, 0])
+        .range([0, 1])
 
     // use this information to add rectangles:
     svg3
@@ -61,6 +62,9 @@ d3.json("./data/3_test_data.json").then(function (data) {
             return d.y1 - d.y0;
         })
         .style("stroke", "black")
+        //.style("fill", function (d) {
+        // return color(d.data.color)
+        // })
         .style("fill", function (d) {
             return color(d.parent.data.name)
         })
@@ -69,22 +73,22 @@ d3.json("./data/3_test_data.json").then(function (data) {
         })
 
     // and to add the text labels
-    svg3
-        .selectAll("text")
-        .data(root.leaves())
-        .enter()
-        .append("text")
-        .attr("x", function (d) {
-            return d.x0 + 5
-        })    // +10 to adjust position (more right)
-        .attr("y", function (d) {
-            return d.y0 + 20
-        })    // +20 to adjust position (lower)
-        .text(function (d) {
-            return d.data.name.replace('mister_', '')
-        })
-        .attr("font-size", "19px")
-        .attr("fill", "white")
+    // svg3
+    //     .selectAll("text")
+    //     .data(root.leaves())
+    //     .enter()
+    //     .append("text")
+    //     .attr("x", function (d) {
+    //         return d.x0 + 5
+    //     })    // +10 to adjust position (more right)
+    //     .attr("y", function (d) {
+    //         return d.y0 + 20
+    //     })    // +20 to adjust position (lower)
+    //     .text(function (d) {
+    //         return d.data.name.replace('mister_', '')
+    //     })
+    //     .attr("font-size", "12px")
+    //     .attr("fill", "white")
 
     // and to add the text labels
     svg3
@@ -93,16 +97,16 @@ d3.json("./data/3_test_data.json").then(function (data) {
         .enter()
         .append("text")
         .attr("x", function (d) {
-            return d.x0 + 5
+            return d.x0 +7
         })    // +10 to adjust position (more right)
         .attr("y", function (d) {
-            return d.y0 + 35
+            return d.y0 + 10
         })    // +20 to adjust position (lower)
         .text(function (d) {
             return d.data.value
         })
-        .attr("font-size", "11px")
-        .attr("fill", "white")
+        .attr("font-size", "30px")
+        .attr("fill", "black")
 
     // Add title for the 3 groups
     svg3
@@ -113,26 +117,27 @@ d3.json("./data/3_test_data.json").then(function (data) {
         .enter()
         .append("text")
         .attr("x", function (d) {
-            return d.x0
+            return d.x0 +30
         })
         .attr("y", function (d) {
-            return d.y0 + 21
+            return d.y0+20
         })
         .text(function (d) {
             return d.data.name
         })
-        .attr("font-size", "19px")
+        .attr("font-size", "60px")
+        .attr("font-weight", "bold")
         .attr("fill", function (d) {
             return color(d.data.name)
         })
 
-    // // Add title for the 3 groups
-    // svg3
-    //     .append("text")
-    //     .attr("x", 0)
-    //     .attr("y", 14)    // +20 to adjust position (lower)
-    //     .text("Three group leaders and 14 employees")
-    //     .attr("font-size", "19px")
-    //     .attr("fill", "grey")
+    // Add title for the 3 groups
+    svg3
+        .append("text")
+        .attr("x", 0)
+        .attr("y", 14)    // +20 to adjust position (lower)
+        .text("Alle bedrohten Tierarten der Schweiz")
+        .attr("font-size", "60px")
+        .attr("fill", "white")
 
 })
