@@ -37,16 +37,25 @@
 <body>
 <header>
 </header>
+<!-- put your html stuff here (titles, buttons, etc) -->
+<!-- Create a div where the graph will take place -->
 
 <section class="white-section" id="title">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <h1 class="big-heading">Der Mensch, so ein Biest.</h1>
-                <h2 class="small-heading">oder wie....</h2>
+                <h2 class="small-heading"><p>Jedes Jahr werden international Daten über die Lebensqualität und das
+                    Wohlergehen des Menschen publiziert. Für
+                    die Berechnungen dieser komplexen Grösse werden mal mehr soziale, mal mehr wirtschaftliche oder
+                    persönliche Faktoren
+                    einbezogen und mehr oder weniger gewichtet. Immer thront die Schweiz in den obersten Rängen. Die
+                    Lebensqualität in der Schweiz ist unbestritten hoch. Gilt dies auch für Tiere, Pflanzen und Pilze?
+                    Fühlen die sich in der Schweiz auch besonders wohl? Oder gibt es für sie andere, bessere Orte?</p>
+                </h2>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-14">
                 <img class="title-image" src="styles/images/dalle_1.png" alt="title" width="50%"></i>
             </div>
         </div>
@@ -56,24 +65,37 @@
 <section class="color-section" id="chart-1">
     <div class="container-fluid">
         <h3 class="section-heading">Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
-        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
-            Keine einzige andere Tierart und............ </p>
-        <button onclick="update('living_quality')">Lebensqualität</button>
-        <button onclick="update('threatened_species')">Bedrohte Tiere</button>
+        <h3>Chart 1: Lebensqualität gemäss OECD Ranking 2022 und bedrohte Tiere in Europa</h3>
+        <p>In dieser Grafik sollen in absteigender Reihenfolge die Lebensqualität der verschiedenen Länder angezeigt
+            werden; die
+            Schweiz an erster Stelle in etwas stärkerer Farbe hervorgehoben. Mit einem Button "Bedrohte Arten" kann man
+            die Prozentwerte bedrohter Tierarten anzeigen, in roter Farbe und aufsteigender Reihenfolge und
+            mit der Schweiz etwas stärker hervorgehoben auf dem zweituntersten Rang</p>
+        <button onclick="update('Total Index')">Lebensqualität</button>
+        <button onclick="update('Threatened Species')">Bedrohte Tiere</button>
         <!--todo evtl buttons direkt ins js rein anstatt hier. siehe maps on click event-->
-        <div id="my_histogram_interactive"></div>
+        <div id="my_barchart_horizontal"></div>
     </div>
 </section>
 
 
 <section class="white-section" id="chart-2">
     <div class="container-fluid">
-        <h3 class="section-heading">Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa</h3>
-        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
-            Keine einzige andere Tierart und............ </p>
+        <h3 class="section-heading">Wo lebt es sich in Europa am Besten und wo wirds eng..<br>..und vorallem für wen? </h3>
+        <p><strong>Chart 2: Lebensqualität des Menschen und bedrohte Tierarten in Europa.</strong>
+            <br>plus.... erklären, interessante facts... <br><strong>Frage an Peer-Evaluator:innen</strong> <br>
+        <ul>
+        <li> Lieber eine grosse Karte mit Dropdown oder viele kleine nebeneinander?</li>
+        <li>Beim hovern über den Tierartenmaps gibts die Option, noch eine Landschaftszusammenstellung anzuzeigen.
+                Brauchts das? Oder evtl. auf Click einen Drawer mit Infos öffnen?
+            </li>
+        </ul>
+<!--
+        <br>https://github.com/deldersveld/topojson/blob/master/countries/united-kingdom/uk-counties.json <br>https://github.com/deldersveld/topojson/blob/master/continents/europe.json
+-->
+        </p>
         <div id="humans"></div>
         <select id="speciesButton"></select>
-        <select id="environmentButton"></select>
         <div id="europe">
         </div>
     </div>
@@ -82,18 +104,30 @@
 
 <section class="color-section" id="chart-3">
     <div class="container-fluid">
-        <h3 class="section-heading">Chart 3: Platz für Mensch und Tier </h3>
-        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
-            Keine einzige andere Tierart und............ </p>
+        <h3 class="section-heading">Chart 3: Anzahl Arten in der Schweiz nach Gefährdungsstatus </h3>
+        <p>In dieser Treemap werden die Anzahl Arten und ihr Gefährdungsgrad in den verschiedenen Klassen von Tieren
+            (Säugetiere, Vögel, Fische...)
+            einander gegenübergestellt. Wenn möglich kann man auf die Klasse der Säugetiere draufklicken und sieht noch
+            mehr Details, ev. sogar einzelne Arten und insbesondere auch den Menschen, der als einziger der Familie
+            Menschenaffen
+            in der Schweiz vorkommt und unglaublich viel Platz einnimmt. Die Grösse der Fläche entspricht der Anzahl
+            Arten. </p>
+        <div id="my_treemap"></div>
     </div>
 </section>
 
 <section class="white-section" id="chart-4">
     <div class="container-fluid">
-        <h3 class="section-heading">Chart 4: Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht,
+        <h3>Chart 4 (optional, wenn noch Zeit): Zeitliche Entwicklung Bevölkerung, Landwirtschaft, Maschinengewicht,
             Mobilität, Tierarten etc. </h3>
-        <p>In diesem Ranking sind Mobilität, Einkommen/Lebenskosten etc. des Menschen die entscheidenden Kriterien.
-            Keine einzige andere Tierart und............ </p>
+        <p>Hier werden Gründe für die Dominanz des Menschen in der Schweiz und die Verdrängung der Tiere in zeitlichen
+            Entwicklungen aufgezeigt. Es
+            wird immer eine Grösse die sich positiv entwickelt, einer anderen Grösse gegenübergestellt, die sich negativ
+            entwickelt und offensichtlich mit
+            der anderen Grösse zu tun hat. z.B. Mobilität: Anzahl Fahrzeuge auf den Strassen; Zerstückelung der
+            Landschaft.
+            Entweder werden die verschiedenen Entwicklungen mit einem Dropdown Menu angewählt oder in einem
+            Scrollytelling erklärt.</p>
         <div id="my_line_chart"></div>
     </div>
 </section>
@@ -108,7 +142,6 @@
     </div>
 </footer>
 
-
 </body>
 
 <!--Javascript-->
@@ -118,9 +151,10 @@
 <script src='lib/lodash.js'></script>
 <script src="lib/topojson/topojson.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src='src/1_barChart.js'></script>
+<script src='src/1_barChart_horizontal.js'></script>
 <script src='src/2_2_europeMap.js'></script>
 <script src='src/2_europeMap_humans.js'></script>
+<script src='src/3_treeMap.js'></script>
 <script src='src/4_lineChart.js'></script>
 <!--<script src='src/all_charts.js'></script>-->
 <!-- todo habe nachgelesen, besser einzeln importieren, spart ladezeit-->

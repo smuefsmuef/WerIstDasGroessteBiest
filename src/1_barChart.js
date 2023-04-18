@@ -7,12 +7,13 @@
         height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-    const svg = d3.select("#my_histogram_interactive")
+    const svg = d3.select("#my_barchart_interactive")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
+
 
 // Initialize the X axis
     const x = d3.scaleBand()
@@ -32,14 +33,14 @@
     function update(selectedVar) {
 
         // Parse the Data
-        d3.csv("./data/1_livingQuality_threatenedSpecies.csv").then(function (data) {
+        d3.csv("./data/1_living_quality_stacked.csv").then(function (data) {
             console.log(data);
             // X axis
-            x.domain(data.map(d => d.group))
+            x.domain(data.map(d => d.country))
             xAxis.transition().duration(1000).call(d3.axisBottom(x));
 
             // Add Y axis
-            y.domain([0, d3.max(data, d => +d[selectedVar])]);
+            y.domain([0, d3.max(data, d => d[selectedVar])]);
             yAxis.transition().duration(1000).call(d3.axisLeft(y));
 
             // variable u: map data to existing bars
@@ -50,7 +51,7 @@
             u.join("rect")
                 .transition()
                 .duration(1000)
-                .attr("x", d => x(d.group))
+                .attr("x", d => x(d.country))
                 .attr("y", d => y(d[selectedVar]))
                 .attr("width", x.bandwidth())
                 .attr("height", d => height - y(d[selectedVar]))
@@ -59,5 +60,5 @@
     }
 
     // Initialize plot
-    update('living_quality')
+    update('Total Index')
 

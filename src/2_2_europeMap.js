@@ -5,8 +5,8 @@
 const canvHeight = 600, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
     .append("svg")
-    .attr("width", canvWidth)
-    .attr("height", canvHeight)
+    .attr("width", canvWidth/2)
+    .attr("height", canvHeight/2)
     .style("border", "1px solid");
 
 
@@ -26,7 +26,7 @@ svgMap.append("text")
     .attr("y", 0)
     .attr("x", margin_map.left)
     .attr("dy", "1.5em")
-    .text("Endangered species in Europe:");
+    .text("And not so for {selectedOption}");
 
 svgMap.append("text")
     .attr("id", "species")
@@ -123,7 +123,7 @@ const pieChartHolder = createPieChartHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${10},${height_map - 90})`);
+        .attr("transform", `translate(${-40},${120})`);
 
     contextHolder.append("rect")
         .attr("width", 100)
@@ -141,10 +141,10 @@ function createContextHolder() {
 function createPieChartHolder() {
     const holder = g.append("g")
         .attr("id", "context-holder-pie")
-        .attr("transform", `translate(${600},${height_map - 90})`);
+        .attr("transform", `translate(${40},${ 120})`);
 
     holder.append("rect")
-        .attr("fill", "lightgrey")
+        .attr("fill", "transparent")
         .attr("width", 100)
         .attr("height", 100);
 
@@ -164,7 +164,7 @@ function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${10},${290})`);
+        .attr("transform", `translate(${-40},${40})`);
 
 //  b. add coloured rect to legend_entry
     index.append("rect")
@@ -188,9 +188,9 @@ function createLegendEndangeredSpecies() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 47)
+        .attr("x", 62)
         .attr("y", 15)
-        .text("Amount in %");
+        .text("Endangered in %");
 
     index.append("text")
         .attr("x", 20)
@@ -255,13 +255,13 @@ function fillCountry(country, species, selectedOption) {
 
 function doPlot() {
 
-    var selectedOption = 'Total Species';
+    var selectedOption = 'Mammals';
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([10, 57])
-        .scale(500)
+        .center([40, 30])
+        .scale(200)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
 
@@ -327,7 +327,7 @@ function doPlot() {
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
 
-        // country label
+      /*  // country label
         g.selectAll("text")
             .data(countries.features)
             .enter()
@@ -340,7 +340,7 @@ function doPlot() {
             .text(function (d) {
                 return d.properties.geounit;
             });
-
+*/
         //  todo reactivate?  country bubble
         // g.selectAll("myCircles")
         //     .data(countries.features)

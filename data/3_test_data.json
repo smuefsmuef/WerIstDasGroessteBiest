@@ -1,0 +1,116 @@
+{
+  "children": [
+    {
+      "name": "Säugetiere",
+      "value": 97,
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "group": "A",
+          "value": 64,
+          "colname": "level3"
+        },
+        {
+          "name": "Verletzlich",
+          "group": "C",
+          "value": 16,
+          "colname": "level3"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 12,
+          "colname": "level3"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "group": "C",
+          "value": 5,
+          "colname": "level3"
+        },
+        {
+          "name": "Ausgestorben",
+          "group": "C",
+          "value": 3,
+          "colname": "level3"
+        }
+      ],
+      "colname": "Artgruppe - Level "
+    },
+    {
+      "name": "Vögel",
+      "value": 205,
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "group": "A",
+          "value": 129,
+          "colname": "level3"
+        },
+        {
+          "name": "Verletzlich",
+          "group": "C",
+          "value": 42,
+          "colname": "level3"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 25,
+          "colname": "level3"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "group": "C",
+          "value": 9,
+          "colname": "level3"
+        },
+        {
+          "name": "Ausgestorben",
+          "group": "C",
+          "value": 5,
+          "colname": "level3"
+        }
+      ],
+      "colname": "level2"
+    },
+    {
+      "name": "Amphibien",
+      "value": 19,
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "group": "A",
+          "value": 6,
+          "colname": "level3"
+        },
+        {
+          "name": "Verletzlich",
+          "group": "C",
+          "value": 8,
+          "colname": "level3"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 25,
+          "colname": "level3"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "group": "C",
+          "value": 9,
+          "colname": "level3"
+        },
+        {
+          "name": "Ausgestorben",
+          "group": "C",
+          "value": 5,
+          "colname": "level3"
+        }
+      ],
+      "colname": "level2"
+    }
+  ],
+  "name": "Alle Arten"
+}

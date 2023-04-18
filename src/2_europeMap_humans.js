@@ -4,8 +4,8 @@
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
-    .attr("width", canvWidth)
-    .attr("height", canvHeight)
+    .attr("width", canvWidth/2)
+    .attr("height", canvHeight/2)
     .style("border", "1px solid");
 
 
@@ -21,14 +21,22 @@ humansMaps.append("text")
     .attr("y", 0)
     .attr("x", margin_map.left)
     .attr("dy", "1.5em")
-    .text("Living Quality Index in Europe:");
+    .text("A nice life for Humans");
+
+
+humansMaps.append("text")
+    .attr("id", "species")
+    .attr("y", 50)
+    .attr("x", margin_map.left + 80)
+    .attr("dy", "1.5em")
+    .text("Living Quality Index in Europe");
 
 function createLegendLifeIndex() {
 
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${10},${290})`);
+        .attr("transform", `translate(${0},${90})`);
 
     //  b. add coloured rect to legend_entry
     index.append("rect")
@@ -52,9 +60,9 @@ function createLegendLifeIndex() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 30)
+        .attr("x", 60)
         .attr("y", 15)
-        .text("Points");
+        .text("Life Quality Index Points");
 
     index.append("text")
         .attr("x", 20)
@@ -74,7 +82,7 @@ function createLegendLifeIndex() {
         .attr("height", 70)
         .attr("fill", "none")
         .attr("stroke", "black")
-        .attr("stroke-width", "1");
+        .attr("stroke-width", "0.5");
 }
 createLegendLifeIndex()
 
@@ -114,8 +122,8 @@ function doPlot() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([10, 57])
-        .scale(500)
+        .center([40, 30])
+        .scale(200)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
 

@@ -109,7 +109,7 @@ div.tooltip {
 
 /*MAP*/
 
-#humans, #europe {
+#humans, #europe, #europe_small {
     background: #ffffff;
 }
 
@@ -130,7 +130,7 @@ div.tooltip {
 .europe-boundary {
     fill: none;
     stroke: #cf892e;
-    stroke-width: 0.2rem;
+    stroke-width: 0.01rem;
     stroke-linejoin: round;
 }
 
