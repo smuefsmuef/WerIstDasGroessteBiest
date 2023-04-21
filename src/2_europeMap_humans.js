@@ -1,6 +1,8 @@
 // check https://d3-graph-gallery.com/graph/bubblemap_template.html
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
+
+
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
@@ -21,7 +23,8 @@ humansMaps.append("text")
     .attr("y", 0)
     .attr("x", margin_map.left)
     .attr("dy", "1.5em")
-    .text("A nice life for Humans");
+    .text("A nice life for Humans")
+    .style("text-anchor", "start")
 
 
 humansMaps.append("text")
@@ -29,7 +32,8 @@ humansMaps.append("text")
     .attr("y", 50)
     .attr("x", margin_map.left + 80)
     .attr("dy", "1.5em")
-    .text("Living Quality Index in Europe");
+    .text("Living Quality Index in Europe")
+    .style("text-anchor", "middle");
 
 function createLegendLifeIndex() {
 
@@ -62,7 +66,8 @@ function createLegendLifeIndex() {
     index.append("text")
         .attr("x", 60)
         .attr("y", 15)
-        .text("Life Quality Index Points");
+        .text("Life Quality Index Points")
+        .style("text-anchor", "middle");
 
     index.append("text")
         .attr("x", 20)

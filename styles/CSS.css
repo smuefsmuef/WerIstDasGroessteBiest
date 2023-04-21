@@ -5,13 +5,21 @@ body {
 
 h1, h2, h3, text, p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #bbb;
+    color: #a6a6a6;
+}
+
+p {
+    font-size: 18px;
+    text-anchor: end;
+    line-height: 1.5;
 }
 
 text {
-    font-size: 10px;
-    text-anchor: middle;
+    /*font-size: 18px;
+    text-anchor: end;
+    line-height: 1.5;*/
 }
+
 
 /* Containers */
 .container-fluid {
@@ -37,7 +45,7 @@ text {
 
 .small-heading {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.5;
 }
 
@@ -89,12 +97,13 @@ button, #speciesButton {
 }
 
 svg {
-    border: thin solid none;
+    border: none;
 }
 
 svg text {
-    text-anchor: middle;
+    /*text-anchor: middle;*/
 }
+
 
 hr {
     margin: 2em 0;
@@ -112,6 +121,17 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
     visibility: hidden;
+}
+
+
+
+/*Buttons*/
+
+.btn-custom {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    height: 40px;
 }
 
 /*MAP*/
@@ -201,4 +221,5 @@ div.tooltip {
         top: 35%;
     }
 }
+
 

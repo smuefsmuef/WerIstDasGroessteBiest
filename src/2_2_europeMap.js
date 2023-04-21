@@ -11,7 +11,7 @@ const svgMap = d3.select("#europe") // body
 
 
 // calc the width and height depending on margin_maps.
-const margin_map = {top: 50, right: 80, bottom: 50, left: 60};
+const margin_map = {top: 80, right: 80, bottom: 50, left: 70};
 const width_map = canvWidth - margin_map.left - margin_map.right;
 const height_map = canvHeight - margin_map.top - margin_map.bottom;
 
@@ -33,7 +33,8 @@ svgMap.append("text")
     .attr("y", 50)
     .attr("x", margin_map.left + 150)
     .attr("dy", "1.5em")
-    .text("How many % of a species are endangered?");
+    .text("How many % of a species are endangered?")
+    .style("text-anchor", "middle");
 
 
 //------EVENTS-----------------------------------------------------
@@ -193,7 +194,8 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("x", 62)
         .attr("y", 15)
-        .text("Endangered in %");
+        .text("Endangered in %")
+        .style("text-anchor", "middle");
 
     index.append("text")
         .attr("x", 20)
