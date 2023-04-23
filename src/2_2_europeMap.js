@@ -226,7 +226,7 @@ function fillCountry(country, species, selectedOption) {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
         if (value > 0) {
-            return "deeppink"
+            return "red"
         } else {
             return "lightgray"
         }
@@ -245,7 +245,7 @@ function fillCountry(country, species, selectedOption) {
 
 function doPlot() {
 
-    var selectedOption = 'Mammals';
+    var selectedOption = 'Säugetiere';
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator

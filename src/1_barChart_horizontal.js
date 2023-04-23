@@ -28,14 +28,24 @@ const y = d3.scaleBand()
 const yAxis = svg1.append("g")
     .attr("class", "myYaxis");
 
+// text label for x axis
+svg1.append("svg:text")
+    .attr("id", "textLabel")
+    .attr("y", height + margin.bottom / 2)
+    .attr("x", width / 2)
+    .attr("dy", "1em")
+    .attr("font-family", "sans-serif")
+    .style("text-anchor", "middle")
+    .style("fill", "white")
+    .style("text-size", "18px")
+    .text("Lebensqualität der Menschen [OECD Index]")
+
 
 // A function that create / update the plot for a given variable:
 function update(selectedVar) {
 
     // Parse the Data
     d3.csv("./data/1_living_quality_threatened_animals_stacked.csv").then(function (data) {
-        console.log(data)
-        console.log(selectedVar)
 
         if (selectedVar === "Total_Index") {
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
@@ -48,17 +58,16 @@ function update(selectedVar) {
 
             // X axis
             x.domain([0, d3.max(data, d => d[selectedVar])])
-            console.log(d3.max(data, d => d[selectedVar]))
 
-            xAxis.transition().duration(1000)
+            xAxis.transition().duration(2000)
                 .call(d3.axisBottom(x))
                 .selectAll("yAxisLabel")
                 .attr("transform", "translate(5,0)")
 
 
             // text label for x axis
-            svg1.append("svg:text")
-                .attr("id", "textLabel")
+            svg1.select("#textLabel")
+                .text(selectedVar)
                 .attr("y", height + margin.bottom / 2)
                 .attr("x", width / 2)
                 .attr("dy", "1em")
@@ -75,7 +84,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(1000)
+                .duration(2000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -86,14 +95,14 @@ function update(selectedVar) {
             data.sort((a, b) => a[selectedVar] - b[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
-            yAxis.transition().duration(1000)
+            yAxis.transition().duration(2000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "left");
 
             // X axis
             x.domain([0, 40])
 
-            xAxis.transition().duration(1000)
+            xAxis.transition().duration(2000)
                 .call(d3.axisBottom(x))
                 .selectAll("text")
                 .attr("transform", "translate(5,0)")
@@ -110,7 +119,7 @@ function update(selectedVar) {
                 .style("fill", "white")
                 .style("text-size", "18px")
                 .text(null)
-                .text("Bedrohte Tierarten [Anzahl]")
+                .text("Anteil bedrohter Tierarten im Verhältnis zu allen Tierarten [Prozent]")
 
             // variable u: map data to existing bars
             const u = svg1.selectAll("rect")
@@ -119,7 +128,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(1000)
+                .duration(2000)
                 .attr("x",  x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -138,7 +147,7 @@ function update(selectedVar) {
             // X axis
             x.domain([0, 50])
 
-            xAxis.transition().duration(1000)
+            xAxis.transition().duration(2000)
                 .call(d3.axisBottom(x))
                 .selectAll("yAxisLabel")
                 .attr("transform", "translate(5,0)")
@@ -162,12 +171,12 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(1000)
+                .duration(2000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
                 .attr("height", y.bandwidth())
-                .attr("fill", d => colorPickerIndex(d.country))
+                .attr("fill", d => colorPickerHuman(d.country))
         } else {
 
         data.sort((a, b) => b[selectedVar] - a[selectedVar]);
@@ -181,22 +190,22 @@ function update(selectedVar) {
         // X axis
         x.domain([0, 50])
 
-        xAxis.transition().duration(1000)
+        xAxis.transition().duration(2000)
             .call(d3.axisBottom(x))
             .selectAll("yAxisLabel")
             .attr("transform", "translate(5,0)")
 
 
         // text label for x axis
-        svg1.append("text").remove()
-            .attr("y", height + margin.bottom / 2)
-            .attr("x", width / 2)
-            .attr("dy", "1em")
-            .attr("font-family", "sans-serif")
-            .style("text-anchor", "middle")
-            .style("fill", "white")
-            .style("text-size", "18px")
-            .text(selectedVar)
+            svg1.select("#textLabel")
+                .text(selectedVar)
+                .attr("y", height + margin.bottom / 2)
+                .attr("x", width / 2)
+                .attr("dy", "1em")
+                .attr("font-family", "sans-serif")
+                .style("text-anchor", "middle")
+                .style("fill", "white")
+                .style("text-size", "18px")
 
         // variable u: map data to existing bars
         const u = svg1.selectAll("rect")
@@ -205,7 +214,7 @@ function update(selectedVar) {
         // update bars
         u.join("rect")
             .transition()
-            .duration(1000)
+            .duration(2000)
             .attr("x", x(0))
             .attr("y", d => y(d.country))
             .attr("width", d => -x(d[selectedVar]))
@@ -222,7 +231,7 @@ function colorPickerHuman(c) {
     if (c === "Switzerland") {
         return "#eaff70";
     } else {
-        return "#03a65c";
+        return "#21caf1";
     }
 }
 
@@ -230,26 +239,9 @@ function colorPickerAnimal(c) {
     if (c === "Switzerland") {
         return "#eaff70";
     } else {
-        return "#fd7272";
+        return "#ff4c38";
     }
-}
 
-function changeLegend(selectedVar) {
-    currentLegend = "";
-    if (selectedVar === "Total_Index") {
-        currentLegend = "Lebensqualität der Menschen [OECD Index]";
-    } else {
-        currentLegend = "Anteil bedrohter Tier- und Pflanzenarten [%]";
-    }
-    return currentLegend;
-}
-
-function colorPickerIndex(c) {
-    if (c === "Switzerland") {
-        return "#eaff70";
-    } else {
-        return "#8dd8e7";
-    }
 }
 
 // Initialize plot
