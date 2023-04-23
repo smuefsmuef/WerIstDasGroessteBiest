@@ -97,22 +97,22 @@ d3.json("./data/3_treemap_mammals.json").then(function (data) {
     .attr("fill", "white")
 
     // and to add the text labels
-    svg3b
-        .selectAll("vals")
-        .data(root.leaves())
-        .enter()
-        .append("text")
-        .attr("x", function (d) {
-            return d.x0 + 1
-        })    // +10 to adjust position (more right)
-        .attr("y", function (d) {
-            return d.y0 + 12
-        })    // +20 to adjust position (lower)
-        .text(function (d) {
-            return d.data.value
-        })
-        .attr("font-size", "14px")
-        .attr("fill", "black")
+    // svg3b
+    //     .selectAll("vals")
+    //     .data(root.leaves())
+    //     .enter()
+    //     .append("text")
+    //     .attr("x", function (d) {
+    //         return d.x0 + 1
+    //     })    // +10 to adjust position (more right)
+    //     .attr("y", function (d) {
+    //         return d.y0 + 12
+    //     })    // +20 to adjust position (lower)
+    //     .text(function (d) {
+    //         return d.data.value
+    //     })
+    //     .attr("font-size", "14px")
+    //     .attr("fill", "black")
 
     // Add title for the 3 groups
     svg3b
