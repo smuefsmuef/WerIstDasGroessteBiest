@@ -5,13 +5,27 @@ body {
 
 h1, h2, h3, text, p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #bbb;
+    color: #cccccc;
 }
 
-text {
-    font-size: 10px;
-    text-anchor: middle;
+
+
+
+.text-normal {
+    padding-top: 1.2rem;
+    padding-bottom: 0.6rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #cccccc;
 }
+
+.text-small {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #cccccc;
+}
+
+
 
 /* Containers */
 .container-fluid {
@@ -21,11 +35,16 @@ text {
 /* Sections */
 .color-section {
     background-color: #1b313b;
-    color: #fff;
+
 }
 
 .white-section {
     background-color: #fff;
+}
+
+.red-section {
+    background-color: #ff4c38;
+    color: #fff;
 }
 
 /* Headings */
@@ -37,13 +56,17 @@ text {
 
 .small-heading {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     line-height: 1.5;
+    color: #808080;
 }
 
 .section-heading {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: bold;
     line-height: 1.5;
+    color: #ff4c38;
+
 }
 
 /* Title Section */
@@ -69,6 +92,17 @@ text {
     top: 3%;
 }
 
+/*Buttons*/
+
+.btn-custom {
+    height: 40px;
+}
+
+.btn-sm.btn-custom {
+    height: 30px;
+}
+
+
 
 .possibly-sidebyside .one {
     float: left;
@@ -84,17 +118,18 @@ text {
 }
 
 button, #speciesButton {
-    background: #73dcd5;
+    background: #ff6352;
     height: 2rem;
 }
 
 svg {
-    border: thin solid none;
+    border: none;
 }
 
 svg text {
-    text-anchor: middle;
+    /*text-anchor: middle;*/
 }
+
 
 hr {
     margin: 2em 0;
@@ -108,11 +143,13 @@ div.tooltip {
     padding: 2px;
     font: 12px sans-serif;
     background: lightsteelblue;
-    border: 0px;
+    border: 0;
     border-radius: 8px;
     pointer-events: none;
     visibility: hidden;
 }
+
+
 
 /*MAP*/
 
@@ -175,7 +212,7 @@ div.tooltip {
 }
 
 .stop-right-species {
-    stop-color: deeppink;
+    stop-color: #ff230a;
 }
 
 .filled-human {
@@ -201,4 +238,46 @@ div.tooltip {
         top: 35%;
     }
 }
+
+/*treemap styles
+text {
+    pointer-events: none;
+}
+
+.grandparent text {
+    font-weight: bold;
+}
+
+rect {
+    fill: none;
+    stroke: #fff;
+}
+
+rect.parent,
+.grandparent rect {
+    stroke-width: 2px;
+}
+
+.grandparent rect {
+    fill: orange;
+}
+
+.grandparent:hover rect {
+    fill: #ee9700;
+}
+
+.children rect.parent,
+.grandparent rect {
+    cursor: pointer;
+}
+
+.children rect.parent {
+    fill: #bbb;
+    fill-opacity: .5;
+}
+
+.children:hover rect.child {
+    fill: #bbb;
+}
+*/
 
