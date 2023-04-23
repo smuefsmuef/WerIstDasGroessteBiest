@@ -11,7 +11,8 @@
 
 //Read the data
     d3.csv("./data/4_history.csv").then(function (data) {
-        console.log(data);
+        //console.log(data);
+
         // List of groups (here I have one group per column)
         const allGroup = ["Bevölkerung", "FlächeLandw", "ProduktionLandw"]
 
@@ -108,7 +109,7 @@
                 // is the element currently visible ?
                 currentOpacity = d3.selectAll("." + d.name).style("opacity")
                 // Change the opacity: from 0 to 1 or from 1 to 0
-                d3.selectAll("." + d.name).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
+                d3.selectAll("." + d.name).transition().style("opacity", currentOpacity === 1 ? 0 : 1)
 
             })
     })

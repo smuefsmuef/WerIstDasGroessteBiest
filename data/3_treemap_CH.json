@@ -4,146 +4,140 @@
       "name": "Säugetiere",
       "children": [
         {
+          "name": "Nicht gefährdet",
+          "value": 65,
+          "colorsam": "springgreen3"
+        },
+        {
+          "name": "Mensch",
+          "value": 1,
+          "colorsam": "yellow"
+        },
+        {
           "name": "Gefährdet",
           "group": "B",
           "value": 16,
-          "color": "blue"
+          "colorsam": "red3"
         },
         {
           "name": "Stark gefährdet",
           "group": "A",
           "value": 12,
-          "color": "blueviolet"
+          "colorsam": "red2"
         },
         {
           "name": "Vom Aussterben bedroht",
           "group": "A",
           "value": 5,
-          "color": "fuchsia"
+          "colorsam": "red1"
         }
-      ],
-      "colname": "Säugetiere Test"
+      ]
     },
     {
       "name": "Vögel",
       "children": [
         {
+          "name": "Nicht gefährdet",
+          "value": 129,
+          "colorsam": "springgreen3"
+        },
+        {
           "name": "Gefährdet",
           "group": "C",
           "value": 42,
-          "color": "blue"
+          "colorsam": "red3"
         },
         {
           "name": "Stark gefährdet",
           "group": "C",
           "value": 25,
-          "color": "blueviolet"
+          "colorsam": "red2"
         },
         {
           "name": "Vom Aussterben bedroht",
           "group": "C",
           "value": 9,
-          "color": "fuchsia"
+          "colorsam": "red1"
         }
-      ],
-      "colname": "Vögel Test"
+      ]
     },
     {
       "name": "Amphibien",
       "children": [
         {
+          "name": "Nicht gefährdet",
+          "value": 5,
+          "colorsam": "springgreen3"
+        },
+        {
           "name": "Gefährdet",
           "group": "C",
           "value": 8,
-          "color": "blue"
+          "colorsam": "red3"
         },
         {
           "name": "Stark gefährdet",
           "group": "C",
           "value": 6,
-          "color": "blueviolet"
-        },
-        {
-          "name": "Vom Aussterben bedroht",
-          "group": "C",
-          "value": 0,
-          "color": "fuchsia"
+          "colorsam": "red2"
         }
-      ],
-      "colname": "level2"
+      ]
     },
     {
       "name": "Reptilien",
       "children": [
         {
+          "name": "Nicht gefährdet",
+          "value": 6,
+          "colorsam": "springgreen3"
+        },
+        {
           "name": "Gefährdet",
           "group": "C",
           "value": 2,
-          "color": "blue"
+          "colorsam": "red3"
         },
         {
           "name": "Stark gefährdet",
           "group": "C",
           "value": 9,
-          "color": "blueviolet"
+          "colorsam": "red2"
         },
         {
           "name": "Vom Aussterben bedroht",
           "group": "C",
           "value": 2,
-          "color": "fuchsia"
+          "colorsam": "red1"
         }
-      ],
-      "colname": "level1"
+      ]
     },
     {
       "name": "Fische",
       "children": [
         {
+          "name": "Nicht gefährdet",
+          "value": 56,
+          "colorsam": "springgreen3"
+        },
+        {
           "name": "Gefährdet",
           "group": "C",
           "value": 11,
-          "color": "blue"
+          "colorsam": "red3"
         },
         {
           "name": "Stark gefährdet",
           "group": "C",
           "value": 8,
-          "color": "blueviolet"
+          "colorsam": "red2"
         },
         {
           "name": "Vom Aussterben bedroht",
           "group": "C",
           "value": 15,
-          "color": "fuchsia"
+          "colorsam": "red1"
         }
-      ],
-      "colname": "level5"
-    },
-    {
-      "name": "Insekten",
-      "children": [
-        {
-          "name": "Gefährdet",
-          "group": "C",
-          "value": 487,
-          "color": "blue"
-        },
-        {
-          "name": "Stark gefährdet",
-          "group": "C",
-          "value": 358,
-          "colname": "level6"
-        },
-        {
-          "name": "Vom Aussterben bedroht",
-          "group": "C",
-          "value": 230,
-          "color": "fuchsia"
-        }
-      ],
-      "colname": "level6"
+      ]
     }
-  ],
-  "name": "Alle Arten"
+  ]
 }
