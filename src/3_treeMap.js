@@ -42,7 +42,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
 
      const color = d3.scaleOrdinal()
        //.domain(["Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
-    .range(["#ff230a", "#21caf1", "#ff4c38", "#ff6352", "#eaff70"])
+    .range(["#21caf1","#ff6352","#ff4c38", "#ff230a",  "#eaff70"])
 
     // And a opacity scale
     // const opacity = d3.scaleLinear()
