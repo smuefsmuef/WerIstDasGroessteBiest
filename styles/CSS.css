@@ -116,7 +116,7 @@ h1, h2, h3, text, p {
 #title {
     color: rgba(244, 247, 249, 0.98);
     text-align: left;
-    background-image: url("images/dalle_1.png");
+    background-image: url("dalle_1.png");
     height: 100%;
     background-position: top;
 
