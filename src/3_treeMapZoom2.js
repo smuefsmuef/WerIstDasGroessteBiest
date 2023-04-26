@@ -63,7 +63,7 @@
 //
 //     // If id and parentId options are specified, or the path option, use d3.stratify
 //     // to convert tabular data to a hierarchy; otherwise we assume that the data is
-//     // specified as an object {children} with nested objects (a.k.a. the “flare.json”
+//     // specified as an object {children} with nested objects (a.scrollama.a. the “flare.json”
 //     // format), and use d3.hierarchy.
 //     const root = path != null ? d3.stratify().path(path)(data)
 //         : id != null || parentId != null ? d3.stratify().id(id).parentId(parentId)(data)

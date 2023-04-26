@@ -20,21 +20,7 @@ const g = svgMap.append("g")
     .attr("id", "chart-area")
     .attr("transform", `translate(${margin_map.left},${margin_map.top})`);
 
-// chart title
-svgMap.append("text")
-    .attr("id", "chart-title")
-    .attr("y", 0)
-    .attr("x", margin_map.left)
-    .attr("dy", "1.5em")
-    .text("and not so for {selectedOption}");
 
-svgMap.append("text")
-    .attr("id", "species")
-    .attr("y", 50)
-    .attr("x", margin_map.left + 150)
-    .attr("dy", "1.5em")
-    .text("How many % of a species are endangered?")
-    .style("text-anchor", "middle");
 
 
 //------EVENTS-----------------------------------------------------
@@ -45,10 +31,10 @@ function mouseover(species, countryId, countryArea, landcover) {
 
     if(percent !== undefined){
         d3.select("#context-label").text("" +countryId + ": " + percent + "%");
-
     }
 
-    plotPieChart(landcover, countryId)
+    contextHolder.select("path")
+ //   plotPieChart(landcover, countryId)
 }
 
 function mouseout(countries) {
@@ -137,7 +123,7 @@ function createContextHolder() {
 
     contextHolder.append("text")
         .attr("id", "context-label")
-        .attr("transform", "translate(50,50)");
+        .attr("transform", "translate(50,-40)")
     return contextHolder;
 }
 
@@ -194,7 +180,7 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("x", 62)
         .attr("y", 15)
-        .text("Endangered in %")
+        .text("Vom Aussterben Bedroht")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -245,7 +231,7 @@ function fillCountry(country, species, selectedOption) {
 
 function doPlot() {
 
-    var selectedOption = 'Säugetiere';
+    var selectedOption = 'Reptilien';
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
@@ -300,7 +286,6 @@ function doPlot() {
         })
 
         const country = g.selectAll("path.countries")
-            // alternativ die methode von oben aufsplitten, so dass pro kanton einzeln umrandung
             .data(countries.features)
             .enter()
             .append("path")
@@ -316,32 +301,6 @@ function doPlot() {
             .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
-
-      /*  // country label
-        g.selectAll("text")
-            .data(countries.features)
-            .enter()
-            .append("text")
-            .attr("class", "country-label")
-            .attr("transform", function (d) {
-                return "translate(" + pathGenerator.centroid(d) + ")";
-            })
-            .attr("dy", ".35em")
-            .text(function (d) {
-                return d.properties.geounit;
-            });
-*/
-        //  todo reactivate?  country bubble
-        // g.selectAll("myCircles")
-        //     .data(countries.features)
-        //     .enter()
-        //     .append("circle")
-        //     .attr("transform", function(d) { return "translate(" + pathGenerator.centroid(d) + ")"; })
-        //     .attr("r", 14)
-        //     .style("fill", "69b3a2")
-        //     .attr("stroke", "#69b3a2")
-        //     .attr("stroke-width", 1)
-        //     .attr("fill-opacity", .2)
 
         // events
         country.on("mouseover", (event, d) => {

@@ -40,9 +40,9 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
 
     // prepare a color scale
 
-     const color = d3.scaleOrdinal()
-       //.domain(["Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
-    .range(["#21caf1","#ff6352","#ff4c38", "#ff230a",  "#eaff70"])
+    const color = d3.scaleOrdinal()
+        //.domain(["Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
+        .range(["#21caf1", "#ff6352", "#ff4c38", "#ff230a", "#eaff70"])
 
     // And a opacity scale
     // const opacity = d3.scaleLinear()
@@ -83,18 +83,18 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         .selectAll("text")
         .data(root.leaves())
         .enter()
-        // .append("text")
-        // .attr("x", function (d) {
-        //     return d.x0 + 5
-        // })    // +10 to adjust position (more right)
-        // .attr("y", function (d) {
-        //     return d.y0 + 20
-        // })    // +20 to adjust position (lower)
-        // .text(function (d) {
-        //     return d.data.name.replace('mister_', '')
-        // })
-       // .attr("font-size", "12px")
-        //.attr("fill", "white")
+    // .append("text")
+    // .attr("x", function (d) {
+    //     return d.x0 + 5
+    // })    // +10 to adjust position (more right)
+    // .attr("y", function (d) {
+    //     return d.y0 + 20
+    // })    // +20 to adjust position (lower)
+    // .text(function (d) {
+    //     return d.data.name.replace('mister_', '')
+    // })
+    // .attr("font-size", "12px")
+    //.attr("fill", "white")
 
     // and to add the text labels
     svg3
@@ -136,7 +136,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         // .attr("fill", function (d) {
         //     return color(d.data.color)
         // })
-        .attr("fill", "white")
+        .attr("fill", "black")
 
     // Add title for the 3 groups
     // svg3
