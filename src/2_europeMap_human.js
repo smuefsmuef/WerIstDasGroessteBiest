@@ -10,15 +10,15 @@ const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
-    .attr("width", canvWidthHuman/2)
-    .attr("height", canvHeightHuman/2)
+    .attr("width", canvWidthHuman / 2)
+    .attr("height", canvHeightHuman / 2)
     .style("border", "1px solid");
 
 
 // // create parent group and add left and top margin_mapHuman
 const gh = humansMaps.append("g")
-        .attr("id", "chart-area")
-         .attr("transform", `translate(${margin_mapHuman.left},${margin_mapHuman.top})`)
+    .attr("id", "chart-area")
+    .attr("transform", `translate(${margin_mapHuman.left},${margin_mapHuman.top})`)
 ;
 
 
@@ -32,9 +32,9 @@ function createLegendLifeIndex() {
     //  b. add coloured rect to legend_entry
     index.append("rect")
         .attr("x", 10)
-        .attr("y",  20)
-        .attr("width", 100)
-        .attr("height", 20)
+        .attr("y", 20)
+        .attr("width", 120)
+        .attr("height", 5)
         .classed('filled-human', true);
 
     // add gradient
@@ -74,8 +74,9 @@ function createLegendLifeIndex() {
         .attr("height", 70)
         .attr("fill", "none")
         .attr("stroke", "none")
-        ;
+    ;
 }
+
 createLegendLifeIndex()
 
 

@@ -3,8 +3,8 @@
 
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 120},
-    width = 800 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom;
+    width = 450 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg1 = d3.select("#my_barchart_horizontal")
@@ -36,8 +36,8 @@ svg1.append("svg:text")
     .attr("dy", "1em")
     .attr("font-family", "sans-serif")
     .style("text-anchor", "middle")
-    .style("fill", "white")
-    .style("text-size", "18px")
+    .style("fill", "black")
+    .style("text-size", "8px")
     .text("Lebensqualität der Menschen [OECD Index]")
 
 
@@ -54,7 +54,7 @@ function update(selectedVar) {
             yAxis.transition().duration(2000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
-                .style("font-size", "16px")
+                .style("font-size", "1rem")
 
             // X axis
             x.domain([0, d3.max(data, d => d[selectedVar])])
@@ -70,10 +70,10 @@ function update(selectedVar) {
                 .text(selectedVar)
                 .attr("y", height + margin.bottom / 2)
                 .attr("x", width / 2)
-                .attr("dy", "1em")
+                .attr("dy", "1rem")
                 .attr("font-family", "sans-serif")
                 .style("text-anchor", "middle")
-                .style("fill", "white")
+                .style("fill", "black")
                 .style("text-size", "18px")
                 .text("Lebensqualität der Menschen [OECD Index]")
 
@@ -116,8 +116,8 @@ function update(selectedVar) {
                 .attr("dy", "1em")
                 .attr("font-family", "sans-serif")
                 .style("text-anchor", "middle")
-                .style("fill", "white")
-                .style("text-size", "18px")
+                .style("fill", "black")
+                .style("text-size", "8px")
                 .text(null)
                 .text("Anteil bedrohter Tierarten im Verhältnis zu allen Tierarten [Prozent]")
 
@@ -142,7 +142,7 @@ function update(selectedVar) {
             yAxis.transition().duration(2000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
-                .style("font-size", "16px")
+                .style("font-size", "1rem")
 
             // X axis
             x.domain([0, 50])
@@ -185,7 +185,7 @@ function update(selectedVar) {
         yAxis.transition().duration(2000)
             .call(d3.axisLeft(y))
             .style("text-anchor", "end")
-            .style("font-size", "16px")
+            .style("font-size", "1rem")
 
         // X axis
         x.domain([0, 50])
