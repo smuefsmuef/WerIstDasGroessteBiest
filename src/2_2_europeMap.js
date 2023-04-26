@@ -5,8 +5,8 @@
 const canvHeight = 600, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
     .append("svg")
-    .attr("width", canvWidth/2)
-    .attr("height", canvHeight/2)
+    .attr("width", canvWidth / 2)
+    .attr("height", canvHeight / 2)
     .style("border", "1px solid");
 
 
@@ -21,80 +21,22 @@ const g = svgMap.append("g")
     .attr("transform", `translate(${margin_map.left},${margin_map.top})`);
 
 
-
-
 //------EVENTS-----------------------------------------------------
 
 // create event handlers for mouse events
 function mouseover(species, countryId, countryArea, landcover) {
     const percent = species[countryId];
 
-    if(percent !== undefined){
-        d3.select("#context-label").text("" +countryId + ": " + percent + "%");
+    if (percent !== undefined) {
+        d3.select("#context-label").text("" + countryId + ": " + percent + "%");
     }
-
     contextHolder.select("path")
- //   plotPieChart(landcover, countryId)
 }
 
-function mouseout(countries) {
-    // countries.style("fill", "green");
+function mouseout() {
+    d3.select("#context-label").text("");
 }
 
-function plotPieChart(landcover, countryId) {
-    //https://gist.github.com/chilijung/7e548ce769135e15281c
-    // todo next add plot for every country
-    pieChartHolder.select("path")
-
-    var width = 100,
-        height = 100,
-        // find the min of width and height and devided by 2
-        radius = Math.min(width, height) / 2;
-
-    const color = d3.scaleOrdinal()
-        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
-    var arcnew = d3.arc()
-        // the outer radius of the pie chart.
-        .outerRadius(radius - 20)
-        // the inner radius of the pie chart, set 0 for now
-        .innerRadius(0);
-
-    // Constructs a new pie function
-    var pie = d3.pie()
-        // not sorting
-        .sort(null)
-        // set the pie chart value to population.
-        .value(function (d) {
-            return d.value;
-        });
-
-    // append a group
-    var gp = pieChartHolder.selectAll(".arc")
-        .data(pie(landcover))
-        .enter().append("g")
-        .attr("transform", "translate(50,50)") // mitte des elements
-        .attr("class", "arc");
-
-    // append path, the pie
-    gp.append("path")
-        .attr("d", arcnew)
-        .style("fill", function (d) {
-            return color(d.data.name);
-        });
-
-    // add text
-    gp.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + arc.centroid(d) + ")";
-        })
-
-        .attr("dy", ".35em")
-        .style("text-anchor", "middle")
-        .text(function (d) {
-            return d.data.name;
-        });
-}
 
 //------LEGEND-----------------------------------------------------
 
@@ -106,6 +48,7 @@ const arc = d3.arc()
 
 // kleines rechteck unten rechts..für donut plot
 const contextHolder = createContextHolder();
+
 // const pieChartHolder = createPieChartHolder(); // todo maybe enable?
 
 function createContextHolder() {
@@ -127,28 +70,6 @@ function createContextHolder() {
     return contextHolder;
 }
 
-// environment
-function createPieChartHolder() {
-    const holder = g.append("g")
-        .attr("id", "context-holder-pie")
-        .attr("transform", `translate(${40},${ 120})`);
-
-    holder.append("rect")
-        .attr("fill", "transparent")
-        .attr("width", 100)
-        .attr("height", 100);
-
-    holder.append("path")
-        .attr("transform", "translate(50,50)"); // mitte des elements
-
-    holder.append("text")
-        .attr("id", "context-label-pie")
-        .attr("transform", "translate(50,50)");
-
-    return holder;
-}
-
-
 // create legend
 function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
@@ -160,8 +81,8 @@ function createLegendEndangeredSpecies() {
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 100)
-        .attr("height", 20)
+        .attr("width", 120)
+        .attr("height", 5)
         .classed('filled', true);
 
 // add gradient
@@ -180,7 +101,7 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("x", 62)
         .attr("y", 15)
-        .text("Vom Aussterben Bedroht")
+        .text("Vom Aussterben bedroht")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -191,7 +112,7 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("x", 100)
         .attr("y", 60)
-        .text("> 50%");
+        .text("> 60%");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -211,7 +132,7 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value > 0) {
+        if (value >= 0) {
             return "red"
         } else {
             return "lightgray"
@@ -220,7 +141,7 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill-opacity", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value > 50) {
+        if (value > 60) {
             return 1
         } else {
             return value / 100
@@ -232,7 +153,6 @@ function fillCountry(country, species, selectedOption) {
 function doPlot() {
 
     var selectedOption = 'Reptilien';
-
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
@@ -305,7 +225,8 @@ function doPlot() {
         // events
         country.on("mouseover", (event, d) => {
             const selected_species_data = species.find(e => e.type === selectedOption)
-            mouseover(selected_species_data, d.properties.geounit, d3.select(this), landcover)
+            console.log(event, d)
+            mouseover(selected_species_data, d.properties.geounit, d3.select(this))
         });
 
         country.on("mouseout", function () {
