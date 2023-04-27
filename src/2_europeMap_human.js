@@ -11,8 +11,7 @@ const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.
 const humansMaps = d3.select("#humans") // body
     .append("svg")
     .attr("width", canvWidthHuman / 2)
-    .attr("height", canvHeightHuman / 2)
-    .style("border", "1px solid");
+    .attr("height", canvHeightHuman / 2);
 
 
 // // create parent group and add left and top margin_mapHuman
@@ -51,20 +50,26 @@ function createLegendLifeIndex() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 60)
+        .attr("x", 70)
         .attr("y", 15)
-        .text("Life Quality Index")
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("Life Quality Index (Pkt.)")
         .style("text-anchor", "middle");
 
     index.append("text")
-        .attr("x", 20)
-        .attr("y", 60)
-        .text("0");
+        .attr("x", 10)
+        .attr("y", 40)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("50");
 
     index.append("text")
-        .attr("x", 100)
-        .attr("y", 60)
-        .text("100 Pkt.");
+        .attr("x", 110)
+        .attr("y", 40)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("100");
 
     // 3. create the main border of the legend
     index.append("rect")
@@ -83,31 +88,22 @@ createLegendLifeIndex()
 function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
-        if (value > 0) {
-            return "#00655e"
+        if (value > 90) {
+            return '#1698f1'
+        } else if (80 < value && value < 90) {
+            return '#489ed8'
+        } else if (70 < value && value < 80) {
+            return '#69a2c7'
+        } else if (60 < value && value < 70) {
+            return '#9ba7ae'
+        } else if (50 < value && value < 60) {
+            return '#bcab9d'
+        } else if (0 < value && value < 50) {
+            return '#ddaf8c'
         } else {
             return "lightgray"
         }
     })
-    country.style("fill-opacity", d => {
-        const value = life_index_data[d.properties.geounit]
-        if (value > 90) {
-            return .9
-        } else if (80 < value && value < 90) {
-            return .7
-        } else if (70 < value && value < 80) {
-            return .5
-        } else if (60 < value && value < 70) {
-            return .3
-        } else if (50 < value && value < 60) {
-            return .2
-        } else if (1 < value && value < 50) {
-            return .1
-        } else {
-            return 1
-        }
-    })
-
 }
 
 function doPlotHumans() {
@@ -116,7 +112,7 @@ function doPlotHumans() {
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
         .center([40, 30])
-        .scale(200)
+        .scale(250)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
 
