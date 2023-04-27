@@ -2,7 +2,10 @@
 <html lang="">
 <head>
     <link rel="stylesheet" href="styles/CSS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shrikhand">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico">
@@ -26,7 +29,7 @@
 
     <header>
 
-        <section class="white-section" id="title">
+        <section class="color-section" id="title">
 
             <div class="container-fluid">
                 <div class="row">
@@ -69,10 +72,9 @@
                     Frage an Peer-Evaluator:innen: Brauchts das? Welche Clocks fändet ihr besonders interessant?
                 </div>
             </div>
-
             <div class="step" data-step="1">
                 <img src="img/labels/eye.png" alt="lables">
-                <h2>Weltweit werden jedes Jahr Rankings über die Lebensqualität und das
+                <h2 class="section-heading">Weltweit werden jedes Jahr Rankings über die Lebensqualität und das
                     Wohlergehen des Menschen publiziert. <br><br>In fast allen thront die Schweiz in den obersten
                     Rängen. <br>
                     <br>
@@ -82,16 +84,17 @@
             </div>
 
             <div class="step" data-step="2">
-                <section class="white-section" id="chart-1">
+                <section class="color-section" id="chart-1">
                     <div class="container-fluid">
                         <h2>Gehts dem Mensch gut - geht's dem Rest schlecht?
                         </h2>
                         <h3>Vergleiche wie sich die Lebensqualität für Mensch und Tier weltweit verhält:</h3>
-                        <button type="button" class="btn btn-info btn-lg btn-custom" onclick="update('Total_Index')">
+                        <br>
+                        <button type="button" class="btn btn-info btn-sm btn-custom" onclick="update('Total_Index')">
                             Lebensqualität
                             der Menschen
                         </button>
-                        <button type="button" class="btn btn-danger btn-lg btn-custom"
+                        <button type="button" class="btn btn-danger btn-sm btn-custom"
                                 onclick="update('Threatened_species_total')">
                             Bedrohte Tier- und Pflanzenarten
                         </button>
@@ -174,7 +177,7 @@
             </div>
 
             <div class="step" data-step="4">
-                <section class="white-section" id="chart-2">
+                <section class="color-section" id="chart-2">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
@@ -224,7 +227,7 @@
                     </div>
                     <div>Zoom in/ out?</div>
                 </div>
-                <section class="white-section" id="chart-3">
+                <section class="color-section" id="chart-3">
                     <div class="container-fluid">
                         <div id="my_treemap"></div>
                         <div class="text-normal">TBD: Farblegende gelb: Mensch; starkes Rot: vom Aussterben
@@ -255,7 +258,7 @@
                         Verständnis hilfreich? Oder Tooltips mit mehr Infos?
                     </div>
                 </div>
-                <section class="white-section" id="chart-3b">
+                <section class="color-section" id="chart-3b">
                     <div class="container-fluid">
                         <h3 class="section-heading-dark"></h3>
                         <div id="my_treemap_mammals"></div>
@@ -277,34 +280,37 @@
             <div class="step" data-step="10">
                 <img src="img/labels/endo.png" alt="lables">
 
-                <section class="white-section" id="about">
+                <section class="color-section" id="about">
                     <div class="container-fluid">
 
                         <div class="row">
                             <div class="about-box col-lg-3">
                                 <i class="icon fas fa-seedling fa-4x"></i>
                                 <h3>Weniger Naturschutz</h3>
-                                <p>Seit XYZ hat .....politik..ngos, turismus..die schweiz verglichen zu italien hat nur
-                                    0.6% (tbd richtiger wert) der fläche unter naturschutz...... etc..tbd </p>
+                                <p>Auf die Gesamtfläche der Schweiz hoch gerechnet, sind nur <b>12 %</b> geschützte Naturfläche. Damit liegt die Schweiz in Europa auf Rang 25 von 35 Ländern.
+                                    <br>
+                                    <a href="https://www.protectedplanet.net/country/CHE">Quelle</a>
+                                    <a href="https://www.eea.europa.eu/ims/nationally-designated-terrestrial-protected-areas#:~:text=The%20EU%20Biodiversity%20Strategy%20for%202030%20sets%20the%20target%20of,over%20100%2C000%20sites%20in%20total.">Quelle</a></p>
+
                             </div>
 
                             <div class="about-box col-lg-3">
                                 <i class="icon fas fa-industry fa-4x"></i>
                                 <h3 class="about-title">Mehr Industrie & Agrarflächen</h3>
-                                <p class="about-text">In industrienationen ... tbd ... veränderung seit 1900...</p>
+                                <p class="about-text">tbd..In industrienationen ... tbd ... veränderung seit 1900...</p>
                             </div>
 
                             <div class="about-box col-lg-3">
                                 <i class="icon fas fa-person fa-4x"></i>
                                 <h3 class="about-title">Mehr Menschen</h3>
-                                <p class="about-text">Seit 1900...erreichen 2025 9mia...seit beginn artikel lesen
+                                <p class="about-text">tbd...Seit 1900...erreichen 2025 9mia...seit beginn artikel lesen
                                     xxx-mehr menschen... </p>
                             </div>
 
                             <div class="about-box col-lg-3">
                                 <i class="icon fas fa-temperature-high  fa-4x"></i>
                                 <h3 class="about-title">Klimaveränderungen</h3>
-                                <p class="about-text">CO2... Lebensräume.. umkämpft. tbd.</p>
+                                <p class="about-text">tbd.. CO2... Lebensräume.. umkämpft. tbd.</p>
                             </div>
                         </div>
 
@@ -326,7 +332,7 @@
             </div>
 
             <div class="step" data-step="11">
-                <section class="white-section" id="chart-4">
+                <section class="color-section" id="chart-4">
                     <div class="container-fluid">
                         <h3>Zeitliche Entwicklung seit 1900 Bevölkerung, Landwirtschaft,
                             Maschinengewicht,
@@ -352,13 +358,6 @@
                         Scrollytelling erklärt.
                     </div>
                 </div>
-
-                <div class="step" data-step="12">
-                    <img src="img/labels/moskito.png" alt="lables">
-                    <h2>Mehr Infos gibts hier: tbd
-                    </h2>
-                </div>
-
 
             </div>
 
@@ -431,6 +430,7 @@
         <a href="https://stats.oecd.org/Index.aspx?DataSetCode=WILD_LIFE">OECD Wild Life</a>
         <br>
         <a href="https://stats.oecd.org/Index.aspx?DataSetCode=LAND_COVER">OECD Land Cover</a> <br>
+        <a href="https://cdn.zmescience.com/wp-content/uploads/2022/05/eye-g073f1f894_1920.jpg*! todo add source">Bildquelle</a>
     </div>
 </footer>
 

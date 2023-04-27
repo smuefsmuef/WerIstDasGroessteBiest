@@ -94,7 +94,7 @@ d3.json("./data/3_treemap_mammals.json").then(function (data) {
         return d.data.name.replace('mister_', '')
     })
     .attr("font-size", "1rem")
-    .attr("fill", "black")
+    .attr("fill", "#efedea")
 
     // and to add the text labels
     // svg3b
@@ -136,7 +136,7 @@ d3.json("./data/3_treemap_mammals.json").then(function (data) {
         // .attr("fill", function (d) {
         //     return color(d.data.color)
         // })
-        .attr("fill", "black")
+        .attr("fill", "#efedea")
 
     // Add title for the 3 groups
     // svg3
