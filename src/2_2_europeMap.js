@@ -6,8 +6,7 @@ const canvHeight = 600, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
     .append("svg")
     .attr("width", canvWidth / 2)
-    .attr("height", canvHeight / 2)
-    .style("border", "1px solid");
+    .attr("height", canvHeight / 2);
 
 
 // calc the width and height depending on margin_maps.
@@ -99,20 +98,26 @@ function createLegendEndangeredSpecies() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 62)
+        .attr("x", 65)
         .attr("y", 15)
-        .text("Vom Aussterben bedroht")
+        .text("Bedroht (%)")
+        .attr("fill", "#efedea")
+        .attr("font-size", "1rem")
         .style("text-anchor", "middle");
 
     index.append("text")
-        .attr("x", 20)
-        .attr("y", 60)
+        .attr("fill", "#efedea")
+        .attr("font-size", "1rem")
+        .attr("x", 10)
+        .attr("y", 40)
         .text("0");
 
     index.append("text")
-        .attr("x", 100)
-        .attr("y", 60)
-        .text("> 60%");
+        .attr("fill", "#efedea")
+        .attr("font-size", "1rem")
+        .attr("x", 110)
+        .attr("y", 40)
+        .text(" >50");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -132,21 +137,23 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value >= 0) {
-            return "red"
+        if (value > 50) {
+            return '#ff230a'
+        } else if (40 < value && value < 50) {
+            return '#eb431e'
+        } else if (30 < value && value < 40) {
+            return '#d66332'
+        } else if (20 < value && value < 30) {
+            return '#c28446'
+        } else if (10 < value && value < 20) {
+            return '#a4b464'
+        } else if (0 < value && value < 10) {
+            return '#85e482'
         } else {
             return "lightgray"
         }
     })
-    country.style("fill-opacity", d => {
-        const selected_species_data = species.find(e => e.type === selectedOption)
-        const value = selected_species_data[d.properties.geounit]
-        if (value > 60) {
-            return 1
-        } else {
-            return value / 100
-        }
-    })
+
 
 }
 
@@ -157,7 +164,7 @@ function doPlot() {
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
         .center([40, 30])
-        .scale(200)
+        .scale(250)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
 
@@ -174,7 +181,6 @@ function doPlot() {
     ).then(function (data) {
         var europe = data[0];
         var species = data[1];
-        var landcover = data[2];
 
         // List of groups (here I have one group per column)
         var species_groups = species.map(i => i.type)

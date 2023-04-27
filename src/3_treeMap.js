@@ -112,7 +112,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
             return d.data.value
         })
         .attr("font-size", "1rem")
-        .attr("fill", "black")
+        .attr("fill", "#efedea")
 
     // Add title for the 3 groups
     svg3
@@ -136,7 +136,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         // .attr("fill", function (d) {
         //     return color(d.data.color)
         // })
-        .attr("fill", "black")
+        .attr("fill", "#efedea")
 
     // Add title for the 3 groups
     // svg3
