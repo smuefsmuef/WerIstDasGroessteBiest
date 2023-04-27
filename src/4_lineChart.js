@@ -4,7 +4,7 @@
 // append the svg object to the body of the page
     const svg4 = d3.select("#my_line_chart")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
+        .attr("width", width*2 + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -36,7 +36,7 @@
         // Add X axis --> it is a date format
         const x = d3.scaleLinear()
             .domain([1900, 2030])
-            .range([0, width - 100]);
+            .range([0, width*2 - 100]);
         svg4.append("g")
             .attr("transform", `translate(0, ${height})`)
             .call(d3.axisBottom(x));
