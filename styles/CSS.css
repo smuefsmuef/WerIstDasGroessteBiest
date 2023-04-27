@@ -61,15 +61,16 @@ img {
 /* Headings */
 .big-heading {
     font-family: 'Shrikhand', cursive;
-    font-size: 4.5rem;
+    font-size: 8rem;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 .small-heading {
     font-weight: bold;
     font-size: 1.8rem;
     line-height: 1.5;
-    color: #cccccc;
+    color: #ffffff;
 }
 
 .small-heading-dark {
@@ -79,11 +80,13 @@ img {
     color: #283340;
 }
 
-.section-heading-bright {
+.section-heading {
     font-size: 3.5rem;
-    font-weight: bold;
     line-height: 1.5;
-    color: #142229;
+    font-family: "Helvetica 35 Thin", Helvetica, Arial, sans-serif;
+    /*font-family: 'Roboto Light', sans-serif;*/
+    color: #ffffff;
+
 }
 
 .section-heading-dark {
@@ -124,18 +127,16 @@ img {
 
 /* Title Section */
 #title {
-    color: rgba(1, 8, 13, 0.98);
-    text-align: left;
-    /*background-image: url("dalle_1.png");*/
+    color: rgb(229, 235, 239);
+    text-align: center;
+    background-image: url("eye.jpg");
+    /*!*https://cdn.zmescience.com/wp-content/uploads/2022/05/eye-g073f1f894_1920.jpg*! todo add source*/
     background-color: #283340;
     height-min: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     background-size: cover;
-    /*padding-bottom: 20rem;*/
-
     overflow: hidden;
     position: relative;
     display: flex;
@@ -294,16 +295,27 @@ div.tooltip {
     color: red;
 }
 
-
-@media (max-width: 1028px) {
+@media (max-width: 1600px) {
     #title {
-        text-align: center;
+        text-align: right;
     }
 
     .title-image {
         position: static;
         transform: rotate(0);
-        top: 35%;
+        top: 70%;
+    }
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: left;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 60%;
     }
 }
 
