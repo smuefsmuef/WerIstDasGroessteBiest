@@ -10,7 +10,7 @@
 // append the svg object to the body of the page
 const svg3 = d3.select("#my_treemap")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
+        .attr("width", width*2 + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform",
@@ -29,7 +29,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
 
     // Then d3.treemap computes the position of each element of the hierarchy
     d3.treemap()
-        .size([width, height])
+        .size([width*2, height])
         .paddingTop(28)
         .paddingRight(7)
         .paddingInner(3)      // Padding between each rectangle
@@ -40,9 +40,9 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
 
     // prepare a color scale
 
-     const color = d3.scaleOrdinal()
-       //.domain(["Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
-    .range(["#21caf1","#ff6352","#ff4c38", "#ff230a",  "#eaff70"])
+    const color = d3.scaleOrdinal()
+        //.domain(["Reptilien", "Fische",  "Säugetiere", "Vögel", "Amphibien"])
+        .range(["#21caf1", "#ff6352", "#ff4c38", "#ff230a", "#eaff70"])
 
     // And a opacity scale
     // const opacity = d3.scaleLinear()
@@ -83,18 +83,18 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         .selectAll("text")
         .data(root.leaves())
         .enter()
-        // .append("text")
-        // .attr("x", function (d) {
-        //     return d.x0 + 5
-        // })    // +10 to adjust position (more right)
-        // .attr("y", function (d) {
-        //     return d.y0 + 20
-        // })    // +20 to adjust position (lower)
-        // .text(function (d) {
-        //     return d.data.name.replace('mister_', '')
-        // })
-       // .attr("font-size", "12px")
-        //.attr("fill", "white")
+    // .append("text")
+    // .attr("x", function (d) {
+    //     return d.x0 + 5
+    // })    // +10 to adjust position (more right)
+    // .attr("y", function (d) {
+    //     return d.y0 + 20
+    // })    // +20 to adjust position (lower)
+    // .text(function (d) {
+    //     return d.data.name.replace('mister_', '')
+    // })
+    // .attr("font-size", "12px")
+    //.attr("fill", "white")
 
     // and to add the text labels
     svg3
@@ -111,7 +111,7 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         .text(function (d) {
             return d.data.value
         })
-        .attr("font-size", "14px")
+        .attr("font-size", "1rem")
         .attr("fill", "black")
 
     // Add title for the 3 groups
@@ -131,12 +131,12 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         .text(function (d) {
             return d.data.name
         })
-        .attr("font-size", "20px")
+        .attr("font-size", "1rem")
         .attr("font-weight", "bold")
         // .attr("fill", function (d) {
         //     return color(d.data.color)
         // })
-        .attr("fill", "white")
+        .attr("fill", "black")
 
     // Add title for the 3 groups
     // svg3

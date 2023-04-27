@@ -1,11 +1,28 @@
 body {
-    background-color: #283340; /* Black background color */
+    background-color: #283340; /* dark background color */
     text-align: center;
 }
 
+section > #title {
+    position: relative;
+    z-index: 5;
+}
+
+
+.content {
+    background: transparent;
+    text-align: center;
+    padding: 0 4%;
+}
+
 h1, h2, h3, text, p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #cccccc;
+    font-family: 'Roboto Thin', sans-serif;
+    color: #283340;
+}
+
+img {
+    border-radius: 50%;
+    width: 5rem
 }
 
 .text-normal {
@@ -14,22 +31,11 @@ h1, h2, h3, text, p {
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.5;
-    color: #cccccc;
-}
-
-.text-normal-dark {
-    padding-top: 1.2rem;
-    padding-bottom: 0.6rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #283340;
 }
 
 .text-small {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 1.5;
-    color: #cccccc;
 }
 
 
@@ -41,7 +47,6 @@ h1, h2, h3, text, p {
 /* Sections */
 .color-section {
     background-color: #283340;
-
 }
 
 .white-section {
@@ -55,16 +60,17 @@ h1, h2, h3, text, p {
 
 /* Headings */
 .big-heading {
-    font-weight: bold;
-    font-size: 4.5rem;
+    font-family: 'Shrikhand', cursive;
+    font-size: 8rem;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 .small-heading {
     font-weight: bold;
     font-size: 1.8rem;
     line-height: 1.5;
-    color: #cccccc;
+    color: #ffffff;
 }
 
 .small-heading-dark {
@@ -74,11 +80,13 @@ h1, h2, h3, text, p {
     color: #283340;
 }
 
-.section-heading-bright {
+.section-heading {
     font-size: 3.5rem;
-    font-weight: bold;
     line-height: 1.5;
-    color: #cccccc;
+    font-family: "Helvetica 35 Thin", Helvetica, Arial, sans-serif;
+    /*font-family: 'Roboto Light', sans-serif;*/
+    color: #ffffff;
+
 }
 
 .section-heading-dark {
@@ -97,33 +105,49 @@ h1, h2, h3, text, p {
     left: -75%;
     transform-origin: bottom left;
 }
+
 /*Animal icon*/
 .animal-icon {
     margin-top: 20px;
     fill: white;
     width: 50px;
-    height:50px;
+    height: 50px;
 }
 
 .human-icon {
     margin-top: 20px;
     fill: white;
     width: 60px;
-    height:60px;
+    height: 60px;
+}
+
+#footer {
+    color: white;
 }
 
 /* Title Section */
 #title {
-    color: rgba(244, 247, 249, 0.98);
-    text-align: left;
-    background-image: url("dalle_1.png");
-    height: 100%;
-    background-position: top;
-
+    color: rgb(229, 235, 239);
+    text-align: center;
+    background-image: url("eye.jpg");
+    /*!*https://cdn.zmescience.com/wp-content/uploads/2022/05/eye-g073f1f894_1920.jpg*! todo add source*/
+    background-color: #283340;
+    height-min: 100%;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    padding-bottom: 20rem;
-
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    -webkit-transition: opacity 350ms linear;
+    -moz-transition: opacity 350ms linear;
+    -ms-transition: opacity 350ms linear;
+    -o-transition: opacity 350ms linear;
+    transition: opacity 350ms linear;
 }
 
 /* Title Image */
@@ -138,14 +162,12 @@ h1, h2, h3, text, p {
 /*Buttons*/
 
 .btn-custom {
-    height: 40px;
+    height: 30px;
 }
 
 .btn-sm.btn-custom {
     height: 30px;
 }
-
-
 
 .possibly-sidebyside .one {
     float: left;
@@ -157,12 +179,17 @@ h1, h2, h3, text, p {
 
 .sidebyside div, .sidebyside svg {
     display: inline;
+}
 
+.custom-border {
+    margin-top: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #ddddde;
 }
 
 button, #speciesButton {
-    background: #ff6352;
-    height: 2rem;
+    background: #fff;
 }
 
 svg {
@@ -193,7 +220,6 @@ div.tooltip {
 }
 
 
-
 /*MAP*/
 
 #humans, #europe, #europe_small {
@@ -216,9 +242,9 @@ div.tooltip {
 }
 
 .europe-boundary {
-    fill: none;
-    stroke: #cf892e;
-    stroke-width: 0.01rem;
+    fill: transparent;
+    stroke: rgba(51, 72, 93, 0.3);
+    stroke-width: 0.1rem;
     stroke-linejoin: round;
 }
 
@@ -230,16 +256,15 @@ div.tooltip {
     text-anchor: middle;
 }
 
-
 #context-holder {
     fill: none;
     stroke: black;
 }
 
-#context-label{
+#context-label {
     color: #1b313b;
-    font-size: 10px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-family: 'Roboto Thin', sans-serif;
 }
 
 .stop-left-human {
@@ -270,15 +295,27 @@ div.tooltip {
     color: red;
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1600px) {
     #title {
-        text-align: center;
+        text-align: right;
     }
 
     .title-image {
         position: static;
         transform: rotate(0);
-        top: 35%;
+        top: 70%;
+    }
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: left;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 60%;
     }
 }
 
@@ -324,3 +361,53 @@ rect.parent,
 }
 */
 
+
+/*Scrollama*/
+
+#scrolly {
+    position: relative;
+}
+
+article {
+    position: relative;
+    padding: 0 1rem;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.step {
+    margin: 1rem auto 4rem auto;
+    background-color: #3b3b3b;
+    color: #fff;
+    opacity: 0.0;
+}
+
+.step.is-active {
+    background-color: transparent;
+    color: #3b3b3b;
+    opacity: 1;
+}
+
+.step p, .step section {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/*Counter*/
+.clock {
+    height: 12rem;
+    line-height: 120px;
+    text-align: center;
+    margin-top: 5rem;
+    padding: 0 30px;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05),
+    3px 3px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.clock .display {
+    font-size: 60px;
+    color: cyan;
+    letter-spacing: 5px;
+    font-family: 'Roboto Thin', sans-serif;
+}
