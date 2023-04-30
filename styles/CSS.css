@@ -389,15 +389,12 @@ article {
 
 /*Counter*/
 .clock {
-    height: 12rem;
-    line-height: 120px;
     text-align: center;
-    margin-top: 5rem;
-    padding: 0 30px;
-    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05),
-    3px 3px 5px rgba(0, 0, 0, 0.5);
-
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #ddddde;
 }
+
 
 .clock .display {
     font-size: 60px;
