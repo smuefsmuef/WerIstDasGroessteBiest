@@ -1,152 +1,137 @@
-// // Copyright 2021 Observable, Inc.
-// // Released under the ISC license.
-// // https://observablehq.com/@d3/treemap
-//
-// const svg3c = d3.select("#my_treemap_zoom")
-//     .append("svg")
-//     .attr("width", width + margin.left + margin.right)
-//     .attr("height", height + margin.top + margin.bottom)
-//     .append("g")
-//     .attr("transform",
-//         `translate(${margin.left}, ${margin.top})`);
-//
-// const flare = d3.json("./data/3_flare.json")
-// console.log(flare)
-//
-// chart = Treemap(flare, {
-//     value: d => d.size, // size of each node (file); null for internal nodes (folders)
-//     group: (d, n) => n.ancestors().slice(-2)[0].data.name, // e.g., "animate" in flare/animate/Easing; color
-//     label: (d, n) => [...d.name.split(/(?=[A-Z][a-z])/g), n.value.toLocaleString("en")].join("\n"),
-//     title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`,
-//     link: (d, n) => `https://github.com/prefuse/Flare/blob/master/flare/src/${n.ancestors().reverse().map(d => d.data.name).join("/")}.as`,
-//     width: 1152,
-//     height: 1152
-// })
-//
-// function Treemap(data, { // data is either tabular (array of objects) or hierarchy (nested objects)
-//     path, // as an alternative to id and parentId, returns an array identifier, imputing internal nodes
-//     id = Array.isArray(data) ? d => d.id : null, // if tabular data, given a d in data, returns a unique identifier (string)
-//     parentId = Array.isArray(data) ? d => d.parentId : null, // if tabular data, given a node d, returns its parent’s identifier
-//     children, // if hierarchical data, given a d in data, returns its children
-//     value, // given a node d, returns a quantitative value (for area encoding; null for count)
-//     sort = (a, b) => d3.descending(a.value, b.value), // how to sort nodes prior to layout
-//     label, // given a leaf node d, returns the name to display on the rectangle
-//     group, // given a leaf node d, returns a categorical value (for color encoding)
-//     title, // given a leaf node d, returns its hover text
-//     link, // given a leaf node d, its link (if any)
-//     linkTarget = "_blank", // the target attribute for links (if any)
-//     tile = d3.treemapBinary, // treemap strategy
-//     width = 640, // outer width, in pixels
-//     height = 400, // outer height, in pixels
-//     margin = 0, // shorthand for margins
-//     marginTop = margin, // top margin, in pixels
-//     marginRight = margin, // right margin, in pixels
-//     marginBottom = margin, // bottom margin, in pixels
-//     marginLeft = margin, // left margin, in pixels
-//     padding = 1, // shorthand for inner and outer padding
-//     paddingInner = padding, // to separate a node from its adjacent siblings
-//     paddingOuter = padding, // shorthand for top, right, bottom, and left padding
-//     paddingTop = paddingOuter, // to separate a node’s top edge from its children
-//     paddingRight = paddingOuter, // to separate a node’s right edge from its children
-//     paddingBottom = paddingOuter, // to separate a node’s bottom edge from its children
-//     paddingLeft = paddingOuter, // to separate a node’s left edge from its children
-//     round = true, // whether to round to exact pixels
-//     colors = d3.schemeTableau10, // array of colors
-//     zDomain, // array of values for the color scale
-//     fill = "#ccc", // fill for node rects (if no group color encoding)
-//     fillOpacity = group == null ? null : 0.6, // fill opacity for node rects
-//     stroke, // stroke for node rects
-//     strokeWidth, // stroke width for node rects
-//     strokeOpacity, // stroke opacity for node rects
-//     strokeLinejoin, // stroke line join for node rects
-// } = {}) {
-//
-//     // If id and parentId options are specified, or the path option, use d3.stratify
-//     // to convert tabular data to a hierarchy; otherwise we assume that the data is
-//     // specified as an object {children} with nested objects (a.scrollama.a. the “flare.json”
-//     // format), and use d3.hierarchy.
-//     const root = path != null ? d3.stratify().path(path)(data)
-//         : id != null || parentId != null ? d3.stratify().id(id).parentId(parentId)(data)
-//             : d3.hierarchy(data, children);
-//
-//     // Compute the values of internal nodes by aggregating from the leaves.
-//     value == null ? root.count() : root.sum(d => Math.max(0, value(d)));
-//
-//     // Prior to sorting, if a group channel is specified, construct an ordinal color scale.
-//     const leaves = root.leaves();
-//     const G = group == null ? null : leaves.map(d => group(d.data, d));
-//     if (zDomain === undefined) zDomain = G;
-//     zDomain = new d3.InternSet(zDomain);
-//     const color = group == null ? null : d3.scaleOrdinal(zDomain, colors);
-//
-//     // Compute labels and titles.
-//     const L = label == null ? null : leaves.map(d => label(d.data, d));
-//     const T = title === undefined ? L : title == null ? null : leaves.map(d => title(d.data, d));
-//
-//     // Sort the leaves (typically by descending value for a pleasing layout).
-//     if (sort != null) root.sort(sort);
-//
-//     // Compute the treemap layout.
-//     d3.treemap()
-//         .tile(tile)
-//         .size([width - marginLeft - marginRight, height - marginTop - marginBottom])
-//         .paddingInner(paddingInner)
-//         .paddingTop(paddingTop)
-//         .paddingRight(paddingRight)
-//         .paddingBottom(paddingBottom)
-//         .paddingLeft(paddingLeft)
-//         .round(round)
-//         (root);
-//
-//     const svg3c = d3.create("svg")
-//         .attr("viewBox", [-marginLeft, -marginTop, width, height])
-//         .attr("width", width)
-//         .attr("height", height)
-//         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-//         .attr("font-family", "sans-serif")
-//         .attr("font-size", 10);
-//
-//     const node = svg3c.selectAll("a")
-//         .data(leaves)
-//         .join("a")
-//         .attr("xlink:href", link == null ? null : (d, i) => link(d.data, d))
-//         .attr("target", link == null ? null : linkTarget)
-//         .attr("transform", d => `translate(${d.x0},${d.y0})`);
-//
-//     node.append("rect")
-//         .attr("fill", color ? (d, i) => color(G[i]) : fill)
-//         .attr("fill-opacity", fillOpacity)
-//         .attr("stroke", stroke)
-//         .attr("stroke-width", strokeWidth)
-//         .attr("stroke-opacity", strokeOpacity)
-//         .attr("stroke-linejoin", strokeLinejoin)
-//         .attr("width", d => d.x1 - d.x0)
-//         .attr("height", d => d.y1 - d.y0);
-//
-//     if (T) {
-//         node.append("title").text((d, i) => T[i]);
-//     }
-//
-//     if (L) {
-//         // A unique identifier for clip paths (to avoid conflicts).
-//         const uid = `O-${Math.random().toString(16).slice(2)}`;
-//
-//         node.append("clipPath")
-//             .attr("id", (d, i) => `${uid}-clip-${i}`)
-//             .append("rect")
-//             .attr("width", d => d.x1 - d.x0)
-//             .attr("height", d => d.y1 - d.y0);
-//
-//         node.append("text")
-//             .attr("clip-path", (d, i) => `url(${new URL(`#${uid}-clip-${i}`, location)})`)
-//             .selectAll("tspan")
-//             .data((d, i) => `${L[i]}`.split(/\n/g))
-//             .join("tspan")
-//             .attr("x", 3)
-//             .attr("y", (d, i, D) => `${(i === D.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-//             .attr("fill-opacity", (d, i, D) => i === D.length - 1 ? 0.7 : null)
-//             .text(d => d);
-//     }
-//
-//     return Object.assign(svg3c.node(), {scales: {color}});
-// }
+//code https://observablehq.com/@d3/zoomable-treemap
+(() => {
+
+    var count = 0;
+
+    function uid(name) {
+        return new Id("O-" + (name == null ? "" : name + "-") + ++count);
+    }
+
+    function Id(id) {
+        this.id = id;
+        this.href = new URL(`#${id}`, location) + "";
+    }
+
+    Id.prototype.toString = function () {
+        return "url(" + this.href + ")";
+    };
+
+
+    const x = d3.scaleLinear().rangeRound([0, width]);
+    const y = d3.scaleLinear().rangeRound([0, height]);
+
+    const svg3d = d3.create("svg")
+        .attr("viewBox", [0.5, -30.5, width, height + 30])
+        .style("font", "10px sans-serif");
+
+    function tile(node, x0, y0, x1, y1) {
+        d3.treemapBinary(node, 0, 0, width, height);
+        for (const child of node.children) {
+            child.x0 = x0 + child.x0 / width * (x1 - x0);
+            child.x1 = x0 + child.x1 / width * (x1 - x0);
+            child.y0 = y0 + child.y0 / height * (y1 - y0);
+            child.y1 = y0 + child.y1 / height * (y1 - y0);
+        }
+    }
+
+    let name = d => d.ancestors().reverse().map(d => d.data.name).join("/");
+    let format = d3.format(",d")
+    let treemap = data => d3.treemap()
+        .tile(tile)
+        (d3.hierarchy(data)
+            .sum(d => d.value)
+            .sort((a, b) => b.value - a.value));
+
+
+    function render(group, root) {
+        const node = group
+            .selectAll("g")
+            .data(root.children.concat(root))
+            .join("g");
+
+        node.filter(d => d === root ? d.parent : d.children)
+            .attr("cursor", "pointer")
+            .on("click", (event, d) => d === root ? zoomout(root) : zoomin(d));
+
+        node.append("title")
+            .text(d => `${name(d)}\n${format(d.value)}`);
+
+        node.append("rect")
+            .attr("id", d => (d.leafUid = uid("leaf")).id)
+            .attr("fill", d => d === root ? "#fff" : d.children ? "#ccc" : "#ddd")
+            .attr("stroke", "#fff");
+
+        node.append("clipPath")
+            .attr("id", d => (d.clipUid = uid("clip")).id)
+            .append("use")
+            .attr("xlink:href", d => d.leafUid.href);
+
+        node.append("text")
+            .attr("clip-path", d => d.clipUid)
+            .attr("font-weight", d => d === root ? "bold" : null)
+            .selectAll("tspan")
+            .data(d => (d === root ? name(d) : d.data.name).split(/(?=[A-Z][^A-Z])/g).concat(format(d.value)))
+            .join("tspan")
+            .attr("x", 3)
+            .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
+            .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
+            .attr("font-weight", (d, i, nodes) => i === nodes.length - 1 ? "normal" : null)
+            .text(d => d);
+
+        group.call(position, root);
+    }
+
+    function position(group, root) {
+        group.selectAll("g")
+            .attr("transform", d => d === root ? `translate(0,-30)` : `translate(${x(d.x0)},${y(d.y0)})`)
+            .select("rect")
+            .attr("width", d => d === root ? width : x(d.x1) - x(d.x0))
+            .attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0));
+    }
+
+    let group = svg3d.append("g")
+
+
+// When zooming in, draw the new nodes on top, and fade them in.
+    function zoomin(d) {
+        const group0 = group.attr("pointer-events", "none");
+        const group1 = group = svg3d.append("g").call(render, d);
+
+        x.domain([d.x0, d.x1]);
+        y.domain([d.y0, d.y1]);
+
+        svg3d.transition()
+            .duration(750)
+            .call(t => group0.transition(t).remove()
+                .call(position, d.parent))
+            .call(t => group1.transition(t)
+                .attrTween("opacity", () => d3.interpolate(0, 1))
+                .call(position, d));
+    }
+
+// When zooming out, draw the old nodes on top, and fade them out.
+    function zoomout(d) {
+        const group0 = group.attr("pointer-events", "none");
+        const group1 = group = svg3d.insert("g", "*").call(render, d.parent);
+
+        x.domain([d.parent.x0, d.parent.x1]);
+        y.domain([d.parent.y0, d.parent.y1]);
+
+        svg3d.transition()
+            .duration(750)
+            .call(t => group0.transition(t).remove()
+                .attrTween("opacity", () => d3.interpolate(1, 0))
+                .call(position, d))
+            .call(t => group1.transition(t)
+                .call(position, d.parent));
+    }
+
+
+    d3.json("./data/3_data_treemap_zoom.json").then(function (data) {
+        group.call(render, treemap(data));
+        let sel = d3.select("#zoom_treemap");
+        console.log(svg3d.node())
+        sel.node().appendChild(svg3d.node());
+    });
+
+})();
