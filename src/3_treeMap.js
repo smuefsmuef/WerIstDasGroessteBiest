@@ -16,6 +16,15 @@ const svg3 = d3.select("#my_treemap")
         .attr("transform",
             `translate(${margin.left}, ${margin.top})`);
 
+// var tooltip = d3.select("#my_treemap")
+//     .append("svg")
+//     .style("position", "absolute")
+//     .style("visibility", "hidden")
+//     .style("color", "white")
+//     .style("background-color", "black")
+//     .style("padding", "8px")
+//     .text("tooltip");
+
 // read json data
 d3.json("./data/3_treemap_CH.json").then(function (data) {
     //console.log(data)
@@ -70,6 +79,12 @@ d3.json("./data/3_treemap_CH.json").then(function (data) {
         .style("fill", function (d) {
             return color(d.data.name)
         })
+        .on("mouseover", function(d) {
+            tooltip.text(d.name);
+            tooltip.style("visibility", "visible");
+        })
+        .on("mouseout", function(){
+            return tooltip.style("visibility", "hidden");});
     //    .style("fill", function(d) { return d.data.colorsamp; })
     //  .style("fill", function (d) {
     //      return color(d.parent.data.colorsamp)
