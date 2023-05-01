@@ -88,7 +88,7 @@ d3.json("./data/3_treemap_mammals.json").then(function (data) {
         return d.x0 + 5
     })    // +10 to adjust position (more right)
     .attr("y", function (d) {
-        return d.y0 + 20
+        return d.y0 + 7
     })    // +20 to adjust position (lower)
     .text(function (d) {
         return d.data.name.replace('mister_', '')
