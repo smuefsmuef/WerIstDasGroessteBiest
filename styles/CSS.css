@@ -19,8 +19,8 @@ section > #title {
     padding: 0 4%;
 }
 
- h2, h3, text, p {
-     color: #efedea;
+h2, h3, text, p {
+    color: #efedea;
 }
 
 img {
@@ -86,7 +86,7 @@ img {
     color: #efedea;
 }
 
-.title-background{
+.title-background {
     background-color: #e70101;
     color: #0a1014;
     font-size: 3.5rem;
@@ -217,7 +217,6 @@ hr {
 }
 
 
-
 /*MAP*/
 
 #humans, #europe {
@@ -256,11 +255,11 @@ hr {
 
 #context-holder {
     fill: none;
-    stroke: #0a1014;
+    stroke: white;
 }
 
 #context-label {
-    color: #1b313b;
+    color: white;
     font-size: 1rem;
     font-family: 'DM Sans', sans-serif;
 }
@@ -278,7 +277,7 @@ hr {
 }
 
 .stop-right-species {
-    stop-color: #d506a8;
+    stop-color: #a2163e;
 }
 
 .filled-human {
@@ -322,15 +321,14 @@ hr {
     cursor: pointer;
     appearance: none;
     background-color: inherit;
-   /*transition: transform 0.7s ease-in-out;*/
+    /*transition: transform 0.7s ease-in-out;*/
     opacity: 0.8;
 }
 
-.animal-select-button:hover{
+.animal-select-button:hover {
     transform: rotate(360deg);
     opacity: 1;
 }
-
 
 
 /*treemap styles

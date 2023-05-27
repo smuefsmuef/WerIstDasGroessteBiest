@@ -23,12 +23,15 @@ const g = svgMap.append("g")
 //------EVENTS-----------------------------------------------------
 
 // create event handlers for mouse events
-function mouseover(species, countryId, countryArea, landcover) {
+function mouseover(species, countryId) {
     const percent = species[countryId];
-
+    console.log("species", species)
+    console.log("countryId", countryId)
+// todo fix display of percent - somehow it doesnt recognize all paths anymrore..
     if (percent !== undefined) {
         d3.select("#context-label").text("" + countryId + ": " + percent + "%");
     }
+    console.log("mouseover: " + countryId + " " + percent + "%");
     contextHolder.select("path")
 }
 
@@ -53,23 +56,25 @@ const contextHolder = createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-40},${120})`);
+        .attr("transform", `translate(${-30},${190})`);
 
     contextHolder.append("rect")
         .attr("width", 100)
         .attr("height", 100)
-        .attr("stroke", "none");
+        .attr("stroke", "white")
 
     contextHolder.append("path")
         .attr("transform", "translate(50,50)"); // mitte des elements
 
     contextHolder.append("text")
         .attr("id", "context-label")
-        .attr("transform", "translate(50,-40)")
+        .attr("color", "white")
+        .text("problem todo")
+        .attr("transform", "translate(10,50)")
     return contextHolder;
 }
 
-// create legend
+// create legend slider
 function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
@@ -176,15 +181,15 @@ function fillCountry(country, species, selectedOption) {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
         if (value > 50) {
-            return '#D506A8'
+            return '#a2163e'
         } else if (40 < value && value < 50) {
-            return '#DA33AF'
+            return '#B1405A'
         } else if (30 < value && value < 40) {
-            return '#E060B6'
+            return '#C16A76'
         } else if (20 < value && value < 30) {
-            return '#E58DBD'
+            return '#D19492'
         } else if (10 < value && value < 20) {
-            return '#EBBAC4'
+            return '#E1BEAE'
         } else if (0 < value && value < 10) {
             return '#f1e8cb'
         } else {
@@ -221,16 +226,8 @@ function doPlot(selectedOption) {
 
         var countries = topojson.feature(europe, europe.objects.continent_Europe_subunits); // kriegen die gazen grenzen/kantone
 
-        // When the button is changed, run the updateChart function
-        d3.select("#speciesButton").on("change", function (d) {
-            // recover the option that has been chosen
-            selectedOption = d3.select(this).property("value")
-            // run the updateChart function with this selected option
-            // recolor countries
-            fillCountry(country, species, selectedOption)
-        })
 
-
+        // todo refactoring aller buttons
         d3.select("#reptilien").on("click", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
@@ -267,7 +264,6 @@ function doPlot(selectedOption) {
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-
 
         const country = g.selectAll("path.countries")
             .data(countries.features)
