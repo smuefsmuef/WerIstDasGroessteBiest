@@ -131,10 +131,46 @@ function createLegendEndangeredSpecies() {
 
 createLegendEndangeredSpecies()
 
+//------BUTTONS-----------------------------------------------------
+d3.select("#reptilien")
+    .append("europe")
+
+d3.select("#saeugetiere")
+    .append("europe")
+
+d3.select("#voegel")
+    .append("europe")
+
+d3.select("#amphibien")
+    .append("europe")
+
+d3.select("#fisch")
+    .append("europe")
+
+d3.select("#wirbellose")
+    .append("europe")
+
+d3.select("#all")
+    .append("europe")
+
+
+const animaltype = d3.select("#animal-type")
+    .append("europe")
+    .append("text")
+    .attr("x", 65)
+    .attr("y", 15)
+    .text("Reptilien")
+    .attr("text", function (d) {
+        return d
+    })
+    .attr("fill", "#efedea")
+    .attr("font-size", "1rem")
+    .style("text-anchor", "middle");
+
+
 //-----------------------------------------------------------
 
 function fillCountry(country, species, selectedOption) {
-    console.log('triggered fill country')
     // https://online-free-tools.com/en/css_color_hex_gradient
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
@@ -155,14 +191,11 @@ function fillCountry(country, species, selectedOption) {
             return "#333"
         }
     })
-
-
-
 }
 
 
-function doPlot() {
-    var selectedOption = 'Reptilien'
+function doPlot(selectedOption) {
+    var selectedOption = selectedOption
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
@@ -186,23 +219,6 @@ function doPlot() {
         var europe = data[0];
         var species = data[1];
 
-        // List of groups (here I have one group per column)
-        var species_groups = species.map(i => i.type)
-
-        // add the options to the button
-        // https://d3-graph-gallery.com/graph/line_select.html
-        d3.select("#speciesButton")
-            .selectAll('myOptions')
-            .data(species_groups)
-            .enter()
-            .append('option')
-            .text(function (d) {
-                return d;
-            }) // text showed in the menu
-            .attr("value", function (d) {
-                return d;
-            }) // corresponding value returned by the button
-
         var countries = topojson.feature(europe, europe.objects.continent_Europe_subunits); // kriegen die gazen grenzen/kantone
 
         // When the button is changed, run the updateChart function
@@ -212,6 +228,44 @@ function doPlot() {
             // run the updateChart function with this selected option
             // recolor countries
             fillCountry(country, species, selectedOption)
+        })
+
+
+        d3.select("#reptilien").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+
+        d3.select("#saeugetiere").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+        d3.select("#voegel").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+        d3.select("#amphibien").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+        d3.select("#fisch").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+        d3.select("#wirbellose").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+        })
+        d3.select("#all").on("click", function (d) {
+            selectedOption = d3.select(this).property("value")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
         })
 
 
@@ -245,4 +299,4 @@ function doPlot() {
     });
 }
 
-doPlot();
+doPlot('Reptilien');

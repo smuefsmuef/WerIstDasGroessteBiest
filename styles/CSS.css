@@ -5,6 +5,7 @@ body {
 main {
     background-color: #0a1014; /* dark background color */
     font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 section > #title {
@@ -24,7 +25,7 @@ section > #title {
 
 img {
     border-radius: 50%;
-    width: 5rem
+    width: 4rem
 }
 
 .text-normal {
@@ -321,14 +322,15 @@ hr {
     cursor: pointer;
     appearance: none;
     background-color: inherit;
-    transition: transform 0.7s ease-in-out;
-    opacity: 0.5;
+   /*transition: transform 0.7s ease-in-out;*/
+    opacity: 0.8;
 }
 
 .animal-select-button:hover{
     transform: rotate(360deg);
     opacity: 1;
 }
+
 
 
 /*treemap styles
