@@ -2,11 +2,11 @@
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
 // create svgMap canvas
-const canvHeight = 600, canvWidth = 800;
+const canvHeight = 500, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
     .append("svg")
-    .attr("width", canvWidth / 2)
-    .attr("height", canvHeight / 2);
+    .attr("width", canvWidth)
+    .attr("height", canvHeight);
 
 
 // calc the width and height depending on margin_maps.
@@ -134,37 +134,40 @@ createLegendEndangeredSpecies()
 //-----------------------------------------------------------
 
 function fillCountry(country, species, selectedOption) {
+    console.log('triggered fill country')
+    // https://online-free-tools.com/en/css_color_hex_gradient
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
         if (value > 50) {
-            return '#ff230a'
+            return '#D506A8'
         } else if (40 < value && value < 50) {
-            return '#eb431e'
+            return '#DA33AF'
         } else if (30 < value && value < 40) {
-            return '#d66332'
+            return '#E060B6'
         } else if (20 < value && value < 30) {
-            return '#c28446'
+            return '#E58DBD'
         } else if (10 < value && value < 20) {
-            return '#a4b464'
+            return '#EBBAC4'
         } else if (0 < value && value < 10) {
-            return '#85e482'
+            return '#f1e8cb'
         } else {
-            return "lightgray"
+            return "#333"
         }
     })
 
 
+
 }
 
-function doPlot() {
 
-    var selectedOption = 'Reptilien';
+function doPlot(selectedOption) {
+
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([40, 30])
-        .scale(250)
+        .center([20, 55])
+        .scale(400)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
 
@@ -184,7 +187,6 @@ function doPlot() {
 
         // List of groups (here I have one group per column)
         var species_groups = species.map(i => i.type)
-
 
         // add the options to the button
         // https://d3-graph-gallery.com/graph/line_select.html
@@ -210,6 +212,7 @@ function doPlot() {
             // recolor countries
             fillCountry(country, species, selectedOption)
         })
+
 
         const country = g.selectAll("path.countries")
             .data(countries.features)
@@ -241,4 +244,4 @@ function doPlot() {
     });
 }
 
-doPlot();
+doPlot('Reptilien');

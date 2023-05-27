@@ -1,7 +1,7 @@
 // check https://d3-graph-gallery.com/graph/bubblemap_template.html
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
-const canvHeightHuman = 600, canvWidthHuman = 800;
+const canvHeightHuman = 500, canvWidthHuman = 800;
 // calc the width and height depending on margin_mapHumans.
 const margin_mapHuman = {top: 80, right: 80, bottom: 50, left: 70};
 const width_mapHuman = canvWidthHuman - margin_mapHuman.left - margin_mapHuman.right;
@@ -10,8 +10,8 @@ const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
-    .attr("width", canvWidthHuman / 2)
-    .attr("height", canvHeightHuman / 2);
+    .attr("width", canvWidthHuman )
+    .attr("height", canvHeightHuman);
 
 
 // // create parent group and add left and top margin_mapHuman
@@ -101,7 +101,7 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
         } else if (0 < value && value < 50) {
             return '#ddaf8c'
         } else {
-            return "lightgray"
+            return "#333"
         }
     })
 }
@@ -111,8 +111,8 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([40, 30])
-        .scale(250)
+        .center([20, 55])
+        .scale(400)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
 

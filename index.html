@@ -36,8 +36,8 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
                         <h1 class="big-heading">Der Mensch, das grösste Biest?</h1>
-<!--                           <h2 class="title-background">Die Lebensqualität der Menschen in der Schweiz ist hoch,-->
-<!--                               aber gilt dies auch für die Tiere?</h2> -->
+                        <!--                           <h2 class="title-background">Die Lebensqualität der Menschen in der Schweiz ist hoch,-->
+                        <!--                               aber gilt dies auch für die Tiere?</h2> -->
                     </div>
                     <div class="col-sm-2">
                     </div>
@@ -164,17 +164,31 @@
                                 <div id="humans"></div>
                             </div>
                             <div class="col-sm-6">
-                                <h2 class="text-normal">...aber etwas weniger für <br>
-                                    <img src="img/labels/eye.png" alt="lables">
-                                    <img src="img/labels/cell.png" alt="lables">
-                                    <img src="img/labels/rainforest.png" alt="lables">
-                                    <img src="img/labels/buffalo.png" alt="lables">
-                                    <img src="img/labels/endo.png" alt="lables">
-                                    <img src="img/labels/buffalo.png" alt="lables">
-
-
+                                <h2 class="text-normal">...aber etwas weniger für... <br>
                                     <select id="speciesButton"></select></h2>
                                 <div id="europe"></div>
+                                <div>
+
+
+                                    <button  value="Reptilien" type="submit" class="animal-select-button">
+                                        <img src="img/labels/eye.png" alt="lables">
+                                    </button>
+                                    <button    value="Säugetiere" type="submit" class="animal-select-button" >
+                                        <img src="img/labels/eye.png" alt="lables">
+                                    </button>
+                                    <button type="submit" class="animal-select-button" onclick="doPlot('Fisch')">
+                                        <img src="img/labels/moskito.png" alt="lables">
+                                    </button>
+                                    <button type="submit" class="animal-select-button">
+                                        <img src="img/labels/buffalo.png" alt="lables">
+                                    </button>
+                                    <button type="submit" class="animal-select-button">
+                                        <img src="img/labels/fish.png" alt="lables">
+                                    </button>
+                                    <button type="submit" class="animal-select-button">
+                                        <img src="img/labels/cell.png" alt="lables">
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -338,7 +352,6 @@
 <script src='src/3_treeMap_mammals.js'></script>
 <script src='src/3_treeMapZoom2.js'></script>
 <script src='src/4_lineChart.js'></script>
-<script src='src/counter.js'></script>
 <script src="lib/scrollama/scrollama.min.js"></script>
 
 

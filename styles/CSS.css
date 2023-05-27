@@ -43,7 +43,7 @@ img {
 
 /* Containers */
 .container-fluid {
-    padding: 3% 15%;
+    padding: 0% 3%;
 }
 
 /* Sections */
@@ -219,7 +219,7 @@ hr {
 
 /*MAP*/
 
-#humans, #europe, #europe_small {
+#humans, #europe {
     background: #0a1014;
     color: white;
 }
@@ -273,11 +273,11 @@ hr {
 }
 
 .stop-left-species {
-    stop-color: #85e482;
+    stop-color: #f1e8cb;
 }
 
 .stop-right-species {
-    stop-color: #ff230a;
+    stop-color: #d506a8;
 }
 
 .filled-human {
@@ -315,6 +315,21 @@ hr {
         top: 60%;
     }
 }
+
+.animal-select-button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform 0.7s ease-in-out;
+    opacity: 0.5;
+}
+
+.animal-select-button:hover{
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
 
 /*treemap styles
 text {
@@ -369,7 +384,7 @@ article {
     position: relative;
     padding: 0 1rem;
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
     background-color: #0a1014;
 }
 
@@ -405,3 +420,4 @@ article {
     color: cyan;
     letter-spacing: 5px;
 }
+
