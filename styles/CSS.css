@@ -85,6 +85,21 @@ img {
     color: #efedea;
 }
 
+.title-background{
+    background-color: #e70101;
+    color: #0a1014;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-style: italic;
+    padding: .3em .7em .2em .4em;
+    display: inline;
+    text-align: right;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+
+}
+
 .section-heading-dark {
     font-size: 3.5rem;
     font-weight: bold;
