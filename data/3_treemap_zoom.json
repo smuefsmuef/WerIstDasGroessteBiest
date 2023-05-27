@@ -1,0 +1,191 @@
+{
+  "name": "#Arten",
+  "color": "grey",
+  "children": [
+    {
+      "name": "Säugetiere",
+      "color": "#90b376",
+      "image": "img/phylopic/braunbaer.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 65,
+          "color": "#90b376"
+        },
+        {
+          "name": "Mensch",
+          "value": 1,
+          "color": "yellow"
+        },
+        {
+          "name": "Gefährdet",
+          "group": "B",
+          "value": 16,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "A",
+          "value": 12,
+          "color": "#ff4c38"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "value": 2,
+          "color": "#ff230a"
+        }
+      ]
+    },
+    {
+      "name": "Vögel",
+      "color": "#90b376",
+      "image": "img/animal_icons/Animals Bundle-43.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 129,
+          "color": "#90b376"
+        },
+        {
+          "name": "Potenziell gefährdet",
+          "color": "#fc897c",
+          "children": [
+            {
+              "name": "Potenziell gefährdete Vogelarten: \nKolbenente\nWaldohreule\nHänfling\nWanderfalke\nBaumfalke\nOrpheusspötter\nFeldschwirl\nNachtigall\nSchafstelze\nWespenbussard\nSchwarzkehlchen\nTurteltaube\nGartengrasmücke\nDrosselrohrsänger\nFeldlerche\nSteinhuhn\nMauersegler\nAlpensegler\nKuckuck\nMehlschwalbe\nMittelspecht\nZaunammer\nTurmfalke\nWendehals\nAlpenschneehuhn\nRohrschwirl\nGartenrotschwanz\nFlussseeschwalbe\nDorngrasmücke\nBirkhuhn\nHaselhuhn\nSchleiereule",
+              "value": 32,
+              "color": "#fc897c"
+            }
+          ]
+        },
+        {
+          "name": "Gefährdet",
+          "color": "#ff6352",
+          "children": [
+            {
+              "name": "Gefährdete Vogelarten: Schwarzhalstaucher\nGänsesäger\nReiherente\nWiesenpieper\nSteinadler\nRohrammer\nGelbspötter\nBartmeise\nZwergtaucher\nEisvogel\nWeissstorch\nDohle\nGrauammer\nHeidelerche\nWaldlaubsänger\nFitis\nGrauspecht\nUferschwalbe\nBraunkehlchen\nWaldschnepfe\nWacholderdrossel\nRingdrossel\nWiedehopf",
+              "value": 23,
+              "color": "#ff6352"
+            }
+          ]
+        },
+        {
+          "name": "Stark gefährdet",
+          "color": "#ff4c38",
+          "children": [
+            {
+              "name": "Stark gefährdete Vogelarten: Schnatterente\nTafelente\nHalsbandschnäpper\nZwergdommel\nBlaumerle\nAlpenkrähe\nFlussuferläufer\nSteinkauz\nUhu\nZiegenmelker\nFlussregenpfeifer\nLachmöwe\nZwergohreule\nAuerhuhn",
+              "value": 14,
+              "color": "#ff4c38"
+            }
+          ]
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "color": "#ff230a",
+          "children": [
+            {
+              "name": "Vom Aussterben bedrohte Vogelarten: Purpurreiher\nWachtelkönig\nOrtolan\nBekassine\nBartgeier\nRotkopfwürger\nGrosser Brachvogel\nRebhuhn\nKiebitz",
+              "value": 9,
+              "color": "#ff230a"
+            }
+          ]
+        },
+        {
+          "name": "Ausgestorben",
+          "color": "white",
+          "children": [
+            {
+              "name": "Ausgestorbene Vogelarten: Rothuhn\nHaubenlerche\nRaubwürger\nSchwarzstirnwürger\nFischadler\nRotschenkel",
+              "value": 6,
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amphibien",
+      "color": "#90b376",
+      "image": "img/animal_icons/Animals Bundle-86.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 5,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet",
+          "group": "C",
+          "value": 8,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 6,
+          "color": "#ff4c38"
+        }
+      ]
+    },
+    {
+      "name": "Reptilien",
+      "color": "#90b376",
+      "image": "img/animal_icons/Animals Bundle-55.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 6,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet",
+          "group": "C",
+          "value": 2,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 9,
+          "color": "#ff4c38"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "group": "C",
+          "value": 2,
+          "color": "#ff230a"
+        }
+      ]
+    },
+    {
+      "name": "Fische",
+      "color": "#90b376",
+      "image": "img/animal_icons/Animals Bundle-50.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 56,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet",
+          "group": "C",
+          "value": 11,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet",
+          "group": "C",
+          "value": 8,
+          "color": "#ff4c38"
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "group": "C",
+          "value": 15,
+          "color": "#ff230a"
+        }
+      ]
+    }
+  ]
+}
