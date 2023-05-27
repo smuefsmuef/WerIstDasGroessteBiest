@@ -60,7 +60,8 @@ img {
 .big-heading {
     font-size: 8rem;
     line-height: 1.5;
-    color: #efedea;
+    color: #ffffff;
+    filter: brightness(3);
     font-family: 'Shrikhand', cursive;
 }
 
@@ -134,13 +135,14 @@ img {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     height: 100vh;
     -webkit-transition: opacity 350ms linear;
     -moz-transition: opacity 350ms linear;
     -ms-transition: opacity 350ms linear;
     -o-transition: opacity 350ms linear;
     transition: opacity 350ms linear;
+    filter: brightness(0.8);
 }
 
 /* Title Image */
