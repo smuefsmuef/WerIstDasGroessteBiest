@@ -161,7 +161,8 @@ function fillCountry(country, species, selectedOption) {
 }
 
 
-function doPlot(selectedOption) {
+function doPlot() {
+    var selectedOption = 'Reptilien'
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
@@ -244,4 +245,4 @@ function doPlot(selectedOption) {
     });
 }
 
-doPlot('Reptilien');
+doPlot();
