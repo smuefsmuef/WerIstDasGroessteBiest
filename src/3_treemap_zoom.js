@@ -66,7 +66,7 @@
 
         node.append("rect")
             .attr("id", d => (d.leafUid = uid("leaf")).id)
-            .attr("stroke", "#fff")
+            .attr("stroke", "black")
             .style("fill", function (d) {
                 return d.data.color;
             })
@@ -75,19 +75,21 @@
             const leaf = d3.select(this);
             leaf.append("image")
                 .attr("xlink:href", d.data.image) // Der Pfad zum Bild aus den JSON-Daten
-                .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0))
-                .attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0));
+                .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0))*0.6)
+                .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0))*0.6)
         });
 
-        node.each(function(d) {
-            const leaf2 = d3.select(this);
-            leaf2.append("image")
-                .attr("xlink:href", d.data.collage) // Der Pfad zum Bild aus den JSON-Daten
-                .attr("x0", d => d.x0-50)
-                .attr("y0", d => d.y0)
-                .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0)+300)
-                //.attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0)+100);
-        });
+
+        //
+        // node.each(function(d) {
+        //     const leaf2 = d3.select(this);
+        //     leaf2.append("image")
+        //         .attr("xlink:href", d.data.collage) // Der Pfad zum Bild aus den JSON-Daten
+        //         .attr("x0", d => d.x0-50)
+        //         .attr("y0", d => d.y0)
+        //         .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0)+300)
+        //         //.attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0)+100);
+        // });
 
         node.append("clipPath")
             .attr("id", d => (d.clipUid = uid("clip")).id)
@@ -98,12 +100,13 @@
             .attr("clip-path", d => d.clipUid)
             .attr("font-weight", d => d === root ? "bold" : null)
             .selectAll("tspan")
-            .data(d => (d === root ? name(d) : d.data.name).split(/(?=[A-Z][^A-Z])/g).concat(format(d.value)))
+            .data(d => {
+                const textArray = (d === root ? name(d) : d.data.name).split(/(?=\n)/g).concat(format(d.value));
+                return textArray.map(text => text.replace(/\n/g, ""));
+            })
             .join("tspan")
             .attr("x", 3)
             .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-            //.attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
-            //.attr("font-weight", (d, i, nodes) => i === nodes.length - 1 ? "normal" : null)
             .text(d => d);
 
         group.call(position, root);

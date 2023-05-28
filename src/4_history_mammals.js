@@ -1,1 +1,0 @@
-//https://ourworldindata.org/wild-mammals-birds-biomass#:~:text=Livestock%20make%20up%2062%25%20of,wild%20mammals%20are%20just%204%25.
