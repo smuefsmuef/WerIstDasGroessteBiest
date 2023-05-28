@@ -1,5 +1,5 @@
 {
-  "name": "#Arten",
+  "name": "Anzahl Arten",
   "color": "grey",
   "children": [
     {
@@ -13,9 +13,15 @@
           "color": "#90b376"
         },
         {
-          "name": "Mensch",
-          "value": 1,
-          "color": "yellow"
+          "name": "Dominant",
+          "color": "yellow",
+          "children": [
+            {
+              "name": "Homo Sapiens (vernünftiger Mensch)\n\nin Schweiz 2023:\n 8.8 Millionen Menschen\n15 Millionen Nutztiere\n1.2 Millionen Haustiere",
+              "value": 1,
+              "color": "yellow"
+            }
+            ]
         },
         {
           "name": "Gefährdet",
@@ -84,7 +90,7 @@
           "color": "#ff230a",
           "children": [
             {
-              "name": "Vom Aussterben bedrohte Vogelarten: Purpurreiher\nWachtelkönig\nOrtolan\nBekassine\nBartgeier\nRotkopfwürger\nGrosser Brachvogel\nRebhuhn\nKiebitz",
+              "name": "Vom Aussterben bedrohte Vogelarten: \nPurpurreiher\nWachtelkönig\nOrtolan\nBekassine\nBartgeier\nRotkopfwürger\nGrosser Brachvogel\nRebhuhn\nKiebitz",
               "value": 9,
               "color": "#ff230a"
             }
