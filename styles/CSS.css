@@ -25,7 +25,8 @@ h2, h3, text, p {
 
 img {
     border-radius: 50%;
-    width: 4rem
+    width: 4rem;
+    border: 2px solid white;
 }
 
 .text-normal {
@@ -98,8 +99,6 @@ img {
     text-align: right;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-
-
 }
 
 .section-heading-dark {
@@ -212,11 +211,6 @@ svg {
     border: none;
 }
 
-svg text {
-    /*text-anchor: middle;*/
-}
-
-
 hr {
     margin: 2em 0;
 }
@@ -229,24 +223,15 @@ hr {
     color: white;
 }
 
-
 #chart-title {
     font-size: 24px;
     text-anchor: start;
 }
 
-.countries {
-    fill: #bbb;
-}
-
-.countries-new {
-    fill: #ff653e;
-}
-
 .europe-boundary {
     fill: transparent;
     stroke: #0a1014;
-    stroke-width: 0.1rem;
+    stroke-width: 0.12rem;
     stroke-linejoin: round;
 }
 
@@ -259,13 +244,11 @@ hr {
 }
 
 #context-holder {
-    fill: none;
-    stroke: white;
+
 }
 
 #context-label {
-    color: white;
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-family: 'DM Sans', sans-serif;
 }
 

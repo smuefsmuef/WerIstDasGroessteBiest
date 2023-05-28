@@ -25,52 +25,32 @@ const g = svgMap.append("g")
 // create event handlers for mouse events
 function mouseover(species, countryId) {
     const percent = species[countryId];
-    console.log("species", species)
-    console.log("countryId", countryId)
-// todo fix display of percent - somehow it doesnt recognize all paths anymrore..
-    if (percent !== undefined) {
-        d3.select("#context-label").text("" + countryId + ": " + percent + "%");
+    if (percent !== undefined && percent !== '0') {
+        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " sind vom Aussterben bedroht.");
     }
-    console.log("mouseover: " + countryId + " " + percent + "%");
-    contextHolder.select("path")
 }
 
 function mouseout() {
-    d3.select("#context-label").text("");
+    d3.select("#context-label").text(" ");
 }
 
 
 //------LEGEND-----------------------------------------------------
 
-// arc generator for donought plot - generiert svgMap element
-const arc = d3.arc()
-    .innerRadius(25)
-    .outerRadius(45);
 
-
-// kleines rechteck unten rechts..für donut plot
-const contextHolder = createContextHolder();
-
-// const pieChartHolder = createPieChartHolder(); // todo maybe enable?
+createContextHolder();
 
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-30},${190})`);
-
-    contextHolder.append("rect")
-        .attr("width", 100)
-        .attr("height", 100)
-        .attr("stroke", "white")
-
-    contextHolder.append("path")
-        .attr("transform", "translate(50,50)"); // mitte des elements
+        .attr("transform", `translate(${-80},${-80})`)
 
     contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 15)
         .attr("id", "context-label")
-        .attr("color", "white")
-        .text("problem todo")
-        .attr("transform", "translate(10,50)")
+        .attr("fill", "#FF0000FF")
+        .style("text-anchor", "left");
     return contextHolder;
 }
 
@@ -122,7 +102,7 @@ function createLegendEndangeredSpecies() {
         .attr("font-size", "1rem")
         .attr("x", 110)
         .attr("y", 40)
-        .text(" >50");
+        .text(" > 50");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -194,7 +174,7 @@ function doPlot(selectedOption) {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([20, 55])
+        .center([20, 56])
         .scale(400)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
@@ -207,7 +187,6 @@ function doPlot(selectedOption) {
         [
             d3.json("./data/2_europe.json"),
             d3.csv("./data/2_europe_threatend_species.csv"),
-            d3.csv("./data/2_europe_land_cover_coordinates.csv") // reine testdaten todo fox
         ]
     ).then(function (data) {
         var europe = data[0];
@@ -215,6 +194,57 @@ function doPlot(selectedOption) {
 
         var countries = topojson.feature(europe, europe.objects.continent_Europe_subunits); // kriegen die gazen grenzen/kantone
 
+        /* todo hover effect map
+        let mouseOver = function(d) {
+            d3.selectAll(".Country")
+                .transition()
+                .duration(200)
+                .style("opacity", .5)
+            d3.select(this)
+                .transition()
+                .duration(200)
+                .style("opacity", 1)
+                .style("stroke", "black")
+        }
+        let mouseLeave = function(d) {
+            d3.selectAll(".Country")
+                .transition()
+                .duration(200)
+                .style("opacity", 1)
+            d3.select(this)
+                .transition()
+                .duration(200)
+                .style("stroke", "transparent")
+        }
+        */
+
+
+        const country = g.selectAll("path.countries")
+            .data(countries.features)
+            .enter()
+            .append("path")
+            .attr("id", d => d.id)
+            .attr("class", "countries")
+            .attr("d", pathGenerator)
+            .attr("class", "europe-boundary");
+
+        // boundaries of each country
+        g.append("path")
+            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
+            .attr("d", pathGenerator);
+
+        // initially color the country
+        fillCountry(country, species, selectedOption)
+
+        // events
+        country.on("mouseover", (event, d) => {
+            const selected_species_data = species.find(e => e.type === selectedOption)
+            mouseover(selected_species_data, d.properties.geounit, d3.select(this))
+        });
+
+        country.on("mouseout", function () {
+            mouseout(d3.select(this))
+        });
 
         // todo refactoring aller buttons
         d3.select("#reptilien").on("click", function (d) {
@@ -254,34 +284,43 @@ function doPlot(selectedOption) {
             animaltype.text(selectedOption)
         })
 
-        const country = g.selectAll("path.countries")
-            .data(countries.features)
-            .enter()
-            .append("path")
-            .attr("id", d => d.id)
-            .attr("class", "countries")
-            .attr("d", pathGenerator);
 
-        // initially color the country
-        fillCountry(country, species, selectedOption)
-
-        // boundaries of each country
-        g.append("path")
-            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits))
-            .attr("class", "europe-boundary")
-            .attr("d", pathGenerator);
-
-        // events
-        country.on("mouseover", (event, d) => {
-            const selected_species_data = species.find(e => e.type === selectedOption)
-            console.log(event, d)
-            mouseover(selected_species_data, d.properties.geounit, d3.select(this))
-        });
-
-        country.on("mouseout", function () {
-            mouseout(d3.select(this))
-        });
     });
 }
 
 doPlot('Reptilien');
+
+
+function translateCountryName(countryId) {
+    var translations = {
+        "austria": "Österreich",
+        "belgium": "Belgien",
+        "czechrepublic": "Tschechische Republik",
+        "denmark": "Dänemark",
+        "estonia": "Estland",
+        "finland": "Finnland",
+        "france": "Frankreich",
+        "germany": "Deutschland",
+        "greece": "Griechenland",
+        "hungary": "Ungarn",
+        "iceland": "Island",
+        "ireland": "Irland",
+        "italy": "Italien",
+        "latvia": "Lettland",
+        "lithuania": "Litauen",
+        "luxembourg": "Luxemburg",
+        "netherlands": "Niederlande",
+        "norway": "Norwegen",
+        "poland": "Polen",
+        "portugal": "Portugal",
+        "slovakia": "Slowakei",
+        "slovenia": "Slowenien",
+        "spain": "Spanien",
+        "sweden": "Schweden",
+        "switzerland": "Schweiz",
+        "england": "England"
+    };
+
+    var translatedName = translations[countryId.toLowerCase()];
+    return translatedName || 'Translation not available';
+}
