@@ -52,7 +52,7 @@ function createLegendLifeIndex() {
     index.append("text")
         .attr("x", 70)
         .attr("y", 15)
-        .attr("font-size", "1rem")
+        .attr("font-size", "1.1rem")
         .attr("fill", "#efedea")
         .text("Life Quality Index (Pkt.)")
         .style("text-anchor", "middle");

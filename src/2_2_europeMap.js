@@ -107,7 +107,7 @@ function createLegendEndangeredSpecies() {
         .attr("y", 15)
         .text("Bedroht (%)")
         .attr("fill", "#efedea")
-        .attr("font-size", "1rem")
+        .attr("font-size", "1.1rem")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -136,27 +136,16 @@ function createLegendEndangeredSpecies() {
 
 createLegendEndangeredSpecies()
 
-//------BUTTONS-----------------------------------------------------
-d3.select("#reptilien")
-    .append("europe")
+//------SELECTS-----------------------------------------------------
 
-d3.select("#saeugetiere")
-    .append("europe")
+const selectLabel = g.append("g")
+    .attr("id", "legend")
+    .attr("transform", `translate(${35},${415})`);
 
-d3.select("#voegel")
-    .append("europe")
-
-d3.select("#amphibien")
-    .append("europe")
-
-d3.select("#fisch")
-    .append("europe")
-
-d3.select("#wirbellose")
-    .append("europe")
-
-d3.select("#all")
-    .append("europe")
+//  b. add coloured rect to legend_entry
+selectLabel.append("text")
+    .attr("fill", "#efedea")
+    .text("Untersuche die Bedrohungslage von:")
 
 
 const animaltype = d3.select("#animal-type")

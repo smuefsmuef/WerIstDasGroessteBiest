@@ -138,6 +138,10 @@ img {
     color: #efedea;
 }
 
+#legend {
+    font-size: 1.1rem;
+}
+
 /* Title Section */
 #title {
     text-align: center;
