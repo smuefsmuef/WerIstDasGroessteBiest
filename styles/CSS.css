@@ -87,9 +87,10 @@ img {
 }
 
 .title-background {
-    background-color: #e70101;
-    color: #0a1014;
-    font-size: 3.5rem;
+    background-color: #0a1014;
+    opacity: 0.8;
+    color: #e70101 ;
+    font-size: 3rem;
     line-height: 1.5;
     font-style: italic;
     padding: .3em .7em .2em .4em;
