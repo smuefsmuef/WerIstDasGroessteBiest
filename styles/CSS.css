@@ -37,9 +37,10 @@ img {
     line-height: 1.5;
 }
 
-.text-small {
+.text-small > a, .text-small {
     font-size: 1.1rem;
     line-height: 1.5;
+    color: #355463;
 }
 
 
@@ -223,6 +224,7 @@ hr {
     color: white;
 }
 
+
 #chart-title {
     font-size: 24px;
     text-anchor: start;
@@ -243,17 +245,14 @@ hr {
     text-anchor: middle;
 }
 
-#context-holder {
-
-}
 
 #context-label {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     font-family: 'DM Sans', sans-serif;
 }
 
 .stop-left-human {
-    stop-color: #ddaf8c;
+    stop-color: #F1E8CB;
 }
 
 .stop-right-human {

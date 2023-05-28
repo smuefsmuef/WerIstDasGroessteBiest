@@ -10,7 +10,7 @@ const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
-    .attr("width", canvWidthHuman )
+    .attr("width", canvWidthHuman)
     .attr("height", canvHeightHuman);
 
 
@@ -91,15 +91,15 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
         if (value > 90) {
             return '#1698f1'
         } else if (80 < value && value < 90) {
-            return '#489ed8'
+            return '#41A8E9'
         } else if (70 < value && value < 80) {
-            return '#69a2c7'
+            return '#6DB8E1'
         } else if (60 < value && value < 70) {
-            return '#9ba7ae'
+            return '#99C8DA'
         } else if (50 < value && value < 60) {
-            return '#bcab9d'
+            return '#C5D8D2'
         } else if (0 < value && value < 50) {
-            return '#ddaf8c'
+            return '#F1E8CB'
         } else {
             return "#333"
         }
@@ -111,7 +111,7 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([20, 56])
+        .center([20, 55])
         .scale(400)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);

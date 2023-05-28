@@ -26,7 +26,7 @@ const g = svgMap.append("g")
 function mouseover(species, countryId) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
-        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " sind vom Aussterben bedroht.");
+        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% Arten sind vom Aussterben bedroht.");
     }
 }
 
@@ -43,7 +43,7 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-80},${-80})`)
+        .attr("transform", `translate(${-100},${-60})`)
 
     contextHolder.append("text")
         .attr("x", 65)
@@ -61,7 +61,6 @@ function createLegendEndangeredSpecies() {
         .attr("id", "legend")
         .attr("transform", `translate(${-40},${120})`);
 
-//  b. add coloured rect to legend_entry
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
@@ -102,7 +101,7 @@ function createLegendEndangeredSpecies() {
         .attr("font-size", "1rem")
         .attr("x", 110)
         .attr("y", 40)
-        .text(" > 50");
+        .text(" >70");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -149,18 +148,22 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value > 50) {
-            return '#a2163e'
-        } else if (40 < value && value < 50) {
-            return '#B1405A'
-        } else if (30 < value && value < 40) {
-            return '#C16A76'
-        } else if (20 < value && value < 30) {
-            return '#D19492'
-        } else if (10 < value && value < 20) {
-            return '#E1BEAE'
-        } else if (0 < value && value < 10) {
-            return '#f1e8cb'
+        if (value > 70) {
+            return '#A2163E';
+        } else if (value > 60) {
+            return '#AD3452';
+        } else if (value > 50) {
+            return '#B85266';
+        } else if (value > 40) {
+            return '#C3707A';
+        } else if (value > 30) {
+            return '#CF8E8E';
+        } else if (value > 20) {
+            return '#DAACA2';
+        } else if (value > 10) {
+            return '#E5CAB6';
+        } else if (value > 0) {
+            return '#F1E8CB';
         } else {
             return "#333"
         }
@@ -247,38 +250,38 @@ function doPlot(selectedOption) {
         });
 
         // todo refactoring aller buttons
-        d3.select("#reptilien").on("click", function (d) {
+        d3.select("#reptilien").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
 
-        d3.select("#saeugetiere").on("click", function (d) {
+        d3.select("#saeugetiere").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-        d3.select("#voegel").on("click", function (d) {
+        d3.select("#voegel").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-        d3.select("#amphibien").on("click", function (d) {
+        d3.select("#amphibien").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-        d3.select("#fisch").on("click", function (d) {
+        d3.select("#fisch").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-        d3.select("#wirbellose").on("click", function (d) {
+        d3.select("#wirbellose").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
-        d3.select("#all").on("click", function (d) {
+        d3.select("#all").on("mouseover", function (d) {
             selectedOption = d3.select(this).property("value")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
