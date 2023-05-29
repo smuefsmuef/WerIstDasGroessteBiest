@@ -5,7 +5,7 @@
     {
       "name": "Säugetiere",
       "color": "#90b376",
-      "image": "img/phylopic/braunbaer.svg",
+      "image": "img/animal_icons/Animals Bundle-28.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -21,7 +21,7 @@
               "value": 1,
               "color": "yellow"
             }
-            ]
+          ]
         },
         {
           "name": "Gefährdet",
@@ -166,7 +166,7 @@
     {
       "name": "Fische",
       "color": "#90b376",
-      "image": "img/animal_icons/Animals Bundle-50.svg",
+      "image": "img/phylopic/fish.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -190,6 +190,549 @@
           "group": "C",
           "value": 15,
           "color": "#ff230a"
+        }
+      ]
+    },
+    {
+      "name": "Landschnecken und Grossmuscheln",
+      "color": "#90b376",
+      "image": "img/phylopic/snail.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 120,
+          "color": "#90b376"
+        },
+        {
+          "name": "Potenziell gefährdet",
+          "color": "#fc897c",
+          "children": [
+            {
+              "name": "Potenziell gefährdete Schneckenarten: \nPuppen-Quellschnecke\nRundmundige Quellschnecke\nStrobels Schliessmundschnecke\nSüdalpen-Wachsschnecke\nSüdliche Riemenschnecke\nBerg-Haarschnecke",
+              "value": 6,
+              "color": "#fc897c"
+            }
+          ]
+        },
+        {
+          "name": "Gefährdet",
+          "color": "#ff6352",
+          "children": [
+            {
+              "name": "Gefährdete Schneckenarten: \nSchöne Landdeckelschnecke\nAlpen-Brunnenschnecke\nWeitmündige Schlammschnecke\nScharfe Tellerschnecke\nGlänzende Tellerschnecke\nKleine Tönnchenschnecke\nWulstige Kornschnecke\nSumpf-Windelschnecke\nGestreifte Windelschnecke\nVierzahn-Vielfrassschnecke\nWeisse Vielfrassschnecke, Zebraschnecke\nZahnlose Schliessmundschnecke\nAlpweiden-Glasschnecke\nBerg-Glasschnecke\nRötliche Daudebardie\nHelle Nacktschnecke\nIgel-Wegschnecke\nRote Wegschnecke\nQuendelschnecke\nFlache Teichmuschel\nQuell-Blasenschnecke\nGlattes Posthörnchen\nRotbraune Zylinderwindelschnecke\nGletscher-Glasschnecke\nBerg-Egelschnecke\nGenabelte Maskenschnecke\nSee-Erbsenmuschel                       \nKreisrunde Erbsenmuschel                \nKleinste Erbsenmuschel                  \nSchmidts Quellschnecke\nFerraris Puppenschnecke\nBerg-Glanzschnecke\nSichelmundschnecke\nEngadiner Felsenschnecke\nVierblatt-Zwergdeckelschnecke\nNidwaldner Haarschnecke\nGekerbte Jura-Haarschnecke",
+              "value": 38,
+              "color": "#ff6352"
+            }
+          ]
+        },
+        {
+          "name": "Stark gefährdet",
+          "color": "#ff4c38",
+          "children": [
+            {
+              "name": "Stark gefährdete Schneckenarten: \nSpitze Sumpfdeckelschnecke\nKleine Schnauzenschnecke\nStumpfe Federkiemenschnecke\nGelippte Tellerschnecke\nZierliche Tellerschnecke\nVerbogenes Posthörnchen\nGenabelte Zwergpuppenschnecke\nIllyrische Kornschnecke\nSchmale Windelschnecke\nBauchige Windelschnecke\nGemeine Schliessmundschnecke\nGeradmund-Schliessmundschnecke\nZierliche Schliessmundschnecke\nGestreifte-Glasschnecke\nGrosse Glasschnecke\nWeitmündige Glasschnecke\nKleine Daudebardie\nSüdliche Malermuschel\nAufgeblasene Flussmuschel\nKugelige Erbsenmuschel\nGekritzte Mulmnadel\nSüdliche Zwergpuppenschnecke\nGrosse Kornschnecke\nPuppenkornschnecke\nAlpen-Puppenschnecke\nFeingerippte Grasschnecke\nKleinste Zylinderwindelschnecke\nDreizahn-Vielfrassschnecke\nGipfel-Glasschnecke\nMalermuschel\nBayerische Federkiemenschnecke\nSüdalpen-Pagodenschnecke\nSüdtessiner Haferkornschnecke\nHarfenschnecke\nBlanke Windelschnecke\nStuders Schliessmundschnecke\nSüdalpen-Schliessmundschnecke\nRötliche Bernsteinschnecke\nBergamasker Felsenschnecke\nAchat-FelsenschneckeMoor\nWindelschnecke",
+              "value": 42,
+              "color": "#ff4c38"
+            }
+          ]
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "color": "#ff230a",
+          "children": [
+            {
+              "name": "Vom Aussterben bedrohte Schneckenarten: \nPSchöne Erbsenmuschel\nGemeine Kahnschnecke\nGraue Schliessmundschnecke\nLimace des caves, Grande L. jaune, tachetée\nGlänzende Glattschnecke\nWeitmündige Haferkornschnecke\nBläuliche Kornschnecke\nZweizähniges Moospüppchen\nGrosse Grasschnecke\nVierzähnige Windelschnecke\nArktische Windelschnecke\nSimplon-Schliessmundschnecke\nBauchige Blindschnecke\nSüdalpen-Glanzschnecke\nFarblose Glanzschnecke\nSchwarze Kielnacktschnecke\nZwerg-Heideschnecke\nGrosse Felsenschnecke\n\nGemeine Bachmuschel",
+              "value": 19,
+              "color": "#ff230a"
+            }
+          ]
+        },
+        {
+          "name": "Ausgestorben",
+          "color": "white",
+          "children": [
+            {
+              "name": "Ausgestorbene Vogelarten: \nInsubrische Zwergdeckelschnecke\nKar-Felsenschnecke\nKleinzahn-Flussmuschel",
+              "value": 3,
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insekten",
+      "color": "#90b376",
+      "image": "img/animal_icons/Animals Bundle-84.svg",
+      "children": [
+        {
+          "name": "Eintagsfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/eintagsfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 41,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Eintagsfliegenarten: \n",
+                  "value": 9,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Eintagsfliegenarten: \n",
+                  "value": 14,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Eintagsfliegenarten: \n",
+                  "value": 7,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Eintagsfliegenarten: \n",
+                  "value": 12,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Eintagsfliegenarten: \n",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Heuschrecken",
+          "color": "#90b376",
+          "image": "img/phylopic/heuschrecke.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 43,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Heuschreckenarten: \n",
+                  "value": 19,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Heuschreckenarten: \n",
+                  "value": 19,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Heuschreckenarten: \n",
+                  "value": 8,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Heuschreckenarten: \n",
+                  "value": 10,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Heuschreckenarten: \n",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Käfer",
+          "color": "#90b376",
+          "image": "img/phylopic/kaefer.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 91,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Käferarten: \n",
+                  "value": 47,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Käferarten: \n",
+                  "value": 41,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Käferarten: \n",
+                  "value": 44,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Käferarten: \n",
+                  "value": 31,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Käferarten: \n",
+                  "value": 2,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Köcherfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/koecherfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 101,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Köcherfliegenarten: \n",
+                  "value": 43,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Köcherfliegenarten: \n",
+                  "value": 54,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Köcherfliegenarten: \n",
+                  "value": 47,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Köcherfliegenarten: \n",
+                  "value": 29,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Köcherfliegenarten: \n",
+                  "value": 17,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Libellen",
+          "image": "img/phylopic/libelle.svg",
+          "color": "#90b376",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 42,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Libellenarten: \n",
+                  "value": 6,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Libellenarten: \n",
+                  "value": 11,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Libellenarten: \n",
+                  "value": 9,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Libellenarten: \n",
+                  "value": 4,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Libellenarten: \n",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Schmetterlinge, Falter & Widderchen",
+          "color": "#90b376",
+          "image": "img/phylopic/schmetterling.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 104,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Schmetterlinge & Falterarten: \n",
+                  "value": 44,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Schmetterlinge & Falterarten: \n",
+                  "value": 38,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Schmetterlinge & Falterarten: \n",
+                  "value": 27,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Schmetterlinge & Falterarten: \n",
+                  "value": 10,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Schmetterlinge & Falterarten: \n",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Steinfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/steinfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 46,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Steinfliegenarten: \n",
+                  "value": 19,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Steinfliegenarten: \n",
+                  "value": 13,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Steinfliegenarten: \n",
+                  "value": 14,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Steinfliegenarten: \n",
+                  "value": 10,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Steinfliegenarten: \n",
+                  "value": 7,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
