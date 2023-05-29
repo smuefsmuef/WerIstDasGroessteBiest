@@ -138,16 +138,23 @@ createLegendEndangeredSpecies()
 
 const selectLabel = g.append("g")
     .attr("id", "legend")
-   // .attr("transform", `translate(${270},${-40})`); //oben rechts
+    .attr("transform", `translate(${270},${-40})`); //oben rechts
    // .attr("transform", `translate(${-70},${45})`); // //oben links
-    .attr("transform", `translate(${-70},${485})`); // //unten links
+   // .attr("transform", `translate(${-70},${485})`); // //unten links
 
 //  b. add coloured rect to legend_entry
 selectLabel.append("text")
     .attr("fill", "#efedea")
-    .attr("x", 0)
+    .attr("x", 100)
     .attr("y", 0)
-    .text("Untersuche die Bedrohungslage von:")
+    .text("Untersuche die")
+
+//  b. add coloured rect to legend_entry
+selectLabel.append("text")
+    .attr("fill", "#efedea")
+    .attr("x", 100)
+    .attr("y", 15)
+    .text("Bedrohungslage:")
 
 // Define the SVG pattern
 var defs = selectLabel.append("defs");
@@ -168,12 +175,12 @@ function createPatterns(id) {
 }
 
 selectLabel.append("circle")
-    .attr("cx", 15 )
-    .attr("cy", 20)
-    .attr("r", 15)
-  //  .attr("id", "reptilien")
-    .style("fill", createPatterns("reptilien"))  // Apply the pattern as the fill
-    //.style("fill", "red")  // Apply the pattern as the fill
+    .attr("cx", 135 )
+    .attr("cy", 60)
+    .attr("r", 30)
+   .attr("id", "reptilien")
+   // .style("fill", createPatterns("reptilien"))  // Apply the pattern as the fill
+    .style("fill", "purple")  // Apply the pattern as the fill
     .attr("stroke", "black")
     .attr("class", "animal-select-button selected")
     .attr("stroke-width", "1")
@@ -185,9 +192,9 @@ selectLabel.append("circle")
 
 
 selectLabel.append("circle")
-    .attr("cx", 47 )
-    .attr("cy", 20)
-    .attr("r", 15)
+    .attr("cx", 135 )
+    .attr("cy", 130)
+    .attr("r", 30)
     .attr("fill", "green")
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
@@ -199,10 +206,10 @@ selectLabel.append("circle")
     .attr("id", "amphibien")
 
 selectLabel.append("circle")
-    .attr("cx", 79 )
-    .attr("cy", 20)
-    .attr("r", 15)
-    .attr("fill", "blue")
+    .attr("cx", 135 )
+    .attr("cy", 200)
+    .attr("r", 30)
+    .attr("fill", "lightblue")
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
     .attr("stroke-width", "1")
@@ -213,10 +220,10 @@ selectLabel.append("circle")
     .attr("id", "saeugetiere")
 
 selectLabel.append("circle")
-    .attr("cx", 111 )
-    .attr("cy", 20)
-    .attr("r", 15)
-    .attr("fill", "blue")
+    .attr("cx", 135 )
+    .attr("cy", 270)
+    .attr("r", 30)
+    .attr("fill", "lightyellow")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
     .attr("stroke-width", "1")
@@ -227,10 +234,10 @@ selectLabel.append("circle")
     .attr("id", "voegel")
 
 selectLabel.append("circle")
-    .attr("cx", 143 )
-    .attr("cy", 20)
-    .attr("r", 15)
-    .style("fill", "blue")  // Apply the pattern as the fill
+    .attr("cx", 135 )
+    .attr("cy", 340)
+    .attr("r", 30)
+    .style("fill", "grey")  // Apply the pattern as the fill
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
     .attr("stroke-width", "1")
@@ -242,9 +249,9 @@ selectLabel.append("circle")
 
 
 selectLabel.append("circle")
-    .attr("cx", 175 )
-    .attr("cy", 20)
-    .attr("r", 15)
+    .attr("cx", 135 )
+    .attr("cy", 410)
+    .attr("r", 30)
     .attr("fill", "blue")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
@@ -321,7 +328,7 @@ function doPlot(selectedOption) {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([40, 55])
+        .center([30, 55])
         .scale(430)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);

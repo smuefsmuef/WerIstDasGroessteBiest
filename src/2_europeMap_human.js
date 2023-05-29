@@ -127,7 +127,7 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([40, 55])
+        .center([30, 55])
         .scale(430)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
