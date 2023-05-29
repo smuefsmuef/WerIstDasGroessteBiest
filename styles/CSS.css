@@ -225,7 +225,6 @@ hr {
     color: white;
 }
 
-
 #chart-title {
     font-size: 24px;
     text-anchor: start;
@@ -398,20 +397,6 @@ article {
     font-size: 1.5rem;
 }
 
-/*Counter*/
-.clock {
-    text-align: center;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: #ddddde;
-}
-
-
-.clock .display {
-    font-size: 60px;
-    color: cyan;
-    letter-spacing: 5px;
-}
 
 .tooltip {
     position: absolute;
