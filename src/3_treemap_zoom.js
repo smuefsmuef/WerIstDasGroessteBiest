@@ -18,7 +18,7 @@
 
     const margin = {top: 30, right: 30, bottom: 70, left: 120},
         widthTreemap = 600 - margin.left - margin.right,
-        heightTreemap = 450 - margin.top - margin.bottom;
+        heightTreemap = 400 - margin.top - margin.bottom;
 
     const x = d3.scaleLinear().rangeRound([0, widthTreemap]);
     const y = d3.scaleLinear().rangeRound([0, heightTreemap]);
