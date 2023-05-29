@@ -21,6 +21,8 @@ const gh = humansMaps.append("g")
 ;
 
 
+//------LEGEND-----------------------------------------------------
+
 function createLegendLifeIndex() {
 
     // 1. create a group to hold the legend
@@ -153,17 +155,31 @@ function doPlotHumans() {
             .append("path")
             .attr("id", d => d.id)
             .attr("class", "countries")
-            .attr("d", pathGenerator);
+            .attr("d", pathGenerator)         .attr("class", "europe-boundary");
 
         //initially color the country
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
 
         // boundaries of each country
         gh.append("path")
-            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits))
+            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
 
+        country_humans.on("mouseover", (event, d) => {
+         const percent = life_index_data[0]['France']
+        console.log(life_index_data[0],
+            )
+
+
+            console.log("ed", d.properties.geounit)
+            console.log("esd", percent)
+            mouseover(d.properties.geounit, percent)
+        });
+
+        country_humans.on("mouseout", function () {
+            mouseout(d3.select(this))
+        });
     });
 
 }

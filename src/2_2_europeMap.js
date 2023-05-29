@@ -59,9 +59,7 @@ function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-      //  .attr("transform", `translate(${-80},${-80})`);
-     //   .attr("transform", `translate(${330},${400})`);
-.attr("transform", `translate(${-80},${-55})`);
+        .attr("transform", `translate(${-80},${-55})`);
 
     index.append("rect")
         .attr("x", 10)
@@ -138,35 +136,31 @@ createLegendEndangeredSpecies()
 
 const selectLabel = g.append("g")
     .attr("id", "legend")
-    .attr("transform", `translate(${270},${-40})`); //oben rechts
-   // .attr("transform", `translate(${-70},${45})`); // //oben links
-   // .attr("transform", `translate(${-70},${485})`); // //unten links
+    .attr("transform", `translate(${290},${-40})`);
 
-//  b. add coloured rect to legend_entry
 selectLabel.append("text")
     .attr("fill", "#efedea")
     .attr("x", 100)
     .attr("y", 0)
     .text("Untersuche die")
 
-//  b. add coloured rect to legend_entry
 selectLabel.append("text")
     .attr("fill", "#efedea")
     .attr("x", 100)
     .attr("y", 15)
     .text("Bedrohungslage:")
 
-// Define the SVG pattern
+// svg pattern
 var defs = selectLabel.append("defs");
 
 function createPatterns(id) {
     defs.append("pattern")
-       .attr("id", id)
+        .attr("id", id)
         .attr("patternUnits", "userSpaceOnUse")
         .attr("width", 30)
         .attr("height", 30)
         .append("image")
-        .attr("xlink:href", "/img/labels/"+ id +".jpg")
+        .attr("xlink:href", "/img/labels/" + id + ".jpg")
         .attr("width", 30)
         .attr("z-index", "199")
         .attr("height", 30);
@@ -174,14 +168,15 @@ function createPatterns(id) {
 }
 
 selectLabel.append("circle")
-    .attr("cx", 135 )
+    .attr("cx", 145)
     .attr("cy", 60)
-    .attr("r", 30)
-   .attr("id", "reptilien")
-    .style("fill", "purple")  // Apply the pattern as the fill
-    .style("fill", createPatterns("reptilien"))  // Apply the pattern as the fill
+    .attr("r", 20)
+    .attr("id", "reptilien")
+    .style("fill", "purple")
+    .style("fill", createPatterns("reptilien"))
     .attr("stroke", "black")
-    .attr("class", "animal-select-button selected")
+    .attr("class", "animal-select-button")
+    .classed("selected", true)
     .attr("stroke-width", "1")
     .attr("wert", function (d) {
         return "Reptilien"
@@ -189,13 +184,12 @@ selectLabel.append("circle")
     .attr("type", "submit")
 
 
-
 selectLabel.append("circle")
-    .attr("cx", 135 )
-    .attr("cy", 130)
-    .attr("r", 30)
+    .attr("cx", 145)
+    .attr("cy", 110)
+    .attr("r", 20)
     .attr("fill", "green")
-    .style("fill", createPatterns("amphibien"))  // Apply the pattern as the fill
+    .style("fill", createPatterns("amphibien"))
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
     .attr("stroke-width", "1")
@@ -206,12 +200,11 @@ selectLabel.append("circle")
     .attr("id", "amphibien")
 
 selectLabel.append("circle")
-    .attr("cx", 135 )
-    .attr("cy", 200)
-    .attr("r", 30)
+    .attr("cx", 145)
+    .attr("cy", 160)
+    .attr("r", 20)
     .attr("fill", "lightblue")
-   .style("fill", createPatterns("saeugetiere"))  // Apply the pattern as the fill
-
+    .style("fill", createPatterns("saeugetiere"))
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
     .attr("stroke-width", "1")
@@ -222,10 +215,10 @@ selectLabel.append("circle")
     .attr("id", "saeugetiere")
 
 selectLabel.append("circle")
-    .attr("cx", 135 )
-    .attr("cy", 270)
-    .attr("r", 30)
-    .style("fill", createPatterns("voegel"))  // Apply the pattern as the fill
+    .attr("cx", 145)
+    .attr("cy", 210)
+    .attr("r", 20)
+    .style("fill", createPatterns("voegel"))
     .attr("fill", "lightyellow")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
@@ -237,11 +230,11 @@ selectLabel.append("circle")
     .attr("id", "voegel")
 
 selectLabel.append("circle")
-    .attr("cx", 135 )
-    .attr("cy", 340)
-    .attr("r", 30)
-    .style("fill", createPatterns("fisch"))  // Apply the pattern as the fill
-    .style("fill", "grey")  // Apply the pattern as the fill
+    .attr("cx", 145)
+    .attr("cy", 260)
+    .attr("r", 20)
+    .style("fill", "grey")
+    .style("fill", createPatterns("fisch"))
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
     .attr("stroke-width", "1")
@@ -253,10 +246,10 @@ selectLabel.append("circle")
 
 
 selectLabel.append("circle")
-    .attr("cx", 135 )
-    .attr("cy", 410)
-    .attr("r", 30)
-    .style("fill", createPatterns("wirbellose"))  // Apply the pattern as the fill
+    .attr("cx", 145)
+    .attr("cy", 310)
+    .attr("r", 20)
+    .style("fill", createPatterns("wirbellose"))
     .attr("fill", "blue")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
@@ -266,21 +259,6 @@ selectLabel.append("circle")
     })
     .attr("type", "submit")
     .attr("id", "wirbellose")
-
-
-/*selectLabel.append("circle")
-    .attr("cx", 207 )
-    .attr("cy", 20)
-    .attr("r", 15)
-    .attr("fill", "blue")
-    .attr("stroke", "black")
-    .attr("class", "animal-select-button ")
-    .attr("stroke-width", "1")
-    .attr("wert", function (d) {
-        return "Pflanzen und Tiere"
-    })
-    .attr("type", "submit")
-    .attr("id", "all")*/
 
 // tierart in titel
 const animaltype = d3.select("#animal-type")
@@ -353,30 +331,6 @@ function doPlot(selectedOption) {
 
         var countries = topojson.feature(europe, europe.objects.continent_Europe_subunits); // kriegen die gazen grenzen/kantone
 
-        /* todo hover effect map
-        let mouseOver = function(d) {
-            d3.selectAll(".Country")
-                .transition()
-                .duration(200)
-                .style("opacity", .5)
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .style("opacity", 1)
-                .style("stroke", "black")
-        }
-        let mouseLeave = function(d) {
-            d3.selectAll(".Country")
-                .transition()
-                .duration(200)
-                .style("opacity", 1)
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .style("stroke", "transparent")
-        }
-        */
-
 
         const country = g.selectAll("path.countries")
             .data(countries.features)
@@ -407,47 +361,77 @@ function doPlot(selectedOption) {
 
         // todo refactoring aller buttons
         d3.selectAll("#reptilien").on("mouseover", function (d) {
-            console.log("reptilien", this)
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#reptilien").classed("selected", true)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
         })
 
         d3.selectAll("#saeugetiere").on("mouseover", function (d) {
-            console.log("on hover saeugetiere", this)
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#saeugetiere").classed("selected", true)
+            d3.selectAll("#reptilien").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
+
         })
 
         d3.selectAll("#voegel").on("mouseover", function (d) {
-            console.log("on hover oegel", this)
-
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#voegel").classed("selected", true)
+            d3.selectAll("#reptilien").classed("selected", false)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
+
         })
         d3.selectAll("#amphibien").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#amphibien").classed("selected", true)
+            d3.selectAll("#reptilien").classed("selected", false)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
+
         })
         d3.selectAll("#fisch").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#fisch").classed("selected", true)
+            d3.selectAll("#reptilien").classed("selected", false)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
+
         })
         d3.selectAll("#wirbellose").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            d3.selectAll("#wirbellose").classed("selected", true)
+            d3.selectAll("#reptilien").classed("selected", false)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
         })
-      /*  d3.select("#all").on("mouseover", function (d) {
-            selectedOption = d3.select(this).attr("wert")
-            fillCountry(country, species, selectedOption)
-            animaltype.text(selectedOption)
-        })
-*/
 
     });
 }

@@ -315,7 +315,10 @@ hr {
 }
 
 .animal-select-button:hover {
-    transform: rotate(360deg);
+    opacity: 1;
+}
+
+.selected {
     opacity: 1;
 }
 
