@@ -2,7 +2,7 @@
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
 // create svgMap canvas
-const canvHeight = 500, canvWidth = 800;
+const canvHeight = 600, canvWidth = 500;
 const svgMap = d3.select("#europe") // body
     .append("svg")
     .attr("width", canvWidth)
@@ -59,7 +59,7 @@ function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${120})`);
+        .attr("transform", `translate(${-80},${-55})`);
 
     index.append("rect")
         .attr("x", 10)
@@ -111,6 +111,23 @@ function createLegendEndangeredSpecies() {
         .attr("height", 70)
         .attr("fill", "none")
         .attr("stroke", "none");
+
+    // grey box
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#333")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
 }
 
 createLegendEndangeredSpecies()
@@ -177,8 +194,8 @@ function doPlot(selectedOption) {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([20, 56])
-        .scale(400)
+        .center([10, 55])
+        .scale(430)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
 

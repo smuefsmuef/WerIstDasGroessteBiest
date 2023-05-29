@@ -25,7 +25,7 @@ h2, h3, text, p {
 
 img {
     border-radius: 50%;
-    width: 4rem;
+    width: 6rem;
     border: 2px solid white;
 }
 
@@ -371,7 +371,7 @@ article {
     position: relative;
     padding: 0 1rem;
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     background-color: #0a1014;
 }
 

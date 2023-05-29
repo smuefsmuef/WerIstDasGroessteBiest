@@ -1,7 +1,7 @@
 // check https://d3-graph-gallery.com/graph/bubblemap_template.html
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
-const canvHeightHuman = 500, canvWidthHuman = 800;
+const canvHeightHuman = 600, canvWidthHuman = 500;
 // calc the width and height depending on margin_mapHumans.
 const margin_mapHuman = {top: 80, right: 80, bottom: 50, left: 70};
 const width_mapHuman = canvWidthHuman - margin_mapHuman.left - margin_mapHuman.right;
@@ -26,9 +26,9 @@ function createLegendLifeIndex() {
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${120})`);
+        .attr("transform", `translate(${-80},${-55})`);
 
-    //  b. add coloured rect to legend_entry
+    // gradient
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
@@ -78,8 +78,24 @@ function createLegendLifeIndex() {
         .attr("width", 120)
         .attr("height", 70)
         .attr("fill", "none")
-        .attr("stroke", "none")
-    ;
+        .attr("stroke", "none");
+
+    // grey box
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#333")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
 }
 
 createLegendLifeIndex()
@@ -111,8 +127,8 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([20, 55])
-        .scale(400)
+        .center([10, 55])
+        .scale(430)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
 
