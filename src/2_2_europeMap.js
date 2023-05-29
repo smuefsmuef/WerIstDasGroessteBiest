@@ -2,7 +2,7 @@
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
 // create svgMap canvas
-const canvHeight = 600, canvWidth = 500;
+const canvHeight = 600, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
     .append("svg")
     .attr("width", canvWidth)
@@ -26,7 +26,7 @@ const g = svgMap.append("g")
 function mouseover(species, countryId) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
-        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% Arten sind vom Aussterben bedroht.");
+        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " bedroht.");
     }
 }
 
@@ -43,7 +43,7 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-100},${-60})`)
+        .attr("transform", `translate(${-135},${20})`)
 
     contextHolder.append("text")
         .attr("x", 65)
@@ -59,7 +59,9 @@ function createLegendEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-55})`);
+      //  .attr("transform", `translate(${-80},${-80})`);
+     //   .attr("transform", `translate(${330},${400})`);
+.attr("transform", `translate(${-80},${-55})`);
 
     index.append("rect")
         .attr("x", 10)
@@ -115,10 +117,10 @@ function createLegendEndangeredSpecies() {
     // grey box
     index.append("rect")
         .attr("x", 10)
-        .attr("y", (d,i) => 30 * i + 50)
+        .attr("y", (d, i) => 30 * i + 50)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#333")
+        .attr("fill", "#333")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
@@ -136,14 +138,139 @@ createLegendEndangeredSpecies()
 
 const selectLabel = g.append("g")
     .attr("id", "legend")
-    .attr("transform", `translate(${35},${415})`);
+   // .attr("transform", `translate(${270},${-40})`); //oben rechts
+   // .attr("transform", `translate(${-70},${45})`); // //oben links
+    .attr("transform", `translate(${-70},${485})`); // //unten links
 
 //  b. add coloured rect to legend_entry
 selectLabel.append("text")
     .attr("fill", "#efedea")
+    .attr("x", 0)
+    .attr("y", 0)
     .text("Untersuche die Bedrohungslage von:")
 
+// Define the SVG pattern
+var defs = selectLabel.append("defs");
 
+function createPatterns(id) {
+    defs.append("pattern")
+       .attr("id", id)
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("width", 30)
+        .attr("height", 30)
+        .append("image")
+        .attr("xlink:href", "/img/labels/"+ id +".jpg")
+        .attr("width", 30)
+        .attr("z-index", "199")
+        .attr("height", 30);
+
+    return "url(#" + id + ")";
+}
+
+selectLabel.append("circle")
+    .attr("cx", 15 )
+    .attr("cy", 20)
+    .attr("r", 15)
+  //  .attr("id", "reptilien")
+    .style("fill", createPatterns("reptilien"))  // Apply the pattern as the fill
+    //.style("fill", "red")  // Apply the pattern as the fill
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button selected")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Reptilien"
+    })
+    .attr("type", "submit")
+
+
+
+selectLabel.append("circle")
+    .attr("cx", 47 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .attr("fill", "green")
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Amphibien"
+    })
+    .attr("type", "submit")
+    .attr("id", "amphibien")
+
+selectLabel.append("circle")
+    .attr("cx", 79 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .attr("fill", "blue")
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Säugetiere"
+    })
+    .attr("type", "submit")
+    .attr("id", "saeugetiere")
+
+selectLabel.append("circle")
+    .attr("cx", 111 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .attr("fill", "blue")
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button ")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Vögel"
+    })
+    .attr("type", "submit")
+    .attr("id", "voegel")
+
+selectLabel.append("circle")
+    .attr("cx", 143 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .style("fill", "blue")  // Apply the pattern as the fill
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button ")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Fische"
+    })
+    .attr("type", "submit")
+    .attr("id", "fisch")
+
+
+selectLabel.append("circle")
+    .attr("cx", 175 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .attr("fill", "blue")
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button ")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Wirbellose"
+    })
+    .attr("type", "submit")
+    .attr("id", "wirbellose")
+
+
+/*selectLabel.append("circle")
+    .attr("cx", 207 )
+    .attr("cy", 20)
+    .attr("r", 15)
+    .attr("fill", "blue")
+    .attr("stroke", "black")
+    .attr("class", "animal-select-button ")
+    .attr("stroke-width", "1")
+    .attr("wert", function (d) {
+        return "Pflanzen und Tiere"
+    })
+    .attr("type", "submit")
+    .attr("id", "all")*/
+
+// tierart in titel
 const animaltype = d3.select("#animal-type")
     .append("europe")
     .append("text")
@@ -194,7 +321,7 @@ function doPlot(selectedOption) {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([10, 55])
+        .center([40, 55])
         .scale(430)
         .translate([width_map / 2, height_map / 2])
         .precision(.1);
@@ -268,38 +395,39 @@ function doPlot(selectedOption) {
 
         // todo refactoring aller buttons
         d3.select("#reptilien").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            console.log("reptilien")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
 
         d3.select("#saeugetiere").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
         d3.select("#voegel").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
         d3.select("#amphibien").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
         d3.select("#fisch").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
         d3.select("#wirbellose").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })
         d3.select("#all").on("mouseover", function (d) {
-            selectedOption = d3.select(this).property("value")
+            selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
         })

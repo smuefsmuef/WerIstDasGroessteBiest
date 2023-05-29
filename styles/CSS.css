@@ -27,6 +27,7 @@ img {
     border-radius: 50%;
     width: 6rem;
     border: 2px solid white;
+background-image: url('/img/labels/bird.jpg');
 }
 
 .text-normal {
