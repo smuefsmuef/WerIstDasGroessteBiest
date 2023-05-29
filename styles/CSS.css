@@ -27,7 +27,7 @@ img {
     border-radius: 50%;
     width: 6rem;
     border: 2px solid white;
-background-image: url('/img/labels/bird.jpg');
+background-image: url('/img/labels/voegel.jpg');
 }
 
 .text-normal {
@@ -305,12 +305,13 @@ hr {
 }
 
 .animal-select-button {
-    border: none;
+    stroke: beige;
+    stroke-width: 2px;
     cursor: pointer;
     appearance: none;
     background-color: inherit;
     /*transition: transform 0.7s ease-in-out;*/
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .animal-select-button:hover {
