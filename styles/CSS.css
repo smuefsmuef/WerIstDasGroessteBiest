@@ -252,19 +252,19 @@ hr {
 }
 
 .stop-left-human {
-    stop-color: #F1E8CB;
+    stop-color: #ff653e;
 }
 
 .stop-right-human {
-    stop-color: #0481ba; /* Teal */
+    stop-color: #69e3c2;
 }
 
 .stop-left-species {
-    stop-color: #f1e8cb;
+    stop-color: #69e3c2;
 }
 
 .stop-right-species {
-    stop-color: #ff653e;
+    stop-color: #ff653e ;
 }
 
 .filled-human {
