@@ -287,19 +287,19 @@ function fillCountry(country, species, selectedOption) {
         if (value > 70) {
             return '#FF2E16';
         } else if (value > 60) {
-            return '#FF4C38';
+            return '#F3412D';
         } else if (value > 50) {
-            return '#FF6959';
+            return '#E75444';
         } else if (value > 40) {
-            return '#FF877A';
+            return '#DB675C';
         } else if (value > 30) {
-            return '#FFA59B';
+            return '#CF7B73';
         } else if (value > 20) {
-            return '#FFC3BC';
+            return '#C38E8B';
         } else if (value > 10) {
-            return '#FFE1DD';
+            return '#B7A1A2';
         } else if (value > 0) {
-            return '#FFFFFF';
+            return '#ACB5BA';
         } else {
             return "#333"
         }

@@ -27,7 +27,6 @@ img {
     border-radius: 50%;
     width: 6rem;
     border: 2px solid white;
-background-image: url('/img/labels/voegel.jpg');
 }
 
 .text-normal {
@@ -62,10 +61,10 @@ background-image: url('/img/labels/voegel.jpg');
 
 /* Headings */
 .big-heading {
-    font-size: 8rem;
+    font-size: 20rem;
     line-height: 1.5;
-    color: #ffffff;
-    filter: brightness(3);
+    color: #A1AB95;
+   filter: brightness(1);
     font-family: 'Shrikhand', cursive;
 }
 
@@ -253,19 +252,19 @@ hr {
 }
 
 .stop-left-human {
-    stop-color: #F1E8CB;
+    stop-color: #B6BEDE;
 }
 
 .stop-right-human {
-    stop-color: #03b9ad;
+    stop-color: #819028;
 }
 
 .stop-left-species {
-    stop-color: #F1E8CB;
+    stop-color: #A0C8D1;
 }
 
 .stop-right-species {
-    stop-color: #ff653e ;
+    stop-color: #FF2E16 ;
 }
 
 
@@ -291,6 +290,14 @@ hr {
         transform: rotate(0);
         top: 70%;
     }
+
+    .big-heading {
+        font-size: 13rem;
+        line-height: 1.5;
+        color: #A1AB95;
+        filter: brightness(1);
+        font-family: 'Shrikhand', cursive;
+    }
 }
 
 @media (max-width: 1028px) {
@@ -302,6 +309,14 @@ hr {
         position: static;
         transform: rotate(0);
         top: 60%;
+    }
+
+    .big-heading {
+        font-size: 8rem;
+        line-height: 1.5;
+        color: #A1AB95;
+        filter: brightness(1);
+        font-family: 'Shrikhand', cursive;
     }
 }
 
