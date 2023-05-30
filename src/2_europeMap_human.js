@@ -107,20 +107,20 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
         if (value > 90) {
-            return '#69E3C2'
-        } else if (80 < value && value < 90) {
-            return '#82CEAC'
-        } else if (70 < value && value < 80) {
-            return '#9BB996'
-        } else if (60 < value && value < 70) {
-            return '#B4A480'
-        } else if (50 < value && value < 60) {
-            return '#CD8F6A'
-        } else if (0 < value && value < 50) {
-            return '#FF653E'
-        } else {
-            return "#333"
-        }
+            return '#03b9ad'
+            } else if (80 < value && value < 90) {
+                return '#32C2B3'
+            } else if (70 < value && value < 80) {
+                return '#62CBB9'
+            } else if (60 < value && value < 70) {
+                return '#91D5BF'
+            } else if (50 < value && value < 60) {
+                return '#C1DEC5'
+            } else if (0 < value && value < 50) {
+                return '#F1E8CB'
+            } else {
+                return "#333"
+            }
     })
 }
 
