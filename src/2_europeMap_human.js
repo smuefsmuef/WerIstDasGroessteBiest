@@ -1,7 +1,7 @@
 // check https://d3-graph-gallery.com/graph/bubblemap_template.html
 // https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
 
-const canvHeightHuman = 500, canvWidthHuman = 800;
+const canvHeightHuman = 600, canvWidthHuman = 800;
 // calc the width and height depending on margin_mapHumans.
 const margin_mapHuman = {top: 80, right: 80, bottom: 50, left: 70};
 const width_mapHuman = canvWidthHuman - margin_mapHuman.left - margin_mapHuman.right;
@@ -21,14 +21,16 @@ const gh = humansMaps.append("g")
 ;
 
 
+//------LEGEND-----------------------------------------------------
+
 function createLegendLifeIndex() {
 
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${120})`);
+        .attr("transform", `translate(${-80},${-55})`);
 
-    //  b. add coloured rect to legend_entry
+    // gradient
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
@@ -78,8 +80,24 @@ function createLegendLifeIndex() {
         .attr("width", 120)
         .attr("height", 70)
         .attr("fill", "none")
-        .attr("stroke", "none")
-    ;
+        .attr("stroke", "none");
+
+    // grey box
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#333")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
 }
 
 createLegendLifeIndex()
@@ -89,20 +107,20 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
         if (value > 90) {
-            return '#1698f1'
-        } else if (80 < value && value < 90) {
-            return '#41A8E9'
-        } else if (70 < value && value < 80) {
-            return '#6DB8E1'
-        } else if (60 < value && value < 70) {
-            return '#99C8DA'
-        } else if (50 < value && value < 60) {
-            return '#C5D8D2'
-        } else if (0 < value && value < 50) {
-            return '#F1E8CB'
-        } else {
-            return "#333"
-        }
+            return '#03b9ad'
+            } else if (80 < value && value < 90) {
+                return '#32C2B3'
+            } else if (70 < value && value < 80) {
+                return '#62CBB9'
+            } else if (60 < value && value < 70) {
+                return '#91D5BF'
+            } else if (50 < value && value < 60) {
+                return '#C1DEC5'
+            } else if (0 < value && value < 50) {
+                return '#F1E8CB'
+            } else {
+                return "#333"
+            }
     })
 }
 
@@ -111,8 +129,8 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([20, 55])
-        .scale(400)
+        .center([30, 55])
+        .scale(430)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
 
@@ -137,17 +155,31 @@ function doPlotHumans() {
             .append("path")
             .attr("id", d => d.id)
             .attr("class", "countries")
-            .attr("d", pathGenerator);
+            .attr("d", pathGenerator)         .attr("class", "europe-boundary");
 
         //initially color the country
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
 
         // boundaries of each country
         gh.append("path")
-            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits))
+            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
 
+        country_humans.on("mouseover", (event, d) => {
+         const percent = life_index_data[0]['France']
+        console.log(life_index_data[0],
+            )
+
+
+            console.log("ed", d.properties.geounit)
+            console.log("esd", percent)
+            mouseover(d.properties.geounit, percent)
+        });
+
+        country_humans.on("mouseout", function () {
+            mouseout(d3.select(this))
+        });
     });
 
 }
