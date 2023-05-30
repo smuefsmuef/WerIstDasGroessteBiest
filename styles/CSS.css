@@ -184,6 +184,7 @@ background-image: url('/img/labels/voegel.jpg');
 
 .btn-sm.btn-custom {
     height: 30px;
+    color: #0a1014;
 }
 
 .possibly-sidebyside .one {
@@ -266,6 +267,7 @@ hr {
 .stop-right-species {
     stop-color: #ff653e ;
 }
+
 
 .filled-human {
     fill: url(#mainGradient);

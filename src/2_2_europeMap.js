@@ -285,21 +285,21 @@ function fillCountry(country, species, selectedOption) {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
         if (value > 70) {
-            return '#ff653e';
+            return '#FF2E16';
         } else if (value > 60) {
-            return '#FD7752';
+            return '#FF4C38';
         } else if (value > 50) {
-            return '#FB8A66';
+            return '#FF6959';
         } else if (value > 40) {
-            return '#F99D7A';
+            return '#FF877A';
         } else if (value > 30) {
-            return '#F7AF8E';
+            return '#FFA59B';
         } else if (value > 20) {
-            return '#F5C2A2';
+            return '#FFC3BC';
         } else if (value > 10) {
-            return '#F3D5B6';
+            return '#FFE1DD';
         } else if (value > 0) {
-            return '#F1E8CB';
+            return '#FFFFFF';
         } else {
             return "#333"
         }
