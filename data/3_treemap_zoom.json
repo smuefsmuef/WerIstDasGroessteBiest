@@ -1,16 +1,16 @@
 {
   "name": "Anzahl Arten",
-  "color": "grey",
+  "color": "#829098",
   "children": [
     {
       "name": "Säugetiere",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-28.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 65,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Dominant",
@@ -44,13 +44,13 @@
     },
     {
       "name": "Vögel",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-43.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 129,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Potenziell gefährdet",
@@ -59,7 +59,7 @@
             {
               "name": "Potenziell gefährdete Vogelarten: \nKolbenente\nWaldohreule\nHänfling\nWanderfalke\nBaumfalke\nOrpheusspötter\nFeldschwirl\nNachtigall\nSchafstelze\nWespenbussard\nSchwarzkehlchen\nTurteltaube\nGartengrasmücke\nDrosselrohrsänger\nFeldlerche\nSteinhuhn\nMauersegler\nAlpensegler\nKuckuck\nMehlschwalbe\nMittelspecht\nZaunammer\nTurmfalke\nWendehals\nAlpenschneehuhn\nRohrschwirl\nGartenrotschwanz\nFlussseeschwalbe\nDorngrasmücke\nBirkhuhn\nHaselhuhn\nSchleiereule",
               "value": 32,
-              "color": "#fc897c"
+              "color": "#829098"
             }
           ]
         },
@@ -70,7 +70,7 @@
             {
               "name": "Gefährdete Vogelarten: Schwarzhalstaucher\nGänsesäger\nReiherente\nWiesenpieper\nSteinadler\nRohrammer\nGelbspötter\nBartmeise\nZwergtaucher\nEisvogel\nWeissstorch\nDohle\nGrauammer\nHeidelerche\nWaldlaubsänger\nFitis\nGrauspecht\nUferschwalbe\nBraunkehlchen\nWaldschnepfe\nWacholderdrossel\nRingdrossel\nWiedehopf",
               "value": 23,
-              "color": "#ff6352"
+              "color": "#829098"
             }
           ]
         },
@@ -81,7 +81,7 @@
             {
               "name": "Stark gefährdete Vogelarten: Schnatterente\nTafelente\nHalsbandschnäpper\nZwergdommel\nBlaumerle\nAlpenkrähe\nFlussuferläufer\nSteinkauz\nUhu\nZiegenmelker\nFlussregenpfeifer\nLachmöwe\nZwergohreule\nAuerhuhn",
               "value": 14,
-              "color": "#ff4c38"
+              "color": "#829098"
             }
           ]
         },
@@ -92,7 +92,7 @@
             {
               "name": "Vom Aussterben bedrohte Vogelarten: \nPurpurreiher\nWachtelkönig\nOrtolan\nBekassine\nBartgeier\nRotkopfwürger\nGrosser Brachvogel\nRebhuhn\nKiebitz",
               "value": 9,
-              "color": "#ff230a"
+              "color": "#829098"
             }
           ]
         },
@@ -103,7 +103,7 @@
             {
               "name": "Ausgestorbene Vogelarten: Rothuhn\nHaubenlerche\nRaubwürger\nSchwarzstirnwürger\nFischadler\nRotschenkel",
               "value": 6,
-              "color": "white"
+              "color": "#829098"
             }
           ]
         }
@@ -111,13 +111,13 @@
     },
     {
       "name": "Amphibien",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-86.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 5,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Gefährdet",
@@ -135,13 +135,13 @@
     },
     {
       "name": "Reptilien",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-55.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 6,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Gefährdet",
@@ -165,13 +165,13 @@
     },
     {
       "name": "Fische",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/phylopic/fish.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 56,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Gefährdet",
@@ -195,13 +195,13 @@
     },
     {
       "name": "Schnecken und Muscheln",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/phylopic/snail.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
           "value": 120,
-          "color": "#90b376"
+          "color": "#829098"
         },
         {
           "name": "Potenziell gefährdet",
@@ -262,18 +262,18 @@
     },
     {
       "name": "Insekten",
-      "color": "#90b376",
+      "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-84.svg",
       "children": [
         {
           "name": "Eintagsfliegen",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/eintagsfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 41,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -334,13 +334,13 @@
         },
         {
           "name": "Heuschrecken",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/heuschrecke.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 43,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -401,13 +401,13 @@
         },
         {
           "name": "Käfer",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/kaefer2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 91,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -468,13 +468,13 @@
         },
         {
           "name": "Köcherfliegen",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/koecherfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 101,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -536,12 +536,12 @@
         {
           "name": "Libellen",
           "image": "img/phylopic/libelle.svg",
-          "color": "#90b376",
+          "color": "#829098",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 42,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -561,7 +561,7 @@
                 {
                   "name": "Gefährdete Libellenarten: \n",
                   "value": 11,
-                  "color": "#ff6352"
+                  "color": "#829098"
                 }
               ]
             },
@@ -572,7 +572,7 @@
                 {
                   "name": "Stark gefährdete Libellenarten: \n",
                   "value": 9,
-                  "color": "#ff4c38"
+                  "color": "#829098"
                 }
               ]
             },
@@ -583,7 +583,7 @@
                 {
                   "name": "Vom Aussterben bedrohte Libellenarten: \n",
                   "value": 4,
-                  "color": "#ff230a"
+                  "color": "#829098"
                 }
               ]
             },
@@ -594,7 +594,7 @@
                 {
                   "name": "Ausgestorbene Libellenarten: \n",
                   "value": 3,
-                  "color": "white"
+                  "color": "#829098"
                 }
               ]
             }
@@ -602,13 +602,13 @@
         },
         {
           "name": "Schmetterlinge, Falter & Widderchen",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/schmetterling.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 104,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",
@@ -669,13 +669,13 @@
         },
         {
           "name": "Steinfliegen",
-          "color": "#90b376",
+          "color": "#829098",
           "image": "img/phylopic/steinfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
               "value": 46,
-              "color": "#90b376"
+              "color": "#829098"
             },
             {
               "name": "Potenziell gefährdet",

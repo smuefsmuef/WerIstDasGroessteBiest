@@ -107,15 +107,15 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
         if (value > 90) {
-            return '#017BDE'
+            return '#304654'
             } else if (80 < value && value < 90) {
-                return '#3496E5'
+                return '#596B76'
             } else if (70 < value && value < 80) {
-                return '#66B0EB'
+                return '#829098'
             } else if (60 < value && value < 70) {
-                return '#99CAF2'
+                return '#ACB5BA'
             } else if (50 < value && value < 60) {
-                return '#CCE4F8'
+                return '#D5DADC'
             } else if (0 < value && value < 50) {
                 return '#FFFFFF'
             } else {
