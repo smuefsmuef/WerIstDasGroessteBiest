@@ -71,25 +71,8 @@
                 return d.data.color;
             })
 
-        node.each(function(d) {
-            const leaf = d3.select(this);
-            leaf.append("image")
-                .attr("xlink:href", d.data.image) // Der Pfad zum Bild aus den JSON-Daten
-                .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0))*0.6)
-                .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0))*0.6)
-        });
-
-
-        //
-        // node.each(function(d) {
-        //     const leaf2 = d3.select(this);
-        //     leaf2.append("image")
-        //         .attr("xlink:href", d.data.collage) // Der Pfad zum Bild aus den JSON-Daten
-        //         .attr("x0", d => d.x0-50)
-        //         .attr("y0", d => d.y0)
-        //         .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0)+300)
-        //         //.attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0)+100);
-        // });
+        node.append("image")
+            .attr("xlink:href", d => d.data.image); // Der Pfad zum Bild aus den JSON-Daten;
 
         node.append("clipPath")
             .attr("id", d => (d.clipUid = uid("clip")).id)
@@ -107,6 +90,7 @@
             .join("tspan")
             .attr("x", 3)
             .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
+            //.attr("font-size", 10)
             .text(d => d);
 
         group.call(position, root);
@@ -116,10 +100,19 @@
         group.selectAll("g")
             .attr("transform", d => d === root ? `translate(0,-30)` : `translate(${x(d.x0)},${y(d.y0)})`)
             .select("rect")
-            .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0))
+            .attr("width", d => d === root ? widthTreemap :  x(d.x1) - x(d.x0))
             .attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0));
+        group.selectAll("g")
+            .select("image")
+            .attr("x", d => d === root ? 0 : (x(d.x1) - x(d.x0))*0.2)
+            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0))*0.1)
+            .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0))*0.6)
+            .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0))*0.6)
+
 
     }
+
+
 
     let group = svg3d.append("g")
 
@@ -156,13 +149,14 @@
                 .call(position, d))
             .call(t => group1.transition(t)
                 .call(position, d.parent));
+
+
     }
 
 
     d3.json("./data/3_treemap_zoom.json").then(function (data) {
         group.call(render, treemap(data));
         let sel = d3.select("#zoom_treemap");
-        console.log(svg3d.node())
         sel.node().appendChild(svg3d.node());
     });
 

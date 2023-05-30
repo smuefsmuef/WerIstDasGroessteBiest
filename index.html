@@ -66,82 +66,88 @@
 
             <div class="step" data-step="2">
                 <section class="color-section" id="chart-1">
-                    <div class="container-fluid">
-                        <h2>Geht's dem Mensch gut - geht's dem Rest schlecht?
-                        </h2>
-                        <h3>Vergleiche wie sich die Lebensqualität von Mensch und Tier in den verschiedenen Ländern
-                            unterscheidet.</h3>
-                        <br>
-                        <button type="button" class="btn btn-info btn-sm btn-custom" onclick="update('Total_Index')">
-                            Lebensqualität
-                            der Menschen
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                onclick="update('Threatened_species_total')">
-                            Bedrohte Tier- und Pflanzenarten
-                        </button>
-
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <div id="my_barchart_horizontal"></div>
-                            </div>
-                            <div class="col-sm-5 custom-border">
-                                <h5>Exkurs: Wie entsteht der Lebensqualitätsindex?</h5>
-                                <div class="text-small"> Im "Quality of Life Index" der OECD werden acht verschiedene
+                    <h2>Geht's dem Mensch gut - geht's dem Rest schlecht?
+                    </h2>
+                    <h3>Vergleiche wie sich die Lebensqualität von Mensch und Tier in den verschiedenen Ländern
+                        unterscheidet.</h3>
+                    <br>
+                    <button type="button" class="btn btn-info btn-sm btn-custom" onclick="update('Total_Index')">
+                        Lebensqualität
+                        der Menschen
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm btn-custom"
+                            onclick="update('Threatened_species_total')">
+                        Bedrohte Tier- und Pflanzenarten
+                    </button>
+                    <div id="my_barchart_horizontal"></div>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Exkurs: Wie entsteht der Lebensqualitätsindex?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Im "Quality of Life Index" der OECD werden acht verschiedene
                                     Indices verrechnet und unterschiedlich gewichtet. Unter anderem wirtschaftliche,
                                     soziale und ökologische Faktoren. Die vier blauen Indices werden positiv
                                     verrechnet, die roten negativ. Schauen Sie, weshalb die Schweiz am Schluss zuoberst
-                                    thront.
-                                </div>
-                                <br>
-                                <div>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Purchasing Power Index')">
-                                        + Kaufkraftindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Safety Index')">
-                                        + Sicherheitsindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Health Care Index')">
-                                        + Gesundheitsindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Climate Index')">+
-                                        Klimaindex
-                                    </button>
-                                </div>
-                                <br>
-                                <div>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Cost of Living Index')">
-                                        - Lebenshaltungskostenindex
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Property Price to Income Ratio')">- Verhältnis von
-                                        Immobilienpreis
-                                        zu Einkommen
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Traffic Commute Time Index')">- Pendlerzeitindex
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Pollution Index')">
-                                        - Umweltverschmutzungsindex
-                                    </button>
-                                </div>
-                                <br>
-                                <h5>Ist Ihnen etwas aufgefallen? </h5>
-                                <div class="text-small">
-                                    Der Lebenshaltungskostenindex, in dem die Schweiz den letzten Platz belegt,
-                                    wird am wenigsten stark gewichtet. Auch das Verhältnis von Immobilien zu
-                                    Einkommen wird nicht stark gewichtet. Wer hat wohl diese Gewichtungen vorgenommen?
-                                </div>
-                                <div>
-                                </div>
+                                    thront.</div>
                             </div>
                         </div>
+                    </div>
+
+                    <h5>Exkurs: Wie entsteht der Lebensqualitätsindex?</h5>
+                    <div class="text-small"> Im "Quality of Life Index" der OECD werden acht verschiedene
+                        Indices verrechnet und unterschiedlich gewichtet. Unter anderem wirtschaftliche,
+                        soziale und ökologische Faktoren. Die vier blauen Indices werden positiv
+                        verrechnet, die roten negativ. Schauen Sie, weshalb die Schweiz am Schluss zuoberst
+                        thront.
+                    </div>
+                    <br>
+                    <div>
+                        <button type="button" class="btn btn-primary btn-sm btn-custom"
+                                onclick="update('Purchasing Power Index')">
+                            + Kaufkraftindex
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm btn-custom"
+                                onclick="update('Safety Index')">
+                            + Sicherheitsindex
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm btn-custom"
+                                onclick="update('Health Care Index')">
+                            + Gesundheitsindex
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm btn-custom"
+                                onclick="update('Climate Index')">+
+                            Klimaindex
+                        </button>
+                    </div>
+                    <br>
+                    <div>
+                        <button type="button" class="btn btn-danger btn-sm btn-custom"
+                                onclick="update('Cost of Living Index')">
+                            - Lebenshaltungskostenindex
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm btn-custom"
+                                onclick="update('Property Price to Income Ratio')">- Verhältnis von
+                            Immobilienpreis
+                            zu Einkommen
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm btn-custom"
+                                onclick="update('Traffic Commute Time Index')">- Pendlerzeitindex
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm btn-custom"
+                                onclick="update('Pollution Index')">
+                            - Umweltverschmutzungsindex
+                        </button>
+                    </div>
+                    <br>
+                    <h5>Ist Ihnen etwas aufgefallen? </h5>
+                    <div class="text-small">
+                        Der Lebenshaltungskostenindex, in dem die Schweiz den letzten Platz belegt,
+                        wird am wenigsten stark gewichtet. Auch das Verhältnis von Immobilien zu
+                        Einkommen wird nicht stark gewichtet. Wer hat wohl diese Gewichtungen vorgenommen?
                     </div>
                 </section>
             </div>
@@ -273,7 +279,6 @@
                                 Und zwar schon lange... vielleicht wird's ja bald besser?<br>
                             </h2>
                         </div>
-
                         <div class="step" data-step="10">
                             <div id="animation_neu"></div>
                         </div>
@@ -281,10 +286,7 @@
                     </div>
                 </section>
             </div>
-
-
         </article>
-
     </section>
 
 
@@ -329,8 +331,6 @@
 <script src='src/1_barChart_horizontal.js'></script>
 <script src='src/2_europeMap_human.js'></script>
 <script src='src/2_2_europeMap.js'></script>
-<script src='src/3_treeMap.js'></script>
-<script src='src/3_treeMap_mammals.js'></script>
 <script src='src/3_treemap_zoom.js'></script>
 <script src='src/4_lineChart.js'></script>
 <script src='src/4_animation_history_neu.js'></script>

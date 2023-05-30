@@ -3,8 +3,8 @@
 
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 120},
-    width = 450 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 500 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg1 = d3.select("#my_barchart_horizontal")
@@ -129,12 +129,12 @@ function update(selectedVar) {
             u.join("rect")
                 .transition()
                 .duration(2000)
-                .attr("x",  x(0))
+                .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
                 .attr("height", y.bandwidth())
                 .attr("fill", d => colorPickerAnimal(d.country))
-        } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar ==="Climate Index") {
+        } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar === "Climate Index") {
 
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
@@ -179,24 +179,24 @@ function update(selectedVar) {
                 .attr("fill", d => colorPickerHuman(d.country))
         } else {
 
-        data.sort((a, b) => b[selectedVar] - a[selectedVar]);
-        // Add Y axis
-        y.domain(data.map(d => d.country));
-        yAxis.transition().duration(2000)
-            .call(d3.axisLeft(y))
-            .style("text-anchor", "end")
-            .style("font-size", "1rem")
+            data.sort((a, b) => b[selectedVar] - a[selectedVar]);
+            // Add Y axis
+            y.domain(data.map(d => d.country));
+            yAxis.transition().duration(2000)
+                .call(d3.axisLeft(y))
+                .style("text-anchor", "end")
+                .style("font-size", "1rem")
 
-        // X axis
-        x.domain([0, 50])
+            // X axis
+            x.domain([0, 50])
 
-        xAxis.transition().duration(2000)
-            .call(d3.axisBottom(x))
-            .selectAll("yAxisLabel")
-            .attr("transform", "translate(5,0)")
+            xAxis.transition().duration(2000)
+                .call(d3.axisBottom(x))
+                .selectAll("yAxisLabel")
+                .attr("transform", "translate(5,0)")
 
 
-        // text label for x axis
+            // text label for x axis
             svg1.select("#textLabel")
                 .text(selectedVar)
                 .attr("y", height + margin.bottom / 2)
@@ -207,45 +207,57 @@ function update(selectedVar) {
                 .style("fill", "white")
                 .style("text-size", "18px")
 
-        // variable u: map data to existing bars
-        const u = svg1.selectAll("rect")
-            .data(data)
+            // variable u: map data to existing bars
+            const u = svg1.selectAll("rect")
+                .data(data)
 
-        // update bars
-        u.join("rect")
-            .transition()
-            .duration(2000)
-            .attr("x", x(0))
-            .attr("y", d => y(d.country))
-            .attr("width", d => -x(d[selectedVar]))
-            .attr("height", y.bandwidth())
-            .attr("fill", d => colorPickerAnimal(d.country))
-    }
+            // update bars
+            u.join("rect")
+                .transition()
+                .duration(2000)
+                .attr("x", x(0))
+                .attr("y", d => y(d.country))
+                .attr("width", d => -x(d[selectedVar]))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => colorPickerAnimal(d.country))
+
+            // events
+            svg1.on("mouseover", (event, d) => {
+                console.log(d3.select(this), 'd3.select(this)')
+                console.log(event, 'event')
+            });
+
+            svg1.on("mouseout", function () {
+                mouseout(d3.select(this))
+            });
+
+
+        }
+
+
     })
 }
 
 
-
-
 function colorPickerHuman(c) {
     if (c === "Switzerland") {
-        return "#eaff70";
-    } else {
         return "#21caf1";
+    } else {
+        return "#7C8F91FF";
     }
 }
 
 function colorPickerAnimal(c) {
     if (c === "Switzerland") {
-        return "#eaff70";
-    } else {
         return "#ff4c38";
+    } else {
+        return "#736765FF";
     }
 
 }
 
 // Initialize plot
-        update('Total_Index')
+update('Total_Index')
 
 
 

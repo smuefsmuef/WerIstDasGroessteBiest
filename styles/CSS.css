@@ -37,7 +37,7 @@ img {
     line-height: 1.5;
 }
 
-.text-small > a, .text-small {
+.text-small > a, .text-small, .accordion-body {
     font-size: 1.1rem;
     line-height: 1.5;
     color: #355463;
@@ -420,3 +420,6 @@ article {
     border-radius: 8px;
     pointer-events: none;
 }
+
+
+/* Collapse */

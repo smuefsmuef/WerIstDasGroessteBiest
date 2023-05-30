@@ -194,7 +194,7 @@
       ]
     },
     {
-      "name": "Landschnecken und Grossmuscheln",
+      "name": "Schnecken und Muscheln",
       "color": "#90b376",
       "image": "img/phylopic/snail.svg",
       "children": [
@@ -402,7 +402,7 @@
         {
           "name": "Käfer",
           "color": "#90b376",
-          "image": "img/phylopic/kaefer.svg",
+          "image": "img/phylopic/kaefer2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
