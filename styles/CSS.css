@@ -264,7 +264,7 @@ hr {
 }
 
 .stop-right-species {
-    stop-color: #a2163e;
+    stop-color: #ff653e;
 }
 
 .filled-human {
@@ -410,3 +410,4 @@ article {
     border-radius: 8px;
     pointer-events: none;
 }
+

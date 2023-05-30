@@ -23,11 +23,13 @@ const g = svgMap.append("g")
 //------EVENTS-----------------------------------------------------
 
 // create event handlers for mouse events
-function mouseover(species, countryId) {
+function mouseover(species, countryId, country) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
         d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " bedroht.");
     }
+    country.style("fill", 0.5); // todo
+
 }
 
 function mouseout() {
@@ -283,19 +285,19 @@ function fillCountry(country, species, selectedOption) {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
         if (value > 70) {
-            return '#A2163E';
+            return '#ff653e';
         } else if (value > 60) {
-            return '#AD3452';
+            return '#FD7752';
         } else if (value > 50) {
-            return '#B85266';
+            return '#FB8A66';
         } else if (value > 40) {
-            return '#C3707A';
+            return '#F99D7A';
         } else if (value > 30) {
-            return '#CF8E8E';
+            return '#F7AF8E';
         } else if (value > 20) {
-            return '#DAACA2';
+            return '#F5C2A2';
         } else if (value > 10) {
-            return '#E5CAB6';
+            return '#F3D5B6';
         } else if (value > 0) {
             return '#F1E8CB';
         } else {
@@ -318,6 +320,9 @@ function doPlot(selectedOption) {
 
     var pathGenerator = d3.geoPath()
         .projection(projection); // albers projection
+
+
+
 
     // get data
     Promise.all(
@@ -349,9 +354,11 @@ function doPlot(selectedOption) {
         // initially color the country
         fillCountry(country, species, selectedOption)
 
+
         // events
         country.on("mouseover", (event, d) => {
             const selected_species_data = species.find(e => e.type === selectedOption)
+            console.log(d3.select(this), 'd3.select(this)')
             mouseover(selected_species_data, d.properties.geounit, d3.select(this))
         });
 
@@ -472,3 +479,4 @@ function translateCountryName(countryId) {
     var translatedName = translations[countryId.toLowerCase()];
     return translatedName || 'Translation not available';
 }
+
