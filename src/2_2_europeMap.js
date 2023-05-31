@@ -26,14 +26,17 @@ const g = svgMap.append("g")
 function mouseover(species, countryId, country) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
-        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " bedroht.");
+        d3.select("#context-label").text(translateCountryName(countryId) + ": ");
+        d3.select("#context-label-2").text(percent+ "%");
+        d3.select("#context-label-3").text("der " + species.type + " bedroht.");
     }
-    country.style("fill", 0.5); // todo
 
 }
 
 function mouseout() {
     d3.select("#context-label").text(" ");
+    d3.select("#context-label-2").text(" ");
+    d3.select("#context-label-3").text(" ");
 }
 
 
@@ -45,28 +48,45 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-135},${20})`)
+        .attr("transform", `translate(${-135},${130})`)
 
     contextHolder.append("text")
         .attr("x", 65)
         .attr("y", 15)
         .attr("id", "context-label")
-        .attr("fill", "#FF0000FF")
+        .attr("fill", "#FF6959")
+        .text("Schweiz:")
+        .style("text-anchor", "left");
+
+    contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 40)
+        .attr("id", "context-label-2")
+        .attr("fill", "#FF6959")
+        .text("78.9%")
+        .style("text-anchor", "right");
+
+    contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 55)
+        .attr("id", "context-label-3")
+        .attr("fill", "#FF6959")
+        .text("der Reptilien bedroht.")
         .style("text-anchor", "left");
     return contextHolder;
 }
 
 // create legend slider
-function createLegendEndangeredSpecies() {
+function createSliderEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-55})`);
+        .attr("transform", `translate(${340},${400})`);
 
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 210)
+        .attr("width", 110)
         .attr("height", 5)
         .classed('filled', true);
 
@@ -101,9 +121,9 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("fill", "#efedea")
         .attr("font-size", "1rem")
-        .attr("x", 200)
+        .attr("x", 100)
         .attr("y", 40)
-        .text(" >100");
+        .text("100");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -114,56 +134,75 @@ function createLegendEndangeredSpecies() {
         .attr("fill", "none")
         .attr("stroke", "none");
 
+
+}
+
+createSliderEndangeredSpecies()
+
+
+function createLegendEndangeredSpecies() {
+// 1. create a group to hold the legend
+    const index2 = g.append("g")
+        .attr("id", "legend")
+        .attr("transform", `translate(${-80},${-95})`);
+
+// 3. create the main border of the legend
+    index2.append("rect")
+        .attr("x", 1)
+        .attr("y", 1)
+        .attr("width", 120)
+        .attr("height", 70)
+        .attr("fill", "none")
+        .attr("stroke", "none");
+
     // grey box
-    index.append("rect")
+    index2.append("rect")
         .attr("x", 10)
-        .attr("y", (d,i) => 30 * i + 80)
+        .attr("y", (d, i) => 30 * i + 80)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#333")
+        .attr("fill", "#333")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
-    index.append("text")
+    index2.append("text")
         .attr("x", 33)
         .attr("y", 90)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
         .text("k.A.");
 
-    index.append("rect")
-        .attr("x",  10)
-        .attr("y", (d,i) => 30 * i + 50)
+    index2.append("rect")
+        .attr("x", 10)
+        .attr("y", (d, i) => 30 * i + 50)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#27374D")
+        .attr("fill", "#27374D")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
-    index.append("text")
+    index2.append("text")
         .attr("x", 33)
         .attr("y", 65)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("wenig bedroht");
+        .text("sehr nettes Leben");
 
-    index.append("rect")
+    index2.append("rect")
         .attr("x", 130)
-        .attr("y", (d,i) => 30 * i + 50)
+        .attr("y", (d, i) => 30 * i + 50)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#E8F2E8")
+        .attr("fill", "#ACB5BA")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
-    index.append("text")
+    index2.append("text")
         .attr("x", 153)
         .attr("y", 65)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("stark bedroht");
-
-
+        .text("weniger nettes Leben");
 }
 
 createLegendEndangeredSpecies()
@@ -322,7 +361,7 @@ function fillCountry(country, species, selectedOption) {
             return '#E8F2E8';
         } else if (value > 80) {
             return '#D2DDD6';
-        }else if (value > 70) {
+        } else if (value > 70) {
             return '#BDC8C5';
         } else if (value > 60) {
             return '#A7B3B4';
@@ -358,8 +397,6 @@ function doPlot(selectedOption) {
 
     var pathGenerator = d3.geoPath()
         .projection(projection); // albers projection
-
-
 
 
     // get data

@@ -22,19 +22,18 @@ const gh = humansMaps.append("g")
 
 
 //------LEGEND-----------------------------------------------------
-
-function createLegendLifeIndex() {
+function createSliderLifeIndex() {
 
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-75})`);
+        .attr("transform", `translate(${340},${400})`);
 
     // gradient
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 210)
+        .attr("width", 110)
         .attr("height", 5)
         .classed('filled-human', true);
 
@@ -52,11 +51,11 @@ function createLegendLifeIndex() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 70)
+        .attr("x", 64)
         .attr("y", 15)
         .attr("font-size", "1.1rem")
         .attr("fill", "#efedea")
-        .text("Life Quality Index (Pkt.)")
+        .text("Life Quality Idx. (Pkt.)")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -67,7 +66,7 @@ function createLegendLifeIndex() {
         .text("50");
 
     index.append("text")
-        .attr("x", 200)
+        .attr("x", 100)
         .attr("y", 40)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
@@ -81,6 +80,17 @@ function createLegendLifeIndex() {
         .attr("height", 70)
         .attr("fill", "none")
         .attr("stroke", "none");
+
+
+}
+
+createSliderLifeIndex()
+function createLegendLifeIndex() {
+
+    // 1. create a group to hold the legend
+    const index = gh.append("g")
+        .attr("id", "legend")
+        .attr("transform", `translate(${-80},${-95})`);
 
     // grey box
     index.append("rect")
@@ -100,27 +110,11 @@ function createLegendLifeIndex() {
         .text("k.A.");
 
     index.append("rect")
-        .attr("x", 110)
-        .attr("y", (d,i) => 30 * i + 50)
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("fill",  "#27374D")
-        .attr("stroke", "black")
-        .attr("stroke-width", "1");
-
-    index.append("text")
-        .attr("x", 133)
-        .attr("y", 65)
-        .attr("font-size", "1rem")
-        .attr("fill", "#efedea")
-        .text("sehr nettes Leben");
-
-    index.append("rect")
         .attr("x", 10)
-        .attr("y", (d,i) => 30 * i + 50)
+        .attr("y", (d, i) => 30 * i + 50)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#E8F2E8")
+        .attr("fill", "#27374D")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
@@ -129,8 +123,23 @@ function createLegendLifeIndex() {
         .attr("y", 65)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("Leben tbd");
+        .text("sehr nettes Leben");
 
+    index.append("rect")
+        .attr("x", 130)
+        .attr("y", (d, i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", "#ACB5BA")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 153)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("weniger nettes Leben");
 
 }
 
