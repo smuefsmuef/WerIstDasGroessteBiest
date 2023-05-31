@@ -204,7 +204,7 @@ function createLegendEndangeredSpecies() {
         .text("weniger nettes Leben");
 }
 
-createLegendEndangeredSpecies()
+// createLegendEndangeredSpecies()
 
 //------SELECTS-----------------------------------------------------
 
