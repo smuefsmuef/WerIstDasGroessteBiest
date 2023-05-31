@@ -66,7 +66,7 @@ function createLegendEndangeredSpecies() {
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 120)
+        .attr("width", 210)
         .attr("height", 5)
         .classed('filled', true);
 
@@ -84,9 +84,9 @@ function createLegendEndangeredSpecies() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 65)
+        .attr("x", 62)
         .attr("y", 15)
-        .text("Bedroht (%)")
+        .text("Bedrohte Tierart (%)")
         .attr("fill", "#efedea")
         .attr("font-size", "1.1rem")
         .style("text-anchor", "middle");
@@ -101,9 +101,9 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("fill", "#efedea")
         .attr("font-size", "1rem")
-        .attr("x", 110)
+        .attr("x", 200)
         .attr("y", 40)
-        .text(" >70");
+        .text(" >100");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -117,10 +117,26 @@ function createLegendEndangeredSpecies() {
     // grey box
     index.append("rect")
         .attr("x", 10)
-        .attr("y", (d, i) => 30 * i + 50)
+        .attr("y", (d,i) => 30 * i + 80)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill", "#333")
+        .attr("fill",  "#333")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 90)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
+
+    index.append("rect")
+        .attr("x",  10)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#27374D")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
@@ -129,7 +145,25 @@ function createLegendEndangeredSpecies() {
         .attr("y", 65)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("k.A.");
+        .text("wenig bedroht");
+
+    index.append("rect")
+        .attr("x", 130)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#E8F2E8")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 153)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("stark bedroht");
+
+
 }
 
 createLegendEndangeredSpecies()
@@ -284,22 +318,26 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value > 70) {
-            return '#FF2E16';
+        if (value > 90) {
+            return '#E8F2E8';
+        } else if (value > 80) {
+            return '#D2DDD6';
+        }else if (value > 70) {
+            return '#BDC8C5';
         } else if (value > 60) {
-            return '#F3412D';
+            return '#A7B3B4';
         } else if (value > 50) {
-            return '#E75444';
+            return '#929EA3';
         } else if (value > 40) {
-            return '#DB675C';
+            return '#7C8A91';
         } else if (value > 30) {
-            return '#CF7B73';
+            return '#677580';
         } else if (value > 20) {
-            return '#C38E8B';
+            return '#51606F';
         } else if (value > 10) {
-            return '#B7A1A2';
+            return '#3C4B5E';
         } else if (value > 0) {
-            return '#ACB5BA';
+            return '#27374D';
         } else {
             return "#333"
         }
@@ -344,6 +382,7 @@ function doPlot(selectedOption) {
             .attr("id", d => d.id)
             .attr("class", "countries")
             .attr("d", pathGenerator)
+            // todo add boundary for CH
             .attr("class", "europe-boundary");
 
         // boundaries of each country

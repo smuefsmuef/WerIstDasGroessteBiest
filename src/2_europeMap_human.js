@@ -28,13 +28,13 @@ function createLegendLifeIndex() {
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-55})`);
+        .attr("transform", `translate(${-80},${-75})`);
 
     // gradient
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 120)
+        .attr("width", 210)
         .attr("height", 5)
         .classed('filled-human', true);
 
@@ -67,7 +67,7 @@ function createLegendLifeIndex() {
         .text("50");
 
     index.append("text")
-        .attr("x", 110)
+        .attr("x", 200)
         .attr("y", 40)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
@@ -85,7 +85,7 @@ function createLegendLifeIndex() {
     // grey box
     index.append("rect")
         .attr("x", 10)
-        .attr("y", (d,i) => 30 * i + 50)
+        .attr("y", (d,i) => 30 * i + 80)
         .attr("width", 20)
         .attr("height", 20)
         .attr("fill",  "#333")
@@ -94,10 +94,44 @@ function createLegendLifeIndex() {
 
     index.append("text")
         .attr("x", 33)
-        .attr("y", 65)
+        .attr("y", 90)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
         .text("k.A.");
+
+    index.append("rect")
+        .attr("x", 110)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#27374D")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 133)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("sehr nettes Leben");
+
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d,i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#E8F2E8")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("Leben tbd");
+
+
 }
 
 createLegendLifeIndex()
@@ -107,20 +141,28 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
         if (value > 90) {
-            return '#819028'
-            } else if (80 < value && value < 90) {
-                return '#8B994C'
-            } else if (70 < value && value < 80) {
-                return '#96A271'
-            } else if (60 < value && value < 70) {
-                return '#A1AB95'
-            } else if (50 < value && value < 60) {
-                return '#ACB5BA'
-            } else if (0 < value && value < 50) {
-                return '#B6BEDE'
-            } else {
-                return "#333"
-            }
+            return '#27374D';
+        } else if (value > 80) {
+            return '#3C4B5E';
+        }else if (value > 70) {
+            return '#51606F';
+        } else if (value > 60) {
+            return '#677580';
+        } else if (value > 50) {
+            return '#7C8A91';
+        } else if (value > 40) {
+            return '#929EA3';
+        } else if (value > 30) {
+            return '#A7B3B4';
+        } else if (value > 20) {
+            return '#BDC8C5';
+        } else if (value > 10) {
+            return '#D2DDD6';
+        } else if (value > 0) {
+            return '#E8F2E8';
+        } else {
+            return "#333"
+        }
     })
 }
 

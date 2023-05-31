@@ -241,7 +241,7 @@ function update(selectedVar) {
 
 function colorPickerHuman(c) {
     if (c === "Switzerland") {
-        return "#819028";
+        return "#FF6959";
     } else {
         return "#ACB5BA";
     }
