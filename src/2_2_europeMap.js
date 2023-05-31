@@ -30,7 +30,6 @@ function mouseover(species, countryId, country) {
         d3.select("#context-label-2").text(percent+ "%");
         d3.select("#context-label-3").text("der " + species.type + " bedroht.");
     }
-
 }
 
 function mouseout() {
@@ -48,7 +47,7 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-135},${130})`)
+        .attr("transform", `translate(${-135},${120})`)
 
     contextHolder.append("text")
         .attr("x", 65)
@@ -340,12 +339,13 @@ const animaltype = d3.select("#animal-type")
     .append("europe")
     .append("text")
     .attr("x", 65)
+    .attr("class", "animal-type")
     .attr("y", 15)
     .text("Reptilien")
     .attr("text", function (d) {
         return d
     })
-    .attr("fill", "#efedea")
+
     .attr("font-size", "1rem")
     .style("text-anchor", "middle");
 

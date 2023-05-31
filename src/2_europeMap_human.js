@@ -20,6 +20,23 @@ const gh = humansMaps.append("g")
     .attr("transform", `translate(${margin_mapHuman.left},${margin_mapHuman.top})`)
 ;
 
+//------EVENTS-----------------------------------------------------
+
+// create event handlers for mouse events
+function mouseoverHumans(index_values, countryId) {
+    const percent = index_values[countryId]
+    if (percent !== undefined && percent !== '0') {
+        d3.select("#context-label-4").text(translateCountryName(countryId) + ": ");
+        d3.select("#context-label-5").text(percent );
+        d3.select("#context-label-6").text("von 100 Punkten");
+    }
+}
+
+function mouseoutHumans() {
+  d3.select("#context-label-4").text(" ");
+    d3.select("#context-label-5").text(" ");
+    d3.select("#context-label-6").text(" ");
+}
 
 //------LEGEND-----------------------------------------------------
 function createSliderLifeIndex() {
@@ -146,6 +163,42 @@ function createLegendLifeIndex() {
 createLegendLifeIndex()
 
 
+
+
+function createContextHolderHumans() {
+    const contextHolder4 = gh.append("g")
+        .attr("id", "context-holder-4")
+        .attr("transform", `translate(${-135},${120})`)
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 15)
+        .attr("id", "context-label-4")
+        .attr("fill", "#FF6959")
+        .text("Schweiz:")
+        .style("text-anchor", "left");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 40)
+        .attr("id", "context-label-5")
+        .attr("fill", "#FF6959")
+        .text("95.1")
+        .style("text-anchor", "right");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 55)
+        .attr("id", "context-label-6")
+        .attr("fill", "#FF6959")
+        .text("von 100 Pkt.")
+        .style("text-anchor", "left");
+    return contextHolder4;
+}
+
+createContextHolderHumans();
+
+
 function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
@@ -211,28 +264,63 @@ function doPlotHumans() {
         //initially color the country
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
 
+        // events
+        country_humans.on("mouseover", (event, d) => {
+            mouseoverHumans(life_index_data[0], d.properties.geounit)
+        });
+
+        country_humans.on("click", (event, d) => {
+            mouseoverHumans(life_index_data[0], d.properties.geounit)
+        });
+
+        country_humans.on("mouseout", function () {
+            mouseoutHumans(d3.select(this))
+        });
+
         // boundaries of each country
         gh.append("path")
             .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
 
-        country_humans.on("mouseover", (event, d) => {
-         const percent = life_index_data[0]['France']
-        console.log(life_index_data[0],
-            )
-
-
-            console.log("ed", d.properties.geounit)
-            console.log("esd", percent)
-            mouseover(d.properties.geounit, percent)
-        });
-
-        country_humans.on("mouseout", function () {
-            mouseout(d3.select(this))
-        });
     });
 
 }
 
 doPlotHumans();
+
+
+function translateCountryName(countryId) {
+    var translations = {
+        "austria": "Österreich",
+        "belgium": "Belgien",
+        "czechrepublic": "Tschechische Republik",
+        "denmark": "Dänemark",
+        "estonia": "Estland",
+        "finland": "Finnland",
+        "france": "Frankreich",
+        "germany": "Deutschland",
+        "greece": "Griechenland",
+        "hungary": "Ungarn",
+        "iceland": "Island",
+        "ireland": "Irland",
+        "italy": "Italien",
+        "latvia": "Lettland",
+        "lithuania": "Litauen",
+        "luxembourg": "Luxemburg",
+        "netherlands": "Niederlande",
+        "norway": "Norwegen",
+        "poland": "Polen",
+        "portugal": "Portugal",
+        "slovakia": "Slowakei",
+        "slovenia": "Slowenien",
+        "spain": "Spanien",
+        "sweden": "Schweden",
+        "switzerland": "Schweiz",
+        "england": "England"
+    };
+
+    var translatedName = translations[countryId.toLowerCase()];
+    return translatedName || 'Translation not available';
+}
+

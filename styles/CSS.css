@@ -246,12 +246,12 @@ hr {
 }
 
 
-#context-label, #context-label-3 {
+#context-label, #context-label-3, #context-label-4, #context-label-6 {
     font-size: 1.1rem;
     font-family: 'DM Sans', sans-serif;
 }
 
-#context-label-2 {
+#context-label-2, #context-label-5 {
     font-size: 2.50rem;
     font-family: 'DM Sans', sans-serif;
 }
@@ -343,6 +343,9 @@ hr {
 .selected {
     opacity: 1;
     stroke: #FF6959;
+}
+
+.animal-type {
 }
 
 
