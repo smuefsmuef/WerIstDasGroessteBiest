@@ -265,16 +265,22 @@ function doPlotHumans() {
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
 
         // events
+        var isClicked = false;
         country_humans.on("mouseover", (event, d) => {
-            mouseoverHumans(life_index_data[0], d.properties.geounit)
+            if(!isClicked) {
+                mouseoverHumans(life_index_data[0], d.properties.geounit)
+            }
         });
 
         country_humans.on("click", (event, d) => {
             mouseoverHumans(life_index_data[0], d.properties.geounit)
+            isClicked = !isClicked;
         });
 
         country_humans.on("mouseout", function () {
-            mouseoutHumans(d3.select(this))
+            if(!isClicked) {
+                mouseoutHumans(d3.select(this))
+            }
         });
 
         // boundaries of each country

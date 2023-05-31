@@ -27,7 +27,7 @@ function mouseover(species, countryId, country) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
         d3.select("#context-label").text(translateCountryName(countryId) + ": ");
-        d3.select("#context-label-2").text(percent+ "%");
+        d3.select("#context-label-2").text(percent + "%");
         d3.select("#context-label-3").text("der " + species.type + " bedroht.");
     }
 }
@@ -432,14 +432,24 @@ function doPlot(selectedOption) {
 
 
         // events
+        var isClicked = false;
         country.on("mouseover", (event, d) => {
+            if (!isClicked) {
+                const selected_species_data = species.find(e => e.type === selectedOption)
+                mouseover(selected_species_data, d.properties.geounit, d3.select(this))
+            }
+        });
+
+        country.on("click", (event, d) => {
             const selected_species_data = species.find(e => e.type === selectedOption)
-            console.log(d3.select(this), 'd3.select(this)')
             mouseover(selected_species_data, d.properties.geounit, d3.select(this))
+            isClicked = !isClicked;
         });
 
         country.on("mouseout", function () {
-            mouseout(d3.select(this))
+            if (!isClicked) {
+                mouseout(d3.select(this))
+            }
         });
 
         // todo refactoring aller buttons
@@ -447,6 +457,8 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
             d3.selectAll("#reptilien").classed("selected", true)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
@@ -459,6 +471,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#saeugetiere").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
@@ -472,6 +487,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#voegel").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -484,6 +502,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#amphibien").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -496,6 +517,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#fisch").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -508,6 +532,8 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
             d3.selectAll("#wirbellose").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
