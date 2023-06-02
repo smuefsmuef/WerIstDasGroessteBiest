@@ -29,6 +29,7 @@ function mouseover(species, countryId, country) {
         d3.select("#context-label").text(translateCountryName(countryId) + ": ");
         d3.select("#context-label-2").text(percent + "%");
         d3.select("#context-label-3").text("der " + species.type + " bedroht.");
+        d3.select("#context-label-8").text("(Klicken fixiert/löst den Wert.)");
     }
 }
 
@@ -36,6 +37,7 @@ function mouseout() {
     d3.select("#context-label").text(" ");
     d3.select("#context-label-2").text(" ");
     d3.select("#context-label-3").text(" ");
+    d3.select("#context-label-8").text(" ");
 }
 
 
@@ -72,6 +74,14 @@ function createContextHolder() {
         .attr("fill", "#FF6959")
         .text("der Reptilien bedroht.")
         .style("text-anchor", "left");
+
+    contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 69)
+        .attr("id", "context-label-8")
+        .attr("font-size", "0.7rem")
+        .attr("fill", "#3C4B5E")
+        .text("(Klicken fixiert/löst den Wert.)");
     return contextHolder;
 }
 
@@ -323,16 +333,16 @@ selectLabel.append("circle")
     .attr("cx", 145)
     .attr("cy", 310)
     .attr("r", 20)
-    .style("fill", createPatterns("wirbellose"))
+    .style("fill", createPatterns("wirbellosen"))
     .attr("fill", "blue")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
     .attr("stroke-width", "1")
     .attr("wert", function (d) {
-        return "Wirbellose"
+        return "Wirbellosen"
     })
     .attr("type", "submit")
-    .attr("id", "wirbellose")
+    .attr("id", "wirbellosen")
 
 // tierart in titel
 const animaltype = d3.select("#animal-type")
@@ -464,7 +474,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
         })
 
         d3.selectAll("#saeugetiere").on("mouseover", function (d) {
@@ -479,7 +489,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
 
@@ -495,7 +505,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
         d3.selectAll("#amphibien").on("mouseover", function (d) {
@@ -510,8 +520,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
-
+            d3.selectAll("#wirbellosen").classed("selected", false)
         })
         d3.selectAll("#fisch").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
@@ -519,22 +528,21 @@ function doPlot(selectedOption) {
             animaltype.text(selectedOption)
             mouseout()
             isClicked = false;
-
             d3.selectAll("#fisch").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
-        d3.selectAll("#wirbellose").on("mouseover", function (d) {
+        d3.selectAll("#wirbellosen").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
             mouseout()
             isClicked = false;
-            d3.selectAll("#wirbellose").classed("selected", true)
+            d3.selectAll("#wirbellosen").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)

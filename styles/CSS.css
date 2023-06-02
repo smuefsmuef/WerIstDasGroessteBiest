@@ -299,7 +299,7 @@ hr {
     .big-heading {
         font-size: 13rem;
         line-height: 1.5;
-        color: #EC796E;
+        color: #FF6959;
 
         font-family: 'Shrikhand', cursive;
     }
@@ -326,7 +326,7 @@ hr {
 }
 
 .animal-select-button {
-    stroke: #ACB5BA;
+    stroke: #E8F2E8;
     stroke-width: 2px;
     cursor: pointer;
     appearance: none;

@@ -29,6 +29,7 @@ function mouseoverHumans(index_values, countryId) {
         d3.select("#context-label-4").text(translateCountryName(countryId) + ": ");
         d3.select("#context-label-5").text(percent );
         d3.select("#context-label-6").text("von 100 Punkten");
+        d3.select("#context-label-7").text("(Klicken fixiert/löst den Wert.)");
     }
 }
 
@@ -36,6 +37,7 @@ function mouseoutHumans() {
   d3.select("#context-label-4").text(" ");
     d3.select("#context-label-5").text(" ");
     d3.select("#context-label-6").text(" ");
+    d3.select("#context-label-7").text(" ");
 }
 
 //------LEGEND-----------------------------------------------------
@@ -97,8 +99,6 @@ function createSliderLifeIndex() {
         .attr("height", 70)
         .attr("fill", "none")
         .attr("stroke", "none");
-
-
 }
 
 createSliderLifeIndex()
@@ -109,7 +109,7 @@ function createLegendLifeIndex() {
         .attr("id", "legend")
         .attr("transform", `translate(${-80},${-95})`);
 
-    // grey box
+    // keine Angaben
     index.append("rect")
         .attr("x", 10)
         .attr("y", (d,i) => 30 * i + 80)
@@ -193,6 +193,14 @@ function createContextHolderHumans() {
         .attr("fill", "#FF6959")
         .text("von 100 Pkt.")
         .style("text-anchor", "left");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 69)
+        .attr("id", "context-label-7")
+        .attr("font-size", "0.7rem")
+        .attr("fill", "#3C4B5E")
+        .text("(Klicken fixiert/löst den Wert.)");
     return contextHolder4;
 }
 
