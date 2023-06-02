@@ -407,7 +407,7 @@ article {
 }
 
 .step {
-    margin: 1rem auto 4rem auto;
+    margin: 0rem auto 4rem auto;
     background-color: #3b3b3b;
     color: #fff;
     opacity: 0.0;
