@@ -26,14 +26,16 @@ const g = svgMap.append("g")
 function mouseover(species, countryId, country) {
     const percent = species[countryId];
     if (percent !== undefined && percent !== '0') {
-        d3.select("#context-label").text(translateCountryName(countryId) + ": " + percent + "% der " + species.type + " bedroht.");
+        d3.select("#context-label").text(translateCountryName(countryId) + ": ");
+        d3.select("#context-label-2").text(percent + "%");
+        d3.select("#context-label-3").text("der " + species.type + " bedroht.");
     }
-    country.style("fill", 0.5); // todo
-
 }
 
 function mouseout() {
     d3.select("#context-label").text(" ");
+    d3.select("#context-label-2").text(" ");
+    d3.select("#context-label-3").text(" ");
 }
 
 
@@ -45,28 +47,45 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-135},${20})`)
+        .attr("transform", `translate(${-135},${120})`)
 
     contextHolder.append("text")
         .attr("x", 65)
         .attr("y", 15)
         .attr("id", "context-label")
-        .attr("fill", "#FF0000FF")
+        .attr("fill", "#FF6959")
+        .text("Schweiz:")
+        .style("text-anchor", "left");
+
+    contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 40)
+        .attr("id", "context-label-2")
+        .attr("fill", "#FF6959")
+        .text("78.9%")
+        .style("text-anchor", "right");
+
+    contextHolder.append("text")
+        .attr("x", 65)
+        .attr("y", 55)
+        .attr("id", "context-label-3")
+        .attr("fill", "#FF6959")
+        .text("der Reptilien bedroht.")
         .style("text-anchor", "left");
     return contextHolder;
 }
 
 // create legend slider
-function createLegendEndangeredSpecies() {
+function createSliderEndangeredSpecies() {
 // 1. create a group to hold the legend
     const index = g.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-55})`);
+        .attr("transform", `translate(${340},${400})`);
 
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 120)
+        .attr("width", 110)
         .attr("height", 5)
         .classed('filled', true);
 
@@ -84,9 +103,9 @@ function createLegendEndangeredSpecies() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 65)
+        .attr("x", 62)
         .attr("y", 15)
-        .text("Bedroht (%)")
+        .text("Bedrohte Tierart (%)")
         .attr("fill", "#efedea")
         .attr("font-size", "1.1rem")
         .style("text-anchor", "middle");
@@ -101,9 +120,9 @@ function createLegendEndangeredSpecies() {
     index.append("text")
         .attr("fill", "#efedea")
         .attr("font-size", "1rem")
-        .attr("x", 110)
+        .attr("x", 100)
         .attr("y", 40)
-        .text(" >70");
+        .text("100");
 
 // 3. create the main border of the legend
     index.append("rect")
@@ -114,25 +133,78 @@ function createLegendEndangeredSpecies() {
         .attr("fill", "none")
         .attr("stroke", "none");
 
+
+}
+
+createSliderEndangeredSpecies()
+
+
+function createLegendEndangeredSpecies() {
+// 1. create a group to hold the legend
+    const index2 = g.append("g")
+        .attr("id", "legend")
+        .attr("transform", `translate(${-80},${-95})`);
+
+// 3. create the main border of the legend
+    index2.append("rect")
+        .attr("x", 1)
+        .attr("y", 1)
+        .attr("width", 120)
+        .attr("height", 70)
+        .attr("fill", "none")
+        .attr("stroke", "none");
+
     // grey box
-    index.append("rect")
+    index2.append("rect")
         .attr("x", 10)
-        .attr("y", (d, i) => 30 * i + 50)
+        .attr("y", (d, i) => 30 * i + 80)
         .attr("width", 20)
         .attr("height", 20)
         .attr("fill", "#333")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
-    index.append("text")
+    index2.append("text")
+        .attr("x", 33)
+        .attr("y", 90)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
+
+    index2.append("rect")
+        .attr("x", 10)
+        .attr("y", (d, i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", "#27374D")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index2.append("text")
         .attr("x", 33)
         .attr("y", 65)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("k.A.");
+        .text("sehr nettes Leben");
+
+    index2.append("rect")
+        .attr("x", 130)
+        .attr("y", (d, i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", "#ACB5BA")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index2.append("text")
+        .attr("x", 153)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("weniger nettes Leben");
 }
 
-createLegendEndangeredSpecies()
+// createLegendEndangeredSpecies()
 
 //------SELECTS-----------------------------------------------------
 
@@ -267,12 +339,13 @@ const animaltype = d3.select("#animal-type")
     .append("europe")
     .append("text")
     .attr("x", 65)
+    .attr("class", "animal-type")
     .attr("y", 15)
     .text("Reptilien")
     .attr("text", function (d) {
         return d
     })
-    .attr("fill", "#efedea")
+
     .attr("font-size", "1rem")
     .style("text-anchor", "middle");
 
@@ -284,22 +357,26 @@ function fillCountry(country, species, selectedOption) {
     country.style("fill", d => {
         const selected_species_data = species.find(e => e.type === selectedOption)
         const value = selected_species_data[d.properties.geounit]
-        if (value > 70) {
-            return '#FF2E16';
+        if (value > 90) {
+            return '#E8F2E8';
+        } else if (value > 80) {
+            return '#D2DDD6';
+        } else if (value > 70) {
+            return '#BDC8C5';
         } else if (value > 60) {
-            return '#FF4C38';
+            return '#A7B3B4';
         } else if (value > 50) {
-            return '#FF6959';
+            return '#929EA3';
         } else if (value > 40) {
-            return '#FF877A';
+            return '#7C8A91';
         } else if (value > 30) {
-            return '#FFA59B';
+            return '#677580';
         } else if (value > 20) {
-            return '#FFC3BC';
+            return '#51606F';
         } else if (value > 10) {
-            return '#FFE1DD';
+            return '#3C4B5E';
         } else if (value > 0) {
-            return '#FFFFFF';
+            return '#27374D';
         } else {
             return "#333"
         }
@@ -322,8 +399,6 @@ function doPlot(selectedOption) {
         .projection(projection); // albers projection
 
 
-
-
     // get data
     Promise.all(
         [
@@ -344,6 +419,7 @@ function doPlot(selectedOption) {
             .attr("id", d => d.id)
             .attr("class", "countries")
             .attr("d", pathGenerator)
+            // todo add boundary for CH
             .attr("class", "europe-boundary");
 
         // boundaries of each country
@@ -356,14 +432,24 @@ function doPlot(selectedOption) {
 
 
         // events
+        var isClicked = false;
         country.on("mouseover", (event, d) => {
+            if (!isClicked) {
+                const selected_species_data = species.find(e => e.type === selectedOption)
+                mouseover(selected_species_data, d.properties.geounit, d3.select(this))
+            }
+        });
+
+        country.on("click", (event, d) => {
             const selected_species_data = species.find(e => e.type === selectedOption)
-            console.log(d3.select(this), 'd3.select(this)')
             mouseover(selected_species_data, d.properties.geounit, d3.select(this))
+            isClicked = !isClicked;
         });
 
         country.on("mouseout", function () {
-            mouseout(d3.select(this))
+            if (!isClicked) {
+                mouseout(d3.select(this))
+            }
         });
 
         // todo refactoring aller buttons
@@ -371,6 +457,8 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
             d3.selectAll("#reptilien").classed("selected", true)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
@@ -383,6 +471,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#saeugetiere").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
@@ -396,6 +487,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#voegel").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -408,6 +502,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#amphibien").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -420,6 +517,9 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+
             d3.selectAll("#fisch").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
@@ -432,6 +532,8 @@ function doPlot(selectedOption) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
             d3.selectAll("#wirbellose").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)

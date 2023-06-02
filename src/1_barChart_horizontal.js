@@ -243,7 +243,7 @@ function colorPickerHuman(c) {
     if (c === "Switzerland") {
         return "#FF6959";
     } else {
-        return "#596B76";
+        return "#ACB5BA";
     }
 }
 
@@ -251,7 +251,7 @@ function colorPickerAnimal(c) {
     if (c === "Switzerland") {
         return "#FF6959";
     } else {
-        return "#596B76";
+        return "#ACB5BA";
     }
 
 }
