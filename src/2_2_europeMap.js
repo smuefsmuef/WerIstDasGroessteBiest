@@ -241,13 +241,14 @@ function createPatterns(id) {
     defs.append("pattern")
         .attr("id", id)
         .attr("patternUnits", "userSpaceOnUse")
+     .attr("patternTransform", "translate(40,30)")
         .attr("width", 30)
         .attr("height", 30)
         .append("image")
         .attr("xlink:href", "/img/labels/" + id + ".jpg")
-        .attr("width", 30)
+        .attr("width", 50)
         .attr("z-index", "199")
-        .attr("height", 30);
+        .attr("height", 50);
     return "url(#" + id + ")";
 }
 
