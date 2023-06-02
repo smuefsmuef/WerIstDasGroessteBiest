@@ -413,3 +413,25 @@ article {
     pointer-events: none;
 }
 
+
+/*Quiz*/
+ #result {
+     background-color: #f0f0f0;
+     padding: 10px;
+     margin-bottom: 10px;
+     fill: #0a1014;
+ }
+#options {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    fill: #f0f0f0;
+}
+#question {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    fill: #f0f0f0;
+}
+
+

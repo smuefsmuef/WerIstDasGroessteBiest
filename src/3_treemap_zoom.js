@@ -105,11 +105,9 @@
         group.selectAll("g")
             .select("image")
             .attr("x", d => d === root ? 0 : (x(d.x1) - x(d.x0))*0.2)
-            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0))*0.1)
+            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0))*0.15)
             .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0))*0.6)
             .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0))*0.6)
-
-
     }
 
 
