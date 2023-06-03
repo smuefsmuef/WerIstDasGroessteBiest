@@ -178,11 +178,23 @@ img {
 /*Buttons*/
 
 .btn-custom {
-    height: 30px;
+    height: 40px;
+    background: #D2DDD6;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 4px #7C8A91;
+    transition: box-shadow 0.3s;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+    background: #D2DDD6;
+    box-shadow: 0 0 0 4px #FF6959, 0 0 0 2px transparent;
 }
 
 .btn-sm.btn-custom {
-    height: 30px;
+    height: 40px;
+    font-size: 1.5rem;
+    padding: 10px 10px 10px 10px;
     color: #0a1014;
 }
 
@@ -431,12 +443,14 @@ article {
     width: 100px;
     height: 28px;
     padding: 2px;
-    font: 12px sans-serif;
+    font: 14px sans-serif;
     background: #efedea;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
 }
+
+
 
 
 /*Quiz*/
@@ -462,17 +476,53 @@ article {
 }
 
 
-/*Buttons Treemap*/
+/*Treemap*/
 
 .treemap-button {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     cursor: pointer;
+    opacity: 75%;
+    box-shadow: 0 0 0 4px #7C8A91;
+    transition: box-shadow 0.3s;
+
 }
 
 .treemap-button:hover {
-    height: 150px;
-    width: 150px;
-    opacity: 85%;
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    opacity: 100%;
+    border: none;
+    box-shadow: 0 0 0 5px #FF6959;
+
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #3C4B5E;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 

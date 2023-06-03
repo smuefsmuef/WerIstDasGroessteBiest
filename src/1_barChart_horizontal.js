@@ -51,7 +51,7 @@ function update(selectedVar) {
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
-            yAxis.transition().duration(2000)
+            yAxis.transition().duration(4000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
                 .style("font-size", "1rem")
@@ -59,7 +59,7 @@ function update(selectedVar) {
             // X axis
             x.domain([0, d3.max(data, d => d[selectedVar])])
 
-            xAxis.transition().duration(2000)
+            xAxis.transition().duration(4000)
                 .call(d3.axisBottom(x))
                 .selectAll("yAxisLabel")
                 .attr("transform", "translate(5,0)")
@@ -84,7 +84,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(2000)
+                .duration(4000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -95,14 +95,14 @@ function update(selectedVar) {
             data.sort((a, b) => a[selectedVar] - b[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
-            yAxis.transition().duration(2000)
+            yAxis.transition().duration(4000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "left");
 
             // X axis
             x.domain([0, 40])
 
-            xAxis.transition().duration(2000)
+            xAxis.transition().duration(4000)
                 .call(d3.axisBottom(x))
                 .selectAll("text")
                 .attr("transform", "translate(5,0)")
@@ -119,7 +119,7 @@ function update(selectedVar) {
                 .style("fill", "#efedea")
                 .style("text-size", "8px")
                 .text(null)
-                .text("Anteil bedrohter Tierarten im Verhältnis zu allen Tierarten [Prozent]")
+                .text("Anteil bedrohter Tierarten [Prozent]")
 
             // variable u: map data to existing bars
             const u = svg1.selectAll("rect")
@@ -128,7 +128,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(2000)
+                .duration(5000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -139,7 +139,7 @@ function update(selectedVar) {
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
-            yAxis.transition().duration(2000)
+            yAxis.transition().duration(5000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
                 .style("font-size", "1rem")
@@ -147,7 +147,7 @@ function update(selectedVar) {
             // X axis
             x.domain([0, 50])
 
-            xAxis.transition().duration(2000)
+            xAxis.transition().duration(5000)
                 .call(d3.axisBottom(x))
                 .selectAll("yAxisLabel")
                 .attr("transform", "translate(5,0)")
@@ -171,7 +171,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(2000)
+                .duration(5000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -182,7 +182,7 @@ function update(selectedVar) {
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
-            yAxis.transition().duration(2000)
+            yAxis.transition().duration(5000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
                 .style("font-size", "1rem")
@@ -190,7 +190,7 @@ function update(selectedVar) {
             // X axis
             x.domain([0, 50])
 
-            xAxis.transition().duration(2000)
+            xAxis.transition().duration(5000)
                 .call(d3.axisBottom(x))
                 .selectAll("yAxisLabel")
                 .attr("transform", "translate(5,0)")
@@ -214,7 +214,7 @@ function update(selectedVar) {
             // update bars
             u.join("rect")
                 .transition()
-                .duration(2000)
+                .duration(5000)
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => -x(d[selectedVar]))
@@ -243,7 +243,7 @@ function colorPickerHuman(c) {
     if (c === "Switzerland") {
         return "#FF6959";
     } else {
-        return "#ACB5BA";
+        return "#A7B3B4";
     }
 }
 
@@ -251,7 +251,7 @@ function colorPickerAnimal(c) {
     if (c === "Switzerland") {
         return "#FF6959";
     } else {
-        return "#ACB5BA";
+        return "#A7B3B4";
     }
 
 }

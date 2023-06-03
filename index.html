@@ -218,58 +218,67 @@
                 </div>
 
                 <div class="step" data-step="6">
-                    <!--                    <section class="color-section" id="chart-3">-->
-                    <!--                        <div class="container-fluid">-->
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 ">
-                            <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                 data-toggle="tooltip"
-                                 title="Der süsse und intelligente Fischotter ist vom Aussterben bedroht:-("
-                                 onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
-                        </div>
-                        <div class="col-sm-6 col-md-3  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <div class="rounded-circle">
-                                <img src="/img/labels/fisch.jpg" class="treemap-button" alt="fisch">
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
-                        </div>
-                        <div class="col-sm-6 col-md-3  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
-                        </div>
-                        <div class="col-sm-6 col-md-4  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
-                        </div>
-                        <div class="col-sm-6 col-md-4  ">
-                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
-                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                    <section class="color-section" id="chart-3">
+                        <div class="container-fluid">
+
+
+                            <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
+                                die
+                                Kacheln klickst und über die Titel wieder zurück.<br>
+                            </h3>
+                            <div id="zoom_treemap"></div>
                             </br>
 
+                            <h3>Wo findest Du diese fünf Arten in der Treemap?
+                            </h3>
+                            </br>
                         </div>
-
-                    </div>
-                    </br>
-                    </br>
-                    </br>
-                    <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
-                        die
-                        Kacheln klickst und über die Titel wieder zurück.<br>
-                    </h3>
-                    <div id="zoom_treemap"></div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                     onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <!--    </section>-->
-                <!--    </div>-->
 
 
                 <!--                <h2 class="section-heading">Hast Du die Tierarten gefunden?</h2>-->
@@ -375,7 +384,6 @@
 </body>
 
 <!--Javascript-->
-<!--todo d3 entweder lokal oder dynamisch, lib oder d3-->
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src='lib/d3/d3.js'></script>
 <script src='lib/lodash.js'></script>
@@ -384,9 +392,10 @@
 <script src="https://unpkg.com/scrollama"></script>
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script>
     $(function () {
