@@ -29,6 +29,7 @@ function mouseover(species, countryId, country) {
         d3.select("#context-label").text(translateCountryName(countryId) + ": ");
         d3.select("#context-label-2").text(percent + "%");
         d3.select("#context-label-3").text("der " + species.type + " bedroht.");
+        d3.select("#context-label-8").text("(Klicken fixiert/löst den Wert.)");
     }
 }
 
@@ -36,6 +37,7 @@ function mouseout() {
     d3.select("#context-label").text(" ");
     d3.select("#context-label-2").text(" ");
     d3.select("#context-label-3").text(" ");
+    d3.select("#context-label-8").text(" ");
 }
 
 
@@ -47,31 +49,24 @@ createContextHolder();
 function createContextHolder() {
     const contextHolder = g.append("g")
         .attr("id", "context-holder")
-        .attr("transform", `translate(${-135},${120})`)
+        .attr("transform", `translate(${-135},${120})`);
 
-    contextHolder.append("text")
-        .attr("x", 65)
-        .attr("y", 15)
-        .attr("id", "context-label")
-        .attr("fill", "#FF6959")
-        .text("Schweiz:")
-        .style("text-anchor", "left");
+    const createTextElement = (x, y, id, fill, text, anchor) => {
+        return contextHolder.append("text")
+            .attr("x", x)
+            .attr("y", y)
+            .attr("id", id)
+            .attr("fill", fill)
+            .text(text)
+            .style("text-anchor", anchor);
+    };
 
-    contextHolder.append("text")
-        .attr("x", 65)
-        .attr("y", 40)
-        .attr("id", "context-label-2")
-        .attr("fill", "#FF6959")
-        .text("78.9%")
-        .style("text-anchor", "right");
+    createTextElement(65, 15, "context-label", "#FF6959", "Schweiz:", "left");
+    createTextElement(65, 40, "context-label-2", "#FF6959", "78.9%", "right");
+    createTextElement(65, 55, "context-label-3", "#FF6959", "der Reptilien bedroht.", "left");
+    createTextElement(65, 69, "context-label-8", "#3C4B5E", "(Klicken fixiert/löst den Wert.)", "left")
+        .attr("font-size", "0.7rem");
 
-    contextHolder.append("text")
-        .attr("x", 65)
-        .attr("y", 55)
-        .attr("id", "context-label-3")
-        .attr("fill", "#FF6959")
-        .text("der Reptilien bedroht.")
-        .style("text-anchor", "left");
     return contextHolder;
 }
 
@@ -133,78 +128,10 @@ function createSliderEndangeredSpecies() {
         .attr("fill", "none")
         .attr("stroke", "none");
 
-
 }
-
 createSliderEndangeredSpecies()
 
 
-function createLegendEndangeredSpecies() {
-// 1. create a group to hold the legend
-    const index2 = g.append("g")
-        .attr("id", "legend")
-        .attr("transform", `translate(${-80},${-95})`);
-
-// 3. create the main border of the legend
-    index2.append("rect")
-        .attr("x", 1)
-        .attr("y", 1)
-        .attr("width", 120)
-        .attr("height", 70)
-        .attr("fill", "none")
-        .attr("stroke", "none");
-
-    // grey box
-    index2.append("rect")
-        .attr("x", 10)
-        .attr("y", (d, i) => 30 * i + 80)
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("fill", "#333")
-        .attr("stroke", "black")
-        .attr("stroke-width", "1");
-
-    index2.append("text")
-        .attr("x", 33)
-        .attr("y", 90)
-        .attr("font-size", "1rem")
-        .attr("fill", "#efedea")
-        .text("k.A.");
-
-    index2.append("rect")
-        .attr("x", 10)
-        .attr("y", (d, i) => 30 * i + 50)
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("fill", "#27374D")
-        .attr("stroke", "black")
-        .attr("stroke-width", "1");
-
-    index2.append("text")
-        .attr("x", 33)
-        .attr("y", 65)
-        .attr("font-size", "1rem")
-        .attr("fill", "#efedea")
-        .text("sehr nettes Leben");
-
-    index2.append("rect")
-        .attr("x", 130)
-        .attr("y", (d, i) => 30 * i + 50)
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("fill", "#ACB5BA")
-        .attr("stroke", "black")
-        .attr("stroke-width", "1");
-
-    index2.append("text")
-        .attr("x", 153)
-        .attr("y", 65)
-        .attr("font-size", "1rem")
-        .attr("fill", "#efedea")
-        .text("weniger nettes Leben");
-}
-
-// createLegendEndangeredSpecies()
 
 //------SELECTS-----------------------------------------------------
 
@@ -228,26 +155,29 @@ selectLabel.append("text")
 var defs = selectLabel.append("defs");
 
 function createPatterns(id) {
-    defs.append("pattern")
+    defs.append("svg:pattern")
         .attr("id", id)
         .attr("patternUnits", "userSpaceOnUse")
+     .attr("patternTransform", "translate(40,30)")
         .attr("width", 30)
         .attr("height", 30)
         .append("image")
-        .attr("xlink:href", "/img/labels/" + id + ".jpg")
+        .attr("xlink:href", "/img/labels/" + id + ".svg")
         .attr("width", 30)
         .attr("z-index", "199")
         .attr("height", 30);
     return "url(#" + id + ")";
 }
 
-selectLabel.append("circle")
+
+
+const test = selectLabel.append("circle")
     .attr("cx", 145)
     .attr("cy", 60)
     .attr("r", 20)
     .attr("id", "reptilien")
-    .style("fill", "purple")
-    .style("fill", createPatterns("reptilien"))
+  .style("fill", "transparent " )
+ //   .style("fill", createPatterns("reptilien"))
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
     .classed("selected", true)
@@ -256,6 +186,14 @@ selectLabel.append("circle")
         return "Reptilien"
     })
     .attr("type", "submit")
+
+// test.append("image:img")
+//     .attr("xlink:href", "/img/labels/reptilien.jpg")
+//     .attr("x",155)
+//     .attr("y", 60)
+//     .attr("width", 30)
+//     .attr("height", 30);
+
 
 
 selectLabel.append("circle")
@@ -323,16 +261,16 @@ selectLabel.append("circle")
     .attr("cx", 145)
     .attr("cy", 310)
     .attr("r", 20)
-    .style("fill", createPatterns("wirbellose"))
+    .style("fill", createPatterns("wirbellosen"))
     .attr("fill", "blue")
     .attr("stroke", "black")
     .attr("class", "animal-select-button ")
     .attr("stroke-width", "1")
     .attr("wert", function (d) {
-        return "Wirbellose"
+        return "Wirbellosen"
     })
     .attr("type", "submit")
-    .attr("id", "wirbellose")
+    .attr("id", "wirbellosen")
 
 // tierart in titel
 const animaltype = d3.select("#animal-type")
@@ -452,20 +390,6 @@ function doPlot(selectedOption) {
             }
         });
 
-        // todo refactoring aller buttons
-        d3.selectAll("#reptilien").on("mouseover", function (d) {
-            selectedOption = d3.select(this).attr("wert")
-            fillCountry(country, species, selectedOption)
-            animaltype.text(selectedOption)
-            mouseout()
-            isClicked = false;
-            d3.selectAll("#reptilien").classed("selected", true)
-            d3.selectAll("#saeugetiere").classed("selected", false)
-            d3.selectAll("#voegel").classed("selected", false)
-            d3.selectAll("#amphibien").classed("selected", false)
-            d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
-        })
 
         d3.selectAll("#saeugetiere").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
@@ -479,7 +403,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
 
@@ -495,7 +419,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
         d3.selectAll("#amphibien").on("mouseover", function (d) {
@@ -510,8 +434,7 @@ function doPlot(selectedOption) {
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#fisch").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
-
+            d3.selectAll("#wirbellosen").classed("selected", false)
         })
         d3.selectAll("#fisch").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
@@ -519,22 +442,21 @@ function doPlot(selectedOption) {
             animaltype.text(selectedOption)
             mouseout()
             isClicked = false;
-
             d3.selectAll("#fisch").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
             d3.selectAll("#amphibien").classed("selected", false)
-            d3.selectAll("#wirbellose").classed("selected", false)
+            d3.selectAll("#wirbellosen").classed("selected", false)
 
         })
-        d3.selectAll("#wirbellose").on("mouseover", function (d) {
+        d3.selectAll("#wirbellosen").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)
             animaltype.text(selectedOption)
             mouseout()
             isClicked = false;
-            d3.selectAll("#wirbellose").classed("selected", true)
+            d3.selectAll("#wirbellosen").classed("selected", true)
             d3.selectAll("#reptilien").classed("selected", false)
             d3.selectAll("#saeugetiere").classed("selected", false)
             d3.selectAll("#voegel").classed("selected", false)
