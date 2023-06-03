@@ -64,7 +64,7 @@ img {
     font-size: 20rem;
     line-height: 1.5;
     color: #A1AB95;
-   filter: brightness(1);
+    filter: brightness(1);
     font-family: 'Shrikhand', cursive;
 }
 
@@ -91,7 +91,7 @@ img {
 .title-background {
     background-color: #0a1014;
     opacity: 0.8;
-    color: #e70101 ;
+    color: #e70101;
     font-size: 3rem;
     line-height: 1.5;
     font-style: italic;
@@ -265,7 +265,7 @@ hr {
 }
 
 .stop-left-species {
-    stop-color: #27374D ;
+    stop-color: #27374D;
 }
 
 .stop-right-species {
@@ -440,18 +440,20 @@ article {
 
 
 /*Quiz*/
- #result {
-     background-color: #f0f0f0;
-     padding: 10px;
-     margin-bottom: 10px;
-     fill: #0a1014;
- }
+#result {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    fill: #0a1014;
+}
+
 #options {
     background-color: #f0f0f0;
     padding: 10px;
     margin-bottom: 10px;
     fill: #f0f0f0;
 }
+
 #question {
     background-color: #f0f0f0;
     padding: 10px;
@@ -459,4 +461,18 @@ article {
     fill: #f0f0f0;
 }
 
+
+/*Buttons Treemap*/
+
+.treemap-button {
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.treemap-button:hover {
+    height: 150px;
+    width: 150px;
+    opacity: 85%;
+}
 

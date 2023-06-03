@@ -3,6 +3,7 @@
   "color": "#829098",
   "children": [
     {
+      "id": "1",
       "name": "Säugetiere",
       "color": "#829098",
       "image": "img/animal_icons/Animals Bundle-28.svg",
@@ -13,6 +14,7 @@
           "color": "#829098"
         },
         {
+          "id": "2",
           "name": "Dominant",
           "color": "yellow",
           "children": [
@@ -57,9 +59,43 @@
           "color": "#fc897c",
           "children": [
             {
-              "name": "Potenziell gefährdete Vogelarten: \nKolbenente\nWaldohreule\nHänfling\nWanderfalke\nBaumfalke\nOrpheusspötter\nFeldschwirl\nNachtigall\nSchafstelze\nWespenbussard\nSchwarzkehlchen\nTurteltaube\nGartengrasmücke\nDrosselrohrsänger\nFeldlerche\nSteinhuhn\nMauersegler\nAlpensegler\nKuckuck\nMehlschwalbe\nMittelspecht\nZaunammer\nTurmfalke\nWendehals\nAlpenschneehuhn\nRohrschwirl\nGartenrotschwanz\nFlussseeschwalbe\nDorngrasmücke\nBirkhuhn\nHaselhuhn\nSchleiereule",
+              "name": "Potenziell gefährdete Vogelarten",
               "value": 32,
-              "color": "#829098"
+              "color": "#829098",
+              "species": [
+                "Kolbenente",
+                "Waldohreule",
+                "Hänfling",
+                "Wanderfalke",
+                "Baumfalke",
+                "Orpheusspötter",
+                "Feldschwirl",
+                "Nachtigall",
+                "Schafstelze",
+                "Wespenbussard",
+                "Schwarzkehlchen",
+                "Turteltaube",
+                "Gartengrasmücke",
+                "Drosselrohrsänger",
+                "Feldlerche",
+                "Steinhuhn",
+                "Mauersegler",
+                "Alpensegler",
+                "Kuckuck",
+                "Mehlschwalbe",
+                "Mittelspecht",
+                "Zaunammer",
+                "Turmfalke",
+                "Wendehals",
+                "Alpenschneehuhn",
+                "Rohrschwirl",
+                "Gartenrotschwanz",
+                "Flussseeschwalbe",
+                "Dorngrasmücke",
+                "Birkhuhn",
+                "Haselhuhn",
+                "Schleiereule"
+              ]
             }
           ]
         },

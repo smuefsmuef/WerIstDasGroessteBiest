@@ -207,33 +207,78 @@
             </div>
             <div>
                 <div class="step" data-step="5">
-                    <h2 class="section-heading">Welche Arten sind in der Schweiz wie stark gefährdet? <br><br>
-                        Von den insgesamt XY Tieren, sind in der Schweiz XY gefährdet. Es gibt zudem eine dominante Art,
-                        die
-                        sich mit einer Entourage von weiteren Arten umgibt. Finde sie.<br>
+                    <h2 class="section-heading">Welche Tierarten sind in der Schweiz wie stark gefährdet? <br><br>
+                        Von den 7 Tiergattungen und den insgesamt 1810 Tierarten, die in der Schweiz beobachtet werden,
+                        sind rund XY gefährdet und weitere XY% potenziell gefährdet.<br><br>
+                        Entdecke, welche und wie viele Tierarten in der Schweiz gefährdet sind.
+                        <br><br>
+                        Hast Du gewusst, dass...
                     </h2>
+
                 </div>
 
                 <div class="step" data-step="6">
-                    <section class="color-section" id="chart-3">
-                        <div class="container-fluid">
-                            <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
-                                die
-                                Kacheln klickst und über die Titel wieder zurück.<br>
-                            </h3>
-                            <div id="zoom_treemap"></div>
+                    <!--                    <section class="color-section" id="chart-3">-->
+                    <!--                        <div class="container-fluid">-->
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 ">
+                            <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                 data-toggle="tooltip"
+                                 title="Der süsse und intelligente Fischotter ist vom Aussterben bedroht:-("
+                                 onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
                         </div>
-                    </section>
+                        <div class="col-sm-6 col-md-3  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <div class="rounded-circle">
+                                <img src="/img/labels/fisch.jpg" class="treemap-button" alt="fisch">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                        </div>
+                        <div class="col-sm-6 col-md-3  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                        </div>
+                        <div class="col-sm-6 col-md-4  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                        </div>
+                        <div class="col-sm-6 col-md-4  ">
+                            <h3>der süsse Fischotter vom Aussterben bedroht ist </h3>
+                            <img src="/img/labels/voegel.jpg" class="treemap-button" alt="vogel">
+                            </br>
+
+                        </div>
+
+                    </div>
+                    </br>
+                    </br>
+                    </br>
+                    <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
+                        die
+                        Kacheln klickst und über die Titel wieder zurück.<br>
+                    </h3>
+                    <div id="zoom_treemap"></div>
                 </div>
+                <!--    </section>-->
+                <!--    </div>-->
 
 
-                <h2 class="section-heading">Hast Du die Tierarten gefunden?</h2>
+                <!--                <h2 class="section-heading">Hast Du die Tierarten gefunden?</h2>-->
 
-<!--                <div id="quiz">-->
-<!--                    <div id="question"></div>-->
-<!--                    <div id="options"></div>-->
-<!--                    <div id="result"></div>-->
-<!--                </div>-->
+                <!--                <div id="quiz">-->
+                <!--                    <div id="question"></div>-->
+                <!--                    <div id="options"></div>-->
+                <!--                    <div id="result"></div>-->
+                <!--                </div>-->
                 <div class="step" data-step="7">
                     <h2 class="section-heading">Aber warum geht's scheinbar genau dort den Menschen gut, <br>
                         wo die Tiere ums Überleben kämpfen? <br>
@@ -266,29 +311,31 @@
                                     </p>
                                 </div>
 
-                            <div class="about-box col-lg-3">
-                                <i class="icon fas fa-tractor fa-4x"></i>
-                                <h3 class="about-title">Gifte in Wasser & Boden</h3>
-                                <p class="about-text">Seit den 1950 Jahren dominiert in der Schweiz, wie in anderen
-                                    Westeuropäischen Ländern, die <b class="red">intensive Landwirtschaftsform</b>. D.h.
-                                    es werden
-                                    hohe Mengen an Pestizide und Düngemittel eingesetzt.</p>
+                                <div class="about-box col-lg-3">
+                                    <i class="icon fas fa-tractor fa-4x"></i>
+                                    <h3 class="about-title">Gifte in Wasser & Boden</h3>
+                                    <p class="about-text">Seit den 1950 Jahren dominiert in der Schweiz, wie in anderen
+                                        Westeuropäischen Ländern, die <b class="red">intensive Landwirtschaftsform</b>.
+                                        D.h.
+                                        es werden
+                                        hohe Mengen an Pestizide und Düngemittel eingesetzt.</p>
+                                </div>
+                                <div class="about-box col-lg-3">
+                                    <i class="icon fas fa-gauge  fa-4x"></i>
+                                    <h3 class="about-title">Weitere Faktoren</h3>
+                                    <p class="about-text">Regional unterschiedlich stark ausgeprägt, beschleunigen die
+                                        Übernützung der Arten durch <b class="red">Jagd und Fischerei</b>, vom Menschen
+                                        eingeführte, <b class="red">invasive Arten</b> und die <b class="red">Zerstörung
+                                            von
+                                            Wäldern und Feuchtgebieten </b> das Artensterben. </p>
+                                </div>
                             </div>
-                            <div class="about-box col-lg-3">
-                                <i class="icon fas fa-gauge  fa-4x"></i>
-                                <h3 class="about-title">Weitere Faktoren</h3>
-                                <p class="about-text">Regional unterschiedlich stark ausgeprägt, beschleunigen die
-                                    Übernützung der Arten durch <b class="red">Jagd und Fischerei</b>, vom Menschen
-                                    eingeführte, <b class="red">invasive Arten</b> und die <b class="red">Zerstörung von
-                                        Wäldern und Feuchtgebieten </b> das Artensterben. </p>
-                            </div>
-                        </div>
 
                             <div class="step" data-step="9">
                                 <h2 class="section-heading">Ja, der Mensch ist das grösste Biest.<br>
                                     Und zwar schon lange... vielleicht wird's ja bald besser?<br>
                                 </h2>
-<!--                                <div id="animation_neu"></div>-->
+                                <!--                                <div id="animation_neu"></div>-->
                             </div>
                         </div>
                     </section>
@@ -341,6 +388,13 @@
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+
 <!--own scripts-->
 <script src='src/1_barChart_horizontal.js'></script>
 <script src='src/2_europeMap_human.js'></script>
@@ -349,7 +403,6 @@
 <script src='src/4_lineChart.js'></script>
 <script src='src/4_animation_history_neu.js'></script>
 <script src="lib/scrollama/scrollama.min.js"></script>
-
 
 
 </html>
