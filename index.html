@@ -36,66 +36,17 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
                         <h1 class="big-heading">Der Mensch, das grösste Biest?</h1>
-                        <!--   <h2 class="section-heading">Die Lebensqualität der Menschen in der Schweiz ist hoch,
-                               aber gilt dies auch für die Tiere?</h2> todo brauchts vilelicht gar nicht-->
                     </div>
                     <div class="col-sm-2">
                     </div>
                 </div>
             </div>
         </section>
-
     </header>
-
     <section id="scrolly">
         <article>
-
-
-            <div class="step" data-step="0">
-                <div class="clock">
-                    <h4>tbd Population / Extinction / Deforrestation Clock </h4>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="display-clock"></div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div>50 neue Arten werden jeden Tag entedeckt</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div>150-200 Arten sterben täglich aus</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div>385'000 Babies werden jeden Tag geboren</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div>3 Fussballfelder pro Minute an Regenwald werden jeden Tag abgeholzt.</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div><a href="https://extinctionclock.org/">etwas so
-                                in der Art</a>
-                            </div>
-                            <div><a href="https://www.theworldcounts.com/stories/facts-about-the-environment">etwas so
-                                in der Art</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <div class="red">In roter Schrift stehen jeweils unsere Fragen an die Peer-Evaluator:innen:<br> <br>Oben
-                    evtl.
-                    eine Clock / Counter einfügen (oder zuunterst) <br> Unten an der Seite angelangt, würde dann dem
-                    User mitgeteilt, wie viel mehr Menschen, wie viel weniger
-                    Arten, wie viel weniger Regenwald etc. seit dem Besuch der Webseite.<br>
-                    Frage an Peer-Evaluator:innen: Braucht's das? Welche Clocks fändet ihr besonders interessant?
-                </div>
             </div>
             <div class="step" data-step="1">
-                <img src="img/labels/eye.png" alt="lables">
                 <h2 class="section-heading">Weltweit werden jedes Jahr Rankings über die Lebensqualität und das
                     Wohlergehen des Menschen publiziert. <br><br>In fast allen thront die Schweiz in den obersten
                     Rängen. <br>
@@ -107,89 +58,130 @@
 
             <div class="step" data-step="2">
                 <section class="color-section" id="chart-1">
-                    <div class="container-fluid">
-                        <h2>Geht's dem Mensch gut - geht's dem Rest schlecht?
-                        </h2>
-                        <h3>Vergleiche wie sich die Lebensqualität von Mensch und Tier in den verschiedenen Ländern
-                            unterscheidet.</h3>
-                        <br>
-                        <button type="button" class="btn btn-info btn-sm btn-custom" onclick="update('Total_Index')">
-                            Lebensqualität
-                            der Menschen
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                onclick="update('Threatened_species_total')">
-                            Bedrohte Tier- und Pflanzenarten
-                        </button>
-
+                    <h2>Geht's dem Mensch gut - geht's dem Rest schlecht?
+                    </h2>
+                    <h3>Vergleiche wie sich die Lebensqualität von Mensch und Tier in den verschiedenen Ländern
+                        unterscheidet.</h3>
+                    <br>
+                    <button type="button" class="btn btn-secondary btn-sm btn-custom" onclick="update('Total_Index')">
+                        Lebensqualität
+                        der Menschen
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm btn-custom"
+                            onclick="update('Threatened_species_total')">
+                        Bedrohte Tier- und Pflanzenarten
+                    </button>
+                    <div id="my_barchart_horizontal"></div>
+                    <div class="panel-group" id="exkursAccordion">
                         <div class="row">
-                            <div class="col-sm-7">
-                                <div id="my_barchart_horizontal"></div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#exkursAccordion"
+                                               href="#exkursCollapse">
+                                                Exkurs: Wie entsteht der Lebensqualitätsindex?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="exkursCollapse" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="text-small text-left">
+                                                Im "Quality of Life Index" der OECD werden acht verschiedene Indices
+                                                verrechnet und unterschiedlich gewichtet. Unter anderem wirtschaftliche,
+                                                soziale und ökologische Faktoren. Die vier blauen Indices werden positiv
+                                                verrechnet, die roten negativ. Schauen Sie, weshalb die Schweiz am
+                                                Schluss zuoberst thront.
+                                            </div>
+                                            <h5>Ist Ihnen etwas aufgefallen? </h5>
+                                            <div class="text-small text-left">
+                                                Der Lebenshaltungskostenindex, in dem die Schweiz den letzten Platz
+                                                belegt,
+                                                wird am wenigsten stark gewichtet. Auch das Verhältnis von Immobilien zu
+                                                Einkommen wird nicht stark gewichtet. Wer hat wohl diese Gewichtungen
+                                                vorgenommen?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-5 custom-border">
-                                <h5>Exkurs: Wie entsteht der Lebensqualitätsindex?</h5>
-                                <div class="text-small"> Im "Quality of Life Index" der OECD werden acht verschiedene
-                                    Indices verrechnet und unterschiedlich gewichtet. Unter anderem wirtschaftliche,
-                                    soziale und ökologische Faktoren. Die vier blauen Indices werden positiv
-                                    verrechnet, die roten negativ. Schauen Sie, weshalb die Schweiz am Schluss zuoberst
-                                    thront.
-                                </div>
-                                <br>
-                                <div>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Purchasing Power Index')">
-                                        + Kaufkraftindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Safety Index')">
-                                        + Sicherheitsindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Health Care Index')">
-                                        + Gesundheitsindex
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-custom"
-                                            onclick="update('Climate Index')">+
-                                        Klimaindex
-                                    </button>
-                                </div>
-                                <br>
-                                <div>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Cost of Living Index')">
-                                        - Lebenshaltungskostenindex
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Property Price to Income Ratio')">- Verhältnis von
-                                        Immobilienpreis
-                                        zu Einkommen
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Traffic Commute Time Index')">- Pendlerzeitindex
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-custom"
-                                            onclick="update('Pollution Index')">
-                                        - Umweltverschmutzungsindex
-                                    </button>
-                                </div>
-                                <br>
-                                <h5>Ist Ihnen etwas aufgefallen? </h5>
-                                <div class="text-small">
-                                    Der Lebenshaltungskostenindex, in dem die Schweiz den letzten Platz belegt,
-                                    wird am wenigsten stark gewichtet. Auch das Verhältnis von Immobilien zu
-                                    Einkommen wird nicht stark gewichtet. Wer hat wohl diese Gewichtungen vorgenommen?
-                                </div>
-                                <div>
+                            <div class="col-md-6">
+                                <div class="panel-group" id="indexAccordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#indexAccordion"
+                                                   href="#indexCollapse">
+                                                    Indizes der Lebensqualität
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="indexCollapse" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-left">
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Purchasing Power Index')">+
+                                                                    Kaufkraftindex
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Safety Index')">+
+                                                                    Sicherheitsindex
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Health Care Index')">+
+                                                                    Gesundheitsindex
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Climate Index')">+ Klimaindex
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-left">
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Cost of Living Index')">-
+                                                                    Lebenshaltungskostenindex
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Property Price to Income Ratio')">
+                                                                    - Verhältnis Immobilienpreis/Einkommen
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Traffic Commute Time Index')">-
+                                                                    Pendlerzeitindex
+                                                                </button>
+                                                                <button type="button"
+                                                                        class="btn btn-secondary btn-sm btn-custom"
+                                                                        onclick="update('Pollution Index')">-
+                                                                    Umweltverschmutzungsindex
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-
             <div class="step" data-step="3">
-                <img src="img/labels/cell.png" alt="lables">
-                <h2>Wo lebt es sich in Europa am besten und wo wirds eng..<br>..und
+                <h2 class="section-heading">Wo lebt es sich in Europa am besten und wo wirds eng...<br>...und
                     vor allem für wen?
                     <br>
                 </h2>
@@ -199,247 +191,199 @@
                 <section class="color-section" id="chart-2">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <h2 class="text-normal">Ein nettes Leben für <br> die Menschen... </h2>
+                            <div class="col-sm-12 col-md-6 ">
+                                <h2 class="section-heading">Ein nettes Leben für <br> die Menschen </h2>
                                 <div id="humans"></div>
                             </div>
-                            <div class="col-sm-6">
-                                <h2 class="text-normal">...und etwas weniger für <br>
-                                    <select id="speciesButton"></select></h2>
+                            <div class="col-sm-12 col-md-6">
+                                <h2 class="section-heading">...aber etwas weniger für <br>
+                                    <div id="animal-type"> die</div>
+                                </h2>
                                 <div id="europe"></div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <div class="red">
-                    <div><br>
-                        Frage an Peer-Evaluator:innen: <br> Tierarten rechts: Lieber eine ganz grosse Karte mit
-                        Dropdown oder viele kleine nebeneinander?
-                    </div>
-                    <div>Wäre das noch interessant? bei den Tierarten noch eine Option für Anzeige
-                        Landschaftszusammenstellung (Wald/Meer/LAndwirtschaft etc).
-                        Brauchts das? Oder evtl. auf Click einen Drawer mit Infos öffnen?
-                    </div>
-                    <div>Zoom in/ out?</div>
-                </div>
             </div>
-
-            <div class="step" data-step="5">
-                <img src="img/labels/rainforest.png" alt="lables">
-                <h2>Wie stark sind die einzelnen Arten in der Schweiz gefährdet? <br><br>
-                    Die folgende Treemap zeigt den Gefährdungsgrad der Tiere, getrennt nach Tiergattungen. <br>
-                </h2>
-            </div>
-
-            <div class="step" data-step="6">
-                <div class="red">
-                    <div> Info: Die Treemap könnte noch interaktiv gestaltet werden, so dass man zumindest bei den
-                        gefährdeten Tieren reinklicken kann und die einzelnen Arten aufgelistet bekommt. Oder man
-                        könnte anstelle des Zoom-in, einen Tooltip mit weiteren Infos zu den einzelnen Arten ergänzen.
-                    </div>
-                    <div>Was wäre aus eurer Sicht besser? Interaktiv oder Tooltip?
-                    </div>
-                    <div>Zoom in/ out?</div>
+            <div>
+                <div class="step" data-step="5">
+                    <h2 class="section-heading">Welche Tierarten sind in der Schweiz wie stark gefährdet? <br><br>
+                        Von den 7 Tiergattungen und den insgesamt 1933 Tierarten, die in der Schweiz beobachtet werden,
+                        sind mehr als die Hälfte gefährdet.
+                        <br><br>
+                        Entdecke welche Tierarten wie stark gefährdet sind. <br><br>
+                    </h2>
                 </div>
-                <section class="color-section" id="chart-3">
-                    <div class="container-fluid">
-                        <h3>Kein Herz für Amphibien und Reptilien.<br>
-                        </h3>
-                        <div id="my_treemap"></div>
-                        <div class="text-normal">TBD: Farblegende gelb: Mensch; starkes Rot: vom Aussterben
-                            bedroht; helleres
-                            Rot: stark
-                            bedroht; noch helleres Rot: bedroht; Blau: nicht bedroht
+
+                <div class="step" data-step="6">
+                    <section class="color-section" id="chart-3">
+                        <div class="container-fluid">
+                            <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
+                                die
+                                Kacheln klickst und über die Titel wieder zurück.<br>
+                            </h3>
+                            <div id="zoom_treemap"></div>
+                            <br>
+
+
+                            <img src="/img/animal_images/legend_treemap.png" class="img-fluid treemap-legend"
+                                 alt="Legende Treemap">
+                            <div>nicht <span class="word-spacing">gefährdet ausgestorben</span> </div>
+                            <br>
+
+                            <h3>Wo findest Du diese fünf Arten in der Karte oben?
+                            </h3>
+                            <br>
                         </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="step" data-step="7">
-                <img src="img/labels/fish.png" alt="lables">
-                <h2>tbd...Das Ganze nun auf die Säugetiere heruntergebrochen. <br><br>
-                    Von welchen gibt es am meisten<br> auf der Erde?
-                </h2>
-            </div>
-
-
-            <div class="step" data-step="8">
-                <div class="red">
-                    <div>TBD:
-                        Die einzelnen Kacheln repräsentieren die Biomasse der jeweiligen Art.
-                        <br>
-                        Eine idee ist, dass die Treemaps mit icons der entsprechenden Tiergruppe ergänzt werden.
-                        Wäre das fürs Verständnis hilfreich? Oder Tooltips mit mehr Infos?
-                    </div>
-                </div>
-                <section class="color-section" id="chart-3b">
-                    <div class="container-fluid">
-                        <h3 class="section-heading-dark"></h3>
-                        <div id="my_treemap_mammals"></div>
-                        <div class="text-normal">
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-
-            <div class="step" data-step="9">
-                <img src="img/labels/buffalo.png" alt="lables">
-                <h2>Aber warum geht's scheinbar genau dort den Menschen gut, <br>
-                    wo die Tiere ums Überleben kämpfen? <br>
-                </h2>
-
-            </div>
-
-            <div class="step" data-step="10">
-                <img src="img/labels/endo.png" alt="lables">
-
-                <section class="color-section" id="about">
-                    <div class="container-fluid">
-
                         <div class="row">
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!--                <h2 class="section-heading">Hast Du die Tierarten gefunden?</h2>-->
+
+                <!--                <div id="quiz">-->
+                <!--                    <div id="question"></div>-->
+                <!--                    <div id="options"></div>-->
+                <!--                    <div id="result"></div>-->
+                <!--                </div>-->
+                <div class="step" data-step="7">
+                    <h2 class="section-heading">Aber warum geht's scheinbar genau dort den Menschen gut, <br>
+                        wo die Tiere ums Überleben kämpfen? <br>
+                    </h2>
+                </div>
+
+                <div class="step" data-step="8">
+                    <section class="color-section" id="about">
+                        <div class="container-fluid">
+
+                            <div class="row">
+                                <div class="about-box col-lg-3">
+                                    <i class="icon fas fa-person fa-4x"></i>
+                                    <h3 class="about-title">Mehr Menschen </h3>
+                                    <div class="about-text">Die Gefährdungsintensität der Arten hängt eng mit
+                                        der Bevölkerungsdichte des Menschen zusammen.Menschen verursachte <b
+                                                class="red">
+                                            Aussterberate liegt mind. 1000 mal höher</b> als die natürliche
+                                        Aussterberate im
+                                        Laufe
+                                        der Evolution.
+                                </div>
+                            </div>
                             <div class="about-box col-lg-3">
                                 <i class="icon fas fa-seedling fa-4x"></i>
-                                <h3>Weniger Naturschutz</h3>
-                                <p>Auf die Gesamtfläche der Schweiz hochgerechnet, sind nur <b>12 %</b> geschützte
-                                    Naturfläche. Damit liegt die Schweiz in Europa auf Rang 25 von 35 Ländern.
+                                <h3>Wenig Naturschutz</h3>
+                                <div class="text-small"> Auf die Gesamtfläche der Schweiz hochgerechnet, sind <b
+                                        class="red">nur 12 %
+                                    geschützte
+                                    Naturfläche</b>. Damit liegt die Schweiz in Europa auf Rang 25 von 35 Ländern.
                                     <br>
-                                    <a href="https://www.protectedplanet.net/country/CHE">Quelle</a>
-                                    <a href="https://www.eea.europa.eu/ims/nationally-designated-terrestrial-protected-areas#:~:text=The%20EU%20Biodiversity%20Strategy%20for%202030%20sets%20the%20target%20of,over%20100%2C000%20sites%20in%20total.">Quelle</a>
-                                </p>
-
+                                </div>
                             </div>
 
                             <div class="about-box col-lg-3">
-                                <i class="icon fas fa-industry fa-4x"></i>
-                                <h3 class="about-title">Mehr Industrie & Agrarflächen</h3>
-                                <p class="about-text">tbd..In industrienationen ... tbd ... veränderung seit 1900...</p>
+                                <i class="icon fas fa-tractor fa-4x"></i>
+                                <h3 class="about-title">Gifte in Wasser & Boden</h3>
+                                <div class="text-small about-text">Seit den 1950 Jahren dominiert in der Schweiz, wie in
+                                    anderen
+                                    Westeuropäischen Ländern, die <b class="red">intensive Landwirtschaftsform</b>.
+                                    D.h.
+                                    es werden
+                                    hohe Mengen an Pestizide und Düngemittel eingesetzt.
+                                </div>
                             </div>
-
                             <div class="about-box col-lg-3">
-                                <i class="icon fas fa-person fa-4x"></i>
-                                <h3 class="about-title">Mehr Menschen</h3>
-                                <p class="about-text">tbd...Seit 1900...erreichen 2025 9mia...seit beginn artikel lesen
-                                    xxx-mehr menschen... </p>
+                                <i class="icon fas fa-gauge  fa-4x"></i>
+                                <h3 class="about-title">Weitere Faktoren</h3>
+                                <div class="text-small about-text">Regional unterschiedlich stark ausgeprägt,
+                                    beschleunigen die
+                                    Übernützung der Arten durch <b class="red">Jagd und Fischerei</b>, vom Menschen
+                                    eingeführte, <b class="red">invasive Arten</b> und die <b class="red">Zerstörung
+                                        von
+                                        Wäldern und Feuchtgebieten </b> das Artensterben.
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="about-box col-lg-3">
-                                <i class="icon fas fa-temperature-high  fa-4x"></i>
-                                <h3 class="about-title">Klimaveränderungen</h3>
-                                <p class="about-text">tbd.. CO2... Lebensräume.. umkämpft. tbd.</p>
-                            </div>
+                        <div class="step" data-step="9">
+                            <h2 class="section-heading">Ja, der Mensch ist das grösste Biest.<br>
+                                Und zwar schon lange... vielleicht wird's ja bald besser?<br>
+                            </h2>
+                            <!--                                <div id="animation_neu"></div>-->
                         </div>
-                        <div class="red">
-                            <div>Hier wird evtl. auch auf den Counter von ganz oben referenziert... <br>
-                                während lesen/scrollen sind z.b. 3min vergangen..d.h 0.2 Arten ausgestorben, 20km2
-                                Regenwald
-                                gefällt, 5000 neue Menschen geboren etc.
-                                <br>
-                                Ist der Counter eine gute Idee? oder reichen evtl. auch nur diese 4 Aufzählungen um die
-                                story abzurunden?
-                            </div>
-                        </div>
-                        <h2>
-                            <br>
-                            Folgende Grafik zeigt wie sich die Lebensräume und die Population der Schweiz seit 1900
-                            markant verändert haben. </h2>
-                    </div>
-                </section>
-            </div>
-
-            <div class="step" data-step="11">
-                <section class="color-section" id="chart-4">
-                    <div class="container-fluid">
-                        <h3>Zeitliche Entwicklung seit 1900 Bevölkerung, Landwirtschaft,
-                            Maschinengewicht, Mobilität, Tierarten etc. (optional falls noch Zeit)</h3>
-                        <div class="text-normal">
-                        </div>
-                        <div id="my_line_chart"></div>
-                    </div>
-                </section>
-                <div class="red">
-                    <div>TBD (falls noch Zeit): Hier werden Gründe für die Dominanz des Menschen in der Schweiz und die
-                        Verdrängung der Tiere in zeitlichen Entwicklungen aufgezeigt. Es
-                        wird immer eine Grösse die sich positiv entwickelt, einer anderen Grösse gegenübergestellt,
-                        die sich negativ entwickelt und offensichtlich mit
-                        der anderen Grösse zu tun hat. z.B. Mobilität: Anzahl Fahrzeuge auf den Strassen;
-                        Zerstückelung der Landschaft. Entweder werden die verschiedenen Entwicklungen mit einem Dropdown
-                        Menu angewählt oder in
-                        einem Scrollytelling erklärt.
-                    </div>
                 </div>
+    </section>
+    </div>
 
-            </div>
-
-
-        </article>
-
+    </div>
+    </article>
     </section>
 
 
     <footer class="color-section" id="footer">
-        <img src="./img/icons_animal/Animals Bundle-28.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="hase">
-        <img src="./img/icons_animal/Animals Bundle-27.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="gans">
-        <img src="./img/icons_animal/Animals Bundle-36.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="kamel">
-        <img src="./img/icons_animal/Animals Bundle-38.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="affe">
-        <img src="./img/icons_animal/Animals Bundle-39.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="rhino">
-        <img src="./img/icons_animal/Animals Bundle-41.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="vogel">
-        <img src="./img/icons_animal/Animals Bundle-45.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="kolibri">
-        <img src="./img/icons_animal/Animals Bundle-46.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="krabbe">
-        <img src="./img/icons_animal/Animals Bundle-47.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="seepferdchen">
-        <img src="./img/icons_animal/Animals Bundle-51.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="nashorn">
-        <img src="./img/icons_animal/Animals Bundle-54.svg" class="animal-icon mx-auto d-block img-fluid"
-             alt="seepferdchen">
-        <img src="./img/icons_animal/Animals Bundle-55.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="schlange">
-        <img src="./img/icons_animal/Animals Bundle-56.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="löwe">
-        <img src="./img/icons_animal/Animals Bundle-57.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="elephant">
-        <img src="./img/icons_animal/Animals Bundle-31.svg" class="human-icon mx-auto d-block img-fluid"
-             width="100px" alt="mensch">
-        <img src="./img/icons_animal/Animals Bundle-60.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="giraffe">
-        <img src="./img/icons_animal/Animals Bundle-62.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="krokodil">
-        <img src="./img/icons_animal/Animals Bundle-80.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="turtle">
-        <img src="./img/icons_animal/Animals Bundle-89.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="strauss">
-        <img src="./img/icons_animal/Animals Bundle-97.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="mücke">
-        <img src="./img/icons_animal/Animals Bundle-86.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="gecko">
-        <img src="./img/icons_human/2103120.svg" class=" mx-auto d-block img-fluid"
-             width="80px" alt="menschen">
-        <img src="./img/icons_animal/Animals Bundle-42.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="geier">
-        <img src="./img/icons_animal/Animals Bundle-83.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="fledermaus">
-        <img src="./img/icons_animal/Animals Bundle-84.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="schmetterling">
-        <img src="./img/icons_animal/Animals Bundle-96.svg" class="animal-icon mx-auto d-block img-fluid"
-             width="50px" alt="käfer">
         <div class="text-small"> 2023 Güdel Kohler</div>
-        <div class="text-small"> Sources: TBD <br>
+        <div class="text-small"><br>
             <a href="https://www.numbeo.com/quality-of-life/rankings_by_country.jsp?title=2022-mid">Quality of Life
                 Index
                 2022</a>
-            <br>
+            |
             <a href="https://stats.oecd.org/Index.aspx?DataSetCode=WILD_LIFE">OECD Wild Life</a>
-            <br>
-            <a href="https://stats.oecd.org/Index.aspx?DataSetCode=LAND_COVER">OECD Land Cover</a> <br>
-            <a href="https://cdn.zmescience.com/wp-content/uploads/2022/05/eye-g073f1f894_1920.jpg*! todo add source">Bildquelle</a>
+            |
+            <a href="https://stats.oecd.org/Index.aspx?DataSetCode=LAND_COVER">OECD Land Coverage</a> |
+            <a href="https://cdn.zmescience.com/wp-content/uploads/2022/05/eye-g073f1f894_1920.jpg*! todo add source">Titelbild</a>
+            |
+            <a href="https://portal-cdn.scnat.ch/asset/cfec0859-cf5d-5751-b4d4-ff63cb93f03e/HOTSPOT%2036-2017%20DT%20%28WEB%29%20mini.pdf?b=f524838d-8a5a-5bd4-a182-188af69877f5&v=c683e34a-86a8-501c-8a04-3509117395ea_0&s=N1g9-SpwL7MflTPMpmSVUSK4Sl5n_LbprRG9KU64YOw9oWJwRKm4nk-kz8ETLiYiV0kBdod8JvDW8HbU-_OVyVeIUhL04-Tkt8am3WOJrX6pLREFCCAn6ckw-W3OckLFYGgkQKFwMz2mwnNXIuu2iuhN279_ZVps8Und-H5h_GY">Auf
+                den Spuren des Artensterbens in CH</a> |
+            <a href="https://www.eea.europa.eu/ims/nationally-designated-terrestrial-protected-areas#:~:text=The%20EU%20Biodiversity%20Strategy%20for%202030%20sets%20the%20target%20of,over%20100%2C000%20sites%20in%20total.">Geschützte
+                Naturfläche</a> |
+            <a href="https://www.srf.ch/wissen/natur-tiere/25-prozent-weniger-voegel-so-stark-beeinflusst-die-landwirtschaft-den-rueckgang-von-voegeln">Gründe
+                für den Rückgang der Vogelpopulation</a> |
+            <a href="afu.admin.ch/bafu/de/home/themen/biodiversitaet/publikationen-studien/publikationen/liste-national-prioritaeren-arten.html">Bedrohte
+                Arten und Lebensräume in der Schweiz</a>
+
         </div>
     </footer>
 </main>
@@ -448,23 +392,33 @@
 </body>
 
 <!--Javascript-->
-<!--todo d3 entweder lokal oder dynamisch, lib oder d3-->
 <script src="https://d3js.org/d3.v6.js"></script>
 <script src='lib/d3/d3.js'></script>
 <script src='lib/lodash.js'></script>
 <script src="lib/topojson/topojson.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://unpkg.com/scrollama"></script>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
 
 <!--own scripts-->
 <script src='src/1_barChart_horizontal.js'></script>
 <script src='src/2_europeMap_human.js'></script>
 <script src='src/2_2_europeMap.js'></script>
-<script src='src/3_treeMap.js'></script>
-<script src='src/3_treeMap_mammals.js'></script>
-<script src='src/3_treeMapZoom2.js'></script>
+<script src='src/3_treemap_zoom.js'></script>
 <script src='src/4_lineChart.js'></script>
-<script src='src/counter.js'></script>
+<script src='src/4_animation_history_neu.js'></script>
 <script src="lib/scrollama/scrollama.min.js"></script>
 
 

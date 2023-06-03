@@ -8714,13 +8714,6 @@
           }
         },
         {
-          "type": null,
-          "properties": {
-            "type": "Dependency",
-            "geounit": "FaroeIslands"
-          }
-        },
-        {
           "arcs": [
             [
               99
@@ -9121,35 +9114,6 @@
         {
           "arcs": [
             [
-              [
-                158
-              ]
-            ],
-            [
-              [
-                159
-              ]
-            ],
-            [
-              [
-                160
-              ]
-            ],
-            [
-              [
-                161
-              ]
-            ]
-          ],
-          "type": "MultiPolygon",
-          "properties": {
-            "type": "Geounit",
-            "geounit": "Svalbard"
-          }
-        },
-        {
-          "arcs": [
-            [
               162,
               -137,
               -49,
@@ -9201,22 +9165,6 @@
           }
         },
 
-        {
-          "arcs": [
-            [
-              -163,
-              184,
-              -135,
-              185,
-              -138
-            ]
-          ],
-          "type": "Polygon",
-          "properties": {
-            "type": "Geosubunit",
-            "geounit": "Russia"
-          }
-        },
 
         {
           "type": null,
