@@ -63,7 +63,7 @@ img {
 .big-heading {
     font-size: 20rem;
     line-height: 1.5;
-    color: #A1AB95;
+    color: #FF6959;
    filter: brightness(1);
     font-family: 'Shrikhand', cursive;
 }
@@ -86,6 +86,46 @@ img {
     font-size: 3.5rem;
     line-height: 1.5;
     color: #efedea;
+}
+
+
+@media (max-width: 1600px) {
+    #title {
+        text-align: right;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 70%;
+    }
+
+    .big-heading {
+        font-size: 13rem;
+        line-height: 1.5;
+        color: #FF6959;
+        font-family: 'Shrikhand', cursive;
+    }
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: left;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 60%;
+    }
+
+    .big-heading {
+        font-size: 8rem;
+        line-height: 1.5;
+        color: #A1AB95;
+        filter: brightness(1);
+        font-family: 'Shrikhand', cursive;
+    }
 }
 
 .title-background {
@@ -285,45 +325,6 @@ hr {
     color: #FF6959;
 }
 
-@media (max-width: 1600px) {
-    #title {
-        text-align: right;
-    }
-
-    .title-image {
-        position: static;
-        transform: rotate(0);
-        top: 70%;
-    }
-
-    .big-heading {
-        font-size: 13rem;
-        line-height: 1.5;
-        color: #FF6959;
-
-        font-family: 'Shrikhand', cursive;
-    }
-}
-
-@media (max-width: 1028px) {
-    #title {
-        text-align: left;
-    }
-
-    .title-image {
-        position: static;
-        transform: rotate(0);
-        top: 60%;
-    }
-
-    .big-heading {
-        font-size: 8rem;
-        line-height: 1.5;
-        color: #A1AB95;
-        filter: brightness(1);
-        font-family: 'Shrikhand', cursive;
-    }
-}
 
 .animal-select-button {
     stroke: #E8F2E8;
@@ -407,7 +408,7 @@ article {
 }
 
 .step {
-    margin: 0rem auto 4rem auto;
+    margin: 0rem auto 0.1rem auto;
     background-color: #3b3b3b;
     color: #fff;
     opacity: 0.0;
