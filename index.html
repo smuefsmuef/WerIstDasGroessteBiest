@@ -197,7 +197,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <h2 class="section-heading">...aber etwas weniger für <br>
-                                   <div id="animal-type"> die </div>
+                                    <div id="animal-type"> die</div>
                                 </h2>
                                 <div id="europe"></div>
                             </div>
@@ -208,43 +208,45 @@
             <div>
                 <div class="step" data-step="5">
                     <h2 class="section-heading">Welche Tierarten sind in der Schweiz wie stark gefährdet? <br><br>
-                        Von den 7 Tiergattungen und den insgesamt 1810 Tierarten, die in der Schweiz beobachtet werden,
-                        sind rund XY gefährdet und weitere XY% potenziell gefährdet.<br><br>
-                        Entdecke, welche und wie viele Tierarten in der Schweiz gefährdet sind.
+                        Von den 7 Tiergattungen und den insgesamt 1933 Tierarten, die in der Schweiz beobachtet werden,
+                        sind mehr als die Hälfte gefährdet.
                         <br><br>
-                        Hast Du gewusst, dass...
+                        Entdecke welche Tierarten wie stark gefährdet sind. <br><br>
                     </h2>
-
                 </div>
 
                 <div class="step" data-step="6">
                     <section class="color-section" id="chart-3">
                         <div class="container-fluid">
-
-
                             <h3>Die Zahlen beziehen sich auf die Anzahl Arten. <br> Entdecke die Treemap, indem Du in
                                 die
                                 Kacheln klickst und über die Titel wieder zurück.<br>
                             </h3>
                             <div id="zoom_treemap"></div>
-                            </br>
+                            <br>
 
-                            <h3>Wo findest Du diese fünf Arten in der Treemap?
+
+                            <img src="/img/animal_images/legend_treemap.png" class="img-fluid treemap-legend"
+                                 alt="Legende Treemap">
+                            <div>nicht <span class="word-spacing">gefährdet ausgestorben</span> </div>
+                            <br>
+
+                            <h3>Wo findest Du diese fünf Arten in der Karte oben?
                             </h3>
-                            </br>
+                            <br>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 col-md-2 ">
                                 <div class="tooltip-container">
-                                <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                     onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                    <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
                                     <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-2 ">
                                 <div class="tooltip-container">
                                     <img src="/img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
                                     <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
                                 </div>
                             </div>
@@ -302,56 +304,62 @@
                                 <div class="about-box col-lg-3">
                                     <i class="icon fas fa-person fa-4x"></i>
                                     <h3 class="about-title">Mehr Menschen </h3>
-                                    <p class="about-text">Die Gefährdungsintensität der Arten hängt eng mit
+                                    <div class="about-text">Die Gefährdungsintensität der Arten hängt eng mit
                                         der Bevölkerungsdichte des Menschen zusammen.Menschen verursachte <b
                                                 class="red">
                                             Aussterberate liegt mind. 1000 mal höher</b> als die natürliche
                                         Aussterberate im
                                         Laufe
-                                        der Evolution. </p>
+                                        der Evolution.
                                 </div>
-                                <div class="about-box col-lg-3">
-                                    <i class="icon fas fa-seedling fa-4x"></i>
-                                    <h3>Wenig Naturschutz</h3>
-                                    <p>Auf die Gesamtfläche der Schweiz hochgerechnet, sind <b class="red">nur 12 %
-                                        geschützte
-                                        Naturfläche</b>. Damit liegt die Schweiz in Europa auf Rang 25 von 35 Ländern.
-                                        <br>
-                                    </p>
-                                </div>
-
-                                <div class="about-box col-lg-3">
-                                    <i class="icon fas fa-tractor fa-4x"></i>
-                                    <h3 class="about-title">Gifte in Wasser & Boden</h3>
-                                    <p class="about-text">Seit den 1950 Jahren dominiert in der Schweiz, wie in anderen
-                                        Westeuropäischen Ländern, die <b class="red">intensive Landwirtschaftsform</b>.
-                                        D.h.
-                                        es werden
-                                        hohe Mengen an Pestizide und Düngemittel eingesetzt.</p>
-                                </div>
-                                <div class="about-box col-lg-3">
-                                    <i class="icon fas fa-gauge  fa-4x"></i>
-                                    <h3 class="about-title">Weitere Faktoren</h3>
-                                    <p class="about-text">Regional unterschiedlich stark ausgeprägt, beschleunigen die
-                                        Übernützung der Arten durch <b class="red">Jagd und Fischerei</b>, vom Menschen
-                                        eingeführte, <b class="red">invasive Arten</b> und die <b class="red">Zerstörung
-                                            von
-                                            Wäldern und Feuchtgebieten </b> das Artensterben. </p>
+                            </div>
+                            <div class="about-box col-lg-3">
+                                <i class="icon fas fa-seedling fa-4x"></i>
+                                <h3>Wenig Naturschutz</h3>
+                                <div class="text-small"> Auf die Gesamtfläche der Schweiz hochgerechnet, sind <b
+                                        class="red">nur 12 %
+                                    geschützte
+                                    Naturfläche</b>. Damit liegt die Schweiz in Europa auf Rang 25 von 35 Ländern.
+                                    <br>
                                 </div>
                             </div>
 
-                            <div class="step" data-step="9">
-                                <h2 class="section-heading">Ja, der Mensch ist das grösste Biest.<br>
-                                    Und zwar schon lange... vielleicht wird's ja bald besser?<br>
-                                </h2>
-                                <!--                                <div id="animation_neu"></div>-->
+                            <div class="about-box col-lg-3">
+                                <i class="icon fas fa-tractor fa-4x"></i>
+                                <h3 class="about-title">Gifte in Wasser & Boden</h3>
+                                <div class="text-small about-text">Seit den 1950 Jahren dominiert in der Schweiz, wie in
+                                    anderen
+                                    Westeuropäischen Ländern, die <b class="red">intensive Landwirtschaftsform</b>.
+                                    D.h.
+                                    es werden
+                                    hohe Mengen an Pestizide und Düngemittel eingesetzt.
+                                </div>
+                            </div>
+                            <div class="about-box col-lg-3">
+                                <i class="icon fas fa-gauge  fa-4x"></i>
+                                <h3 class="about-title">Weitere Faktoren</h3>
+                                <div class="text-small about-text">Regional unterschiedlich stark ausgeprägt,
+                                    beschleunigen die
+                                    Übernützung der Arten durch <b class="red">Jagd und Fischerei</b>, vom Menschen
+                                    eingeführte, <b class="red">invasive Arten</b> und die <b class="red">Zerstörung
+                                        von
+                                        Wäldern und Feuchtgebieten </b> das Artensterben.
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </div>
 
-            </div>
-        </article>
+                        <div class="step" data-step="9">
+                            <h2 class="section-heading">Ja, der Mensch ist das grösste Biest.<br>
+                                Und zwar schon lange... vielleicht wird's ja bald besser?<br>
+                            </h2>
+                            <!--                                <div id="animation_neu"></div>-->
+                        </div>
+                </div>
+    </section>
+    </div>
+
+    </div>
+    </article>
     </section>
 
 
