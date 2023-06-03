@@ -25,7 +25,8 @@
 
     const svg3d = d3.create("svg")
         .attr("viewBox", [0.5, -30.5, widthTreemap, heightTreemap + 30])
-        .style("font", "10px sans-serif");
+        .style("font", "8px sans-serif")
+        .style("line-height", "11px");
 
     function tile(node, x0, y0, x1, y1) {
         d3.treemapBinary(node, 0, 0, widthTreemap, heightTreemap);
@@ -99,7 +100,7 @@
         group.selectAll("g")
             .select("image")
             .attr("x", d => d === root ? 0 : (x(d.x1) - x(d.x0)) * 0.2)
-            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0)) * 0.15)
+            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0)) * 0.05)
             .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0)) * 0.6)
             .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0)) * 0.6)
     }

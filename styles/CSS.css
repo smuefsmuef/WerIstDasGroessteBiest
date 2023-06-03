@@ -38,9 +38,9 @@ img {
 }
 
 .text-small > a, .text-small {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     line-height: 1.5;
-    color: #355463;
+    color:#efedea;
 }
 
 
@@ -453,30 +453,6 @@ article {
 
 
 
-
-/*Quiz*/
-#result {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 10px;
-    fill: #0a1014;
-}
-
-#options {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 10px;
-    fill: #f0f0f0;
-}
-
-#question {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 10px;
-    fill: #f0f0f0;
-}
-
-
 /*Treemap*/
 
 .treemap-button {
@@ -527,3 +503,11 @@ article {
     opacity: 1;
 }
 
+.treemap-legend {
+    border-radius: 0px;
+    width: 350px;
+}
+
+.word-spacing {
+    word-spacing: 150px;
+}
