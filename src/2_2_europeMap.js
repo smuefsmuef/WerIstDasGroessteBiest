@@ -162,14 +162,12 @@ function createPatterns(id) {
         .attr("width", 1)
         .attr("height", 1)
         .append("image")
-        .attr("xlink:href", "/styles/img/labels/" + id + ".jpg")
+        .attr("xlink:href", "./img/labels/" + id + ".jpg")
         .attr("width", 110)
         .attr("z-index", "199")
         .attr("height", 110);
     return "url(#" + id + ")";
 }
-
-
 
 selectLabel.append("circle")
     .attr("cx", 155)
@@ -371,7 +369,6 @@ function doPlot(selectedOption) {
             .attr("id", d => d.id)
             .attr("class", "countries")
             .attr("d", pathGenerator)
-            // todo add boundary for CH
             .attr("class", "europe-boundary");
 
         // boundaries of each country

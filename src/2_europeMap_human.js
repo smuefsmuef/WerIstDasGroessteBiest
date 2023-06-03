@@ -70,11 +70,11 @@ function createSliderLifeIndex() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 64)
+        .attr("x", 61)
         .attr("y", 15)
         .attr("font-size", "1.1rem")
         .attr("fill", "#efedea")
-        .text("Life Quality Idx. (Pkt.)")
+        .text("Quality of Life (Pkt.)")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -122,7 +122,7 @@ function createLegendLifeIndex() {
 
     index.append("text")
         .attr("x", 33)
-        .attr("y", 90)
+        .attr("y", 93)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
         .text("k.A.");
@@ -138,7 +138,7 @@ function createLegendLifeIndex() {
 
     index.append("text")
         .attr("x", 33)
-        .attr("y", 65)
+        .attr("y", 63)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
         .text("sehr nettes Leben");
@@ -154,7 +154,7 @@ function createLegendLifeIndex() {
 
     index.append("text")
         .attr("x", 153)
-        .attr("y", 65)
+        .attr("y", 63)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
         .text("weniger nettes Leben");
