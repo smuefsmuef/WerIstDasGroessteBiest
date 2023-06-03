@@ -64,7 +64,6 @@ img {
     font-size: 20rem;
     line-height: 1.5;
     color: #FF6959;
-   filter: brightness(1);
     font-family: 'Shrikhand', cursive;
 }
 
@@ -87,11 +86,28 @@ img {
     line-height: 1.5;
     color: #efedea;
 }
+@media (max-width: 1800px) {
+    #title {
+        text-align: center;
+    }
 
+    .title-image {
+        position: static;
+        transform: rotate(0);
+        top: 70%;
+    }
+
+    .big-heading {
+        font-size: 14rem;
+        line-height: 1;
+        color: #FF6959;
+        font-family: 'Shrikhand', cursive;
+    }
+}
 
 @media (max-width: 1600px) {
     #title {
-        text-align: right;
+        text-align: center;
     }
 
     .title-image {
@@ -102,7 +118,7 @@ img {
 
     .big-heading {
         font-size: 13rem;
-        line-height: 1.5;
+        line-height: 1;
         color: #FF6959;
         font-family: 'Shrikhand', cursive;
     }
@@ -224,6 +240,10 @@ img {
     outline: none;
     box-shadow: 0 0 0 4px #7C8A91;
     transition: box-shadow 0.3s;
+}
+
+.margin-right{
+    margin-right: 20px;
 }
 
 .btn-custom:hover, .btn-custom:focus {
@@ -510,4 +530,8 @@ article {
 
 .word-spacing {
     word-spacing: 150px;
+}
+
+.zz {
+fill: #ff653e;
 }

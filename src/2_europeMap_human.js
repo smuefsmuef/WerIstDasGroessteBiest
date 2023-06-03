@@ -27,14 +27,14 @@ function mouseoverHumans(index_values, countryId) {
     const percent = index_values[countryId]
     if (percent !== undefined && percent !== '0') {
         d3.select("#context-label-4").text(translateCountryName(countryId) + ": ");
-        d3.select("#context-label-5").text(percent );
+        d3.select("#context-label-5").text(percent);
         d3.select("#context-label-6").text("von 100 Punkten");
         d3.select("#context-label-7").text("(Klicken fixiert/löst den Wert.)");
     }
 }
 
 function mouseoutHumans() {
-  d3.select("#context-label-4").text(" ");
+    d3.select("#context-label-4").text(" ");
     d3.select("#context-label-5").text(" ");
     d3.select("#context-label-6").text(" ");
     d3.select("#context-label-7").text(" ");
@@ -82,7 +82,7 @@ function createSliderLifeIndex() {
         .attr("y", 40)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
-        .text("50");
+        .text("0");
 
     index.append("text")
         .attr("x", 100)
@@ -102,6 +102,7 @@ function createSliderLifeIndex() {
 }
 
 createSliderLifeIndex()
+
 function createLegendLifeIndex() {
 
     // 1. create a group to hold the legend
@@ -112,10 +113,10 @@ function createLegendLifeIndex() {
     // keine Angaben
     index.append("rect")
         .attr("x", 10)
-        .attr("y", (d,i) => 30 * i + 80)
+        .attr("y", (d, i) => 30 * i + 80)
         .attr("width", 20)
         .attr("height", 20)
-        .attr("fill",  "#333")
+        .attr("fill", "#333")
         .attr("stroke", "black")
         .attr("stroke-width", "1");
 
@@ -159,51 +160,31 @@ function createLegendLifeIndex() {
         .text("weniger nettes Leben");
 
 }
-
 createLegendLifeIndex()
-
-
 
 
 function createContextHolderHumans() {
     const contextHolder4 = gh.append("g")
         .attr("id", "context-holder-4")
-        .attr("transform", `translate(${-135},${120})`)
+        .attr("transform", `translate(${-135},${120})`);
 
-    contextHolder4.append("text")
-        .attr("x", 65)
-        .attr("y", 15)
-        .attr("id", "context-label-4")
-        .attr("fill", "#FF6959")
-        .text("Schweiz:")
-        .style("text-anchor", "left");
+    const createText = (x, y, id, fill, text, textAnchor) => {
+        return contextHolder4.append("text")
+            .attr("x", x)
+            .attr("y", y)
+            .attr("id", id)
+            .attr("fill", fill)
+            .text(text)
+            .style("text-anchor", textAnchor);
+    };
 
-    contextHolder4.append("text")
-        .attr("x", 65)
-        .attr("y", 40)
-        .attr("id", "context-label-5")
-        .attr("fill", "#FF6959")
-        .text("95.1")
-        .style("text-anchor", "right");
-
-    contextHolder4.append("text")
-        .attr("x", 65)
-        .attr("y", 55)
-        .attr("id", "context-label-6")
-        .attr("fill", "#FF6959")
-        .text("von 100 Pkt.")
-        .style("text-anchor", "left");
-
-    contextHolder4.append("text")
-        .attr("x", 65)
-        .attr("y", 69)
-        .attr("id", "context-label-7")
-        .attr("font-size", "0.7rem")
-        .attr("fill", "#3C4B5E")
-        .text("(Klicken fixiert/löst den Wert.)");
+    createText(65, 15, "context-label-4", "#FF6959", "Schweiz:", "left");
+    createText(65, 40, "context-label-5", "#FF6959", "95.1", "right");
+    createText(65, 55, "context-label-6", "#FF6959", "von 100 Pkt.", "left");
+    createText(65, 69, "context-label-7", "#3C4B5E", "(Klicken fixiert/löst den Wert.)", "left")
+        .attr("font-size", "0.9rem");
     return contextHolder4;
 }
-
 createContextHolderHumans();
 
 
@@ -214,7 +195,7 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
             return '#27374D';
         } else if (value > 80) {
             return '#3C4B5E';
-        }else if (value > 70) {
+        } else if (value > 70) {
             return '#51606F';
         } else if (value > 60) {
             return '#677580';
@@ -233,6 +214,7 @@ function fillCountriesWithLifeQualityValue(country, life_index_data) {
         } else {
             return "#333"
         }
+
     })
 }
 
@@ -267,7 +249,7 @@ function doPlotHumans() {
             .append("path")
             .attr("id", d => d.id)
             .attr("class", "countries")
-            .attr("d", pathGenerator)         .attr("class", "europe-boundary");
+            .attr("d", pathGenerator).attr("class", "europe-boundary");
 
         //initially color the country
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
@@ -275,7 +257,7 @@ function doPlotHumans() {
         // events
         var isClicked = false;
         country_humans.on("mouseover", (event, d) => {
-            if(!isClicked) {
+            if (!isClicked) {
                 mouseoverHumans(life_index_data[0], d.properties.geounit)
             }
         });
@@ -286,7 +268,7 @@ function doPlotHumans() {
         });
 
         country_humans.on("mouseout", function () {
-            if(!isClicked) {
+            if (!isClicked) {
                 mouseoutHumans(d3.select(this))
             }
         });
