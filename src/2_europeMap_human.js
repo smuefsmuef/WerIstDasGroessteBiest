@@ -10,8 +10,8 @@ const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.
 // create humansMaps canvas
 const humansMaps = d3.select("#humans") // body
     .append("svg")
-    .attr("width", canvWidthHuman / 2)
-    .attr("height", canvHeightHuman / 2);
+    .attr("width", canvWidthHuman)
+    .attr("height", canvHeightHuman);
 
 
 // // create parent group and add left and top margin_mapHuman
@@ -20,19 +20,39 @@ const gh = humansMaps.append("g")
     .attr("transform", `translate(${margin_mapHuman.left},${margin_mapHuman.top})`)
 ;
 
+//------EVENTS-----------------------------------------------------
 
-function createLegendLifeIndex() {
+// create event handlers for mouse events
+function mouseoverHumans(index_values, countryId) {
+    const percent = index_values[countryId]
+    if (percent !== undefined && percent !== '0') {
+        d3.select("#context-label-4").text(translateCountryName(countryId) + ": ");
+        d3.select("#context-label-5").text(percent );
+        d3.select("#context-label-6").text("von 100 Punkten");
+        d3.select("#context-label-7").text("(Klicken fixiert/löst den Wert.)");
+    }
+}
+
+function mouseoutHumans() {
+  d3.select("#context-label-4").text(" ");
+    d3.select("#context-label-5").text(" ");
+    d3.select("#context-label-6").text(" ");
+    d3.select("#context-label-7").text(" ");
+}
+
+//------LEGEND-----------------------------------------------------
+function createSliderLifeIndex() {
 
     // 1. create a group to hold the legend
     const index = gh.append("g")
         .attr("id", "legend")
-        .attr("transform", `translate(${-40},${120})`);
+        .attr("transform", `translate(${340},${400})`);
 
-    //  b. add coloured rect to legend_entry
+    // gradient
     index.append("rect")
         .attr("x", 10)
         .attr("y", 20)
-        .attr("width", 120)
+        .attr("width", 110)
         .attr("height", 5)
         .classed('filled-human', true);
 
@@ -50,11 +70,11 @@ function createLegendLifeIndex() {
         .attr('offset', '1');
 
     index.append("text")
-        .attr("x", 70)
+        .attr("x", 64)
         .attr("y", 15)
-        .attr("font-size", "1rem")
+        .attr("font-size", "1.1rem")
         .attr("fill", "#efedea")
-        .text("Life Quality Index (Pkt.)")
+        .text("Life Quality Idx. (Pkt.)")
         .style("text-anchor", "middle");
 
     index.append("text")
@@ -65,7 +85,7 @@ function createLegendLifeIndex() {
         .text("50");
 
     index.append("text")
-        .attr("x", 110)
+        .attr("x", 100)
         .attr("y", 40)
         .attr("font-size", "1rem")
         .attr("fill", "#efedea")
@@ -78,30 +98,140 @@ function createLegendLifeIndex() {
         .attr("width", 120)
         .attr("height", 70)
         .attr("fill", "none")
-        .attr("stroke", "none")
-    ;
+        .attr("stroke", "none");
+}
+
+createSliderLifeIndex()
+function createLegendLifeIndex() {
+
+    // 1. create a group to hold the legend
+    const index = gh.append("g")
+        .attr("id", "legend")
+        .attr("transform", `translate(${-80},${-95})`);
+
+    // keine Angaben
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d,i) => 30 * i + 80)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill",  "#333")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 90)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("k.A.");
+
+    index.append("rect")
+        .attr("x", 10)
+        .attr("y", (d, i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", "#27374D")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 33)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("sehr nettes Leben");
+
+    index.append("rect")
+        .attr("x", 130)
+        .attr("y", (d, i) => 30 * i + 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .attr("fill", "#ACB5BA")
+        .attr("stroke", "black")
+        .attr("stroke-width", "1");
+
+    index.append("text")
+        .attr("x", 153)
+        .attr("y", 65)
+        .attr("font-size", "1rem")
+        .attr("fill", "#efedea")
+        .text("weniger nettes Leben");
+
 }
 
 createLegendLifeIndex()
+
+
+
+
+function createContextHolderHumans() {
+    const contextHolder4 = gh.append("g")
+        .attr("id", "context-holder-4")
+        .attr("transform", `translate(${-135},${120})`)
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 15)
+        .attr("id", "context-label-4")
+        .attr("fill", "#FF6959")
+        .text("Schweiz:")
+        .style("text-anchor", "left");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 40)
+        .attr("id", "context-label-5")
+        .attr("fill", "#FF6959")
+        .text("95.1")
+        .style("text-anchor", "right");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 55)
+        .attr("id", "context-label-6")
+        .attr("fill", "#FF6959")
+        .text("von 100 Pkt.")
+        .style("text-anchor", "left");
+
+    contextHolder4.append("text")
+        .attr("x", 65)
+        .attr("y", 69)
+        .attr("id", "context-label-7")
+        .attr("font-size", "0.7rem")
+        .attr("fill", "#3C4B5E")
+        .text("(Klicken fixiert/löst den Wert.)");
+    return contextHolder4;
+}
+
+createContextHolderHumans();
 
 
 function fillCountriesWithLifeQualityValue(country, life_index_data) {
     country.style("fill", d => {
         const value = life_index_data[d.properties.geounit]
         if (value > 90) {
-            return '#1698f1'
-        } else if (80 < value && value < 90) {
-            return '#489ed8'
-        } else if (70 < value && value < 80) {
-            return '#69a2c7'
-        } else if (60 < value && value < 70) {
-            return '#9ba7ae'
-        } else if (50 < value && value < 60) {
-            return '#bcab9d'
-        } else if (0 < value && value < 50) {
-            return '#ddaf8c'
+            return '#27374D';
+        } else if (value > 80) {
+            return '#3C4B5E';
+        }else if (value > 70) {
+            return '#51606F';
+        } else if (value > 60) {
+            return '#677580';
+        } else if (value > 50) {
+            return '#7C8A91';
+        } else if (value > 40) {
+            return '#929EA3';
+        } else if (value > 30) {
+            return '#A7B3B4';
+        } else if (value > 20) {
+            return '#BDC8C5';
+        } else if (value > 10) {
+            return '#D2DDD6';
+        } else if (value > 0) {
+            return '#E8F2E8';
         } else {
-            return "lightgray"
+            return "#333"
         }
     })
 }
@@ -111,8 +241,8 @@ function doPlotHumans() {
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
     var projection_human = d3.geoMercator() // oder z.b. geoMercator
         .rotate([0, 0])
-        .center([40, 30])
-        .scale(250)
+        .center([30, 55])
+        .scale(430)
         .translate([width_mapHuman / 2, height_mapHuman / 2])
         .precision(.1);
 
@@ -137,14 +267,33 @@ function doPlotHumans() {
             .append("path")
             .attr("id", d => d.id)
             .attr("class", "countries")
-            .attr("d", pathGenerator);
+            .attr("d", pathGenerator)         .attr("class", "europe-boundary");
 
         //initially color the country
         fillCountriesWithLifeQualityValue(country_humans, life_index_data[0])
 
+        // events
+        var isClicked = false;
+        country_humans.on("mouseover", (event, d) => {
+            if(!isClicked) {
+                mouseoverHumans(life_index_data[0], d.properties.geounit)
+            }
+        });
+
+        country_humans.on("click", (event, d) => {
+            mouseoverHumans(life_index_data[0], d.properties.geounit)
+            isClicked = !isClicked;
+        });
+
+        country_humans.on("mouseout", function () {
+            if(!isClicked) {
+                mouseoutHumans(d3.select(this))
+            }
+        });
+
         // boundaries of each country
         gh.append("path")
-            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits))
+            .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
 
@@ -153,3 +302,39 @@ function doPlotHumans() {
 }
 
 doPlotHumans();
+
+
+function translateCountryName(countryId) {
+    var translations = {
+        "austria": "Österreich",
+        "belgium": "Belgien",
+        "czechrepublic": "Tschechische Republik",
+        "denmark": "Dänemark",
+        "estonia": "Estland",
+        "finland": "Finnland",
+        "france": "Frankreich",
+        "germany": "Deutschland",
+        "greece": "Griechenland",
+        "hungary": "Ungarn",
+        "iceland": "Island",
+        "ireland": "Irland",
+        "italy": "Italien",
+        "latvia": "Lettland",
+        "lithuania": "Litauen",
+        "luxembourg": "Luxemburg",
+        "netherlands": "Niederlande",
+        "norway": "Norwegen",
+        "poland": "Polen",
+        "portugal": "Portugal",
+        "slovakia": "Slowakei",
+        "slovenia": "Slowenien",
+        "spain": "Spanien",
+        "sweden": "Schweden",
+        "switzerland": "Schweiz",
+        "england": "England"
+    };
+
+    var translatedName = translations[countryId.toLowerCase()];
+    return translatedName || 'Translation not available';
+}
+
