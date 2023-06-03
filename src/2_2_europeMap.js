@@ -65,7 +65,7 @@ function createContextHolder() {
     createTextElement(65, 40, "context-label-2", "#FF6959", "78.9%", "right");
     createTextElement(65, 55, "context-label-3", "#FF6959", "der Reptilien bedroht.", "left");
     createTextElement(65, 69, "context-label-8", "#3C4B5E", "(Klicken fixiert/löst den Wert.)", "left")
-        .attr("font-size", "0.7rem");
+        .attr("font-size", "0.9rem");
 
     return contextHolder;
 }
@@ -141,13 +141,13 @@ const selectLabel = g.append("g")
 
 selectLabel.append("text")
     .attr("fill", "#efedea")
-    .attr("x", 100)
+    .attr("x", 110)
     .attr("y", 0)
     .text("Untersuche die")
 
 selectLabel.append("text")
     .attr("fill", "#efedea")
-    .attr("x", 100)
+    .attr("x", 110)
     .attr("y", 15)
     .text("Bedrohungslage:")
 
@@ -155,29 +155,29 @@ selectLabel.append("text")
 var defs = selectLabel.append("defs");
 
 function createPatterns(id) {
-    defs.append("svg:pattern")
+    defs.append("pattern")
         .attr("id", id)
-        .attr("patternUnits", "userSpaceOnUse")
-     .attr("patternTransform", "translate(40,30)")
-        .attr("width", 30)
-        .attr("height", 30)
+        .attr("patternUnits", "objectBoundingBox")
+        .attr("patternTransform", "translate(0,4)")
+        .attr("width", 1)
+        .attr("height", 1)
         .append("image")
-        .attr("xlink:href", "/img/labels/" + id + ".svg")
-        .attr("width", 30)
+        .attr("xlink:href", "/img/labels/" + id + ".jpg")
+        .attr("width", 110)
         .attr("z-index", "199")
-        .attr("height", 30);
+        .attr("height", 110);
     return "url(#" + id + ")";
 }
 
 
 
-const test = selectLabel.append("circle")
-    .attr("cx", 145)
+selectLabel.append("circle")
+    .attr("cx", 155)
     .attr("cy", 60)
-    .attr("r", 20)
+    .attr("r", 25)
     .attr("id", "reptilien")
-  .style("fill", "transparent " )
- //   .style("fill", createPatterns("reptilien"))
+        .style("fill", "purple")
+     .style("fill", createPatterns("reptilien"))
     .attr("stroke", "black")
     .attr("class", "animal-select-button")
     .classed("selected", true)
@@ -185,21 +185,12 @@ const test = selectLabel.append("circle")
     .attr("wert", function (d) {
         return "Reptilien"
     })
-    .attr("type", "submit")
-
-// test.append("image:img")
-//     .attr("xlink:href", "/img/labels/reptilien.jpg")
-//     .attr("x",155)
-//     .attr("y", 60)
-//     .attr("width", 30)
-//     .attr("height", 30);
-
 
 
 selectLabel.append("circle")
-    .attr("cx", 145)
-    .attr("cy", 110)
-    .attr("r", 20)
+    .attr("cx", 155)
+    .attr("cy", 120)
+    .attr("r", 25)
     .attr("fill", "green")
     .style("fill", createPatterns("amphibien"))
     .attr("stroke", "black")
@@ -212,9 +203,9 @@ selectLabel.append("circle")
     .attr("id", "amphibien")
 
 selectLabel.append("circle")
-    .attr("cx", 145)
-    .attr("cy", 160)
-    .attr("r", 20)
+    .attr("cx", 155)
+    .attr("cy", 180)
+    .attr("r", 25)
     .attr("fill", "lightblue")
     .style("fill", createPatterns("saeugetiere"))
     .attr("stroke", "black")
@@ -227,9 +218,9 @@ selectLabel.append("circle")
     .attr("id", "saeugetiere")
 
 selectLabel.append("circle")
-    .attr("cx", 145)
-    .attr("cy", 210)
-    .attr("r", 20)
+    .attr("cx", 155)
+    .attr("cy", 240)
+    .attr("r", 25)
     .style("fill", createPatterns("voegel"))
     .attr("fill", "lightyellow")
     .attr("stroke", "black")
@@ -242,9 +233,9 @@ selectLabel.append("circle")
     .attr("id", "voegel")
 
 selectLabel.append("circle")
-    .attr("cx", 145)
-    .attr("cy", 260)
-    .attr("r", 20)
+    .attr("cx", 155)
+    .attr("cy", 300)
+    .attr("r", 25)
     .style("fill", "grey")
     .style("fill", createPatterns("fisch"))
     .attr("stroke", "black")
@@ -258,9 +249,9 @@ selectLabel.append("circle")
 
 
 selectLabel.append("circle")
-    .attr("cx", 145)
-    .attr("cy", 310)
-    .attr("r", 20)
+    .attr("cx", 155)
+    .attr("cy", 360)
+    .attr("r", 25)
     .style("fill", createPatterns("wirbellosen"))
     .attr("fill", "blue")
     .attr("stroke", "black")
@@ -315,6 +306,29 @@ function fillCountry(country, species, selectedOption) {
             return '#3C4B5E';
         } else if (value > 0) {
             return '#27374D';
+        } else {
+            return "#333"
+        }
+        if (value > 90) {
+            return '#27374D';
+        } else if (value > 80) {
+            return '#3C4B5E';
+        }else if (value > 70) {
+            return '#51606F';
+        } else if (value > 60) {
+            return '#677580';
+        } else if (value > 50) {
+            return '#7C8A91';
+        } else if (value > 40) {
+            return '#929EA3';
+        } else if (value > 30) {
+            return '#A7B3B4';
+        } else if (value > 20) {
+            return '#BDC8C5';
+        } else if (value > 10) {
+            return '#D2DDD6';
+        } else if (value > 0) {
+            return '#E8F2E8';
         } else {
             return "#333"
         }
@@ -389,7 +403,19 @@ function doPlot(selectedOption) {
                 mouseout(d3.select(this))
             }
         });
-
+        d3.selectAll("#reptilien").on("mouseover", function (d) {
+            selectedOption = d3.select(this).attr("wert")
+            fillCountry(country, species, selectedOption)
+            animaltype.text(selectedOption)
+            mouseout()
+            isClicked = false;
+            d3.selectAll("#reptilien").classed("selected", true)
+            d3.selectAll("#saeugetiere").classed("selected", false)
+            d3.selectAll("#voegel").classed("selected", false)
+            d3.selectAll("#amphibien").classed("selected", false)
+            d3.selectAll("#fisch").classed("selected", false)
+            d3.selectAll("#wirbellose").classed("selected", false)
+        })
 
         d3.selectAll("#saeugetiere").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
