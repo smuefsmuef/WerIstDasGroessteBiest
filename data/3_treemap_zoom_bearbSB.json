@@ -1,0 +1,846 @@
+{
+  "name": "Anzahl Arten",
+  "color": "#929EA3",
+  "children": [
+    {
+      "name": "Säugetiere",
+      "color": "#9F9799",
+      "image": "img/animal_icons/Animals Bundle-28.svg",
+      "children": [
+        {
+          "name": "Säugetiere ohne Fledermäuse",
+          "color": "#BA8A87",
+          "image": "img/animal_icons/Animals Bundle-28.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 65,
+              "color": "#90b376"
+            },
+            {
+              "name": "Dominant",
+              "color": "yellow",
+              "children": [
+                {
+                  "name": "Homo Sapiens (vernünftiger Mensch)\n\nin Schweiz 2023:\n 8.8 Millionen Menschen\n15 Millionen Nutztiere\n1.2 Millionen Haustiere",
+                  "value": 1,
+                  "color": "yellow"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet: \nMauswiesel\nIltis\nFeldspitzmaus\nGartenspitzmaus\nSumpfspitzmaus\nWasserspitzmaus\nFeldhase\nHaselmaus\nZwergmaus\nFatio-Kleinwühlmaus",
+              "value": 10,
+              "color": "#ff6352"
+            },
+            {
+              "name": "Stark gefährdet: \nWolf\nHausratte\nWildkate/Waldkatze",
+              "group": "A",
+              "value": 3,
+              "color": "#ff4c38"
+            },
+            {
+              "name": "Vom Aussterben bedroht: \nFischotter\nEurasicher Luchs",
+              "value": 2,
+              "color": "#ff230a"
+            },
+            {
+              "name": "Ausgestorben: \nBraunbär",
+              "value": 1,
+              "color": "#ff230a"
+            }
+          ]
+        },
+        {
+          "name": "Fledermäuse",
+          "color": "#9F9799",
+          "image": "img/phylopic/fish.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 56,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potentiell Gefährdet: \nKleiner Abendsegler\nGrosser Abendsegler\nFransenfledermaus",
+              "value": 3,
+              "color": "#90b376"
+            },
+            {
+              "name": "Gefährdet: \nNymphenfledermaus\nBechsteinfledermaus\nNordfledermaus\nBreitfügelfledermaus\nBrandtfledermaus\nGrosses Mausohr\nBraunes Langohr\nZweifarbfledermaus",
+              "value": 8,
+              "color": "#90b376"
+            },
+            {
+              "name": "Stark gefährdet: \nMopsfledermaus\nLangflügelfledermaus\nKleine Hufeisennase\nWimperfledermaus\nAlpenlangohr",
+              "value": 5,
+              "color": "#90b376"
+            },
+            {
+              "name": "Vom Aussterben bedroht: \nGrosse Hufeisennase\nKleines Mausohr\nGraues Langohr",
+              "value": 3,
+              "color": "#90b376"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Vögel",
+      "color": "#AF8F8E",
+      "image": "img/animal_icons/Animals Bundle-43.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 129,
+          "color": "#90b376"
+        },
+        {
+          "name": "Potenziell gefährdet",
+          "color": "#fc897c",
+          "children": [
+            {
+              "name": "Potenziell gefährdete Vogelarten: \nKolbenente\nWaldohreule\nHänfling\nWanderfalke\nBaumfalke\nOrpheusspötter\nFeldschwirl\nNachtigall\nSchafstelze\nWespenbussard\nSchwarzkehlchen\nTurteltaube\nGartengrasmücke\nDrosselrohrsänger\nFeldlerche\nSteinhuhn\nMauersegler\nAlpensegler\nKuckuck\nMehlschwalbe\nMittelspecht\nZaunammer\nTurmfalke\nWendehals\nAlpenschneehuhn\nRohrschwirl\nGartenrotschwanz\nFlussseeschwalbe\nDorngrasmücke\nBirkhuhn\nHaselhuhn\nSchleiereule",
+              "value": 32,
+              "color": "#fc897c"
+            }
+          ]
+        },
+        {
+          "name": "Gefährdet",
+          "color": "#ff6352",
+          "children": [
+            {
+              "name": "Gefährdete Vogelarten: Schwarzhalstaucher\nGänsesäger\nReiherente\nWiesenpieper\nSteinadler\nRohrammer\nGelbspötter\nBartmeise\nZwergtaucher\nEisvogel\nWeissstorch\nDohle\nGrauammer\nHeidelerche\nWaldlaubsänger\nFitis\nGrauspecht\nUferschwalbe\nBraunkehlchen\nWaldschnepfe\nWacholderdrossel\nRingdrossel\nWiedehopf",
+              "value": 23,
+              "color": "#ff6352"
+            }
+          ]
+        },
+        {
+          "name": "Stark gefährdet",
+          "color": "#ff4c38",
+          "children": [
+            {
+              "name": "Stark gefährdete Vogelarten: Schnatterente\nTafelente\nHalsbandschnäpper\nZwergdommel\nBlaumerle\nAlpenkrähe\nFlussuferläufer\nSteinkauz\nUhu\nZiegenmelker\nFlussregenpfeifer\nLachmöwe\nZwergohreule\nAuerhuhn",
+              "value": 14,
+              "color": "#ff4c38"
+            }
+          ]
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "color": "#ff230a",
+          "children": [
+            {
+              "name": "Vom Aussterben bedrohte Vogelarten: \nPurpurreiher\nWachtelkönig\nOrtolan\nBekassine\nBartgeier\nRotkopfwürger\nGrosser Brachvogel\nRebhuhn\nKiebitz",
+              "value": 9,
+              "color": "#ff230a"
+            }
+          ]
+        },
+        {
+          "name": "Ausgestorben",
+          "color": "white",
+          "children": [
+            {
+              "name": "Ausgestorbene Vogelarten: Rothuhn\nHaubenlerche\nRaubwürger\nSchwarzstirnwürger\nFischadler\nRotschenkel",
+              "value": 6,
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amphibien",
+      "color": "#C38581",
+      "image": "img/animal_icons/Animals Bundle-86.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 5,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet: \nFeuersalamander\nFadenmolch\nErdkröte\nItalienischer Springfrosch",
+          "group": "C",
+          "value": 4,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet: \nItalienischer Kammmolch\nNördlicher Kammmolch\nTeichmolch\nGeburtshelferkröte\nGelbbauchunke\nKreuzkröte\nSüdlicher Laubfrosch\nEuropäischer Laubfrosch\nSpringfrosch",
+          "group": "C",
+          "value": 9,
+          "color": "#ff4c38"
+        }
+      ]
+    },
+    {
+      "name": "Reptilien",
+      "color": "#D77C73",
+      "image": "img/animal_icons/Animals Bundle-55.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 6,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet: \nZauneidechse\nWestliche Smaragdeidechse\nSchlingnatter\nAspisviper",
+          "group": "C",
+          "value": 4,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet: \nGelbgrüne Zornnatter\nÄskulapnatter\nRingelnatter\nWürfelnatter\nKreuzotter",
+          "group": "C",
+          "value": 5,
+          "color": "#ff4c38"
+        },
+        {
+          "name": "Vom Aussterben bedroht: \nEuropäische Sumpfschildkröte\nVipernatter",
+          "group": "C",
+          "value": 2,
+          "color": "#ff230a"
+        }
+      ]
+    },
+    {
+      "name": "Fische",
+      "color": "#AF8F8E",
+      "image": "img/phylopic/fish.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 56,
+          "color": "#90b376"
+        },
+        {
+          "name": "Gefährdet: \nAal\nSchneider\nStrömer\nPigo\nDorngrundel\nZebraforelle\nAgone\nHundsbarbe\nSüdbarbe\nStrigione\nSeesaibling\nÄsche",
+          "group": "C",
+          "value": 12,
+          "color": "#ff6352"
+        },
+        {
+          "name": "Stark gefährdet: \nBitterling\nGhiozzo\nSabanejewia Iarvata\nBachneunauge\nAlborella\nAtlantische Forelle mit Seelebenform",
+          "group": "C",
+          "value": 6,
+          "color": "#ff4c38"
+        },
+        {
+          "name": "Vom Aussterben bedroht: \nLampetra zanandreai Vladykov\nAdriatische Forelle\nSchwarzmeerforelle\nMarmorataforelle\nNase\nSavetta\nSofie\nRhonestreber, Roi du Doubs\nTiefseesaibling",
+          "group": "C",
+          "value": 15,
+          "color": "#ff230a"
+        },
+        {
+          "name": "potentiell gefährdet: \nAtlantische Forelle\nBarbe\nGroppe\nFelchen",
+          "group": "C",
+          "value": 4,
+          "color": "#ff6352"
+        },
+        {
+          "name": "ausgestorben: \nMoorgrundel\nFlussneunauge\nStör\nMaifisch\nCheppia\nAtlantischer Lachs\nHuchen\nBiblet",
+          "group": "C",
+          "value": 8,
+          "color": "#ff6352"
+        }
+      ]
+    },
+    {
+      "name": "Landschnecken und Grossmuscheln",
+      "color": "#A59495",
+      "image": "img/phylopic/snail.svg",
+      "children": [
+        {
+          "name": "Nicht gefährdet",
+          "value": 120,
+          "color": "#90b376"
+        },
+        {
+          "name": "Potenziell gefährdet",
+          "color": "#fc897c",
+          "children": [
+            {
+              "name": "Potenziell gefährdete Schneckenarten: \nPuppen-Quellschnecke\nRundmundige Quellschnecke\nStrobels Schliessmundschnecke\nSüdalpen-Wachsschnecke\nSüdliche Riemenschnecke\nBerg-Haarschnecke",
+              "value": 6,
+              "color": "#fc897c"
+            }
+          ]
+        },
+        {
+          "name": "Gefährdet",
+          "color": "#ff6352",
+          "children": [
+            {
+              "name": "Gefährdete Schneckenarten: \nSchöne Landdeckelschnecke\nAlpen-Brunnenschnecke\nWeitmündige Schlammschnecke\nScharfe Tellerschnecke\nGlänzende Tellerschnecke\nKleine Tönnchenschnecke\nWulstige Kornschnecke\nSumpf-Windelschnecke\nGestreifte Windelschnecke\nVierzahn-Vielfrassschnecke\nWeisse Vielfrassschnecke, Zebraschnecke\nZahnlose Schliessmundschnecke\nAlpweiden-Glasschnecke\nBerg-Glasschnecke\nRötliche Daudebardie\nHelle Nacktschnecke\nIgel-Wegschnecke\nRote Wegschnecke\nQuendelschnecke\nFlache Teichmuschel\nQuell-Blasenschnecke\nGlattes Posthörnchen\nRotbraune Zylinderwindelschnecke\nGletscher-Glasschnecke\nBerg-Egelschnecke\nGenabelte Maskenschnecke\nSee-Erbsenmuschel\nKreisrunde Erbsenmuschel\nKleinste Erbsenmuschel\nSchmidts Quellschnecke\nFerraris Puppenschnecke\nBerg-Glanzschnecke\nSichelmundschnecke\nEngadiner Felsenschnecke\nVierblatt-Zwergdeckelschnecke\nNidwaldner Haarschnecke\nGekerbte Jura-Haarschnecke",
+              "value": 37,
+              "color": "#ff6352"
+            }
+          ]
+        },
+        {
+          "name": "Stark gefährdet",
+          "color": "#ff4c38",
+          "children": [
+            {
+              "name": "Stark gefährdete Schneckenarten: \nSpitze Sumpfdeckelschnecke\nKleine Schnauzenschnecke\nStumpfe Federkiemenschnecke\nGelippte Tellerschnecke\nZierliche Tellerschnecke\nVerbogenes Posthörnchen\nGenabelte Zwergpuppenschnecke\nIllyrische Kornschnecke\nSchmale Windelschnecke\nBauchige Windelschnecke\nGemeine Schliessmundschnecke\nGeradmund-Schliessmundschnecke\nZierliche Schliessmundschnecke\nGestreifte-Glasschnecke\nGrosse Glasschnecke\nWeitmündige Glasschnecke\nKleine Daudebardie\nSüdliche Malermuschel\nAufgeblasene Flussmuschel\nKugelige Erbsenmuschel\nAnodonta cf. anatina\nGekritzte Mulmnadel\nSüdliche Zwergpuppenschnecke\nGrosse Kornschnecke\nPuppenkornschnecke\nAlpen-Puppenschnecke\nFeingerippte Grasschnecke\nKleinste Zylinderwindelschnecke\nDreizahn-Vielfrassschnecke\nGipfel-Glasschnecke\nMalermuschel\nBayerische Federkiemenschnecke\nSüdalpen-Pagodenschnecke\nSüdtessiner Haferkornschnecke\nHarfenschnecke\nBlanke Windelschnecke\nStuders Schliessmundschnecke\nSüdalpen-Schliessmundschnecke\nRötliche Bernsteinschnecke\nBergamasker Felsenschnecke\nAchat-Felsenschnecke\nMoor Windelschnecke",
+              "value": 42,
+              "color": "#ff4c38"
+            }
+          ]
+        },
+        {
+          "name": "Vom Aussterben bedroht",
+          "color": "#ff230a",
+          "children": [
+            {
+              "name": "Vom Aussterben bedrohte Schneckenarten: \nGemeine Kahnschnecke\nGraue Schliessmundschnecke\nLimace des caves, Grande L. jaune, tachetée\nGlänzende Glattschnecke\nWeitmündige Haferkornschnecke\nBläuliche Kornschnecke\nZweizähniges Moospüppchen\nGrosse Grasschnecke\nVierzähnige Windelschnecke\nArktische Windelschnecke\nSimplon-Schliessmundschnecke\nBauchige Blindschnecke\nSüdalpen-Glanzschnecke\nFarblose Glanzschnecke\nSchwarze Kielnacktschnecke\nZwerg-Heideschnecke\nGrosse Felsenschnecke\nChilostoma cingulatum tigrinum\nGemeine Bachmuschel",
+              "value": 19,
+              "color": "#ff230a"
+            }
+          ]
+        },
+        {
+          "name": "Ausgestorben",
+          "color": "white",
+          "children": [
+            {
+              "name": "Ausgestorben: \nInsubrische Zwergdeckelschnecke\nKar-Felsenschnecke\nKleinzahn-Flussmuschel",
+              "value": 3,
+              "color": "white"
+            }
+          ]
+        },
+        {
+          "name": "Ungenügende Datenlage",
+          "color": "white",
+          "children": [
+            {
+              "name": "Ungenügende Datenlage: \nTrochulus piccardi\nSchöne Erbsenmuschel",
+              "value": 3,
+              "color": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insekten",
+      "color": "#AF8F8E",
+      "image": "img/animal_icons/Animals Bundle-84.svg",
+      "children": [
+        {
+          "name": "Eintagsfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/eintagsfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 41,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Eintagsfliegenarten: \nBaetis melanonyx\nRhithrogena dorieri Sowa\nEcdyonurus alpinus Hefti\nRhithrogena corcontica\nRhithrogena nivata",
+                  "value": 5,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Eintagsfliegenarten: \nBaetis buceratus\nCaenis beskidensis Sowa\nEcdyonurus dispar\nEphemera vulgata Linnaeus\nProcloeon pennulatum\nRhithrogena beskidensis\nTorleya major\nHabrophlebia eldae\nBaetis liebenauae\nCaenis lactea\nRhithrogena allobrogica\nBaetis pentaphlebodes\nBaetis nubecularis\nEcdyonurus parahelveticus",
+                  "value": 14,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Eintagsfliegenarten: \nCaenis rivulorum\nChoroterpes picteti\nProcloeon bifidum\nEphemera lineata\nLeptophlebia marginata\nRhithrogena landai\nSiphlonurus aestivalis",
+                  "value": 7,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Eintagsfliegenarten: \nAcentrella sinaica\nAmeletus inopinatus\nNigrobaetis niger\nCaenis pusilla\nEcdyonurus insignis\nEphemera glaucops\nEphemerella notata\nLeptophlebia vespertina\nOligoneuriella rhenana\nRhithrogena germanica\nHabrophlebia fusca\nMetreletus balcanicus\nArthroplea congener",
+                  "value": 13,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Eintagsfliegenarten: \nEphoron virgo\nHeptagenia coerulans\nHeptagenia longicauda",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Heuschrecken",
+          "color": "#90b376",
+          "image": "img/phylopic/heuschrecke.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 43,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Heuschreckenarten: \nAlpine Bergschrecke\nAlpen-Keulenschrecke",
+                  "value": 2,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Heuschreckenarten: \nLangflügelige Schwertschrecke\nSüdalpen-Sattelschrecke\nStrauch-Sattelschrecke\nZweifarbige Beissschrecke\nGemeine Sichelschrecke\nFiebers Strauchschrecke\nOestliches Heupferd\nSumpfgrille\nEingedrückte Dornschrecke\nItalienische Schönschrecke\nGrosse Höckerschrecke\nSumpfgrashüpfer\nDickkopf-Grashüpfer\nRotflügelige Oedlandschrecke\nRotflügelige Schnarrschrecke\nBlauflügelige Sandschrecke\nSchwarzfleckiger Grashüpfer\nSumpfschrecke\nAlpenschrecke",
+                  "value": 19,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Heuschreckenarten: \nWestliche Dornschrecke\nProvence-Schönschrecke\nGrüne Strandschrecke\nGefleckte Keulenschrecke\nKurzflügelige Schwertschrecke\nSteppen-Sattelschrecke\nCostas Schönschrecke\nSchweizer Goldschrecke",
+                  "value": 8,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Heuschreckenarten: \nGestreifte Südschrecke\nBraunfleckige Beissschrecke\nGestreifte Sumpfgrille\nWanderheuschrecke\nKleiner Heidegrashüpfe\nSägeschrecke\nTürks Dornschrecke\nKiesbank-Grashüpfer\nFluss-Strandschrecke\nKreuzschrecke",
+                  "value": 10,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Heuschreckenarten: \nSteppengrille\nDreizehenschrecke\nGefleckte Schnarrschrecke",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Käfer",
+          "color": "#90b376",
+          "image": "img/phylopic/kaefer.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 91,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Käferarten: \nAcmaeops septentrionis\nLepturobosca virens\nSechsfleckiger Halsbock\nFilzhaariger Halsbock\nFichten-Scheibenbock\nPhytoecia affinis\nMolops elatus",
+                  "value": 7,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Käferarten: \nWeissgeschuppter Eichen-Prachtkäfer\nGrosser Pappel-Prachtkäfer\nGrosser Linden-Prachtkäfer\nBuprestis octoguttata\nMoorkiefern-Prachtkäfer\nBunter Kirschbaum-Prachtkäfer\nAnthaxia chevrieri\nAnthaxia istriana\nAnthaxia nigrojubata incognita\nGoldpunkt-Nadelholz-Prachtkäfer\nGrosser Brombeer-Prachtkäfer\nAgrilus betuleti\nHabroloma nanum\nTrachys troglodytes\nProtaetia marmorata\nHirschkäfer\nAsemum striatum\nSchmaler Halsbock\nLeptura quadrifasciata\nCallimus angulatus\nDeilus fugax\nAlpenbock\nPhymatodes rufipes\nGrauer Espenbock\nChlorophorus figuratus\nAnaglyptus gibbosus\nBlutbock\nExocentrus punctipennis\nAchtpunktierter Pappelbock\nPhytoecia nigricornis\nPhytoecia pustulata\nGrosser Erlen-Prachtkäfer\nBuprestis novemmaculata\nGelbrandiger Kugelhalsbock\nGelbbrauner Kugelhalsbock\nCyrtoclytus capra\nPogonocherus caroli\nSchwarzbock\nRotköpfiger Linienbock\nLeioderes kollari\nPurpuricenus globulicollis\nCarabus convexus convexus\nLeistus spinibarbis\nNebria psammodes\nElaphrus aureus\nDyschirius intermedius\nBembidion atrocaeruleum\nBembidion latinum\nBembidion stephensii\nBembidion lunatum\nBembidion bruxellense\nHarpalus flavescens\nHarpalus smaragdinus\nHarpalus progrediens\nPterostichus gracilis\nPterostichus oenotrius\nPterostichus fasciatopunctatus\nAgonum versutum\nAgonum lugens\nPlatynus livens\nAgonum antennarium\nAgonum scitulum\nAgonum piceum\nAmara schimperi\nAmara apricaria\nChlaenius spoliatus\nOodes helopioides helepioides\nBadister dilatatus\nBadister collaris\nPanagaeus bipustulatus\nOdacantha melanura\nLebia cyanocephala\nDemetrias imperialis\nParadromius longiceps\nPhilorhizus quadrisignatus\nDrypta dentata\nBrachinus elegans\nAmara gebleri\nNashornkäfer\nHarpalus froelichii\nHarpalus fuscipalpis\nSchmalbindiger Breitflügel-Tauchkäfer",
+                  "value": 82,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Käferarten: \nMarien-Prachtkäfer\nLamprodila decipiens\nKleiner Ulmen-Prachtkäfer\nAnthaxia podolica\nSonnenröschen-Prachtkäfer\nWellenbindiger Eichen-Prachtkäfer\nMeliboeus fulgificollis\nAntiker Prachtkäfer\nAgrilus subauratus\nProtaetia aeruginosa\nProtaetia morio\nGnorimus variabilis\nTrichius sexualis\nTrichius gallicus\nRindenschröter\nKörnerbock\nMulmbock\nRhagium sycophanta\nSchwarzer Buntschienenbock\nEichen-Tiefaugenbock\nHaarschildiger Halsbock\nRotgelber Buchen-Halsbock\nSaphanus piceus\nRopalopus femoratus\nPlagionotus detritus\nChlorophorus herbstii\nChlorophorus glabromaculatus\nChlorophorus sartor\nChlorophorus varius\nWeberbock\nLindenbock\nCalamobius filum\nAcanthocinus aedilis\nAgapanthia cardui\nGefleckter Espenbock\nProtaetia affinis\nZottenbock\nSchwarzrandiger Vierflecken-Bock\nBogenförmiger Halsbock\nGroßer Wespenbock\nGlaphyra marmottani\nRopalopus clavipes\nSemanotus undatus\nPoecilium glabratum\nCylindera germanica\nCalosoma inquisitor\nCalosoma sycophanta\nNotiophilus germinyi\nOmophron limbatum\nElaphrus cupreus\nElaphrus riparius\nDyschirius substriatus\nDyschirius laeviusculus\nDyschirius angustatus\nTrechus rubens\nDyschirius abditus\nBembidion prasinum\nBembidion modestum\nBembidion elongatum\nPatrobus australis\nOphonus stictus\nDicheirotrichus placidus\nBradycellus ruficollis\nAcupalpus parvulus\nAcupalpus maculatus\nLaemostenus terricola\nOlisthopus rotundatus\nAgonum gracile\nZabrus tenebrionides\nAmara proxima\nAmara fusca\nChlaenius tristis\nLebia marginata\nCymindis axillaris\nOphonus sabulicola\nBadister unipustulatus\nNebria crenatostriata",
+                  "value": 77,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Käferarten: \nTrachypteris picta decostigma\nSchlehen-Prachtkäfer\nZichorien-Prachtkäfer\nAnthaxia fulgurans\nAnthaxia millefolii\nAnthaxia suzannae\nAgrilus lineola\nProtaetia angustata\nProtaetia fieberi\nJuchtenkäfer, Eremit\nBeulenkopfbock\nStictoleptura cordigera\nRotbeiniger Halsbock\nLeptura aethiops\nGrosser Eichenbock, Heldbock\nTrichoferus holosericeus\nRopalopus ungaricus\nSauerkirschen-Widderbock\nWendekreis-Widderbock\nChlorophorus trifasciatus\nGrauflügliger Erdbock\nHerophila tristis\nMesosa curculionoides\nZitterpappelbock\nPhytoecia virgula\nMorimus asper\nGefleckter Eichen-Prachtkäfer\nBerliner Prachtkäfer\nDicerca moesta\nGoldgrüner Eichen-Prachtkäfer\nStictoleptura erythroptera\nCarabus creutzeri kircheri\nLeistus terminatus\nNebria livida\nNotiophilus substriatus\nBlethisa multipunctata\nElaphrus uliginosus\nDyschirius politus\nDyschirius minutus\nBembidion striatum\nBembidion foraminosum\nBembidion litorale\nBembidion obliquum\nBembidion fluviatile\nStenolophus skrimshiranus\nAcupalpus brunnipes\nAcupalpus exiguus\nPoecilus kugelanni\nPoecilus sericeus\nPterostichus macer\nPterostichus quadrifoveolatus\nPterostichus aterrimus\nCalathus rotundicollis\nSphodrus leucophthalmus\nAgonum impressum\nAgonum viridicupreum\nPlatynus longiventris\nAmara tibialis\nAmara sabulosa\nAmara fulva\nChlaenius velutinus\nChlaenius olivieri\nLebia trimaculata\nDromius schneideri\nBrachinus sclopeta\nAgonum hypocrita\nCylindera arenaria\nMiscodera arctica\nTrechus laevipes\nBembidion eques\nBembidion humerale\nHarpalus zabroides\nAmblystomus niger\nAbax oblongus\nSericoda quadripunctata\nAgonum ericeti\nAnchomenus cyaneus\nLicinus cassideus\nCymindis miliaris\nPhilorhizus sigma\nBrachinus immaculicornis",
+                  "value": 81,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Käferarten: \nCerambyx miles\nClytus rhamni\nCicindela sylvatica\nLophyra flexuosa\nCarabus nodulosus\nDyschirius thoracicus\nBembidion velox\nBembidion laticolle\nOphonus cribricollis\nHarpalus politus\nStenolophus discophorus\nOlisthopus sturmii\nAmara concinna\nAmara messae\nChlaenius sulcicollis\nBembidion virens\nCymindis angularis",
+                  "value": 17,
+                  "color": "white"
+                }
+              ]
+            },
+            {
+              "name": "Sehr seltene Art, keine aktuelle Gefährdung",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Sehr seltene Käferarten: \nCalosoma maderae\nCychrus angustatus\nCychrus cordicollis\nBembidion penninum\nHarpalus xanthopus winkleri\nHarpalus marginellus\nStomis rostratus\nPterostichus honnoratii\nPterostichus rutilans\nPlatyderus rufus\nCalathus rubripes\nLaemostenus macropus\nAmara nigricornis\nAmara infuscata\nLebia scapularis\nParadromius ruficollis\nLeistus montanus montanus\nAgonum carbonarium\nTrichotichnus rimanus\nLeistus montanus rhaeticus\nBoldoriella tedeschii\nDuvalius longhii\nTrichaphaenops sollaudi\nPterostichus flavofemoratus\nPterostichus cribratus\nTanythrix edurus\nPlatynus complanatus\nTrechus pochoni\nNebria cordicollis crypticola",
+                  "value": 29,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Köcherfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/koecherfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 101,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Köcherfliegenarten: \nRhyacophila glareosa\nPolycentropus morettii\nMicrasema morosum\nConsorophylax consors\nCryptothrix nebulicola\nEnoicyla reichenbachii\nMetanoea flavipennis\nMetanoea rhaetica\nRhyacophila rectispina\nAllogamus mendax",
+                  "value": 10,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Köcherfliegenarten: \nRhyacophila aurata\nRhyacophila laevis\nRhyacophila praemorsa\nAgapetus laniger\nAgapetus nimbulus\nSynagapetus iridipennis\nAllotrichia pallicornis\nPhilopotamus montanus\nHydropsyche fulvipes\nHydropsyche saxonica\nCyrnus flavidus\nHolocentropus dubius\nHolocentropus picicornis\nPolycentropus irroratus\nTinodes maclachlani\nTinodes maculicornis\nTrichostegia minor\nAcrophylax zerberus\nAnisogamus difformis\nAnnitella obscurata\nChaetopteryx major\nHalesus tesselatus\nLimnephilus binotatus\nLimnephilus germanus\nLimnephilus helveticus\nLimnephilus subcentralis\nLimnephilus vittatus\nMicropterna fissa\nSilo piceus\nLepidostoma basale\nAthripsodes bilineatus\nCeraclea annulicornis\nCeraclea aurea\nOecetis furva\nNotidobia ciliaris\nBeraeodes minutus\nErnodes articularis\nMolanna albicans\nHydroptila dampfi\nRhyacophila philopotamoides\nRhyacophila stigmatica\nHydroptila ivisa\nWormaldia variegata maclachlani\nAllogamus antennatus\nLimnephilus italicus\nLimnephilus sericeus\nRhyacophila bonaparti\nRhyacophila meyeri\nDiplectrona atra\nTinodes zelleri\nChaetopteryx gessneri\nDrusus melanchaetes\nDrusus muelleri\nDrusus nigrescens",
+                  "value": 54,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Köcherfliegenarten: \nRhyacophila aquitanica\nHydroptila occulta\nIthytrichia clavata\nOligostomis reticulata\nStactobia moselyi\nWormaldia pulla\nHydropsyche guttata\nHydropsyche modesta\nHydropsyche exocellata\nHolocentropus stagnalis\nPolycentropus corniger\nPsychomyia fragilis\nTinodes antonioi\nTinodes pallidulus\nHagenella clathrata\nMicrasema setiferum\nAnomalopterygella chauviniana\nApatania fimbriata\nApatania helvetica\nChaetopterygopsis maclachlani\nGrammotaulius nigropunctatus\nLimnephilus bipunctatus\nLimnephilus flavospinosus\nLimnephilus griseus\nLimnephilus incisus\nLimnephilus nigriceps\nPotamophylax luctuosus\nPotamophylax rotundipennis\nStenophylax mucronatus\nAdicella filicornis\nAdicella reducta\nCeraclea fulva\nCeraclea nigronervosa\nErotesis baltica\nMystacides nigra\nBeraeamyia squamosa\nCatagapetus nigrans\nHydroptila valesiaca\nHydropsyche doehleri\nPlectrocnemia appennina\nSericostoma galeatum\nHelicopsyche sperata\nHydroptila brissaga\nTinodes luscinia\nAnabolia lombarda\nDrusus alpinus",
+                  "value": 46,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Köcherfliegenarten: \nGlossosoma bifidum\nHydroptila martini\nHydroptila pulchricornis\nIthytrichia lamellaris\nOxyethira falcata\nChimarra marginata\nWormaldia mediana\nHydropsyche bulbifera\nPolycentropus kingi\nAgrypnia obsoleta\nBrachycentrus maculatus\nAnabolia brevipennis\nHydatophylax infumatus\nLimnephilus affinis\nNemotaulius punctatolineatus\nLimnephilus elegans\nLithax obscurus\nCeraclea riparia\nCeraclea senilis\nTriaenodes bicolor\nTricholeiochiton fagesii\nHydroptila simulans\nIronoquia dubia\nRhyacophila simulatrix\nTinodes sylvia\nLimnephilus borealis\nLimnephilus algosus\nAlpopsyche ucenorum\nRhyacophila orobica\nSynagapetus moselyi",
+                  "value": 30,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Köcherfliegenarten: \nRhyacophila pascoei\nHydroptila rheni\nHydroptila tigurina\nMicroptila minutissima\nOrthotrichia angustella\nOxyethira simplex\nStactobia eatoniella\nStactobiella risi\nWormaldia subnigra\nBrachycentrus montanus\nBrachycentrus subnubilus\nMicrasema minimum\nLimnephilus politus\nPlatyphylax frauenfeldi\nAthripsodes leucophaeus\nHydroptila insubrica\nAgrypnia picta",
+                  "value": 17,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Libellen",
+          "image": "img/phylopic/libelle.svg",
+          "color": "#90b376",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 42,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Libellenarten: \n",
+                  "value": 6,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Libellenarten: \nSüdliche Prachtlibelle\nWestliche Keiljungfer\nAlpen-Mosaikjungfer\nHochmoor-Mosaikjungfer\nSumpf-Heidelibelle",
+                  "value": 5,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Libellenarten: \nWestliche Zangenlibelle\nGekielte Smaragdlibelle\nÖstlicher Blaupfeil\nGefleckte Heidelibelle\nSpäte Adonislibelle\nGrüne Keiljungfer\nGeisterlibelle",
+                  "value": 7,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Libellenarten: \nGlänzende Binsenjungfer\nKleine Binsenjungfer\nMond-Azurjungfer\nHelm-Azurjungfer\nGelbe Keiljungfer\nGebänderte Heidelibelle\nSibirische Winterlibelle\nZwerglibelle\nZweifleck\nÖstliche Moosjungfer\nZierliche Moosjungfer\nGrosse Moosjungfer",
+                  "value": 12,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Libellenarten: \nVogel-Azurjungfer\nGrosse Zangenlibelle",
+                  "value": 2,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Schmetterlinge, Falter & Widderchen",
+          "color": "#90b376",
+          "image": "img/phylopic/schmetterling.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 104,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Schmetterlinge & Falterarten: \nStorchschnabel Grünwidderchen\nAlpiner Würfelfalter\nApollo\nHochmoorgelbling\nSchwarzfleckiger Ameisenbläuling, Schwarzgefleckter Bläuling\nVeilchenscheckenfalter\nAlpen-Maivogel, Geissblatt-Scheckenfalter\nBündner Scheckenfalter\nSchwarzer Trauerfalter\nGelbbindenmohrenfalter\nHochalpiner Schillernder Mohrenfalter\nEichenzweig-Glasflügler\nMistel-Glasflügler\nGelber Wiesenspinner, Trockenrasen-Herbst-\nEngadiner Bär, Gelber Bär\nRussischer-Bär, Felsbuschheiden-Prachtbär\nGletscherbär\nRauchflügliger Flechtenbär, Felshalden-Flechtenbärchen\nBrevantennia siederi\nDahlica leoi\nDahlica vaudella\nNordischer Glasflügler\nDahlica goppensteinensis\nRebelia ferruginans\nMegalophanes turatii\nPseudobankesia alpestrella\nPseudobankesia contractella\nPtilocephala pyrenaella falsevocata",
+                  "value": 28,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Schmetterlinge & Falterarten: \nKrainisches Widderchen\nVeränderliches Widderchen\nBergkronwicken-Widderchen\nBibernell-Widderchen\nNördliches Platterbsen-Widderchen, Platterbsen-Widderchen\nSüdliches Platterbsen-Widderchen\nVeritys Würfel-Dickkopffalter\nWeissgesäumter Würfelfalter\nGrünblauer Bläuling\nPflaumen-Zipfelfalter\nHimmelblauer Steinkleebläuling, Alexis-Bläuling\nVioletter Feuerfalter\nZahnflügelbläuling\nVogelwicken-Bläuling\nEscher-Bläuling\nEsparsettenbläuling\nFetthennebläuling\nKleiner Schillerfalter\nGrosser Eisvogel\nWegerichscheckenfalter, Gemeiner Scheckenfalter\nRoter Scheckenfalter\nWestlicher Scheckenfalter\nTrauermantel\nOckerbindiger Samtfalter,  Rostbinde, Samtbinde\nEisenfarbiger Samtfalter\nKleines Ochsenauge\nWalliser Waldportier\nOckerfarbiger Würfelfalter\nSchwarzer Apollo\nMattfleckiger Weissling\nGrosser Ampferfeuerfalter\nBlauschillernder Feuerfalter\nKreuzenzian-Ameisenbläuling, Enzianbläuling\nGraublauer Bläuling\nAlpen-Mohrenfalter\nSpanischer Bläuling\nSimplonmohrenfalter\nSudetenmohrenfalter\nSonnenröschen-Glasflügler\nGelben Birken-Glasflügler\nGrasglucke, Waldgrasflur-Grossspinner\nKleespinner, Trockenrasen-Grossspinner\nWolfsmilch-, Grasheiden-Ringelspinner\nKleine Eichen-, Eichenhain-Glucke\nKleines Nachtpfauenauge\nSkabiosenschwärmer\nWolfsmilchchwärmer\nAbendpfauenauge\nEichen-Wollrückenspinner\nAugen-Wollrückenspinner\nSchlehen-Sichelflügler\nBirken-Sichelflügler\nLinden-Sichelsplügler\nWeisser Gabelschwanz, Schwarzpappelauen-Rindenspinner\nGrosser Gabelschwanz, Weidenhalden-Rindenspinner\nSchwarzgefleckter Rauhfussspinner\nWeissbinden-Zahnspinner, Grauer Eichenbuschwald-Blattspinner\nKleiner Eichen-, Eichenbuscheiden-Zahnspinner\nBirken-Gabelschwanz, Birkenerlenhain-Rindenspinner\nEspen-Gabelschwanz, Espenbuschheiden-Rindenspinner\nWeisser-Zahnspinner, Birkenhain-Zahnspinner\nEspen-Zahznspinner, Pappelbirkengehölz-Zahnspinner\nMönch-Zahnspinner, Karmeliterspinner\nKlee-Bürstenspinner, Buschheiden-Streckfuss\nSchwarzer Bär, Heckenlehnen-Schwarzbär\nSchönbär, Buschhaldenflur-Prachtbär\nWeisser Grassbär\nElfenbein-Flechtenbär, Buschrasen-Fletchtenbärchen\nTrockenwieses-FLechtenbär, Steppenrasen-Flechtenbärchen\nFelssteppen-Flechtenbärchen\nPurpurbär, Laubkrautheiden-Purpurbär\nAlpen-Flechtenbär, Trockenrasen-Flechtenbärchen\nAlteichen-Glasflügler\nNachtkerzenschwärmer\nParasitierter Bär\nCanephora unicolor\nEpichnopterix kovacsi\nEpichnopterix sieboldi\nPhalacropterix praecellens\nPtilocephala albida\nRebelia sapho\nBijugis bombycella rotundella\nRebelia thomanni",
+                  "value": 83,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Schmetterlinge & Falterarten: \nFlockenblumen-Grünwidderchen\nSchlehen-Grünwidderchen\nGrünlicher Dickkopffalter\nMattscheckiger Braundickkopffalter\nKronwickenbläuling, Gemeiner Bläuling\nKleiner Schlehen-Zipfelfalter, Akazienzipfelfalter\nBrauner Eichen-Zipfelfalter, Eichenzipfelfalter\nBlauschwarzer Eisvogel\nRotbraunes Wiesenvögelchen\nGrosser Waldportier\nSeltenes Grünwidderchen, Skabiosen-Grünwidderchen\nDistel-Grünwidderchen\nBetonien-Dickkopffalter, Heilziest-Dickkopffalter\nSpiegelfleck-Dickkopffalter\nKleiner Alpenbläuling\nBlasenstrauchbläuling\nLungenenzian-Ameisenbläuling, Kleiner Moorbläuling\nDunkler Wiesenknopf-Ameisenbläuling, Dunkler Moorbläuling\nHeller Wiesenknopf-Ameisenbläuling, Grosser Moorbläuling\nHochmoorperlmutterfalter\nSkabiosenscheckenfalter, Goldener Scheckenfalter\nEhrenpreisscheckenfalter\nGelbringfalter\nWeissgebänderter Mohrenfalter\nKleiner Scheckenfalter\nLeinkraut-Scheckenfalter\nStyx-Mohrenfalter\nRoter Ampfer-Glasflügler\nKreuzdorn-Glasflügler\nGewöhnlicher-Wollafter\nKupferglucke, Hecken-Parkland-Kupferglucke\nPflaumenglucke, Obsthain-Feuerglucke\nBirken(bunt)spinner, Scheckflügel\nGrosses Nachtpfauenauge\nFledermausschwärmer\nBirken-Wollrückenspinner\nGelbbrauner Zahnspinner, Auenpappelgestrüpp-Zahnspinner\nGrosses Braunwidderchen\nKleines Braunwidderchen\nBraungrauer Flechtenbär, Erlenmoor-Flechtenspinner\nZiest-Glasflügler\nErlen Sichelflügler\nGrauer Fleckenbär\nSchilf-Flechtenbär, Braungelber-Flechtenspinner\nKaiserbär, Trauerspinner. Trauerbär\nNesselbär, Moorwiesen-Weissbär\nSchweizeralpenbär, Hochgebirgs-Felsheiden-Fleckenbär\nMatterhornbär\nEpichnopterix pontbrillantella\nRebelia herrichiella\nBijugis bombycella helvetica retiferella",
+                  "value": 51,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Schmetterlinge & Falterarten: \nManns Grünwidderchen\nMehrfarbiges Grünwidderchen\nÖstlicher Scheckenfalter\nSumpfhornklee-Widderchen\nSpätsommer-Würfelfalter, Spätsommer-Würfel-Dickkopffalter\nAmbossfleck-Würfelfalter\nFelsenfalter, Berghexe\nWaldwiesenvögelchen\nMoorwiesenvögelchen\nGrosses Wiesenvögelchen\nHaushechel-Glasflügler\nHecken-Wollafter\nSchwarzgefleckter Bär, Felsheiden-Fleckenbär\nGestreifter Grasbär, -Grasheidenbär\nTrockenrasenbraunbär\nSeggen-Flechtenbär, Waldsumpfgrasflur-Nacktflügelbärch\nJakobskrautbär, Karminbär, Greiskrautflur-Kaminbärchen\nGrosse Pappelglucke, Auwaldglucke\nBlaubeer-, Heidelbeerheiden-Glucke\nBrauner Wiesenspinner\nSanddornschwärmer\nUlmen-Zahnspinner, Ulmenspinner\nEckfleck-Bürstenspinner, Eichenwald-Bürstenbinder\nAugsburger Bär, Waldgrund-Buschbär\nSteppenbär, Labkrautbär",
+                  "value": 25,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Schmetterlinge & Falterarten: \nRotbindensamtfalter, Rotbindiger Samtfalter\nAndorn-Dickkopffalter\nSchwarrotes Grünwidderchen",
+                  "value": 3,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Steinfliegen",
+          "color": "#90b376",
+          "image": "img/phylopic/steinfliege.svg",
+          "children": [
+            {
+              "name": "Nicht gefährdet",
+              "value": 46,
+              "color": "#90b376"
+            },
+            {
+              "name": "Potenziell gefährdet",
+              "color": "#fc897c",
+              "children": [
+                {
+                  "name": "Potenziell gefährdete Steinfliegenarten: \nRhabdiopteryx alpina\nNemoura obtusa\nNemoura sinuata\nLeuctra armata\nLeuctra subalpina\nIsoperla carbonaria\nLeuctra meridionalis\nPerlodes jurassicus",
+                  "value": 8,
+                  "color": "#fc897c"
+                }
+              ]
+            },
+            {
+              "name": "Gefährdet",
+              "color": "#ff6352",
+              "children": [
+                {
+                  "name": "Gefährdete Steinfliegenarten: \nBrachyptera seticornis\nTaeniopteryx hubaulti\nProtonemura meyeri\nLeuctra autumnalis\nLeuctra hexacantha\nLeuctra niveola\nCapnia bifrons\nDinocras megacephala\nProtonemura algovia\nProtonemura nimborella\nLeuctra dolasilla\nRhabdiopteryx harperi\nLeuctra insubrica",
+                  "value": 13,
+                  "color": "#ff6352"
+                }
+              ]
+            },
+            {
+              "name": "Stark gefährdet",
+              "color": "#ff4c38",
+              "children": [
+                {
+                  "name": "Stark gefährdete Steinfliegenarten: \nNemoura avicularis\nNemoura uncinata\nNemoura palliventris\nBesdolus imhoffi\nIsoperla obscura\nIsoperla oxylepis\nPerlodes dispar\nLeuctra elisabethae\nLeuctra helvetica\nLeuctra pseudorosinae\nLeuctra schmidi\nDinocras ferreri\nLeuctra ameliae\nIsoperla orobica",
+                  "value": 14,
+                  "color": "#ff4c38"
+                }
+              ]
+            },
+            {
+              "name": "Vom Aussterben bedroht",
+              "color": "#ff230a",
+              "children": [
+                {
+                  "name": "Vom Aussterben bedrohte Steinfliegenarten: \nBrachyptera trifasciata\nNemoura dubitans\nNemoura sciurus\nPerla abdominalis\nNemoura undulata\nLeuctra sesvenna\nLeuctra vinconi aubertorum\nIsoperla lugens\nLeuctra zwicki\nLeuctra ravizzai",
+                  "value": 10,
+                  "color": "#ff230a"
+                }
+              ]
+            },
+            {
+              "name": "Ausgestorben",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ausgestorbene Steinfliegenarten: \nBrachyptera braueri\nBrachyptera monilicornis\nTaeniopteryx schoenemundi\nBesdolus ventralis\nIsogenus nubecula\nXanthoperla apicalis\nTaeniopteryx nebulosa",
+                  "value": 7,
+                  "color": "white"
+                }
+              ]
+            },
+            {
+              "name": "Ungenügende Datenlage",
+              "color": "white",
+              "children": [
+                {
+                  "name": "Ungenügende Datenlage zu Steinfliegenarten: \nLeuctra festai\nNemoura pesarinii",
+                  "value": 2,
+                  "color": "white"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Krebstiere",
+          "color": "#90b376",
+          "image": "img/phylopic/steinfliege.svg",
+          "children": [
+            {
+              "name": "Gefährdet: \nEdelkrebs",
+              "value": 1,
+              "color": "#90b376"
+            }
+          ]
+        },
+        {
+          "name": "Stark gefährdet: \nDohlenkrebs\nSteinkrebs\nMonard's Gelyella\nJurakarst Styepactophane",
+          "value": 4,
+          "color": "white"
+        }
+      ]
+    }
+  ]
+}

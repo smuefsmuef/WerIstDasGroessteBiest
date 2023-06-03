@@ -18,7 +18,7 @@
 
     const margin = {top: 30, right: 30, bottom: 70, left: 120},
         widthTreemap = 600 - margin.left - margin.right,
-        heightTreemap = 400 - margin.top - margin.bottom;
+        heightTreemap = 320 - margin.top - margin.bottom;
 
     const x = d3.scaleLinear().rangeRound([0, widthTreemap]);
     const y = d3.scaleLinear().rangeRound([0, heightTreemap]);
@@ -36,11 +36,6 @@
             child.y1 = y0 + child.y1 / heightTreemap * (y1 - y0);
         }
     }
-//prepare color scale
-//     const color = d3.scaleOrdinal()
-//         .domain(["", "Nicht gefährdet", "Gefährdet",  "Stark gefährdet", "Vom Aussterben bedroht", "Mensch"])
- //       .range(["#90b376", "#21caf1", "#ff6352", "#ff4c38", "#ff230a", "#eaff70"])
-
 
     let name = d => d.ancestors().reverse().map(d => d.data.name).join("/");
     let format = d3.format(",d")
@@ -48,7 +43,7 @@
         .tile(tile)
         (d3.hierarchy(data)
             .sum(d => d.value)
-            .sort((a, b) =>  a.value -b.value));
+            .sort((a, b) => a.value - b.value));
 
 
     function render(group, root) {
@@ -72,7 +67,7 @@
             })
 
         node.append("image")
-            .attr("xlink:href", d => d.data.image); // Der Pfad zum Bild aus den JSON-Daten;
+            .attr("xlink:href", d => d.data.image);
 
         node.append("clipPath")
             .attr("id", d => (d.clipUid = uid("clip")).id)
@@ -90,7 +85,6 @@
             .join("tspan")
             .attr("x", 3)
             .attr("y", (d, i, nodes) => `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`)
-            //.attr("font-size", 10)
             .text(d => d);
 
         group.call(position, root);
@@ -100,24 +94,18 @@
         group.selectAll("g")
             .attr("transform", d => d === root ? `translate(0,-30)` : `translate(${x(d.x0)},${y(d.y0)})`)
             .select("rect")
-            .attr("width", d => d === root ? widthTreemap :  x(d.x1) - x(d.x0))
+            .attr("width", d => d === root ? widthTreemap : x(d.x1) - x(d.x0))
             .attr("height", d => d === root ? 30 : y(d.y1) - y(d.y0));
         group.selectAll("g")
             .select("image")
-            .attr("x", d => d === root ? 0 : (x(d.x1) - x(d.x0))*0.2)
-            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0))*0.1)
-            .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0))*0.6)
-            .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0))*0.6)
-
-
+            .attr("x", d => d === root ? 0 : (x(d.x1) - x(d.x0)) * 0.2)
+            .attr("y", d => d === root ? 0 : (x(d.y1) - x(d.y0)) * 0.15)
+            .attr("width", d => d === root ? widthTreemap : (x(d.x1) - x(d.x0)) * 0.6)
+            .attr("height", d => d === root ? 30 : (y(d.y1) - y(d.y0)) * 0.6)
     }
-
-
 
     let group = svg3d.append("g")
 
-
-// When zooming in, draw the new nodes on top, and fade them in.
     function zoomin(d) {
         const group0 = group.attr("pointer-events", "none");
         const group1 = group = svg3d.append("g").call(render, d);
@@ -134,7 +122,6 @@
                 .call(position, d));
     }
 
-// When zooming out, draw the old nodes on top, and fade them out.
     function zoomout(d) {
         const group0 = group.attr("pointer-events", "none");
         const group1 = group = svg3d.insert("g", "*").call(render, d.parent);
@@ -149,15 +136,25 @@
                 .call(position, d))
             .call(t => group1.transition(t)
                 .call(position, d.parent));
-
-
     }
 
+    function zoomToNode(jsonPath, nodeId) {
+        d3.json(jsonPath).then(function (data) {
+            const root = treemap(data);
+            const node = root.descendants().find(d => d.data.id === nodeId);
+
+            if (node) {
+                zoomin(node);
+            } else {
+                console.log("Node not found.");
+            }
+        });
+    }
 
     d3.json("./data/3_treemap_zoom.json").then(function (data) {
         group.call(render, treemap(data));
         let sel = d3.select("#zoom_treemap");
         sel.node().appendChild(svg3d.node());
     });
-
+    window.zoomToNode = zoomToNode;
 })();
