@@ -162,7 +162,7 @@ function createPatterns(id) {
         .attr("width", 1)
         .attr("height", 1)
         .append("image")
-        .attr("xlink:href", "/img/labels/" + id + ".jpg")
+        .attr("xlink:href", "/styles/img/labels/" + id + ".jpg")
         .attr("width", 110)
         .attr("z-index", "199")
         .attr("height", 110);
