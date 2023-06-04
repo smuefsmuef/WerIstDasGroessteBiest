@@ -43,6 +43,9 @@ img {
     color:#efedea;
 }
 
+.text-small > a:hover {
+    color: rgb(186, 202, 212);
+}
 
 /* Containers */
 .container-fluid {
