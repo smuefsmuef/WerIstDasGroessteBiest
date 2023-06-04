@@ -1,8 +1,4 @@
-// check https://d3-graph-gallery.com/graph/bubblemap_template.html
-// https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
-
 const canvHeightHuman = 600, canvWidthHuman = 800;
-// calc the width and height depending on margin_mapHumans.
 const margin_mapHuman = {top: 80, right: 80, bottom: 50, left: 70};
 const width_mapHuman = canvWidthHuman - margin_mapHuman.left - margin_mapHuman.right;
 const height_mapHuman = canvHeightHuman - margin_mapHuman.top - margin_mapHuman.bottom;
