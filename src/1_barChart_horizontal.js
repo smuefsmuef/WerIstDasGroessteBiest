@@ -164,28 +164,6 @@ function update(selectedVar) {
 
 
 
-/*            function showLabel(event, d) {
-                d3.select(this)
-                    .attr("opacity", "0.7");
-
-                svg1.append("text")
-                    .attr("class", "bar-label")
-                    .attr("fill", "white")
-                    .attr("font-size", "0.9rem")
-                    .attr("x", x(d[selectedVar]) + 5) // problem d not udated
-                    .attr("y", y(d.country) + y.bandwidth() / 2)
-                    .attr("dy", "0.35em")
-                    .text(Number(d[selectedVar]).toFixed(2));
-            }
-
-            function hideLabel(event, d) {
-                d3.select(this)
-                    .attr("opacity", "1");
-                svg1.select(".bar-label").remove();
-            }*/
-
-
-
         } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar === "Climate Index") {
 
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
@@ -275,9 +253,28 @@ function update(selectedVar) {
 
 
 
+        }
+        function showLabel(event, d) {
+        console.log(selectedVar, "selectedVar")
 
+            d3.select(this)
+                .attr("opacity", "0.7");
+
+            svg1.append("text")
+                .attr("class", "bar-label")
+                .attr("fill", "white")
+                .attr("font-size", "0.9rem")
+                .attr("x", x(d[selectedVar]) + 5)
+                .attr("y", y(d.country) + y.bandwidth() / 2)
+                .attr("dy", "0.35em")
+                .text(Number(d[selectedVar]).toFixed(2));
         }
 
+        function hideLabel(event, d) {
+            d3.select(this)
+                .attr("opacity", "1");
+            svg1.select(".bar-label").remove();
+        }
 
         svg1.selectAll("rect")
             .on("mouseover", showLabel)
