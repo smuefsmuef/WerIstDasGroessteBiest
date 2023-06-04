@@ -346,6 +346,7 @@ hr {
     stroke: #0a1014;
     stroke-width: 0.12rem;
     stroke-linejoin: round;
+    cursor: pointer;
 }
 
 .country-label {
@@ -355,7 +356,6 @@ hr {
     font-weight: 300;
     text-anchor: middle;
 }
-
 
 #context-label, #context-label-3, #context-label-4, #context-label-6 {
     font-size: 1.1rem;
@@ -420,50 +420,6 @@ hr {
 .animal-type {
 }
 
-
-/*treemap styles
-text {
-    pointer-events: none;
-}
-
-.grandparent text {
-    font-weight: bold;
-}
-
-rect {
-    fill: none;
-    stroke: #fff;
-}
-
-rect.parent,
-.grandparent rect {
-    stroke-width: 2px;
-}
-
-.grandparent rect {
-    fill: orange;
-}
-
-.grandparent:hover rect {
-    fill: #ee9700;
-}
-
-.children rect.parent,
-.grandparent rect {
-    cursor: pointer;
-}
-
-.children rect.parent {
-    fill: #bbb;
-    fill-opacity: .5;
-}
-
-.children:hover rect.child {
-    fill: #bbb;
-}
-*/
-
-
 /*Scrollama*/
 
 #scrolly {
@@ -510,8 +466,6 @@ article {
     pointer-events: none;
 }
 
-
-
 /*Treemap*/
 
 .treemap-button {
@@ -521,7 +475,6 @@ article {
     opacity: 75%;
     box-shadow: 0 0 0 4px #7C8A91;
     transition: box-shadow 0.3s;
-
 }
 
 .treemap-button:hover {
