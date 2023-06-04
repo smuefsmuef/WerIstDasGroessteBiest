@@ -93,31 +93,6 @@ function update(selectedVar) {
                 .attr("fill", d => colorPickerHuman(d.country))
 
 
-            function showLabel(event, d) {
-                d3.select(this)
-                    .attr("opacity", "0.7");
-
-                svg1.append("text")
-                    .attr("class", "bar-label")
-                    .attr("fill", "white")
-                    .attr("font-size", "0.9rem")
-                    .attr("x", x(d[selectedVar]) + 5) // problem d not udated
-                    .attr("y", y(d.country) + y.bandwidth() / 2)
-                    .attr("dy", "0.35em")
-                    .text(Number(d[selectedVar]).toFixed(2));
-            }
-
-            function hideLabel(event, d) {
-                d3.select(this)
-                    .attr("opacity", "1");
-                svg1.select(".bar-label").remove();
-            }
-
-
-
-
-            // -------------------
-
         } else if (selectedVar === "Threatened_species_total") {
             data.sort((a, b) => a[selectedVar] - b[selectedVar]);
             // Add Y axis
@@ -255,8 +230,8 @@ function update(selectedVar) {
 
         }
         function showLabel(event, d) {
-        console.log(selectedVar, "selectedVar")
 
+            console.log(selectedVar, 'ssssssssssss')
             d3.select(this)
                 .attr("opacity", "0.7");
 
@@ -264,7 +239,11 @@ function update(selectedVar) {
                 .attr("class", "bar-label")
                 .attr("fill", "white")
                 .attr("font-size", "0.9rem")
-                .attr("x", x(d[selectedVar]) + 5)
+                .attr("x", d => {
+                    if(selectedVar == "") {
+                        return x(d[selectedVar]*-1) + 5;
+                    } else return 5
+                })
                 .attr("y", y(d.country) + y.bandwidth() / 2)
                 .attr("dy", "0.35em")
                 .text(Number(d[selectedVar]).toFixed(2));
