@@ -74,7 +74,7 @@
                     <div id="my_barchart_horizontal"></div>
                     <div class="panel-group" id="exkursAccordion">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 accordion-container">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
@@ -86,26 +86,31 @@
                                     </div>
                                     <div id="exkursCollapse" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="text-small text-left">
-                                                Im "Quality of Life Index" der OECD werden acht verschiedene Indices
+                                            <div class="text-smallest text-left">
+                                                Im "Quality of Life Index" der OECD werden acht verschiedene Indizes
                                                 verrechnet und unterschiedlich gewichtet. Unter anderem wirtschaftliche,
-                                                soziale und ökologische Faktoren. Die vier blauen Indices werden positiv
-                                                verrechnet, die roten negativ. Schauen Sie, weshalb die Schweiz am
+                                                soziale und ökologische Faktoren.
+                                                <br>
+                                                <br>
+                                                Du findest die Indizes rechts: Vier Indizes werden positiv
+                                                verrechnet, vier negativ. Entdecke, weshalb die Schweiz am
                                                 Schluss zuoberst thront.
-                                            </div>
-                                            <h5>Ist Ihnen etwas aufgefallen? </h5>
-                                            <div class="text-small text-left">
+                                            <br>
+                                                <br>
+                                            Ist Dir etwas aufgefallen?
+                                                <br>
+                                                <br>
                                                 Der Lebenshaltungskostenindex, in dem die Schweiz den letzten Platz
                                                 belegt,
                                                 wird am wenigsten stark gewichtet. Auch das Verhältnis von Immobilien zu
-                                                Einkommen wird nicht stark gewichtet. Wer hat wohl diese Gewichtungen
-                                                vorgenommen?
+                                                Einkommen wird nicht stark gewichtet. Wer hat diese Gewichtungen
+                                                vorgenommen? Sicher keine armen Menschen.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 accordion-container">
                                 <div class="panel-group" id="indexAccordion">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -123,23 +128,23 @@
                                                         <div class="row">
                                                             <div class="col-md-12 text-left">
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Purchasing Power Index')">+
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Purchasing Power Index')"style="margin-bottom: 10px;">+
                                                                     Kaufkraftindex
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Safety Index')">+
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Safety Index' )"style="margin-bottom: 10px;">+
                                                                     Sicherheitsindex
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Health Care Index')">+
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Health Care Index')"style="margin-bottom: 10px;">+
                                                                     Gesundheitsindex
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Climate Index')">+ Klimaindex
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Climate Index')"style="margin-bottom: 10px;">+ Klimaindex
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -148,23 +153,23 @@
                                                         <div class="row">
                                                             <div class="col-md-12 text-left">
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Cost of Living Index')">-
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Cost of Living Index')"style="margin-bottom: 10px;">-
                                                                     Lebenshaltungskostenindex
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Property Price to Income Ratio')">
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Property Price to Income Ratio')"style="margin-bottom: 10px;">
                                                                     - Verhältnis Immobilienpreis/Einkommen
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Traffic Commute Time Index')">-
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Traffic Commute Time Index')"style="margin-bottom: 10px;">-
                                                                     Pendlerzeitindex
                                                                 </button>
                                                                 <button type="button"
-                                                                        class="btn btn-secondary btn-sm btn-custom"
-                                                                        onclick="update('Pollution Index')">-
+                                                                        class="btn btn-secondary btn-sm btn-custom-small"
+                                                                        onclick="update('Pollution Index')"style="margin-bottom: 10px;">-
                                                                     Umweltverschmutzungsindex
                                                                 </button>
                                                             </div>
@@ -236,48 +241,49 @@
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6 col-md-2 ">
+                            <div class="col-sm-3 col-md-2 ">
                                 <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                    <img src="img/animal_images/fischotter2.jpeg" class="treemap-button" alt="fischotter"
                                          onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                    <span class="tooltip-text">Der intelligente Fischotter ist in der Schweiz vom Aussterben bedroht. Welche Säugetierart sonst noch?</span>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-2 ">
+                            <div class="col-sm-3 col-md-2 ">
                                 <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '1')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-2 ">
-                                <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
+                                    <img src="img/animal_images/Zornnatter.jpeg" class="treemap-button" alt="zornnatter"
                                          onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                    <span class="tooltip-text">Die gelbgrüne Zornnatter ist stark gefährdet. Ihr Revier ist mehrere Quadratkilometer gross. U.a. wegen zunehmender Zersiedelung ist sie in der Schweiz gefährdet.</span>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-2 ">
+                            <div class="col-sm-3 col-md-2 ">
                                 <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                    <img src="./img/animal_images/huehner2.jpeg" class="treemap-button" alt="rebhuhn"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '6')">
+                                    <span class="tooltip-text">Was ist denn das für ein Huhn? Nicht das bedrohte Rebhuhn. Nein, es ist die Legehenne, die der Mensch massenhaft züchtet.</span>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-2 ">
+                            <div class="col-sm-3 col-md-2 ">
                                 <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                    <img src="./img/animal_images/laubfrosch.jpeg" class="treemap-button" alt="laubfrosch"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '4')">
+                                    <span class="tooltip-text">Wer kennt ihn nicht: den grasgrünen Laubfrosch. Auch er ist in der Schweiz stark gefährdet.</span>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-2 ">
+                            <div class="col-sm-3 col-md-2 ">
                                 <div class="tooltip-container">
-                                    <img src="./img/labels/fischotter2.jpeg" class="treemap-button" alt="fischotter"
-                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '2')">
-                                    <span class="tooltip-text">Der süße und intelligente Fischotter ist vom Aussterben bedroht :-(</span>
+                                    <img src="./img/animal_images/rebhuhn.jpg" class="treemap-button" alt="rebhuhn"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '5')">
+                                    <span class="tooltip-text">Hast Du schon einmal ein Rebhuhn in der Schweiz gesehen? Vermutlich nicht, denn es ist in der Schweiz eine vom Aussterben bedrohte Vogelart.</span>
                                 </div>
                             </div>
+                            <div class="col-sm-3 col-md-2 ">
+                                <div class="tooltip-container">
+                                    <img src="./img/animal_images/vogelwicken_blaeuling.jpg" class="treemap-button" alt="schmetterling"
+                                         onclick="zoomToNode('./data/3_treemap_zoom.json', '3')">
+                                    <span class="tooltip-text">Der Vogelwicken-Bläuling ist einer von 83 gefährdeten Schmetterlingsarten. Er kommt nur noch im Wallis und Graubünden vor.</span>
+                                </div>
+                            </div>
+
                         </div>
                     </section>
                 </div>
