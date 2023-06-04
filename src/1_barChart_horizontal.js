@@ -54,7 +54,7 @@ function update(selectedVar) {
             yAxis.transition().duration(4000)
                 .call(d3.axisLeft(y))
                 .style("text-anchor", "end")
-                .style("font-size", "1rem")
+                .style("font-size", "1.3rem")
 
             // X axis
             x.domain([0, d3.max(data, d => d[selectedVar])])
