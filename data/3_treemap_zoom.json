@@ -5,12 +5,12 @@
     {
       "name": "Säugetiere",
       "color": "#A79394",
-      "image": "img/phylopic/Animals Bundle-28.svg",
+      "image": "img/icons/Animals Bundle-28.svg",
       "children": [
         {
           "name": "Säugetiere ohne Fledermäuse",
           "color": "#9C989B",
-          "image": "img/phylopic/Animals Bundle-28.svg",
+          "image": "img/icons/Animals Bundle-28.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -79,7 +79,7 @@
         {
           "name": "Fledermäuse",
           "color": "#C8837E",
-          "image": "img/phylopic/fledermaus.svg",
+          "image": "img/icons/fledermaus.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -136,8 +136,8 @@
     },
     {
       "name": "Vögel",
-      "color": "#9C989B",
-      "image": "img/phylopic/Animals Bundle-43.svg",
+      "color": "#A29597",
+      "image": "img/icons/Animals Bundle-43.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -205,7 +205,7 @@
     {
       "name": "Amphibien",
       "color": "#C8837E",
-      "image": "img/phylopic/Animals Bundle-86.svg",
+      "image": "img/icons/Animals Bundle-86.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -240,7 +240,7 @@
     {
       "name": "Reptilien",
       "color": "#BD8885",
-      "image": "img/phylopic/Animals Bundle-55.svg",
+      "image": "img/icons/Animals Bundle-55.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -286,7 +286,7 @@
     {
       "name": "Fische",
       "color": "#A79394",
-      "image": "img/phylopic/fish.svg",
+      "image": "img/icons/fish.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -356,7 +356,7 @@
     {
       "name": "Schnecken & Muscheln",
       "color": "#A79394",
-      "image": "img/phylopic/snail.svg",
+      "image": "img/icons/snail.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -423,12 +423,12 @@
     {
       "name": "Insekten",
       "color": "#BD8885",
-      "image": "img/phylopic/Animals Bundle-84.svg",
+      "image": "img/icons/Animals Bundle-84.svg",
       "children": [
         {
           "name": "Eintagsfliegen",
           "color": "#B28E8C",
-          "image": "img/phylopic/eintagsfliege.svg",
+          "image": "img/icons/eintagsfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -495,7 +495,7 @@
         {
           "name": "Heuschrecken",
           "color": "#A79394",
-          "image": "img/phylopic/heuschrecke.svg",
+          "image": "img/icons/heuschrecke.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -562,7 +562,7 @@
         {
           "name": "Käfer",
           "color": "#BD8885",
-          "image": "img/phylopic/kaefer2.svg",
+          "image": "img/icons/kaefer2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -640,7 +640,7 @@
         {
           "name": "Köcherfliegen",
           "color": "#BD8885",
-          "image": "img/phylopic/koecherfliege2.svg",
+          "image": "img/icons/koecherfliege2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -706,7 +706,7 @@
         },
         {
           "name": "Libellen",
-          "image": "img/phylopic/libelle3.svg",
+          "image": "img/icons/libelle3.svg",
           "color": "#A79394",
           "children": [
             {
@@ -774,7 +774,7 @@
         {
           "name": "Schmetterlinge & Falter",
           "color": "#BD8885",
-          "image": "img/phylopic/Animals Bundle-84.svg",
+          "image": "img/icons/Animals Bundle-84.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -842,7 +842,7 @@
         {
           "name": "Steinfliegen",
           "color": "#B28E8C",
-          "image": "img/phylopic/steinfliege.svg",
+          "image": "img/icons/steinfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",

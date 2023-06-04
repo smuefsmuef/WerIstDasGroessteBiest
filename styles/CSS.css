@@ -260,7 +260,7 @@ img {
 }
 
 
-/*Buttons Exkurs*/
+/*Buttons in Accordion und Panel text and title*/
 
 .btn-custom-small {
     height: 40px;
@@ -278,24 +278,66 @@ img {
 
 .btn-sm.btn-custom-small {
     height: 30px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #0a1014;
+}
+
+.panel-body {
+    padding: 0;
+    color: #efedea;
+    background: #0c161c;
+}
+
+.text-smallest {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #929EA3;
+}
+
+.panel-heading {
+    box-shadow: 0 0 0 2px #7C8A91;
+    text-decoration: none;
+}
+
+.panel-heading:hover,
+.panel-heading.open {
+    box-shadow: 0 0 0 2px #FF6959;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.panel-heading:focus  {
+    box-shadow: 0 0 0 2px #FF6959;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .panel-title a {
     font-size: 1.5rem;
     color: #0a1014;
+    text-decoration: none;
 }
 
-.panel-title:hover a {
-    font-size: 1.5rem;
-    color: #7C8A91;
+.panel-title a:hover {
+    text-decoration: none;
+}
+
+.panel-title a:focus {
     text-decoration: none;
 }
 
 .accordion-container {
     margin-bottom: 20px;
 }
+
+.collapse {
+    text-decoration: none;
+}
+
+
+/*sidebyside & custom border*/
+
+
 
 .possibly-sidebyside .one {
     float: left;
@@ -435,7 +477,7 @@ article {
 }
 
 .step {
-    margin: 0rem auto 0.1rem auto;
+    margin: 0 auto 0.1rem auto;
     background-color: #3b3b3b;
     color: #fff;
     opacity: 0.0;
@@ -461,7 +503,7 @@ article {
     padding: 2px;
     font: 12px sans-serif;
     background: #efedea;
-    border: 0px;
+    border: 0;
     border-radius: 8px;
     pointer-events: none;
 }
@@ -475,6 +517,8 @@ article {
     opacity: 75%;
     box-shadow: 0 0 0 4px #7C8A91;
     transition: box-shadow 0.3s;
+    margin-left: 20px;
+    margin-bottom: 30px;
 }
 
 .treemap-button:hover {
@@ -484,7 +528,7 @@ article {
     opacity: 100%;
     border: none;
     box-shadow: 0 0 0 5px #FF6959;
-
+    margin-bottom: 30px;
 }
 
 .tooltip-container {
@@ -516,7 +560,7 @@ article {
 }
 
 .treemap-legend {
-    border-radius: 0px;
+    border-radius: 0;
     width: 350px;
 }
 
@@ -529,17 +573,3 @@ fill: #ff653e;
 }
 
 
-/*Exkurs bar chart*/
-
-.panel-body {
-    padding: 0;
-    color: #efedea;
-    background: #0c161c;
-}
-
-.text-smallest {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    color:#efedea;
-
-}
