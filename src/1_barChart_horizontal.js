@@ -79,12 +79,13 @@ function update(selectedVar) {
 
             // variable u: map data to existing bars
             const u = svg1.selectAll("rect")
-                .data(data)
+                .data(data);
 
             // update bars
             u.join("rect")
                 .transition()
                 .duration(4000)
+                .attr("id", "humans")
                 .attr("x", x(0))
                 .attr("y", d => y(d.country))
                 .attr("width", d => x(d[selectedVar]))
@@ -123,7 +124,7 @@ function update(selectedVar) {
 
             // variable u: map data to existing bars
             const u = svg1.selectAll("rect")
-                .data(data)
+                .data(data);
 
             // update bars
             u.join("rect")
@@ -134,6 +135,9 @@ function update(selectedVar) {
                 .attr("width", d => x(d[selectedVar]))
                 .attr("height", y.bandwidth())
                 .attr("fill", d => colorPickerAnimal(d.country))
+
+
+
         } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar === "Climate Index") {
 
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
@@ -221,20 +225,33 @@ function update(selectedVar) {
                 .attr("height", y.bandwidth())
                 .attr("fill", d => colorPickerAnimal(d.country))
 
-            // events
-            svg1.on("mouseover", (event, d) => {
-                console.log(d3.select(this), 'd3.select(this)')
-                console.log(event, 'event')
-            });
+        }
+        function showLabel(event, d) {
 
-            svg1.on("mouseout", function () {
-                mouseout(d3.select(this))
-            });
+            d3.select(this)
+                .attr("opacity", "0.7");
 
-
+            svg1.append("text")
+                .attr("class", "bar-label")
+                .attr("fill", "white")
+                .attr("font-size", "0.9rem")
+                .attr("x",
+                    Math.sqrt(x(d[selectedVar]) * x(d[selectedVar])) + 5
+        )
+                .attr("y", y(d.country) + y.bandwidth() / 2)
+                .attr("dy", "0.35em")
+                .text(Number(d[selectedVar]).toFixed(2));
         }
 
+        function hideLabel(event, d) {
+            d3.select(this)
+                .attr("opacity", "1");
+            svg1.select(".bar-label").remove();
+        }
 
+        svg1.selectAll("rect")
+            .on("mouseover", showLabel)
+            .on("mouseout", hideLabel);
     })
 }
 
