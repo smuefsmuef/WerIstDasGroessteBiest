@@ -64,7 +64,7 @@ function createContextHolder() {
     createTextElement(65, 15, "context-label", "#FF6959", "Schweiz:", "left");
     createTextElement(65, 40, "context-label-2", "#FF6959", "78.9%", "right");
     createTextElement(65, 55, "context-label-3", "#FF6959", "der Reptilien bedroht.", "left");
-    createTextElement(65, 69, "context-label-8", "#3C4B5E", "(Klicken fixiert/löst den Wert.)", "left")
+    createTextElement(65, 69, "context-label-8", "#929EA3", "(Klicken fixiert/löst den Wert.)", "left")
         .attr("font-size", "0.9rem");
 
     return contextHolder;
@@ -307,29 +307,6 @@ function fillCountry(country, species, selectedOption) {
         } else {
             return "#333"
         }
-        if (value > 90) {
-            return '#27374D';
-        } else if (value > 80) {
-            return '#3C4B5E';
-        }else if (value > 70) {
-            return '#51606F';
-        } else if (value > 60) {
-            return '#677580';
-        } else if (value > 50) {
-            return '#7C8A91';
-        } else if (value > 40) {
-            return '#929EA3';
-        } else if (value > 30) {
-            return '#A7B3B4';
-        } else if (value > 20) {
-            return '#BDC8C5';
-        } else if (value > 10) {
-            return '#D2DDD6';
-        } else if (value > 0) {
-            return '#E8F2E8';
-        } else {
-            return "#333"
-        }
     })
 }
 
@@ -338,7 +315,7 @@ function doPlot(selectedOption) {
     var selectedOption = selectedOption
 
 // europe topojson data from https://github.com/deldersveld/topojson/blob/master/continents/europe.json
-    var projection = d3.geoMercator() // oder z.b. geoMercator
+    var projection = d3.geoMercator()
         .rotate([0, 0])
         .center([30, 55])
         .scale(430)
@@ -360,7 +337,6 @@ function doPlot(selectedOption) {
         var species = data[1];
 
         var countries = topojson.feature(europe, europe.objects.continent_Europe_subunits); // kriegen die gazen grenzen/kantone
-
 
         const country = g.selectAll("path.countries")
             .data(countries.features)

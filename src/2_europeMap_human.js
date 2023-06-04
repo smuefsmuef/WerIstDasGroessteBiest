@@ -181,7 +181,7 @@ function createContextHolderHumans() {
     createText(65, 15, "context-label-4", "#FF6959", "Schweiz:", "left");
     createText(65, 40, "context-label-5", "#FF6959", "95.1", "right");
     createText(65, 55, "context-label-6", "#FF6959", "von 100 Pkt.", "left");
-    createText(65, 69, "context-label-7", "#3C4B5E", "(Klicken fixiert/löst den Wert.)", "left")
+    createText(65, 69, "context-label-7", "#929EA3", "(Klicken fixiert/löst den Wert.)", "left")
         .attr("font-size", "0.9rem");
     return contextHolder4;
 }
@@ -278,13 +278,11 @@ function doPlotHumans() {
             .datum(topojson.mesh(europe, europe.objects.continent_Europe_subunits.geometries))
             .attr("class", "europe-boundary")
             .attr("d", pathGenerator);
-
     });
 
 }
 
 doPlotHumans();
-
 
 function translateCountryName(countryId) {
     var translations = {

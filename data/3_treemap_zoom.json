@@ -5,12 +5,12 @@
     {
       "name": "Säugetiere",
       "color": "#A79394",
-      "image": "img/phylopic/Animals Bundle-28.svg",
+      "image": "img/icons/Animals Bundle-28.svg",
       "children": [
         {
           "name": "Säugetiere ohne Fledermäuse",
           "color": "#9C989B",
-          "image": "img/phylopic/Animals Bundle-28.svg",
+          "image": "img/icons/Animals Bundle-28.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -18,11 +18,12 @@
               "color": "#929EA3"
             },
             {
+              "id": "6",
               "name": "Dominant",
               "color": "#fcf6a9",
               "children": [
                 {
-                  "name": "Homo Sapiens (vernünftiger Mensch)\n\nin Schweiz 2023:\n 8.8 Millionen Menschen\n15 Millionen Nutztiere\n1.2 Millionen Haustiere",
+                  "name": "Homo Sapiens (vernünftiger Mensch)\n\nin der Schweiz leben 2023:\n8.8 Millionen Menschen\n\nAuf der kleinen Fläche der Schweiz können so viele Menschen nur mit Massentierhaltung \nund intensiver Landwirtschaft ernährt werden. \n\nDie Schweizerinnen und Schweizer leben im 2023 von rund: \n\n13 Millionen Hühnern, \n1.5 Millionen Rinder, \n1.3 Millionen Schweinen, \n340'000 Schafen, \n80'000 Ziegen\n\n  Erfreuen sich zu Hause an:\n\n1.2 Millionen Haustieren\n\nDas sine alles Tiere, die vom Menschen dominiert werden und vielen anderen Tieren das Überleben schwer machen.",
                   "value": 1,
                   "color": "#fcf6a9"
                 }
@@ -56,8 +57,7 @@
               "color": "#FF6959",
               "children": [
                 {
-
-                  "name": "Vom Aussterben bedroht: \nFischotter\nEurasicher Luchs",
+                  "name": "Vom Aussterben bedroht: \nFischotter\nEurasischer Luchs",
                   "value": 2,
                   "color": "#FF6959"
                 }
@@ -65,12 +65,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorben: \nBraunbär",
                   "value": 1,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -79,7 +79,7 @@
         {
           "name": "Fledermäuse",
           "color": "#C8837E",
-          "image": "img/phylopic/fledermaus.svg",
+          "image": "img/icons/fledermaus.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -136,8 +136,8 @@
     },
     {
       "name": "Vögel",
-      "color": "#9C989B",
-      "image": "img/phylopic/Animals Bundle-43.svg",
+      "color": "#A29597",
+      "image": "img/icons/Animals Bundle-43.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -178,6 +178,7 @@
           ]
         },
         {
+          "id": "5",
           "name": "Vom Aussterben bedroht",
           "color": "#FF6959",
           "children": [
@@ -190,12 +191,12 @@
         },
         {
           "name": "Ausgestorben",
-          "color": "#fce1de",
+          "color": "#fc5642",
           "children": [
             {
               "name": "Ausgestorbene Vogelarten: Rothuhn\nHaubenlerche\nRaubwürger\nSchwarzstirnwürger\nFischadler\nRotschenkel",
               "value": 6,
-              "color": "#fce1de"
+              "color": "#fc5642"
             }
           ]
         }
@@ -204,7 +205,7 @@
     {
       "name": "Amphibien",
       "color": "#C8837E",
-      "image": "img/phylopic/Animals Bundle-86.svg",
+      "image": "img/icons/Animals Bundle-86.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -223,6 +224,7 @@
           ]
         },
         {
+          "id": "4",
           "name": "Stark gefährdet",
           "color": "#EB7266",
           "children": [
@@ -238,7 +240,7 @@
     {
       "name": "Reptilien",
       "color": "#BD8885",
-      "image": "img/phylopic/Animals Bundle-55.svg",
+      "image": "img/icons/Animals Bundle-55.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -257,6 +259,7 @@
           ]
         },
         {
+          "id": "2",
           "name": "Stark gefährdet",
           "color": "#EB7266",
           "children": [
@@ -283,7 +286,7 @@
     {
       "name": "Fische",
       "color": "#A79394",
-      "image": "img/phylopic/fish.svg",
+      "image": "img/icons/fish.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -338,13 +341,13 @@
         },
         {
           "name": "Ausgestorben",
-          "color": "#fce1de",
+          "color": "#fc5642",
           "children": [
             {
               "name": "ausgestorben: \nMoorgrundel\nFlussneunauge\nStör\nMaifisch\nCheppia\nAtlantischer Lachs\nHuchen\nBiblet",
               "group": "C",
               "value": 8,
-              "color": "#fce1de"
+              "color": "#fc5642"
             }
           ]
         }
@@ -353,7 +356,7 @@
     {
       "name": "Schnecken & Muscheln",
       "color": "#A79394",
-      "image": "img/phylopic/snail.svg",
+      "image": "img/icons/snail.svg",
       "children": [
         {
           "name": "Nicht gefährdet",
@@ -406,12 +409,12 @@
         },
         {
           "name": "Ausgestorben",
-          "color": "#fce1de",
+          "color": "#fc5642",
           "children": [
             {
               "name": "Ausgestorben: \nInsubrische Zwergdeckelschnecke\nKar-Felsenschnecke\nKleinzahn-Flussmuschel",
               "value": 3,
-              "color": "#fce1de"
+              "color": "#fc5642"
             }
           ]
         }
@@ -420,12 +423,12 @@
     {
       "name": "Insekten",
       "color": "#BD8885",
-      "image": "img/phylopic/Animals Bundle-84.svg",
+      "image": "img/icons/Animals Bundle-84.svg",
       "children": [
         {
           "name": "Eintagsfliegen",
           "color": "#B28E8C",
-          "image": "img/phylopic/eintagsfliege.svg",
+          "image": "img/icons/eintagsfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -478,12 +481,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Eintagsfliegenarten: \nEphoron virgo\nHeptagenia coerulans\nHeptagenia longicauda",
                   "value": 3,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -492,7 +495,7 @@
         {
           "name": "Heuschrecken",
           "color": "#A79394",
-          "image": "img/phylopic/heuschrecke.svg",
+          "image": "img/icons/heuschrecke.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -545,12 +548,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Heuschreckenarten: \nSteppengrille\nDreizehenschrecke\nGefleckte Schnarrschrecke",
                   "value": 3,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -559,7 +562,7 @@
         {
           "name": "Käfer",
           "color": "#BD8885",
-          "image": "img/phylopic/kaefer2.svg",
+          "image": "img/icons/kaefer2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -612,12 +615,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Käferarten: \nCerambyx miles\nClytus rhamni\nCicindela sylvatica\nLophyra flexuosa\nCarabus nodulosus\nDyschirius thoracicus\nBembidion velox\nBembidion laticolle\nOphonus cribricollis\nHarpalus politus\nStenolophus discophorus\nOlisthopus sturmii\nAmara concinna\nAmara messae\nChlaenius sulcicollis\nBembidion virens\nCymindis angularis",
                   "value": 17,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             },
@@ -637,7 +640,7 @@
         {
           "name": "Köcherfliegen",
           "color": "#BD8885",
-          "image": "img/phylopic/koecherfliege2.svg",
+          "image": "img/icons/koecherfliege2.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -690,12 +693,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Köcherfliegenarten: \nRhyacophila pascoei\nHydroptila rheni\nHydroptila tigurina\nMicroptila minutissima\nOrthotrichia angustella\nOxyethira simplex\nStactobia eatoniella\nStactobiella risi\nWormaldia subnigra\nBrachycentrus montanus\nBrachycentrus subnubilus\nMicrasema minimum\nLimnephilus politus\nPlatyphylax frauenfeldi\nAthripsodes leucophaeus\nHydroptila insubrica\nAgrypnia picta",
                   "value": 17,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -703,7 +706,7 @@
         },
         {
           "name": "Libellen",
-          "image": "img/phylopic/libelle3.svg",
+          "image": "img/icons/libelle3.svg",
           "color": "#A79394",
           "children": [
             {
@@ -757,12 +760,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Libellenarten: \nVogel-Azurjungfer\nGrosse Zangenlibelle",
                   "value": 2,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -771,7 +774,7 @@
         {
           "name": "Schmetterlinge & Falter",
           "color": "#BD8885",
-          "image": "img/phylopic/Animals Bundle-84.svg",
+          "image": "img/icons/Animals Bundle-84.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -790,6 +793,7 @@
               ]
             },
             {
+              "id": "3",
               "name": "Gefährdet",
               "color": "#CD817A",
               "children": [
@@ -824,12 +828,12 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Schmetterlinge & Falterarten: \nRotbindensamtfalter, Rotbindiger Samtfalter\nAndorn-Dickkopffalter\nSchwarrotes Grünwidderchen",
                   "value": 3,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
@@ -838,7 +842,7 @@
         {
           "name": "Steinfliegen",
           "color": "#B28E8C",
-          "image": "img/phylopic/steinfliege.svg",
+          "image": "img/icons/steinfliege.svg",
           "children": [
             {
               "name": "Nicht gefährdet",
@@ -891,23 +895,23 @@
             },
             {
               "name": "Ausgestorben",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ausgestorbene Steinfliegenarten: \nBrachyptera braueri\nBrachyptera monilicornis\nTaeniopteryx schoenemundi\nBesdolus ventralis\nIsogenus nubecula\nXanthoperla apicalis\nTaeniopteryx nebulosa",
                   "value": 7,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             },
             {
               "name": "Ungenügende Datenlage",
-              "color": "#fce1de",
+              "color": "#fc5642",
               "children": [
                 {
                   "name": "Ungenügende Datenlage zu Steinfliegenarten: \nLeuctra festai\nNemoura pesarinii",
                   "value": 2,
-                  "color": "#fce1de"
+                  "color": "#fc5642"
                 }
               ]
             }
