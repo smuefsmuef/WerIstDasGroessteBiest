@@ -46,7 +46,7 @@ img {
 
 /* Containers */
 .container-fluid {
-    padding: 0% 3%;
+    padding: 0 3%;
 }
 
 /* Sections */
@@ -278,7 +278,7 @@ img {
 
 .btn-sm.btn-custom-small {
     height: 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #0a1014;
 }
 
@@ -315,6 +315,10 @@ img {
 .panel-title a {
     font-size: 1.5rem;
     color: #0a1014;
+    text-decoration: none;
+}
+
+.panel-title a:hover {
     text-decoration: none;
 }
 
