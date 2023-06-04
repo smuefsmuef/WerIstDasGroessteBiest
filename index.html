@@ -56,15 +56,13 @@
                     <h3>Vergleiche wie sich die Lebensqualität von Mensch und Tier in den verschiedenen Ländern
                         unterscheidet.</h3>
                     <br>
-                    <button type="button" class="btn btn-secondary btn-sm btn-custom margin-right"
-                            onclick="update('Total_Index')">
-                        Lebensqualität
-                        der Menschen
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-sm btn-custom"
-                            onclick="update('Threatened_species_total')">
-                        Bedrohte Tier- und Pflanzenarten
-                    </button>
+
+                    <img src="img/photos/humans.jpg" class="treemap-button margin-right"
+                         alt="humans" id="human-btn" onclick="update('Total_Index')">
+
+                    <img src="img/photos/animals.jpg" class="treemap-button"
+                         alt="otter" id="animal-btn" onclick="update('Threatened_species_total')">
+
                     <div id="my_barchart_horizontal"></div>
                     <div class="panel-group" id="exkursAccordion">
                         <div class="row">

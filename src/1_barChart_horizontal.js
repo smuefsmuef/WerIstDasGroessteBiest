@@ -41,6 +41,7 @@ svg1.append("svg:text")
     .text("Lebensqualität der Menschen [OECD Index]")
 
 
+
 // A function that create / update the plot for a given variable:
 function update(selectedVar) {
 
@@ -48,6 +49,9 @@ function update(selectedVar) {
     d3.csv("./data/1_living_quality_threatened_animals_stacked.csv").then(function (data) {
 
         if (selectedVar === "Total_Index") {
+            d3.selectAll("#human-btn").attr("class", "treemap-button-active margin-right")
+            d3.selectAll("#animal-btn").attr("class", "treemap-button")
+
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
@@ -93,6 +97,9 @@ function update(selectedVar) {
                 .attr("fill", d => colorPickerHuman(d.country))
 
         } else if (selectedVar === "Threatened_species_total") {
+            d3.selectAll("#human-btn").attr("class", "treemap-button margin-right")
+            d3.selectAll("#animal-btn").attr("class", "treemap-button-active")
+
             data.sort((a, b) => a[selectedVar] - b[selectedVar]);
             // Add Y axis
             y.domain(data.map(d => d.country));
@@ -139,6 +146,8 @@ function update(selectedVar) {
 
 
         } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar === "Climate Index") {
+            d3.selectAll("#human-btn").attr("class", "treemap-button-active margin-right")
+            d3.selectAll("#animal-btn").attr("class", "treemap-button")
 
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis
@@ -182,6 +191,8 @@ function update(selectedVar) {
                 .attr("height", y.bandwidth())
                 .attr("fill", d => colorPickerHuman(d.country))
         } else {
+            d3.selectAll("#human-btn").attr("class", "treemap-button-active margin-right")
+            d3.selectAll("#animal-btn").attr("class", "treemap-button")
 
             data.sort((a, b) => b[selectedVar] - a[selectedVar]);
             // Add Y axis

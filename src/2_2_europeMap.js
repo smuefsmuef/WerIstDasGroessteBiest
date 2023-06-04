@@ -1,6 +1,3 @@
-// check https://d3-graph-gallery.com/graph/bubblemap_template.html
-// https://gist.github.com/n1n9-jp/d12dde21cc192a86ba9a
-
 // create svgMap canvas
 const canvHeight = 600, canvWidth = 800;
 const svgMap = d3.select("#europe") // body
@@ -130,7 +127,6 @@ function createSliderEndangeredSpecies() {
 
 }
 createSliderEndangeredSpecies()
-
 
 
 //------SELECTS-----------------------------------------------------
@@ -310,7 +306,6 @@ function fillCountry(country, species, selectedOption) {
     })
 }
 
-
 function doPlot(selectedOption) {
     var selectedOption = selectedOption
 
@@ -376,6 +371,8 @@ function doPlot(selectedOption) {
                 mouseout(d3.select(this))
             }
         });
+
+        // animal type buttons (could need a refactoring)
         d3.selectAll("#reptilien").on("mouseover", function (d) {
             selectedOption = d3.select(this).attr("wert")
             fillCountry(country, species, selectedOption)

@@ -297,6 +297,10 @@ img {
     color: #929EA3;
 }
 
+.panel-default>.panel-heading {
+    background-color: #0a1014 !important;
+}
+
 .panel-heading {
     box-shadow: 0 0 0 2px #7C8A91;
     text-decoration: none;
@@ -315,9 +319,9 @@ img {
     text-decoration: none;
 }
 
-.panel-title a {
+.panel-title > a {
     font-size: 1.5rem;
-    color: #0a1014;
+    color: #bacad4 !important;
     text-decoration: none;
 }
 
@@ -529,11 +533,19 @@ article {
 }
 
 .treemap-button:hover {
+    opacity: 100%;
+    border: none;
+    box-shadow: 0 0 0 5px #FF6959;
+    margin-bottom: 30px;
+}
+
+.treemap-button-active {
     height: 120px;
     width: 120px;
     cursor: pointer;
     opacity: 100%;
     border: none;
+    margin-left: 20px;
     box-shadow: 0 0 0 5px #FF6959;
     margin-bottom: 30px;
 }
