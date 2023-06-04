@@ -266,7 +266,7 @@ img {
 /*Buttons in Accordion und Panel text and title*/
 
 .btn-custom-small {
-    height: 40px;
+    height: 30px;
     background: #efedea;
     border: none;
     outline: none;
@@ -292,9 +292,9 @@ img {
 }
 
 .text-smallest {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.5;
-    color: #929EA3;
+    color: #bacad4;
 }
 
 .panel-default>.panel-heading {

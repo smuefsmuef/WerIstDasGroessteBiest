@@ -145,7 +145,7 @@ function update(selectedVar) {
 
 
 
-        } else if (selectedVar === "Purchasing Power Index" || selectedVar === "Safety Index" || selectedVar === "Health Care Index" || selectedVar === "Climate Index") {
+        } else if (selectedVar === "Kaufkraftindex" || selectedVar === "Sicherheitsindex" || selectedVar === "Gesundheitsindex" || selectedVar === "Klimawandelindex") {
             d3.selectAll("#human-btn").attr("class", "treemap-button-active margin-right")
             d3.selectAll("#animal-btn").attr("class", "treemap-button")
 
@@ -254,7 +254,7 @@ function update(selectedVar) {
                 .text(Number(d[selectedVar]).toFixed(2));
         }
 
-        function hideLabel(event, d) {
+        function hideLabel() {
             d3.select(this)
                 .attr("opacity", "1");
             svg1.select(".bar-label").remove();
@@ -268,7 +268,7 @@ function update(selectedVar) {
 
 
 function colorPickerHuman(c) {
-    if (c === "Switzerland") {
+    if (c === "Schweiz") {
         return "#FF6959";
     } else {
         return "#A7B3B4";
@@ -276,7 +276,7 @@ function colorPickerHuman(c) {
 }
 
 function colorPickerAnimal(c) {
-    if (c === "Switzerland") {
+    if (c === "Schweiz") {
         return "#FF6959";
     } else {
         return "#A7B3B4";
