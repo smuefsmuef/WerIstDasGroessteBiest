@@ -243,6 +243,8 @@ img {
     outline: none;
     box-shadow: 0 0 0 3px #7C8A91;
     transition: box-shadow 0.3s;
+    border-radius: 5px;
+    color: black;
 }
 
 .margin-right{
