@@ -138,7 +138,7 @@ img {
     .big-heading {
         font-size: 8rem;
         line-height: 1.5;
-        color: #A1AB95;
+        color:  #FF6959;
         filter: brightness(1);
         font-family: 'Shrikhand', cursive;
     }
@@ -231,14 +231,14 @@ img {
     top: 3%;
 }
 
-/*Buttons*/
+/*Buttons Bar Chart*/
 
 .btn-custom {
     height: 40px;
-    background: #D2DDD6;
+    background: #efedea;
     border: none;
     outline: none;
-    box-shadow: 0 0 0 4px #7C8A91;
+    box-shadow: 0 0 0 3px #7C8A91;
     transition: box-shadow 0.3s;
 }
 
@@ -247,9 +247,10 @@ img {
 }
 
 .btn-custom:hover, .btn-custom:focus {
-    background: #D2DDD6;
-    box-shadow: 0 0 0 4px #FF6959, 0 0 0 2px transparent;
+    background: #efedea;
+    box-shadow: 0 0 0 3px #FF6959, 0 0 0 2px transparent;
 }
+
 
 .btn-sm.btn-custom {
     height: 40px;
@@ -257,6 +258,86 @@ img {
     padding: 10px 10px 10px 10px;
     color: #0a1014;
 }
+
+
+/*Buttons in Accordion und Panel text and title*/
+
+.btn-custom-small {
+    height: 40px;
+    background: #efedea;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 2px #7C8A91;
+    transition: box-shadow 0.3s;
+}
+
+.btn-custom-small:hover, .btn-custom-small:focus {
+    background: #efedea;
+    box-shadow: 0 0 0 2px #FF6959, 0 0 0 2px transparent;
+}
+
+.btn-sm.btn-custom-small {
+    height: 30px;
+    font-size: 1.2rem;
+    color: #0a1014;
+}
+
+.panel-body {
+    padding: 0;
+    color: #efedea;
+    background: #0c161c;
+}
+
+.text-smallest {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #929EA3;
+}
+
+.panel-heading {
+    box-shadow: 0 0 0 2px #7C8A91;
+    text-decoration: none;
+}
+
+.panel-heading:hover,
+.panel-heading.open {
+    box-shadow: 0 0 0 2px #FF6959;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.panel-heading:focus  {
+    box-shadow: 0 0 0 2px #FF6959;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.panel-title a {
+    font-size: 1.5rem;
+    color: #0a1014;
+    text-decoration: none;
+}
+
+.panel-title a:hover {
+    text-decoration: none;
+}
+
+.panel-title a:focus {
+    text-decoration: none;
+}
+
+.accordion-container {
+    margin-bottom: 20px;
+}
+
+.collapse {
+    text-decoration: none;
+}
+
+
+/*sidebyside & custom border*/
+
+
 
 .possibly-sidebyside .one {
     float: left;
@@ -307,6 +388,7 @@ hr {
     stroke: #0a1014;
     stroke-width: 0.12rem;
     stroke-linejoin: round;
+    cursor: pointer;
 }
 
 .country-label {
@@ -316,7 +398,6 @@ hr {
     font-weight: 300;
     text-anchor: middle;
 }
-
 
 #context-label, #context-label-3, #context-label-4, #context-label-6 {
     font-size: 1.1rem;
@@ -381,50 +462,6 @@ hr {
 .animal-type {
 }
 
-
-/*treemap styles
-text {
-    pointer-events: none;
-}
-
-.grandparent text {
-    font-weight: bold;
-}
-
-rect {
-    fill: none;
-    stroke: #fff;
-}
-
-rect.parent,
-.grandparent rect {
-    stroke-width: 2px;
-}
-
-.grandparent rect {
-    fill: orange;
-}
-
-.grandparent:hover rect {
-    fill: #ee9700;
-}
-
-.children rect.parent,
-.grandparent rect {
-    cursor: pointer;
-}
-
-.children rect.parent {
-    fill: #bbb;
-    fill-opacity: .5;
-}
-
-.children:hover rect.child {
-    fill: #bbb;
-}
-*/
-
-
 /*Scrollama*/
 
 #scrolly {
@@ -440,7 +477,7 @@ article {
 }
 
 .step {
-    margin: 0rem auto 0.1rem auto;
+    margin: 0 auto 0.1rem auto;
     background-color: #3b3b3b;
     color: #fff;
     opacity: 0.0;
@@ -466,12 +503,10 @@ article {
     padding: 2px;
     font: 12px sans-serif;
     background: #efedea;
-    border: 0px;
+    border: 0;
     border-radius: 8px;
     pointer-events: none;
 }
-
-
 
 /*Treemap*/
 
@@ -482,7 +517,8 @@ article {
     opacity: 75%;
     box-shadow: 0 0 0 4px #7C8A91;
     transition: box-shadow 0.3s;
-
+    margin-left: 20px;
+    margin-bottom: 30px;
 }
 
 .treemap-button:hover {
@@ -492,7 +528,7 @@ article {
     opacity: 100%;
     border: none;
     box-shadow: 0 0 0 5px #FF6959;
-
+    margin-bottom: 30px;
 }
 
 .tooltip-container {
@@ -524,14 +560,16 @@ article {
 }
 
 .treemap-legend {
-    border-radius: 0px;
+    border-radius: 0;
     width: 350px;
 }
 
 .word-spacing {
-    word-spacing: 150px;
+    word-spacing: 180px;
 }
 
 .zz {
 fill: #ff653e;
 }
+
+
